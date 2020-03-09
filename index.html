@@ -15,7 +15,7 @@ font-style:nexa;
 }
 
 *{outline:0}
-.fd{width:360px;position:relative;top:-20px;z-index:1000px}
+.fd{width:100%;position:relative;top:-20px;z-index:1000px}
 
 .cl{
 		   position:fixed;
@@ -56,11 +56,11 @@ position:sticky;
 top:20px;
 z-index:1000000 !important;
 }
-.overlay {
+.overlay,.overlay1 {
   height: 0%;
   width: 100%;
   position:fixed;
-  z-index:200000 !important;
+  z-index:20000 !important;
   top: 0;
   left: 0; 
   background-color: rgb(0,0,0);
@@ -75,7 +75,6 @@ z-index:1000000 !important;
   text-align: center;
   margin-top: 0px;
 }
-
 .overlay a {
   padding: 0px;
   text-decoration: none;
@@ -87,11 +86,12 @@ z-index:1000000 !important;
 .overl.overlayay a:hover, .overlay a:focus {
   color: #f1f1f1;
 }
-.overlay .closebtn {
+.overlay .closebtn,.closebtn1 {
 				position:absolute;
 				float:right;
 				top:-0.6%; 
 				right:1%;
+				color: #818181;
   font-size: 48px;
 }
 
@@ -150,7 +150,7 @@ SHARE WITH FREINDS</p>
 
 
 
-<div style="height:35px;font-size:24px;cursor:pointer;display:block;color:white;background-color:black;border:0">
+<div style="height:35px;font-size:24px;cursor:pointer;display:block;color:white;background-color:black;border:0;">
 
 
 
@@ -172,16 +172,20 @@ function closeNav() {
 
 
 <form class="sp"method="get" action="https://www.bing.com" target="a"><div class="fd"><center>
-<input type="search"onclick="closeNav()"name="q" size=10 placeholder=" Explore Alion From Here... :-)" class="inp" style="font-size:15px;height:33px; width:100%;box-shadow:0px 16px 16px lightblue; border-style:none;padding-right:36px;padding-left:16px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;background-color:black;color:white"/>
+<input type="search"onclick="closeNav()"name="q" size=10 placeholder=" Explore Alion From Here... :-)" class="inp" style="font-size:15px;height:33px; width:100%;box-shadow:0px 16px 16px #46d2ff; border-style:none;padding-right:36px;padding-left:16px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;background-color:black;color:white"/>
 <input type="image"value="submit"src="p.webp"height="26px" width="26px"alt="alione search"style="top:0px;right:1%;position:absolute;"onclick="closeNav()"/>
 </div> 
 </form>
-<center>
-<a href="https://www.flipkart.com"><img src="f.webp" height=40px width=40px alt="alion FLIPKART"></a> &nbsp<a href="https://www.google.co.in/maps"><img src="m.webp" height=40 width=40 alt="alion GOOGLE MAP"></a>&nbsp <a href="https://www.youtube.com"><img src="i.webp" height=40 width=40 alt="alion YOUTUBE"></a> &nbsp<a href="https://drive.google.com/drive/"><img src="g.webp" height=40 width=40 alt="alion GOOGLE DRIVE"></a> &nbsp<a href="https://www.amazon.in"><img src="a.webp" height=40 width=40 alt="alion AMAZON"></a> <br>
-<br></center>
 
+
+<div style="background-color:#46d2ff;height:220px;width:100%;position:fixed;top:0px;z-index:-50 !important;border-radius:16px;text-align:center;box-shadow:0px 0px 4px 2px lightgrey">
+</div>
 <center>
-<div style="height:128px;width:280px; padding:0;border-left:5px solid #6b5b95;border-right:5px solid #a3a3a3;border-top:5px solid #a3a3a3;border-bottom:5px solid #a3a3a3;border-bottom-right-radius:16px;background-color:#a3a3a3;position:relative;">
+<div style="position:absolute;top:100px;height=300px;left:10%">
+<a href="https://www.flipkart.com"><img src="f.webp" height=40px width=40px alt="alion FLIPKART"></a> &nbsp<a href="https://www.google.co.in/maps"><img src="m.webp" height=40 width=40 alt="alion GOOGLE MAP"></a>&nbsp <a href="https://www.youtube.com"><img src="i.webp" height=40 width=40 alt="alion YOUTUBE"></a> &nbsp<a href="https://drive.google.com/drive/"><img src="g.webp" height=40 width=40 alt="alion GOOGLE DRIVE"></a> &nbsp<a href="https://www.amazon.in"><img src="a.webp" height=40 width=40 alt="alion AMAZON"></a> <br>
+<br>
+
+<div style="height:128px;width:280px; padding:0;border-left:5px solid #6b5b95;border-right:5px solid #a3a3a3;border-top:5px solid #a3a3a3;border-bottom:5px solid #a3a3a3;border-bottom-right-radius:16px;background-color:#a3a3a3;position:relative;"ontouchstart="openNav1()">
 <img src="i.gif"height="20px"width="290px"style="position:absolute;top:-4px;left:-5px"ontouchstart="document.getElementById('m').start();"></img>
 <h5>
 <marquee id="m" direction="up" style="height:88px;z-index:-50px" scrollamount="2"ontouchstart="this.stop()">
@@ -204,8 +208,41 @@ Application Form for BITSAT 2020
 </div>
 
 </div>
-</h1></center><br><br><br><br><br>
- <div class="div1"style="top:50px">
+</h1></center>
+</div>
+
+
+<div id="myNav1" class="overlay1">
+  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav1()">&times;</a><br><br>
+  <div class="overlay-content"style="text-align:left;">
+  <a href="https://testservices.nic.in/ExamSys/root/applyfor.aspx#" target="_aa"onclick="closeNav1()">
+👉 Application Form for JEE Mains(April) 2020</a><br><br><br>
+    <a href="https://viteee.vit.ac.in/#" target="a"onclick="closeNav1()">
+👉 Application Form for VITEEE 2020</a><br><br><br>
+    <a href="https://nest.lpu.in/" target="a" onclick="closeNav()">
+👉 Application Form for LPUNEST 2020</a><br><br><br>
+     <a href="https://cdn3.digialm.com/EForms/configuredHtml/1823/64046/login.html#" target="a" onclick="closeNav1()">
+👉 Application Form for BITSAT 2020</a><br>
+  </div>
+</div>
+
+
+
+<script>
+function openNav1() {
+  document.getElementById("myNav1").style.height = "2000px";
+}
+function closeNav1() {
+  document.getElementById("myNav1").style.height = "0%";
+  document.getElementById('m').start();
+}
+</script>
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <div class="div1"style="top:50px;">
 <a href="https://www.livemint.com/technology/apps/whatsapp-dark-mode-feature-launched-how-to-enable-on-your-phone-11583287528047.html">
 <p style="text-decoration:none;position:absolute;float:left;left:2%;top:-10px;color:purple">
 WhatsApp Dark Mode Have Been Launched
@@ -271,4 +308,21 @@ PROUDLY MADE IN INDIA😀😀😀😀😀
 </h7><p  style="width:100%;border-style:none;border:0px;margin-top:-10px;margin-bottom:0px;padding:0px">
 <center><font color="white"><h1>ALION </H1></p><p  style="text-shadow:0px 0px 3px 3px black; width:100%;border-style:none;border:0px;margin-top:-10px;margin-bottom:px; "><hr></p><div  style="width:100%;border-style:none;border:0px;margin-top:-10px;margin-bottom:44px"><H3>a true hero among all browsers </h3></div>
 
+
+
+<div id="myNav2"style="width:100%;height:260px;position:fixed;bottom:40px;background-color:white;box-shadow:0px 0px 100px 200px white;transition: 2.5s;">
+<a href="whatsapp://send?text=Enjoying Alion!                                      You too can enjoy                             
+               Click Here 👇:                                   https://prabhatr729.github.io/" data-action="share/whatsapp/share"style="float:right">
+<img src="ht.png"style="width:40px;height:40px;"></a>
+<center>
+<img src="wel.gif"height="250px"width="320px"><p>
+<input type="button"style="float:left;width:160px;background-color:#37475a;color:white;height:32px;border-radius:5px"value="CLOSE"onclick="closeNav2()"></input></p>
+</center
+</div></div>
+
+
+<script>
+function closeNav2() {
+  document.getElementById("myNav2").style.bottom = "-1000px";}
+</script>
 </body></html>
