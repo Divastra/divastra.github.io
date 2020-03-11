@@ -127,11 +127,11 @@ let req_nonce = 123456789598; // random number of length 8 to 64 characterswindo
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
-  <a href="file.html" target="_aa"onclick="closeNav()">HOME</a><br>
-    <a href="file1.html" target="a"onclick="closeNav()">CHECK HOW BRAVE YOU ARE</a><br>
-    <a href="p.html" target="a" onclick="closeNav()">DAV BISTUPUR FAIRWELL MEMORIES</a><br>
-     <a href="sf/b.html" target="a" onclick="closeNav()">CLASS XII CS REVISION NOTES</a><br>
-    <a href="af/b.html" target="a" onclick="closeNav()">GETTING BORED?</a><br>
+  <a href="file.html" target="ifr"onclick="closeNav(),openNav3()">HOME</a><br>
+    <a href="file1.html" target="ifr"onclick="closeNav(),openNav3()">CHECK HOW BRAVE YOU ARE</a><br>
+    <a href="p.html" target="ifr" onclick="closeNav(),openNav3()">DAV BISTUPUR FAIRWELL MEMORIES</a><br>
+     <a href="sf/b.html" target="ifr" onclick="closeNav(),openNav3()">CLASS XII CS REVISION NOTES</a><br>
+    <a href="af/b.html" target="ifr" onclick="closeNav(),openNav3()">GETTING BORED?</a><br>
  <br><br>
  <a href=" https://chat.whatsapp.com/Iurqf2fSjKr1j8DsiGSr4d">JOIN OUR WHATSAPP GROUP</a><br>
  <hr>
@@ -158,7 +158,7 @@ SHARE WITH FREINDS</p>
 <center>
 <div style="position:absolute;top:-16px;left:32px;z-index:1000000 !important">
 <h1 style="font-size:30px;"><font color=#4285F4 face="open sans">A</font><font color=#DB4437 face="open sans">l</font><font color=#F4B400 face="open sans">i</font><font color=#4285F4 face="open sans">o</font><font color=#0F9D58 face="open sans">n</font></h1> </div>
-<div style="float:right;"onclick="openNav();">&#9776;&nbsp</div></div>
+<div style="float:right;width:100%;text-align:right"onclick="openNav();">&#9776;&nbsp</div></div>
 
 <script>
 function openNav() {
@@ -171,9 +171,9 @@ function closeNav() {
 <br>
 
 
-<form class="sp"method="get" action="https://www.bing.com" target="a"><div class="fd"><center>
+<form class="sp"method="get" action="https://www.bing.com" target="ifr"><div class="fd"><center>
 <input type="search"onclick="closeNav()"name="q" size=10 placeholder=" Explore Alion From Here... :-)" class="inp" style="font-size:15px;height:33px; width:100%;box-shadow:0px 16px 16px #46d2ff; border-style:none;padding-right:36px;padding-left:16px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;background-color:black;color:white"/>
-<input type="image"value="submit"src="p.webp"height="26px" width="26px"alt="alione search"style="top:0px;right:1%;position:absolute;"onclick="closeNav()"/>
+<input type="image"value="submit"src="p.webp"height="26px" width="26px"alt="alione search"style="top:0px;right:1%;position:absolute;"onclick="closeNav(),openNav3()"/>
 </div> 
 </form>
 
@@ -323,10 +323,12 @@ PROUDLY MADE IN INDIA😀😀😀😀😀
 <input type="button"style="float:left;width:160px;background-color:#37475a;color:white;height:32px;border-radius:5px"value="CLOSE"onclick="closeNav2()"></input></div>
 </center
 </div></div>
-
+<iframe id="ifrr" src="file.html"name="ifr"style="position:fixed;left:0px;height:600px;bottom:-1000px;transition:2.5s;width:100%;margin:0px;border:0;box-shadow:0px -10px 10px white;z-index:1001px !important">
+</iframe>
 
 <script>
-function closeNav2() {
-  document.getElementById("myNav2").style.bottom = "-1000px";}
+function closeNav2() { document.getElementById("myNav2").style.bottom = "-1000px";}
+function openNav3(){ 
+setTimeout(function(){document.getElementById("ifrr").style.bottom = "0px";},1500)}
 </script>
 </body></html>
