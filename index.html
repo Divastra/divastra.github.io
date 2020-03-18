@@ -4,18 +4,18 @@
 <style>
 a{text-decoration:none;color:white}
 .div1{
-height:230px;width:100%;
+height:230px;width:90%;
 position:sticky;
 border-bottom-right-radius:16px;
 border-bottom-left-radius:16px;
 background-color:white;
-box-shadow:0px 0px 20px 5px #2b2645;
+box-shadow:0px 0px 16px 1px #2b2645;
 z-index:0px;
 font-style:nexa;
 }
 
 *{outline:0}
-.fd{width:100%;position:relative;top:-20px;z-index:1000px}
+.fd{box-shadow:0px 8px 8px #46d2ff;background-color:black;width:100%;position:relative;top:-20px;z-index:1000000 !important}
 
 .cl{
 		   position:fixed;
@@ -32,7 +32,8 @@ font-style:nexa;
 document.onreadystatechange = function () { 
 				if (document.readyState === "complete")         
 				  { 
-								console.log(document.readyState); document.getElementById("PreLoaderBar").style.display = "none"; 
+								console.log(document.readyState); document.getElementById("PreLoaderBar").style.opacity= "0"; 
+setTimeout(function(){document.getElementById("PreLoaderBar").style.display = "none";},1000)
 								} 
 					}
 </script>
@@ -49,13 +50,8 @@ document.onreadystatechange = function () {
 <title>ALION</title>
 
 <style>
+.sp{width:100%; position:sticky;top:20px;z-index:1000000 !important;}
 
-
-.sp{
-position:sticky;
-top:20px;
-z-index:1000000 !important;
-}
 .overlay,.overlay1 {
   height: 0%;
   width: 100%;
@@ -89,7 +85,7 @@ z-index:1000000 !important;
 .overlay .closebtn,.closebtn1 {
 				position:absolute;
 				float:right;
-				top:-0.6%; 
+				top:2%; 
 				right:1%;
 				color: #818181;
   font-size: 48px;
@@ -109,17 +105,19 @@ z-index:1000000 !important;
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 </script>
-</head><body  onload="check()"style="background-color:lightblue"style="border-style:none;margin:auto;padding:0;"><meta name="alion"content="Alion">
-
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script>
-let req_nonce = 123456789598; // random number of length 8 to 64 characterswindow.location = "intent://truesdk/web_verify?requestNonce=" + req_nonce +
-"&partnerKey={Your Unique Key which you generated}&partnerName=TrueShop&lang=English&title=Default&skipOption=skip#Intent;scheme=truecallersdk;end";
-}, 600);
-</script>
+</head><body  onload="check()"style="background-color:lightblue"style="border-style:none;margin:auto;padding:0;"><meta name="alion"content="Alion"/>
 
 
-<div id="PreLoaderBar"style="z-index:9999999 !important;background-color:black;top:0;left:0;height:100%;width:100%;position:fixed;opacity:1;"><div ><img src="sc.webp"width="250px"height="250px" class="cl"/></div></div>
+
+
+<div id="PreLoaderBar"style="z-index:9999999 !important;background-color:black;top:0;left:0;height:100%;width:100%;position:fixed;opacity:1;transition:1s"><div ><img src="sc.webp"width="250px"height="250px" class="cl"/></div></div>
+
+
+
+
+
+
+
 
 
 
@@ -149,17 +147,6 @@ SHARE WITH FREINDS</p>
 </center>
 
 
-
-<div style="height:35px;font-size:24px;cursor:pointer;display:block;color:white;background-color:black;border:0;">
-
-
-
-<img src="sc.webp"height="35"width="35"style="z-index:1000000 !important;position:absolute">
-<center>
-<div style="position:absolute;top:-16px;left:32px;z-index:1000000 !important">
-<h1 style="font-size:30px;"><font color=#4285F4 face="open sans">A</font><font color=#DB4437 face="open sans">l</font><font color=#F4B400 face="open sans">i</font><font color=#4285F4 face="open sans">o</font><font color=#0F9D58 face="open sans">n</font></h1> </div>
-<div style="float:right;width:100%;text-align:right"onclick="openNav();">&#9776;&nbsp</div></div>
-
 <script>
 function openNav() {
   document.getElementById("myNav").style.height = "2000px";
@@ -171,9 +158,17 @@ function closeNav() {
 <br>
 
 
-<form class="sp"method="get" action="https://www.bing.com" target="ifr"><div class="fd"><center>
-<input type="search"onclick="closeNav()"name="q" size=10 placeholder=" Explore Alion From Here... :-)" class="inp" style="font-size:15px;height:33px; width:100%;box-shadow:0px 16px 16px #46d2ff; border-style:none;padding-right:36px;padding-left:16px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;background-color:black;color:white"/>
-<input type="image"value="submit"src="p.webp"height="26px" width="26px"alt="alione search"style="top:0px;right:1%;position:absolute;"onclick="closeNav(),openNav3()"/>
+<form class="sp"method="get" action="https://www.bing.com" target="ifr">
+<div class="fd">
+
+<img src="sc.webp"height="35px"width="35px"/>
+
+<span style="position:absolute;left:-4px;top:-16px">
+<h1 style="font-size:30px;position:absolute;left:40px"><font color=#4285F4 face="open sans">A</font><font color=#DB4437 face="open sans">l</font><font color=#F4B400 face="open sans">i</font><font color=#4285F4 face="open sans">o</font><font color=#0F9D58 face="open sans">n</font></h1></span>
+<input type="search"onclick="closeNav()"name="q"id="inpu" size=10 placeholder=" Explore Alion From Here... :-)" class="inp" style="position:absolute;float:right;right:40px;font-size:15px;height:39px;width:50%;box-shadow:0px 0px 16px 1px #46d2ff; border-style:none;padding-right:36px;padding-left:16px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;background-color:black;color:white;transition:2s"/>
+<input id="im" type="image"value="submit"src="p.webp"height="26px" width="26px"alt="alione search"style="top:12px;right:40px;position:absolute;"onclick="closeNav(),openNav3()"/>
+<div style="font-size:24px;cursor:pointer;color:white;position:absolute;top:0px;float:right;right:0"onclick="openNav();">&#9776;&nbsp</div>
+
 </div> 
 </form>
 
@@ -242,6 +237,7 @@ function closeNav1() {
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<center style="position:sticky;top:50px;">
  <div class="div1"style="top:50px;">
 <a href="https://www.livemint.com/technology/apps/whatsapp-dark-mode-feature-launched-how-to-enable-on-your-phone-11583287528047.html">
 <p style="text-decoration:none;position:absolute;float:left;left:2%;top:-10px;color:purple">
@@ -300,35 +296,39 @@ PROUDLY MADE IN INDIA😀😀😀😀😀
 <img src="mi.jpeg"style="position:absolute;height:180px;width:100%;float:left;left:0;bottom:0px;border-bottom-left-radius:12px;border-bottom-right-radius:12px;"
 ></img>
 </a>
-</div>
+</div><br><br><br><br>
 <br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <h7>
-<div style="background-color:black;opacity:0.7;width:100%;height:40px;border-style:none;border:0px;position:fixed;bottom:0px;overflow: auto;"><center><font color="white"face="cooper black"size="1px"><i>Created & Designed by:PRABHAT RANJAN <br>&#9400 copyright 2020. All rights reserved.</div></div>
+<div style="background-color:black;opacity:0.7;width:100%;height:40px;border-style:none;border:0px;position:fixed;bottom:0px;overflow: auto;"><center><font color="white"face="cooper black"size="1px"><i>Created & Designed by:PRABHAT RANJAN <br>&#9400 copyright 2020. All rights reserved.</div>
 </h7><p  style="width:100%;border-style:none;border:0px;margin-top:-10px;margin-bottom:0px;padding:0px">
-<center><font color="white"><h1>ALION </H1></p><p  style="text-shadow:0px 0px 3px 3px black; width:100%;border-style:none;border:0px;margin-top:-10px;margin-bottom:px; "><hr></p><div  style="width:100%;border-style:none;border:0px;margin-top:-10px;margin-bottom:44px"><H3>a true hero among all browsers </h3></div>
+<h1>ALION </H1></p><p  style="text-shadow:0px 0px 3px 3px black; width:100%;border-style:none;border:0px;margin-top:-10px;margin-bottom:px; "><hr></p><div  style="width:100%;border-style:none;border:0px;margin-top:-10px;margin-bottom:44px"><H3>a true hero among all browsers </h3></div>
+</font>
 
 
 
-<div id="myNav2"style="z-index:20000 !important;width:100%;height:260px;position:fixed;bottom:0px;background-color:white;box-shadow:0px 0px 100px 200px white;transition: 2.5s;">
-<div style="position:absolute;top:-55px;right:0">
+<iframe id="ifrr" src="file.html"name="ifr"style="position:fixed;left:0px;height:600px;top:1000px;transition:2.5s;width:100%;margin:0px;border:0;box-shadow:0px -10px 10px white;z-index:1001px !important">
+</iframe>
+
+<div id="myNav2"style="z-index:20000px;width:100%;height:100%;position:fixed;bottom:0px;background-color:white;box-shadow:0px 0px 400px 200px white;transition: 1s;">
+<div style="position:absolute;top:200px;right:0">
 <a href="whatsapp://send?text=Enjoying Alion!                                      You too can enjoy                             
                Click Here 👇:                                   https://prabhatr729.github.io/" data-action="share/whatsapp/share"style="float:right;top:10">
-<img src="ht.png"style="width:40px;height:40px;"></a></div>
+<img src="ht.png"style="width:40px;height:40px;"/></a></div>
 <center>
-<div style="position:absolute;left:0;bottom:40;width:100%;height:90%">
-<img src="wel1.gif"height="100%"width="100%">
+<div style="position:absolute;left:0;bottom:40px;width:100%;height:50%">
+<img src="wel1.gif"height="100%"width="100%"/>
 </div>
 <div style="position:absolute;bottom:0">
 <input type="button"style="float:left;width:160px;background-color:#37475a;color:white;height:32px;border-radius:5px"value="CLOSE"onclick="closeNav2()"></input></div>
-</center
-</div></div>
-<iframe id="ifrr" src="file.html"name="ifr"style="position:fixed;left:0px;height:600px;bottom:-1000px;transition:2.5s;width:100%;margin:0px;border:0;box-shadow:0px -10px 10px white;z-index:1001px !important">
-</iframe>
+</center>
+</div>
+
 
 <script>
 function closeNav2() { document.getElementById("myNav2").style.bottom = "-1000px";}
 function openNav3(){ 
-setTimeout(function(){document.getElementById("ifrr").style.bottom = "0px";},1500)}
+setTimeout(function(){document.getElementById("ifrr").style.top = "40px";
+	},1500)}
 </script>
 </body></html>
