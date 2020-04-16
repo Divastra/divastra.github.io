@@ -106,7 +106,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 
 
-<div id="PreLoaderBar"style="z-index:9999999 !important;background-color:#10101f;top:0;height:100%;width:100%;position:fixed;opacity:1;transition:0.5s;"><hr><center>
+<div id="PreLoaderBar"onload="f1()"style="z-index:9999999 !important;background-color:#10101f;top:0;height:100%;width:100%;position:fixed;opacity:1;transition:0.5s;"><hr><center>
 <h1 id="header"style="font-size:90px;margin:0px">
 <font color=#4285F4 face="open sans">A</font><font color=#DB4437 face="open sans">l</font><font color=#F4B400 face="open sans">i</font><font color=#4285F4 face="open sans">o</font><font color=#0F9D58 face="open sans">n</font></h1>
 <hr>
@@ -133,11 +133,13 @@ Let's 🤜 Corona<br>with</center></b>
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
-  <a href="file.html" target="ifr"onclick="closeNav(),openNav3()">HOME</a><br>
-    <a href="file1.html" target="ifr"onclick="closeNav(),openNav3()">CHECK HOW BRAVE YOU ARE</a><br>
-    <a href="p.html" target="ifr" onclick="closeNav(),openNav3()">DAV BISTUPUR FAIRWELL MEMORIES</a><br>
-     <a href="sf/b.html" target="ifr" onclick="closeNav(),openNav3()">CLASS XII CS REVISION NOTES</a><br>
-    <a href="af/b.html" target="ifr" onclick="closeNav(),openNav3()">GETTING BORED?</a><br>
+  <a href="file.html" target="ifr"onclick="closeNav2(),closeNav(),openNav3()">HOME</a><br>
+    <a href="file1.html" target="ifr"onclick="closeNav2(),closeNav(),openNav3()">CHECK HOW BRAVE YOU ARE</a>
+    <br>
+    <a href="p.html" target="ifr" onclick="closeNav2(),closeNav(),openNav3()">DAV BISTUPUR FAIRWELL MEMORIES</a><br>
+     <a href="sf/b.html" target="ifr" onclick="closeNav2(),closeNav(),openNav3()">CLASS XII CS REVISION NOTES</a><br>
+    <a href="bff/p.html" target="ifr"onclick="closeNav2(),closeNav(),openNav3()">MY BEST FREINDS FOREVER</a><br>
+    <a href="af/b.html" target="ifr" onclick="closeNav2(),closeNav(),openNav3()">GETTING BORED?</a><br>
  <br><br>
  <a href=" https://chat.whatsapp.com/Iurqf2fSjKr1j8DsiGSr4d">JOIN OUR WHATSAPP GROUP</a><br>
  <hr>
@@ -333,14 +335,14 @@ PROUDLY MADE IN INDIA😀😀😀😀😀
 <iframe class="ifco" src="https://www.youtube.com/embed/aVO61QinOag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br><br>
 <iframe class="ifco"src="https://www.youtube.com/embed/P8hfjxWSI-E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br><br>
 <iframe class="ifco" src="https://www.youtube.com/embed/94JdFAOSyZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br><br><br><br>
-<div style="background-color:#007c89;position:absolute;top:39px;width:100%;height:32px"><center>
-<a id="mynav5"href="whatsapp://send?text=कोरोना मुक्त रहें                                    Alion के साथ 😀                          
-               Click Here 👇:                                   https://prabhatr729.github.io/" data-action="share/whatsapp/share">
-               <div style="float:left;padding-top:8px">
+
+<a id="mynav5"href="whatsapp://send?text=कोरोना मुक्त रहें Alion के साथ😀                          
+                                                  Click Here 👉:https://prabhatr729.github.io/" data-action="share/whatsapp/share">
+      <div style="background-color:#007c89;position:absolute;top:39px;width:100%;height:32px"><center>        <div style="float:left;padding-top:8px">
 कोरोना मुक्त रहें और इसे दोस्तों के साथ SHARE करें 👉
 </div>
-<img src="ht.png"style="width:32px;height:32px;"/></a></center></div>
-
+<img src="ht.png"style="width:32px;height:32px;"/></center></div>
+</a>
 <div id="myNav3" style="background-color:black;width:100%;position:fixed;bottom:-8px"><center>
 <img src="sc.gif"style="width:100px;color:white;height:40px;"onclick="closeNav2()"></center></div>
 </div>
@@ -360,6 +362,10 @@ setTimeout(function(){document.getElementById("ifrr").style.height = "100%";
 setTimeout(function(){document.getElementById("PreLoaderBar").style.display = "none";},1000)}
 </script>
 <script>
+function f1(){
+				document.getElementById("PreLoaderBar").style.opacity= "0";
+document.getElementById("PreLoaderBar").style.display = "none";
+				}
 document.onreadystatechange = function () { 
 				if (document.readyState === "complete")         
 				  { 
