@@ -1,4 +1,4 @@
-@media (min-width: 1200px) material-icons{ i {font-size:3rem;} /*1rem = 16px*/ }
+@media (min-width: 1200px) material-icons{ * {font-size:10rem;} /*1rem = 16px*/ }
 .fade-in-bottom {
 	-webkit-animation: fade-in-bottom 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in-bottom 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
