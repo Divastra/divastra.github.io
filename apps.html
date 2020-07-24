@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+a{text-decoration:none;}
+
+#myInput {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+</style>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<input type="search" id="myInput" onkeyup="myFunction()" placeholder="Search and click on apps to download..." title="Type in a name"class="bg-dark text-light sticky-top"autocomplete="off">
+
+
+
+
+
+
+<ul class="list-group" id="myUL"> 
+
+
+<li class="list-group-item">
+<a href="https://drive.google.com/file/d/1Rv5P9YqlNc75mMiCY9fVVHT1xYlZAtd4/view?usp=drivesdk"target="blank">
+Corona Predictor By Prabhat Ranjan
+<font color="black"> (3.2MB)</font>
+</a>
+</li>
+
+<li class="list-group-item">
+<a href="https://drive.google.com/file/d/1S77Fz8SdCBTk2RkX3lqK1EWGQ3YVv_wQ/view?usp=drivesdk"target="blank">
+Tic Tac Toe
+<font color="black"> (1.5MB)</font>
+</a>
+</li>
+
+<li class="list-group-item">
+<a href="https://drive.google.com/file/d/1SA-vJsTN5SOVGfUQh4lN_dzzfLhTDGr5/view?usp=drivesdk"target="blank">
+India Wins
+<font color="black"> (3.4MB)</font>
+</a>
+</li>
+
+<li class="list-group-item">
+<a href="https://drive.google.com/file/d/1S8pcpSQlmKuHucJrExjiLb2EulIUVMB8/view?usp=drivesdk"target="blank">
+Lucky Match
+<font color="black"> (3.2MB)</font>
+</a>
+</li>
+
+<li class="list-group-item">
+<a href="https://drive.google.com/file/d/1SIaug8Ur_Nm_upFdfFYKUbqu2bjTreHU/view?usp=drivesdk"target="blank">
+Funny Relations
+<font color="black"> (3.1MB)</font>
+</a>
+</li>
+
+</ul>
+
+
+
+
+
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
