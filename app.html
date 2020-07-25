@@ -25,6 +25,20 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 
 <script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+<script>
+function GoogleSignIn(){
+
+var provider = new firebase.auth.GoogleAuthProvider();
+
+firebase.auth().signInWithPopup(provider).then(function() {
+  window.location="app.html";
+}).catch(function (error) {
+				var errorM=error.message;
+				alert(errorM);
+				})
+}
+
+</script>
   
   
 </head>
@@ -38,7 +52,7 @@
     <p class="text-focus-in">&nbsp&nbsp&nbspA true hero among all corona fighters</p>
     
     
-
+<div class="btn btn-danger"onclick="GoogleSignIn();">Google+</div>
 
   </div>
 </div>
@@ -440,6 +454,38 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
+</script>
+
+
+
+
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+     apiKey: "AIzaSyDgDVbyoGNDmCfeRBbbC1Ix7tpiacdO7Es",
+  authDomain: "divastra-54bde.firebaseapp.com",
+  databaseURL: "https://divastra-54bde.firebaseio.com",
+  projectId: "divastra-54bde",
+  storageBucket: "divastra-54bde.appspot.com",
+  messagingSenderId: "912640131261",
+  appId: "1:912640131261:web:a8b412038d6e25a23e77d4",
+  measurementId: "G-FC797X93DY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 </script>
 
 </body>
