@@ -25,33 +25,9 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 
 <script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
-<script>
-function GoogleSignIn(){
 
-var provider = new firebase.auth.GoogleAuthProvider();
-
-firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Google Access Token. You can use it to access the Google API.
-  var token = result.credential.accessToken;
-  // The signed-in user info.
-  var user = result.user;
-  // ...
-}).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
-  alert(errorMessage);
-});
-}
-
-</script>
   
-  
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d1d4fe6561be512a25a17954/30bb4d8da3b6d6df89dc738da.js");</script>
 </head>
 <body bgcolor="beige">
 
@@ -468,36 +444,6 @@ var currentScrollPos = window.pageYOffset;
 </script>
 
 
-
-
-
-<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-
-<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
-
-<!-- Add Firebase products that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-     apiKey: "AIzaSyDgDVbyoGNDmCfeRBbbC1Ix7tpiacdO7Es",
-  authDomain: "divastra-54bde.firebaseapp.com",
-  databaseURL: "https://divastra-54bde.firebaseio.com",
-  projectId: "divastra-54bde",
-  storageBucket: "divastra-54bde.appspot.com",
-  messagingSenderId: "912640131261",
-  appId: "1:912640131261:web:a8b412038d6e25a23e77d4",
-  measurementId: "G-FC797X93DY"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
 
 </body>
 </html>
