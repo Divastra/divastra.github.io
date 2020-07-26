@@ -46,6 +46,7 @@
 
 <div class="jumbotron jumbotron-fluid my-0 bg-warning shadow-lg">
   <div class="container">
+  <br><br>
   <img src="p/sc.webp"class="shadow-lg rounded-circle fade-in-bottom"data-wow-delay="0.6s"style="width:10rem;height:10rem">
   <br><br>
    <b> <h1 class="text-flicker-in-glow ">&nbspDivastra</h1> </b>     
@@ -439,7 +440,7 @@ Among humans, coronavirus infections most often occur during the winter months
 
 
 
-<nav class="nav nav-pills bg-light nav-justified fixed-bottom shadow-lg rounded-top border-top border-secondary fade-in-bottom"id="navigation"style="transition:0.5s">
+<nav class="nav nav-pills nav-justified fixed-top bg-dark shadow border-secondary"id="navigation"style="transition:0.5s;">
  
 <a class="nav-item nav-link" href="index.html"><i class="material-icons text-secondary">home</i></a> 
 
@@ -477,9 +478,9 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navigation").style.bottom = "0";
+    document.getElementById("navigation").style.top = "0";
   } else {
-    document.getElementById("navigation").style.bottom = "-50px";
+    document.getElementById("navigation").style.top = "-50px";
   }
   prevScrollpos = currentScrollPos;
 }
