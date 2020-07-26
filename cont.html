@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "7c20c96d-4ea8-4c8d-b4ac-b91866ac3422",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
+
+
 <link href="divastra.css"
       rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
