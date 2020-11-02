@@ -28,25 +28,75 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 
   <script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+
+
+
+<style>
+
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 0%;
+}
+
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+ 
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 100%;
+}
+
+
+</style>
+
  
   
 </head>
 <body bgcolor="beige">
 
-<div class="jumbotron jumbotron-fluid my-0 bg-warning shadow-lg">
+
+
+
+
+
+
+
+
+
+
+<div class="header bg-warning rounded"id="myBar">
+  <div class="progress-container bg-warning">
+    <div class="progress-bar" ></div>
+  </div>
+</div>
+
+
+
+
+  <div class="jumbotron jumbotron-fluid my-0 bg-warning shadow-lg">
   <div class="container">
   <br><br>
 <table width=100% height="100%"><tr width=100% height="100%"><td width=50%>
   <img src="p/sc.webp"class="shadow-lg rounded-circle fade-in-bottom"data-wow-delay="0.6s"style="width:10rem;height:10rem">
   <br><br>
     <h1 class="text-flicker-in-glow">&nbspDivastra</h1>      
-    <p class="text-focus-in">&nbsp&nbsp&nbspA true hero among all corona fighters</p>
+    <p class="text-focus-in">A true hero among all corona fighters</p>
    </td><td width=50%>
-<iframe width="100%" height="100%"src="https://www.powtoon.com/embed/g7Rvh0DS4vi/" frameborder="0" class=" rounded shadow-lg text-focus-in bg-warning" allowfullscreen></iframe>
-</td></tr></table>
-  </div>
-</div>
+<a class="btn btn-success btn-lg shadow text-flicker-in-glow" href="#curator-feed-fun-layout">Be Motivated</a>
+<br><br>
+<a class="btn btn-success btn-lg shadow text-flicker-in-glow" href="https://www.powtoon.com/embed/g7Rvh0DS4vi/">Happy New Year 2021 🎉</a>
 
+</td></tr></table>
+
+</div> </div>
 
 
 <div class="container-fluid bg-dark py-5">
@@ -295,6 +345,23 @@ Among humans, coronavirus infections most often occur during the winter months
 
 
 
+<!-- Place <div> tag where you want the feed to appear -->
+<div id="curator-feed-fun-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+<!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+<script type="text/javascript">
+/* curator-feed-fun-layout */
+(function(){
+var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+i.src = "https://cdn.curator.io/published/e5a9d84b-ad5d-4424-bd00-bddf0360f180.js";
+e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+})();
+</script>
+
+
+
+
+
+
 
 
 
@@ -373,39 +440,48 @@ Among humans, coronavirus infections most often occur during the winter months
 
 
 
-<nav class="nav nav-pills nav-justified fixed-top bg-dark shadow border-secondary"id="navigation"style="transition:0.5s;">
+<nav class="nav nav-pills nav-justified fixed-bottom bg-warning shadow border-secondary"id="navigation"style="transition:0.5s;">
  
-<a class="nav-item nav-link" href="index.html"><i class="material-icons text-secondary">home</i></a> 
+<a class="nav-item nav-link" href="index.html"data-toggle="tooltip" title="Home"><i class="material-icons text-secondary">home</i></a> 
 
-<a class="nav-item nav-link" href="news.html"><i class="material-icons text-secondary">subtitles</i></a> 
+<a class="nav-item nav-link" href="news.html" data-toggle="tooltip" title="India News"><i class="material-icons text-secondary">subtitles</i></a> 
 
-<a class="nav-item nav-link active" href="cont.html"><i class="material-icons">block</i></a> 
+<a class="nav-item nav-link active" href="cont.html" data-toggle="tooltip" title="Boycott China"><i class="material-icons">block</i></a> 
 
-<a class="nav-item nav-link" href="bored.html"><i class="material-icons text-secondary">mood</i></a> 
+<a class="nav-item nav-link" href="bored.html" data-toggle="tooltip" title="Getting Bored"><i class="material-icons text-secondary">mood</i></a> 
 
-<a class="nav-item nav-link" href="app.html"><i class="material-icons text-secondary">shopping_cart</i></a> 
+<a class="nav-item nav-link" href="app.html" data-toggle="tooltip" title="Divastra Store"><i class="material-icons text-secondary">shopping_cart</i></a> 
 
-<a class="nav-item nav-link" href="about.html"><i class="material-icons text-secondary">account_box</i></a> 
+<a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About Me"><i class="material-icons text-secondary">account_box</i></a> 
 
 </nav>
+
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 
 
 
 
 <script>
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navigation").style.top = "0";
-  } else {
-    document.getElementById("navigation").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
 }
 </script>
 
 
+
+
+<script src="//code.tidio.co/ukvzspgnd09avxkfjzmlyje5vu00grzc.js" async></script>
 
 
 </body>
