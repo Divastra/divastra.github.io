@@ -45,8 +45,8 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 .header {
   position: fixed;
-  top: 0;
-  z-index: 1;
+  top: 45px;
+  z-index: 1000;
   width: 0%;
 }
 
@@ -59,7 +59,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 .progress-bar {
   height: 8px;
-  background: #4caf50;
+  
   width: 100%;
 }
 
@@ -85,7 +85,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 <div class="header bg-warning rounded"id="myBar">
   <div class="progress-container bg-warning">
-    <div class="progress-bar" ></div>
+    <div class="progress-bar bg-success shadow" ></div>
   </div>
 </div>
 
@@ -474,7 +474,7 @@ e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
 
 
 
-<nav class="nav nav-pills nav-justified fixed-bottom bg-warning shadow border-secondary"id="navigation"style="transition:0.5s;">
+<nav class="nav nav-pills nav-justified fixed-top bg-dark shadow border-secondary"id="navigation"style="transition:0.5s;">
  
 <a class="nav-item nav-link active" href="index.html" data-toggle="tooltip" title="Home"><i class="material-icons">home</i></a> 
 
@@ -489,6 +489,7 @@ e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
 <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About Me"><i class="material-icons text-secondary">account_box</i></a> 
 
 </nav>
+
 
 
 
