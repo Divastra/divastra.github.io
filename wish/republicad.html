@@ -196,13 +196,15 @@ h3 {
 
 <script>
 var name = prompt("आपका शुभ नाम क्या है?👇");
+name=name.trim();
+name=name.toUpperCase();
 if(name==="null"||name===""||name===" ")
 {
 	name="My Freind";
 	window.location.reload(true);
 }
 document.getElementById('output').innerHTML = name;
-document.getElementById("name").href = "whatsapp://send?text=*"+name+"* ने आपके लीये बधाई के साथ कुछ खुबसुरत तोहफे भेजे हैं। अभी ब्लु लाईन को दबाकर अपना तोहफा देखें👉👉👉👉https://divastra.github.io/wish/republicad.html";
+document.getElementById("name").href = "whatsapp://send?text=*"+name+"* ने आपके लीये *REPUBLIC DAY* के बधाई के साथ कुछ खुबसुरत तोहफे भेजे हैं। अभी ब्लु लाईन को दबाकर अपना तोहफा देखें👉👉👉👉https://divastra.github.io/wish/republicad.html";
 </script>
 
 <script>
