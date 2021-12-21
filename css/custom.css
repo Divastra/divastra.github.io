@@ -1,0 +1,15 @@
+.c_feedback{
+    border-color: #4A148C;
+    color: #4A148C;
+    background-color: #F3E5F5;
+}
+.c_feedback:hover{
+    background-color: #4A148C;
+    color: #F3E5F5;
+}
+.c_logo{
+    transition: 1s;
+}
+.c_logo:hover{
+    transform: scale(1.3);
+}
