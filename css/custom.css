@@ -13,3 +13,6 @@
 .c_logo:hover{
     transform: scale(1.3);
 }
+a{
+    text-decoration: none;
+}
