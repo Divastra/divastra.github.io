@@ -32,7 +32,7 @@
 		#logo {
 			transition: 0.4s;
 			font-size: 40px;
-			}
+		}
 
 
 
@@ -123,8 +123,7 @@ background-size:cover; background-position: center;">
 		<div class="row">
 			<div class="col m-4">
 				<center>
-					<div class="card p-2 pt-4 bg-light shadow"
-						style="min-width: 200px; height: 100%">
+					<div class="card p-2 pt-4 bg-light shadow" style="min-width: 200px; height: 100%">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/1253/1253668.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
@@ -139,8 +138,7 @@ background-size:cover; background-position: center;">
 			</div>
 			<div class="col m-4">
 				<center>
-					<div class="card p-2 pt-4 bg-light shadow"
-						style="min-width: 200px; height: 100%">
+					<div class="card p-2 pt-4 bg-light shadow" style="min-width: 200px; height: 100%">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
@@ -155,8 +153,7 @@ background-size:cover; background-position: center;">
 			</div>
 			<div class="col m-4">
 				<center>
-					<div class="card p-2 pt-4 bg-light shadow"
-						style="min-width: 200px; height: 100%">
+					<div class="card p-2 pt-4 bg-light shadow" style="min-width: 200px; height: 100%">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/777/777242.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
@@ -171,8 +168,7 @@ background-size:cover; background-position: center;">
 			</div>
 			<div class="col m-4">
 				<center>
-					<div class="card p-2 pt-4 bg-light shadow"
-						style="min-width: 200px; height: 100%">
+					<div class="card p-2 pt-4 bg-light shadow" style="min-width: 200px; height: 100%">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/2471/2471750.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
@@ -190,6 +186,12 @@ background-size:cover; background-position: center;">
 	</div>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<script>
+		window.addEventListener("load", function () {
+			setTimeout(function () {
+				// This hides the address bar:
+				window.scrollTo(0, 1);
+			}, 0);
+		});
 		// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
 		window.onscroll = function () { scrollFunction() };
 
