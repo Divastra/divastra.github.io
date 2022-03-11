@@ -105,7 +105,8 @@ background-size:cover; background-position: center;">
 					style="background-color: rgba(255, 255, 255, 0);backdrop-filter: blur(64px);">
 					<div class="">
 						<h1 class="fw-light">
-							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Divastra JEE:&nbsp<span class="typeText"></span></p>
+							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Divastra
+								JEE:&nbsp<span class="typeText"></span></p>
 						</h1>
 					</div>
 					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Something short
@@ -123,18 +124,23 @@ background-size:cover; background-position: center;">
 				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
 		</a>
 	</div>
-	<div id="content" class="container shadow rounded text-light" style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+	<div id="content" class="container shadow rounded text-light"
+		style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
 		<br><br><br><br>
 		<div class="row">
 			<div class="col" style="min-width:300px">
 				<div class="p-4">
 					<ul>
-						<li>Here is the list of recent JEE Mains exam dates and shifts along with their respective difficulty level.</li>
-						<li>If you want to predict result from these shifts then check its difficulty level from this list and enter it below.</li>
-						<li>If you want to predict result of any other shift then enter its difficulty level below, either by reserching its dfficulty level online or by an approximate guess.</li>
+						<li>Here is the list of recent JEE Mains exam dates and shifts along with their respective
+							difficulty level.</li>
+						<li>If you want to predict result from these shifts then check its difficulty level from this
+							list and enter it below.</li>
+						<li>If you want to predict result of any other shift then enter its difficulty level below,
+							either by reserching its dfficulty level online or by an approximate guess.</li>
 						<li>Then enter your marks or expected marks.</li>
 						<li>As soon as you enter marks, your predicted percentile and rank will be shown below.</li>
-						<li>A note for the rank calculation have been attached in the result section below. Kindly refer it to know exact or most approximate rank.</li>
+						<li>A note for the rank calculation have been attached in the result section below. Kindly refer
+							it to know exact or most approximate rank.</li>
 					</ul>
 				</div>
 			</div>
@@ -166,131 +172,151 @@ background-size:cover; background-position: center;">
 		</div>
 	</div>
 	<center>
-	<div class="p-4" style="max-width: 32rem">
-		<select class="form-select shadow p-2" onclick="disabl()" aria-label="Default select example" id="level">
-			<option selected>Select difficulty level</option>
-			<option value="1">Very Easy</option>
-			<option value="2">Easy</option>
-			<option value="3">Medium</option>
-			<option value="4">Hard</option>
-			<option value="5">Very Hard</option>
-		</select>
-	</div>
-	<div class="p-4" style="max-width: 32rem">
-		<div class="alert alert-success" role="alert" id="message">
-			Select difficulty level above ☝️ to enter your marks below 👇
+		<form action="submit">
+			<div class="p-4" style="max-width: 32rem">
+				<select class="form-select shadow p-2" onclick="disabl()" aria-label="Default select example"
+					id="level">
+					<option selected>Select difficulty level</option>
+					<option value="1">Very Easy</option>
+					<option value="2">Easy</option>
+					<option value="3">Medium</option>
+					<option value="4">Hard</option>
+					<option value="5">Very Hard</option>
+				</select>
+			</div>
+		</form>
+		<div class="p-4" style="max-width: 32rem">
+			<div class="alert alert-success" role="alert" id="message">
+				Select difficulty level above ☝️ to enter your marks below 👇
+			</div>
 		</div>
-	</div>
-	
-	
-	<div class="input-group mb-4" style="max-width: 32rem">
-		<input type="number" class="form-control ms-4 shadow" placeholder="Enter your marks here" aria-label="Marks" aria-describedby="basic-addon1" title="If you don't know your actual marks then enter your expected marks here." id="marks" oninput="score()">
-		<button class="input-group-text bg-dark text-light me-4 shadow" onclick="score()" id="basic-addon1">Submit</button>
-	</div>
-	
-	<div class="card p-2 pt-4 m-4 rounded shadow text-white" style="max-width: 32rem; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.5);" id="report">
-		<center>
-		<img src="https://cdn-icons-png.flaticon.com/512/1253/1253668.png" class="card-img-top" alt="..." style="height: 40px; width: 40px">
-		<div class="card-body">
-			<h5 class="card-title">JEE Mains Predicted:</h5>
-			
-			<div class="alert alert-primary" role="alert">
-				<p class="card-text" id="percentilePre"></p>
-				<p class="card-text" id="rankPre"></p>
-			</div>
-			<div class="alert alert-primary" role="alert">
-				<p class="card-text" id="difficultyPre"></p>
-				<p class="card-text" id="marksPre"></p>
-			</div>
-			<div class="input-group mb-4" style="max-width: 32rem">
-				<input type="text" class="form-control" placeholder="Enter your name here" aria-describedby="basic-addon3" title="It is optional field." aria-label="name" id="name">
-				<button class="input-group-text bg-dark text-light"id="basic-addon3">Name</button>
-			</div>
-			<br><br>
-			<p align="Justify" style="font-size: 12px;">
-				Predicted rank is by assuming that <b>10,00,000</b> students have registered for the exam and hence applying the formula given by NTA to predict rank: ((100 – P)/100)*N<br>Your Percentile: P<br>Number of students registered for the exam: N<br>Here it have been assumed that 10,00,000 students have registered for the exam which is an average number of all year.<br><br>If you have some another data of number of students then enter it below and repredict.
-			</p>
-			<div class="input-group">
-				<input type="number" class="form-control shadow" placeholder="Number of candidates" aria-label="Marks" aria-describedby="basic-addon2" title="If you know the actual number of candidates the write here." id="candidates" value="1000000" oninput="score()" style="min-width: 200px">
-				<button class="input-group-text bg-dark text-light shadow" onclick="score()" id="basic-addon2">Re-Predict</button>
-			</div>
-			<p align="Justify" style="font-size: 12px;">
-				<br><br><b>NOTICE:</b>
-				It is an approximate result based on previous years data. Actual result may vary from this result. It just gives you an idea that approximately what your result can be.
-			</p>
-			<br>
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						By-<br><b>Divastra JEE Rank Predictor</b>
+
+
+		<div class="input-group mb-4" style="max-width: 32rem">
+			<input type="number" class="form-control ms-4 shadow" placeholder="Enter your marks here" aria-label="Marks"
+				aria-describedby="basic-addon1"
+				title="If you don't know your actual marks then enter your expected marks here." id="marks"
+				oninput="score()">
+			<button class="input-group-text bg-dark text-light me-4 shadow" onclick="score()"
+				id="basic-addon1">Submit</button>
+		</div>
+
+		<div class="card p-2 pt-4 m-4 rounded shadow text-white"
+			style="max-width: 32rem; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.5);"
+			id="report">
+			<center>
+				<img src="https://cdn-icons-png.flaticon.com/512/1253/1253668.png" class="card-img-top" alt="..."
+					style="height: 40px; width: 40px">
+				<div class="card-body">
+					<h5 class="card-title">JEE Mains Predicted:</h5>
+
+					<div class="alert alert-primary" role="alert">
+						<p class="card-text" id="percentilePre"></p>
+						<p class="card-text" id="rankPre"></p>
 					</div>
-					<div class="col">
-						Owner-<br><b>Prabhat Ranjan</b>
+					<div class="alert alert-primary" role="alert">
+						<p class="card-text" id="difficultyPre"></p>
+						<p class="card-text" id="marksPre"></p>
+					</div>
+					<div class="input-group mb-4" style="max-width: 32rem">
+						<input type="text" class="form-control" placeholder="Enter your name here"
+							aria-describedby="basic-addon3" title="It is optional field." aria-label="name" id="name">
+						<button class="input-group-text bg-dark text-light" id="basic-addon3">Name</button>
+					</div>
+					<br><br>
+					<p align="Justify" style="font-size: 12px;">
+						Predicted rank is by assuming that <b>10,00,000</b> students have registered for the exam and
+						hence applying the formula given by NTA to predict rank: ((100 – P)/100)*N<br>Your Percentile:
+						P<br>Number of students registered for the exam: N<br>Here it have been assumed that 10,00,000
+						students have registered for the exam which is an average number of all year.<br><br>If you have
+						some another data of number of students then enter it below and repredict.
+					</p>
+					<div class="input-group">
+						<input type="number" class="form-control shadow" placeholder="Number of candidates"
+							aria-label="Marks" aria-describedby="basic-addon2"
+							title="If you know the actual number of candidates the write here." id="candidates"
+							value="1000000" oninput="score()" style="min-width: 200px">
+						<button class="input-group-text bg-dark text-light shadow" onclick="score()"
+							id="basic-addon2">Re-Predict</button>
+					</div>
+					<p align="Justify" style="font-size: 12px;">
+						<br><br><b>NOTICE:</b>
+						It is an approximate result based on previous years data. Actual result may vary from this
+						result. It just gives you an idea that approximately what your result can be.
+					</p>
+					<br>
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								By-<br><b>Divastra JEE Rank Predictor</b>
+							</div>
+							<div class="col">
+								Owner-<br><b>Prabhat Ranjan</b>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+			</center>
 		</div>
-		</center>
-	</div>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<script>
-	
-		
-		// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-		window.onscroll = function () { scrollFunction() };
-
-		function scrollFunction() {
-			if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-				document.getElementById("navbar").style.padding = "4px 8px";
-				document.getElementById("logo").style.fontSize = "20px";
-			} else {
-				document.getElementById("navbar").style.padding = "32px 16px";
-				document.getElementById("logo").style.fontSize = "40px";
-			}
-		}
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<script>
 
 
-		var typeText = document.querySelector(".typeText")
-		var textToBeTyped = "a software engineer"
-		var textToBeTypedArr = ["Rank Predictor", "Percentile Predictor", "Predictor"]
-		var index = 0, isAdding = true, textToBeTypedIndex = 0
+			// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+			window.onscroll = function () { scrollFunction() };
 
-		function playAnim() {
-			setTimeout(function () {
-				// set the text of typeText to a substring of the text to be typed using index.
-				typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
-				if (isAdding) {
-					// adding text
-					if (index > textToBeTypedArr[textToBeTypedIndex].length) {
-						// no more text to add
-						isAdding = false
-						//break: wait 2s before playing again
-						setTimeout(function () {
-							playAnim()
-						}, 2000)
-						return
-					} else {
-						// increment index by 1
-						index++
-					}
+			function scrollFunction() {
+				if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+					document.getElementById("navbar").style.padding = "4px 8px";
+					document.getElementById("logo").style.fontSize = "20px";
 				} else {
-					// removing text
-					if (index === 0) {
-						// no more text to remove
-						isAdding = true
-						//switch to next text in text array
-						textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
-					} else {
-						// decrement index by 1
-						index--
-					}
+					document.getElementById("navbar").style.padding = "32px 16px";
+					document.getElementById("logo").style.fontSize = "40px";
 				}
-				// call itself
-				playAnim()
-			}, isAdding ? 120 : 60)
-		}
-		// start animation
-		playAnim()
+			}
+
+
+			var typeText = document.querySelector(".typeText")
+			var textToBeTyped = "a software engineer"
+			var textToBeTypedArr = ["Rank Predictor", "Percentile Predictor", "Predictor"]
+			var index = 0, isAdding = true, textToBeTypedIndex = 0
+
+			function playAnim() {
+				setTimeout(function () {
+					// set the text of typeText to a substring of the text to be typed using index.
+					typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
+					if (isAdding) {
+						// adding text
+						if (index > textToBeTypedArr[textToBeTypedIndex].length) {
+							// no more text to add
+							isAdding = false
+							//break: wait 2s before playing again
+							setTimeout(function () {
+								playAnim()
+							}, 2000)
+							return
+						} else {
+							// increment index by 1
+							index++
+						}
+					} else {
+						// removing text
+						if (index === 0) {
+							// no more text to remove
+							isAdding = true
+							//switch to next text in text array
+							textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
+						} else {
+							// decrement index by 1
+							index--
+						}
+					}
+					// call itself
+					playAnim()
+				}, isAdding ? 120 : 60)
+			}
+			// start animation
+			playAnim()
 
 
 
@@ -298,203 +324,203 @@ background-size:cover; background-position: center;">
 
 
 
-		disabl();
-		function disabl() {
-			var e = document.getElementById("level");
-			var inputClass = document.getElementById("marks").classList;
-			var buttonClass = document.getElementById("basic-addon1").classList;
-			var inputClass2 = document.getElementById("candidates").classList;
-			var buttonClass2 = document.getElementById("basic-addon2").classList;
-			var messageClass = document.getElementById("message").classList;
-			if (e.options[e.selectedIndex].text==="Select difficulty level") {
-				document.getElementById("marks").disabled=true;
-				document.getElementById("basic-addon1").disabled=true;
-				document.getElementById("candidates").disabled=true;
-				document.getElementById("basic-addon2").disabled=true;
-				inputClass.remove("shadow");
-				buttonClass.remove("shadow");
-				inputClass2.remove("shadow");
-				buttonClass2.remove("shadow");
-				messageClass.remove("alert-success");
-				messageClass.add("alert-danger");
-				document.getElementById("message").innerHTML="Select difficulty level above ☝️ to enter your marks below 👇";
-				document.getElementById("percentilePre").innerHTML="";
-				document.getElementById("rankPre").innerHTML="";
-				document.getElementById("difficultyPre").innerHTML="";
-			}
-			else {
-				document.getElementById("marks").disabled=false;
-				document.getElementById("basic-addon1").disabled=false;
-				inputClass.add("shadow");
-				buttonClass.add("shadow");
-				messageClass.remove("alert-danger");
-				messageClass.add("alert-success");
-				document.getElementById("message").innerHTML="Now enter your marks below 👇";
-				document.getElementById("difficultyPre").innerHTML="<b>Difficulty</b>: "+e.options[e.selectedIndex].text;
-			}
-			score();
-		}
-		
-		function score(){
-			var a=parseFloat(document.getElementById('marks').value);
-			var n=parseFloat(document.getElementById('candidates').value);
-			var b,g=0.0;
-			var f = document.getElementById("level");
-			var difficulty = f.options[f.selectedIndex].text;
-			var inputClass2 = document.getElementById("candidates").classList;
-			var buttonClass2 = document.getElementById("basic-addon2").classList;
-
-			if(document.getElementById('candidates').value==""||document.getElementById('candidates').value==null){
-				document.getElementById('candidates').value="1000000";
-				n=1000000;
-			}
-
-			if (difficulty==="Very Easy") {
-				g=0.3;
-			}
-			else if(difficulty==="Easy") {
-				g=0.225;
-			}
-			else if (difficulty==="Medium") {
-				g=0.15;
-			}
-			else if (difficulty==="Hard") {
-				g=0.075;
-			}
-			else if (difficulty==="Very Hard") {
-				g=0.0;
-			}
-			else {
-			}
-
-			if(a<=180) {
-				a=a-a*g;
-			}
-			else {
-				a=a-(300-a)*g*180/120;
-			}
-
-			if (a<(-60)) {
-				document.getElementById('marks').value="-60";
-				a=-60;
-			}
-			if (a>300) {
-				document.getElementById('marks').value="300";
-				a=300;
-			}
-			if (difficulty==="Select difficulty level") {}
-			else {
-				document.getElementById("candidates").disabled=false;
-				document.getElementById("basic-addon2").disabled=false;
-				document.getElementById("marksPre").innerHTML="<b>Marks</b>: "+document.getElementById('marks').value;
-				inputClass2.add("shadow");
-				buttonClass2.add("shadow");
-				if(document.getElementById('marks').value==""||document.getElementById('marks').value==null) {
-					document.getElementById("candidates").disabled=true;
-					document.getElementById("basic-addon2").disabled=true;
+			disabl();
+			function disabl() {
+				var e = document.getElementById("level");
+				var inputClass = document.getElementById("marks").classList;
+				var buttonClass = document.getElementById("basic-addon1").classList;
+				var inputClass2 = document.getElementById("candidates").classList;
+				var buttonClass2 = document.getElementById("basic-addon2").classList;
+				var messageClass = document.getElementById("message").classList;
+				if (e.options[e.selectedIndex].text === "Select difficulty level") {
+					document.getElementById("marks").disabled = true;
+					document.getElementById("basic-addon1").disabled = true;
+					document.getElementById("candidates").disabled = true;
+					document.getElementById("basic-addon2").disabled = true;
+					inputClass.remove("shadow");
+					buttonClass.remove("shadow");
 					inputClass2.remove("shadow");
 					buttonClass2.remove("shadow");
-					document.getElementById("percentilePre").innerHTML="";
-					document.getElementById("rankPre").innerHTML="";
-					document.getElementById("marksPre").innerHTML="";
+					messageClass.remove("alert-success");
+					messageClass.add("alert-danger");
+					document.getElementById("message").innerHTML = "Select difficulty level above ☝️ to enter your marks below 👇";
+					document.getElementById("percentilePre").innerHTML = "";
+					document.getElementById("rankPre").innerHTML = "";
+					document.getElementById("difficultyPre").innerHTML = "";
 				}
-				else if (a<0) {
-					document.getElementById("percentilePre").innerHTML="<b>Percentile</b>: less than 6";
-					document.getElementById("rankPre").innerHTML="<b>Rank</b>: less than "+((100-6)/100)*n+1;
+				else {
+					document.getElementById("marks").disabled = false;
+					document.getElementById("basic-addon1").disabled = false;
+					inputClass.add("shadow");
+					buttonClass.add("shadow");
+					messageClass.remove("alert-danger");
+					messageClass.add("alert-success");
+					document.getElementById("message").innerHTML = "Now enter your marks below 👇";
+					document.getElementById("difficultyPre").innerHTML = "<b>Difficulty</b>: " + e.options[e.selectedIndex].text;
 				}
-				else{
-					if (a<=40) {
-						b=69.5797271-6;
-						b=(a-0)*b/(40-0)+6;
-					}
-					else if (a<=61) {
-						b=84.22540213-69.5797271;
-						b=(a-40)*b/(61-40)+69.5797271;
-					}
-					else if (a<=87) {
-						b=91.59517945-84.22540213;
-						b=(a-61)*b/(87-61)+84.22540213;
-					}
-					else if (a<=94) {
-						b=92.88745828-91.59517945;
-						b=(a-87)*b/(94-87)+91.59517945;
-					}
-					else if (a<=101) {
-						b=93.89928202-92.88745828;
-						b=(a-94)*b/(101-94)+92.88745828;
-					}
-					else if (a<=109) {
-						b=94.96737888-93.89928202;
-						b=(a-101)*b/(109-101)+93.89928202;
-					}
-					else if (a<=119) {
-						b=95.983027-94.96737888;
-						b=(a-109)*b/(119-109)+94.96737888;
-					}
-					else if (a<=131) {
-						b=96.93721175-95.983027;
-						b=(a-119)*b/(131-119)+95.983027;
-					}
-					else if (a<=148) {
-						b=97.97507774-96.93721175;
-						b=(a-131)*b/(148-131)+96.93721175;
-					}
-					else if (a<=159) {
-						b=98.49801724-97.97507774;
-						b=(a-148)*b/(159-148)+97.97507774;
-					}
-					else if (a<=174) {
-						b=98.99673561-98.49801724;
-						b=(a-159)*b/(174-159)+98.49801724;
-					}
-					else if (a<=188) {
-						b=99.3487614-98.99673561;
-						b=(a-174)*b/(188-174)+98.99673561;
-					}
-					else if (a<=199) {
-						b=99.56019541-99.3487614;
-						b=(a-188)*b/(199-188)+99.3487614;
-					}
-					else if (a<=214) {
-						b=99.73930423-99.56019541;
-						b=(a-199)*b/(214-199)+99.56019541;
-					}
-					else if (a<=230) {
-						b=99.87060821-99.73930423;
-						b=(a-214)*b/(230-214)+99.73930423;
-					}
-					else if (a<=249) {
-						b=99.95028296-99.87060821;
-						b=(a-230)*b/(249-230)+99.87060821;
-					}
-					else if (a<=267) {
-						b=99.99016586-99.95028296;
-						b=(a-249)*b/(267-249)+99.95028296;
-					}
-					else if (a<=279) {
-						b=99.99417236-99.99016586;
-						b=(a-267)*b/(279-267)+99.99016586;
-					}
-					else if (a<=284) {
-						b=99.99790569-99.99417236;
-						b=(a-279)*b/(284-279)+99.99417236;
-					}
-					else if (a<=292) {
-						b=99.99890732-99.99790569;
-						b=(a-284)*b/(292-284)+99.99790569;
-					}
-					else if (a<=300) {
-						b=100-99.99890732;
-						b=(a-292)*b/(300-292)+99.99890732;
-					}
-					var c=((100-b)/100)*n+1;
-					document.getElementById("percentilePre").innerHTML="<b>Percentile</b>: "+b.toFixed(7);
-					document.getElementById("rankPre").innerHTML="<b>Rank</b>: "+Math.round(c);
-				}
+				score();
 			}
-			
-		}
-	</script>
+
+			function score() {
+				var a = parseFloat(document.getElementById('marks').value);
+				var n = parseFloat(document.getElementById('candidates').value);
+				var b, g = 0.0;
+				var f = document.getElementById("level");
+				var difficulty = f.options[f.selectedIndex].text;
+				var inputClass2 = document.getElementById("candidates").classList;
+				var buttonClass2 = document.getElementById("basic-addon2").classList;
+
+				if (document.getElementById('candidates').value == "" || document.getElementById('candidates').value == null) {
+					document.getElementById('candidates').value = "1000000";
+					n = 1000000;
+				}
+
+				if (difficulty === "Very Easy") {
+					g = 0.3;
+				}
+				else if (difficulty === "Easy") {
+					g = 0.225;
+				}
+				else if (difficulty === "Medium") {
+					g = 0.15;
+				}
+				else if (difficulty === "Hard") {
+					g = 0.075;
+				}
+				else if (difficulty === "Very Hard") {
+					g = 0.0;
+				}
+				else {
+				}
+
+				if (a <= 180) {
+					a = a - a * g;
+				}
+				else {
+					a = a - (300 - a) * g * 180 / 120;
+				}
+
+				if (a < (-60)) {
+					document.getElementById('marks').value = "-60";
+					a = -60;
+				}
+				if (a > 300) {
+					document.getElementById('marks').value = "300";
+					a = 300;
+				}
+				if (difficulty === "Select difficulty level") { }
+				else {
+					document.getElementById("candidates").disabled = false;
+					document.getElementById("basic-addon2").disabled = false;
+					document.getElementById("marksPre").innerHTML = "<b>Marks</b>: " + document.getElementById('marks').value;
+					inputClass2.add("shadow");
+					buttonClass2.add("shadow");
+					if (document.getElementById('marks').value == "" || document.getElementById('marks').value == null) {
+						document.getElementById("candidates").disabled = true;
+						document.getElementById("basic-addon2").disabled = true;
+						inputClass2.remove("shadow");
+						buttonClass2.remove("shadow");
+						document.getElementById("percentilePre").innerHTML = "";
+						document.getElementById("rankPre").innerHTML = "";
+						document.getElementById("marksPre").innerHTML = "";
+					}
+					else if (a < 0) {
+						document.getElementById("percentilePre").innerHTML = "<b>Percentile</b>: less than 6";
+						document.getElementById("rankPre").innerHTML = "<b>Rank</b>: less than " + ((100 - 6) / 100) * n + 1;
+					}
+					else {
+						if (a <= 40) {
+							b = 69.5797271 - 6;
+							b = (a - 0) * b / (40 - 0) + 6;
+						}
+						else if (a <= 61) {
+							b = 84.22540213 - 69.5797271;
+							b = (a - 40) * b / (61 - 40) + 69.5797271;
+						}
+						else if (a <= 87) {
+							b = 91.59517945 - 84.22540213;
+							b = (a - 61) * b / (87 - 61) + 84.22540213;
+						}
+						else if (a <= 94) {
+							b = 92.88745828 - 91.59517945;
+							b = (a - 87) * b / (94 - 87) + 91.59517945;
+						}
+						else if (a <= 101) {
+							b = 93.89928202 - 92.88745828;
+							b = (a - 94) * b / (101 - 94) + 92.88745828;
+						}
+						else if (a <= 109) {
+							b = 94.96737888 - 93.89928202;
+							b = (a - 101) * b / (109 - 101) + 93.89928202;
+						}
+						else if (a <= 119) {
+							b = 95.983027 - 94.96737888;
+							b = (a - 109) * b / (119 - 109) + 94.96737888;
+						}
+						else if (a <= 131) {
+							b = 96.93721175 - 95.983027;
+							b = (a - 119) * b / (131 - 119) + 95.983027;
+						}
+						else if (a <= 148) {
+							b = 97.97507774 - 96.93721175;
+							b = (a - 131) * b / (148 - 131) + 96.93721175;
+						}
+						else if (a <= 159) {
+							b = 98.49801724 - 97.97507774;
+							b = (a - 148) * b / (159 - 148) + 97.97507774;
+						}
+						else if (a <= 174) {
+							b = 98.99673561 - 98.49801724;
+							b = (a - 159) * b / (174 - 159) + 98.49801724;
+						}
+						else if (a <= 188) {
+							b = 99.3487614 - 98.99673561;
+							b = (a - 174) * b / (188 - 174) + 98.99673561;
+						}
+						else if (a <= 199) {
+							b = 99.56019541 - 99.3487614;
+							b = (a - 188) * b / (199 - 188) + 99.3487614;
+						}
+						else if (a <= 214) {
+							b = 99.73930423 - 99.56019541;
+							b = (a - 199) * b / (214 - 199) + 99.56019541;
+						}
+						else if (a <= 230) {
+							b = 99.87060821 - 99.73930423;
+							b = (a - 214) * b / (230 - 214) + 99.73930423;
+						}
+						else if (a <= 249) {
+							b = 99.95028296 - 99.87060821;
+							b = (a - 230) * b / (249 - 230) + 99.87060821;
+						}
+						else if (a <= 267) {
+							b = 99.99016586 - 99.95028296;
+							b = (a - 249) * b / (267 - 249) + 99.95028296;
+						}
+						else if (a <= 279) {
+							b = 99.99417236 - 99.99016586;
+							b = (a - 267) * b / (279 - 267) + 99.99016586;
+						}
+						else if (a <= 284) {
+							b = 99.99790569 - 99.99417236;
+							b = (a - 279) * b / (284 - 279) + 99.99417236;
+						}
+						else if (a <= 292) {
+							b = 99.99890732 - 99.99790569;
+							b = (a - 284) * b / (292 - 284) + 99.99790569;
+						}
+						else if (a <= 300) {
+							b = 100 - 99.99890732;
+							b = (a - 292) * b / (300 - 292) + 99.99890732;
+						}
+						var c = ((100 - b) / 100) * n + 1;
+						document.getElementById("percentilePre").innerHTML = "<b>Percentile</b>: " + b.toFixed(7);
+						document.getElementById("rankPre").innerHTML = "<b>Rank</b>: " + Math.round(c);
+					}
+				}
+
+			}
+		</script>
 </body>
 
 </html>
