@@ -124,7 +124,7 @@ background-size:cover; background-position: center;">
 			</div>
 		</section>
 		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-		<a href="#content">
+		<a href="#content" id="clickMe">
 			<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_02udvnaf.json" background="transparent"
 				speed="1" style="width: 100px; height: 100px;"
 				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
@@ -198,6 +198,7 @@ background-size:cover; background-position: center;">
 	</div>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<script>
+		document.getElementById("clickMe").click();
 		window.addEventListener("load", function () {
 			setTimeout(function () {
 				// This hides the address bar:
