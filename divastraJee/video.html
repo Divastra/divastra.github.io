@@ -35,42 +35,43 @@
 		}
 
 		.navsize {
-            margin-top: 0px;
+			margin-top: 0px;
 			font-size: 16px;
-        }
+		}
 
-		@media (max-width:992px){
-        .navsize {
-            margin-top: 32px;
-			font-size: 12px;
-        }
+		@media (max-width:992px) {
+			.navsize {
+				margin-top: 32px;
+				font-size: 12px;
+			}
+		}
 
-			.typeText::after {
-				content: "|";
-				animation: blink 1s step-end infinite;
+		.typeText::after {
+			content: "|";
+			animation: blink 1s step-end infinite;
+		}
+
+		@keyframes blink {
+
+			0%,
+			100% {
+				opacity: 1;
 			}
 
-			@keyframes blink {
+			50% {
+				opacity: 0;
+			}
+		}
 
-				0%,
-				100% {
-					opacity: 1;
-				}
-
-				50% {
-					opacity: 0;
-				}
+		@keyframes glow {
+			from {
+				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fbff00, 0 0 40px #fbff00, 0 0 50px #fbff00, 0 0 60px #fbff00, 0 0 70px #fbff00;
 			}
 
-			@keyframes glow {
-				from {
-					text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fbff00, 0 0 40px #fbff00, 0 0 50px #fbff00, 0 0 60px #fbff00, 0 0 70px #fbff00;
-				}
-
-				to {
-					text-shadow: 0 0 20px #fff;
-				}
+			to {
+				text-shadow: 0 0 20px #fff;
 			}
+		}
 	</style>
 	<script>
 		document.addEventListener('contextmenu', event => event.preventDefault());
