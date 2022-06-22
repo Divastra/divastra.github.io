@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Divastra JEE</title>
+	<title>Divastra JEE: Personal Mentorship Program</title>
 	<meta charset="UTF-8">
 	<meta name="theme-color" content="#000000" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -128,7 +128,7 @@ background-size:cover; background-position: center;">
 								alt="..." style="height: 64px; width: 64px; margin-bottom: 32px;">
 					<div class="">
 						<h1 class="fw-light">
-							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Divastra JEE:&nbsp<span class="typeText"></span></p>
+							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Personal Mentorship Program</p>
 						</h1>
 					</div>
 					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">An initiative to provide students with quality technology to carry on their student life with more simplicity and efficiency. You demand, we provide.</p>
@@ -144,7 +144,8 @@ background-size:cover; background-position: center;">
 	</div>
 
 
-	<div class="col m-5">
+	<div class="col m-5" id="content">
+		<br><br><br><br>
 		<center>
 			<div class="card p-2 pt-4 shadow text-white" style="min-width: 200px; max-width: 32rem; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.5);">
 				<img src="https://cdn-icons-png.flaticon.com/512/3199/3199348.png"
@@ -164,72 +165,7 @@ background-size:cover; background-position: center;">
 	</div>
 
 	
-	<div class="container" id="content">
-		<br><br><br><br><br><br>
-		<div class="row">
-			<div class="col m-4">
-				<center>
-					<div class="card p-2 pt-4 shadow text-white" style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-						<center>
-							<img src="https://cdn-icons-png.flaticon.com/512/1253/1253668.png" class="card-img-top"
-								alt="..." style="height: 40px; width: 40px">
-							<div class="card-body">
-								<h5 class="card-title">JEE Mains Rank Predictor</h5>
-								<p class="card-text">Check your JEE Mains Rank even before reult declaration.</p>
-								<a href="divastraJee/rankPredictor.html" class="btn btn-primary">Predict</a>
-							</div>
-						</center>
-					</div>
-				</center>
-			</div>
-			<div class="col m-4">
-				<center>
-					<div class="card p-2 pt-4 shadow text-white" style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-						<center>
-							<img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" class="card-img-top"
-								alt="..." style="height: 40px; width: 40px">
-							<div class="card-body">
-								<h5 class="card-title">IIT JEE Books Library</h5>
-								<p class="card-text">Read all the books you need for IIT JEE Preparation for free.</p>
-								<a href="divastraJee/books.html" class="btn btn-primary">Read</a>
-							</div>
-						</center>
-					</div>
-				</center>
-			</div>
-			<div class="col m-4">
-				<center>
-					<div class="card p-2 pt-4 shadow text-white" style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-						<center>
-							<img src="https://cdn-icons-png.flaticon.com/512/777/777242.png" class="card-img-top"
-								alt="..." style="height: 40px; width: 40px">
-							<div class="card-body">
-								<h5 class="card-title">IIT JEE Video Hub</h5>
-								<p class="card-text">Watch best high quality handpicked IIT JEE videos for free.</p>
-								<a href="divastraJee/video.html" class="btn btn-primary">Watch</a>
-							</div>
-						</center>
-					</div>
-				</center>
-			</div>
-			<div class="col m-4">
-				<center>
-					<div class="card p-2 pt-4 shadow text-white" style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-						<center>
-							<img src="https://cdn-icons-png.flaticon.com/512/2471/2471750.png" class="card-img-top"
-								alt="..." style="height: 40px; width: 40px">
-							<div class="card-body">
-								<h5 class="card-title">IIT JEE Hacked</h5>
-								<p class="card-text">Hack IIT JEE exam with our best in class tips, tricks and guidance.
-								</p>
-								<a href="divastraJee/hack.html" class="btn btn-primary">Hack</a>
-							</div>
-						</center>
-					</div>
-				</center>
-			</div>
-		</div>
-	</div>
+	
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<script>		
 		window.addEventListener("load", function () {
@@ -251,49 +187,6 @@ background-size:cover; background-position: center;">
 				document.getElementById("logo").style.fontSize = "40px";
 			}
 		}
-
-
-		var typeText = document.querySelector(".typeText")
-		var textToBeTyped = "a software engineer"
-		var textToBeTypedArr = ["Personal", "Mentorship", "Program", "One to One"]
-		var index = 0, isAdding = true, textToBeTypedIndex = 0
-
-		function playAnim() {
-			setTimeout(function () {
-				// set the text of typeText to a substring of the text to be typed using index.
-				typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
-				if (isAdding) {
-					// adding text
-					if (index > textToBeTypedArr[textToBeTypedIndex].length) {
-						// no more text to add
-						isAdding = false
-						//break: wait 2s before playing again
-						setTimeout(function () {
-							playAnim()
-						}, 2000)
-						return
-					} else {
-						// increment index by 1
-						index++
-					}
-				} else {
-					// removing text
-					if (index === 0) {
-						// no more text to remove
-						isAdding = true
-						//switch to next text in text array
-						textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
-					} else {
-						// decrement index by 1
-						index--
-					}
-				}
-				// call itself
-				playAnim()
-			}, isAdding ? 120 : 60)
-		}
-		// start animation
-		playAnim()
 	</script>
 	
 	 <a href='https://bachelorthesiswritingservice.com/'>BachelorThesisWritingService.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=e4104d5976820e7278f967ba8b4b9dbdf4ef94da'></script>
