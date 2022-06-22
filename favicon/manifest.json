@@ -1,5 +1,6 @@
 {
  "name": "Divastra JEE",
+ "short_name": "Divastra JEE",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -37,5 +38,9 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ]
+ ],
+ "start_url": "../index.html",
+ "background_color": "#F2E4F4",
+ "display": "standalone",
+ "theme_color": "#4A148C"
 }
