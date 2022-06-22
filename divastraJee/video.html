@@ -126,8 +126,7 @@ background-size:cover; background-position: center;">
 							alt="..." style="height: 64px; width: 64px; margin-bottom: 32px;">
 					<div class="">
 						<h1 class="fw-light">
-							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Divastra JEE New
-								Feature:&nbsp<span class="typeText"></span></p>
+							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Video Hub</p>
 						</h1>
 					</div>
 					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Something short
@@ -145,6 +144,17 @@ background-size:cover; background-position: center;">
 				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
 		</a>
 	</div>
+<div id="content"><br><br><br><br></div>
+	<!-- Place <div> tag where you want the feed to appear -->
+<div id="curator-feed-new-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div><!-- The Javascript can be moved to the end of the html page before the </body> tag --><script type="text/javascript">
+	/* curator-feed-new-feed-layout */
+	(function(){
+	var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+	i.src="https://cdn.curator.io/published/5870c8be-9785-4b76-b056-706ba2ed9303.js";
+	e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+	})();
+	</script>
+
 
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<script>
@@ -167,49 +177,6 @@ background-size:cover; background-position: center;">
 				document.getElementById("logo").style.fontSize = "40px";
 			}
 		}
-
-
-		var typeText = document.querySelector(".typeText")
-		var textToBeTyped = "a software engineer"
-		var textToBeTypedArr = ["On the Way", "Under Construction", "Eagerly Waiting!", "Comming Soon"]
-		var index = 0, isAdding = true, textToBeTypedIndex = 0
-
-		function playAnim() {
-			setTimeout(function () {
-				// set the text of typeText to a substring of the text to be typed using index.
-				typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
-				if (isAdding) {
-					// adding text
-					if (index > textToBeTypedArr[textToBeTypedIndex].length) {
-						// no more text to add
-						isAdding = false
-						//break: wait 2s before playing again
-						setTimeout(function () {
-							playAnim()
-						}, 2000)
-						return
-					} else {
-						// increment index by 1
-						index++
-					}
-				} else {
-					// removing text
-					if (index === 0) {
-						// no more text to remove
-						isAdding = true
-						//switch to next text in text array
-						textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
-					} else {
-						// decrement index by 1
-						index--
-					}
-				}
-				// call itself
-				playAnim()
-			}, isAdding ? 120 : 60)
-		}
-		// start animation
-		playAnim()
 	</script>
 </body>
 
