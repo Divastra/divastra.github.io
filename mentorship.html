@@ -177,6 +177,8 @@ background-size:cover; background-position: center;">
 		</center>
 	</div>
 
+	
+
 	<center>
 		<img src="jee/assets/mentorship.png" alt="mentorship" class="m-4"
 			style="height: auto; width: 80vw; max-width: 640px;">
@@ -345,6 +347,18 @@ background-size:cover; background-position: center;">
 			}
 		}
 	</script>
+
+<script>
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbyfgilTn6Ds4xu0iYJOPKCU0wetMXFMN0l6_7pwVJUMrAs_td8y1-pdCeH72aIFVGNd/exec'
+	const form = document.forms['formName']
+  
+	form.addEventListener('submit', e => {
+	  e.preventDefault()
+	  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		.then(response => console.log('Success!', response))
+		.catch(error => console.error('Error!', error.message))
+	})
+  </script>
 
 	<a href='https://bachelorthesiswritingservice.com/'>BachelorThesisWritingService.com</a>
 	<script type='text/javascript'
