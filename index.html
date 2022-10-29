@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:fb="http://ogp.me/ns/fb#">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 
 <head>
 	<title>Divastra JEE</title>
@@ -41,47 +40,43 @@ xmlns:fb="http://ogp.me/ns/fb#">
 	</script>
 	<style type="text/css">
 		@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
 		html,
 		body {
 			margin: 0;
 			padding: 0
 		}
 
-		#navbar {
-			position: fixed;
-			top: 0;
-			transition: 0.4s;
-			position: fixed;
-			width: 100%;
-			z-index: 99;
-			background-color: rgb(0, 0, 0);
-			padding: "32px 16px";
+		.nav-item {
+			border-radius: 64px;
+			background-color: #6A1B9A;
+			margin: 4px;
 		}
 
-		#logo {
-			transition: 0.4s;
-			font-size: 40px;
+		.nav-item:hover {
+			background-color: #BA68C8;
 		}
-
-		.navsize {
-			margin-top: 0px;
-			font-size: 16px;
-		}
-
-		@media (max-width:992px) {
-			.navsize {
-				margin-top: 32px;
-				font-size: 12px;
-			}
-
-		}
-
-
 
 		.typeText::after {
 			content: "|";
 			animation: blink 1s step-end infinite;
 		}
+
+		.buton{
+			background-color: #4A148C;
+			color: #f3e5f5;
+			transition: 0s;
+			border-radius: 64px;
+			border-width: 1px;
+			border-color: #4A148C;
+			
+		}
+		.buton:hover{
+			background-color: #f3e5f5;
+			color: #4A148C;
+		}
+
+		
 
 		@keyframes blink {
 
@@ -94,39 +89,64 @@ xmlns:fb="http://ogp.me/ns/fb#">
 				opacity: 0;
 			}
 		}
+	</style>
 
-		@keyframes glow {
-			from {
-				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fbff00, 0 0 40px #fbff00, 0 0 50px #fbff00, 0 0 60px #fbff00, 0 0 70px #fbff00;
-			}
-
-			to {
-				text-shadow: 0 0 20px #fff;
-			}
-		}
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 	</style>
 	<script>
 		document.addEventListener('contextmenu', event => event.preventDefault());
 	</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3127604696837062"
-crossorigin="anonymous"></script>
-
-
 </head>
 
-<body style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;background-image: url('jee/assets/rose-petals.svg'); background-repeat: no-repeat;background-attachment: fixed;
-background-size:cover; background-position: center;">
-	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+<body style="background-color: #f3e5f5;">
+
+	<div style="height: 100vh; background-color: #4a148c;">
+		<center>
+			<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+			<lottie-player src="assets\img\lf30_editor_jktagudp.json" background="transparent" speed="1"
+				style="width: 128px; height: 128px; position: absolute; top: 82px; left: 50vw; margin-left: -64px; z-index: 0;"
+				loop autoplay></lottie-player>
+			<img src="jee/assets/logo.png" class="card-img-top" alt="..."
+				style="height: 64px; width: 64px; margin-bottom: 32px;border-radius: 200px;z-index: 1000;position: absolute; top: 114px; left: 50vw; margin-left: -32px;">
+			<h1 style="font-family: 'Archivo Black', sans-serif; color: #f3e5f5; padding-top: 222px; margin-bottom: 32px;">DIVASTRA JEE</h1>
+		</center>
+
+		<section class=" text-center container" style="max-width: 720px;">
+			<div class="rounded p-lg-5">
+				<div class="">
+					<h1 class="fw-light">
+						<p class="textAbove fs-2" style="color:#BA68C8;">The Era
+							of:&nbsp<span class="typeText"></span></p>
+					</h1>
+				</div>
+				<p class="lead fs-6" style="color:rgba(192, 227, 241, 0.664);">An initiative to provide
+					students with quality technology to carry on their student life with more simplicity and
+					efficiency. You demand, we provide.</p>
+			</div>
+		</section>
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		<a href="#content">
+			<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_02udvnaf.json" background="transparent"
+				speed="1" style="width: 100px; height: 100px;"
+				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
+		</a>
+	</div>
+
+	<nav style="background-color: #4a148c; position: sticky; top: 0; z-index: 10000;"
+		class="navbar navbar-expand-lg navbar-dark" id="navbar">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html" id="logo">Divastra JEE</a>
+			<a class="navbar-brand" href="index.html" id="logo">
+				<img src="jee\assets\logo.png" style="border-radius: 200px;" alt="Bootstrap" width="24" height="24">
+				Divastra JEE
+			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul class="nav nav-tabs navsize mb-2 mb-lg-0 ms-md-auto">
+				<ul class="nav navsize mb-2 mb-lg-0 ms-md-auto">
 					<li class="nav-item">
 						<a class="nav-link text-white" href="/mentorship.html">Mentorship</a>
 					</li>
@@ -143,125 +163,95 @@ background-size:cover; background-position: center;">
 			</div>
 		</div>
 	</nav>
-	<br><br><br><br><br><br><br>
-	<div style="height: 100vh;">
-		<section class="py-5 text-center container">
-			<div class="row mx-4">
-				<div class="col-lg-6 col-md-8 mx-auto shadow rounded py-lg-5"
-					style="background-color: rgba(255, 255, 255, 0.1);backdrop-filter: blur(16px);">
-					<img src="jee/assets/logo.png" class="card-img-top" alt="..."
-						style="height: 64px; width: 64px; margin-bottom: 32px;border-radius: 200px;">
-					<div class="">
-						<h1 class="fw-light">
-							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">The Era
-								of:&nbsp<span class="typeText"></span></p>
-						</h1>
-					</div>
-					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">An initiative to provide
-						students with quality technology to carry on their student life with more simplicity and
-						efficiency. You demand, we provide.</p>
-				</div>
-			</div>
-		</section>
-		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-		<a href="#content">
-			<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_02udvnaf.json" background="transparent"
-				speed="1" style="width: 100px; height: 100px;"
-				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
-		</a>
-	</div>
 
-
-	<div class="col m-5" id="content">
-		<br><br><br><br>
+	<div class="col" style="padding-top: 120px;" id="content">
 		<center>
-			<div class="card p-2 pt-4 shadow text-white"
-				style="min-width: 200px; max-width: 32rem; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.5);">
+			<div class="card p-2 pt-4 shadow"
+				style="min-width: 200px; max-width: 32rem; background-color: rgb(255, 255, 255); border-width: 0;">
 				<img src="https://cdn-icons-png.flaticon.com/512/3199/3199348.png" alt="..."
 					style="height: 64px; width: 64px; margin-left: -44px; margin-top: -24px;">
 				<center>
 					<img src="https://cdn-icons-png.flaticon.com/512/2643/2643491.png" class="card-img-top" alt="..."
 						style="height: 50px; width: 50px; margin-top: -40px;">
 					<div class="card-body">
-						<h5 class="card-title">Divastra Mentorship Program</h5>
-						<p class="card-text">Get almost free IIT JEE Mentorship from the specialists 🎉</p>
-						<a href="https://forms.gle/tiJNXh1gRFWQrhzq9" target="_blank"
-							class="btn btn-primary m-2">Register Here</a>
-						<a href="/mentorship.html" target="_blank" class="btn btn-primary m-2">Know More</a>
+						<h5 class="card-title" style="color: #4a148c;">Divastra Mentorship Program</h5>
+						<p class="card-text" style="color: #CE93D8;">Get almost free IIT JEE Mentorship from the specialists 🎉</p>
+						<a href="/mentorship.html" target="_blank" class="btn btn-primary m-2 buton">Know More</a>
 					</div>
 				</center>
 			</div>
 		</center>
 	</div>
 
+	<hr style="margin: 80px; color:#4A148C;">
 
 	<div class="container">
-		<br><br><br><br><br><br>
 		<div class="row">
-			<div class="col m-4">
+			<div class="col" style="margin: 0px 40px 80px 40px;">
 				<center>
 					<div class="card p-2 pt-4 shadow text-white"
-						style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+						style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0;">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/2643/2643491.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
 							<div class="card-body">
-								<h5 class="card-title">Mentorship</h5>
-								<p class="card-text" style="color: #BDBDBD;">Get one to one IIT JEE Personal Mentorship
+								<h5 class="card-title"style="color: #4a148c;">Mentorship</h5>
+								<p class="card-text" style="color: #CE93D8;">Get one to one IIT JEE Personal Mentorship
 									at almost no cost per month.
 								</p>
-								<a href="/mentorship.html" class="btn btn-primary">Get Mentored</a>
+								<a href="/mentorship.html" class="btn btn-primary buton">Get Mentored</a>
 							</div>
 						</center>
 					</div>
 				</center>
 			</div>
-			<div class="col m-4">
+			<div class="col" style="margin: 0px 40px 80px 40px;">
 				<center>
 					<div class="card p-2 pt-4 shadow text-white"
-						style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+						style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0;">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/1253/1253668.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
 							<div class="card-body">
-								<h5 class="card-title">JEE Mains Rank Predictor</h5>
-								<p class="card-text" style="color: #BDBDBD;">Check your JEE Mains Rank even before result
+								<h5 class="card-title"style="color: #4a148c;">JEE Mains Rank Predictor</h5>
+								<p class="card-text" style="color: #CE93D8;">Check your JEE Mains Rank even before
+									result
 									declaration.</p>
-								<a href="/rankPredictor.html" class="btn btn-primary">Predict</a>
+								<a href="/rankPredictor.html" class="btn btn-primary buton">Predict</a>
 							</div>
 						</center>
 					</div>
 				</center>
 			</div>
-			<div class="col m-4">
+			<div class="col" style="margin: 0px 40px 80px 40px;">
 				<center>
 					<div class="card p-2 pt-4 shadow text-white"
-						style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+						style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0;">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
 							<div class="card-body">
-								<h5 class="card-title">IIT JEE Books Library</h5>
-								<p class="card-text" style="color: #BDBDBD;">Read all the books you need for IIT JEE
+								<h5 class="card-title"style="color: #4a148c;">IIT JEE Books Library</h5>
+								<p class="card-text" style="color: #CE93D8;">Read all the books you need for IIT JEE
 									Preparation for free.</p>
-								<a href="/books.html" class="btn btn-primary">Read</a>
+								<a href="/books.html" class="btn btn-primary buton">Read</a>
 							</div>
 						</center>
 					</div>
 				</center>
 			</div>
-			<div class="col m-4">
+			<div class="col" style="margin: 0px 40px 80px 40px;">
 				<center>
 					<div class="card p-2 pt-4 shadow text-white"
-						style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+						style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0;">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/777/777242.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
 							<div class="card-body">
-								<h5 class="card-title">IIT JEE Video Hub</h5>
+								<h5 class="card-title"style="color: #4a148c;">IIT JEE Video Hub</h5>
 								<p class="card-text" style="color: #BDBDBD;">Watch best high quality handpicked IIT JEE
 									videos for free.</p>
-								<a href="/video.html" class="btn btn-primary">Watch</a>
+								<a href="/video.html" class="btn btn-primary buton">Watch</a>
 							</div>
 						</center>
 					</div>
@@ -269,77 +259,65 @@ background-size:cover; background-position: center;">
 			</div>
 		</div>
 	</div>
-	<br><br><br><br><br><br><br><br><br><br>
-	<div class="container shadow rounded bg-dark text-light p-0 text-center">
+	<hr style="margin: 80px; margin-top: 0; color:#4A148C;">
+	<div class="container shadow text-light p-0 text-center" style="background-color: #6A1B9A; border-radius: 8px; margin-bottom: 80px;">
 		<br>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/index2" target="_blank">Divastra JEE App</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/career" target="_blank">Career</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/privacy" target="_blank">Privacy Policy</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/terms" target="_blank">Terms and Conditions</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/refund" target="_blank">Refund Policy</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/shipping" target="_blank">Shipping</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/contact_us" target="_blank">Contact Us</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;" href="https://divastra.github.io/index2"
+			target="_blank">Divastra JEE App</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/privacy" target="_blank">Privacy Policy</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/contact_us" target="_blank">Contact Us</a>
 		<br><br>
 		<section class="m-4">
 			<!-- YouTube -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
-					class="bi bi-youtube text-danger"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
+					class="bi bi-youtube" style="font-size: 1rem;"></i></a>
 
 			<!-- Instagram -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.instagram.com/prabhat_729/" role="button"><i
-				class="bi bi-instagram text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.instagram.com/prabhat_729/" role="button"><i class="bi bi-instagram"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- Facebook -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
-				class="bi bi-facebook text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
+					class="bi bi-facebook" style="font-size: 1rem;"></i></a>
 
 			<!-- LinkedIn -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
-				class="bi bi-linkedin text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
+					class="bi bi-linkedin" style="font-size: 1rem;"></i></a>
 
 			<!-- Twitter -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://twitter.com/PycAnd" role="button"><i
-				class="bi bi-twitter text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://twitter.com/PycAnd" role="button"><i class="bi bi-twitter"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- Quora -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
-				class="bi bi-quora text-warning"  style="font-size: 1rem;"></i></a>
-				
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
+					class="bi bi-quora" style="font-size: 1rem;"></i></a>
+
 			<!-- Telegram -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://telegram.me/prabhat_nit_jsr" role="button"><i
-				class="bi bi-telegram text-warning"  style="font-size: 1rem;"></i></a>
-				
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://telegram.me/prabhat_nit_jsr" role="button"><i class="bi bi-telegram"
+					style="font-size: 1rem;"></i></a>
+
 			<!-- Website -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://divastra.github.io" role="button"><i
-				class="bi bi-globe2 text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://divastra.github.io" role="button"><i class="bi bi-globe2"
+					style="font-size: 1rem;"></i></a>
 		</section>
-		<div class="text-center p-3" style="background-color: rgb(0, 0, 0);">
+		<div class="text-center p-3" style="background-color: #4a148c; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
 			Owned and Managed by Prabhat Ranjan
 		</div>
 	</div>
-	
-	<br><br><br><br><br><br><br>
 	<script>
-		window.addEventListener("load", function () {
-			setTimeout(function () {
-				// This hides the address bar:
-				window.scrollTo(0, 1);
-			}, 0);
-		});
 
-		// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-		window.onscroll = function () { scrollFunction() };
-
-		function scrollFunction() {
-			if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-				document.getElementById("navbar").style.padding = "4px 8px";
-				document.getElementById("logo").style.fontSize = "20px";
-			} else {
-				document.getElementById("navbar").style.padding = "32px 16px";
-				document.getElementById("logo").style.fontSize = "40px";
-			}
-		}
 
 
 		var typeText = document.querySelector(".typeText")

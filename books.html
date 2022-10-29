@@ -35,114 +35,80 @@
 			padding: 0
 		}
 
-		#navbar {
-			position: fixed;
-			top: 0;
-			transition: 0.4s;
-			position: fixed;
-			width: 100%;
-			z-index: 99;
-			background-color: rgb(0, 0, 0);
-			padding: "32px 16px";
+		.nav-item {
+			border-radius: 64px;
+			background-color: #6A1B9A;
+			margin: 4px;
 		}
 
-		#logo {
-			transition: 0.4s;
-			font-size: 40px;
+		.nav-item:hover {
+			background-color: #BA68C8;
 		}
 
-		.navsize {
-			margin-top: 0px;
-			font-size: 16px;
+		
+		.buton{
+			background-color: #4A148C;
+			color: #f3e5f5;
+			transition: 0s;
+			border-radius: 64px;
+			border-width: 1px;
+			border-color: #4A148C;
 		}
-
-		@media (max-width:992px) {
-			.navsize {
-				margin-top: 32px;
-				font-size: 12px;
-			}
+		.buton:hover{
+			background-color: #f3e5f5;
+			color: #4A148C;
 		}
-
-
-
-		.typeText::after {
-			content: "|";
-			animation: blink 1s step-end infinite;
-		}
-
-		@keyframes blink {
-
-			0%,
-			100% {
-				opacity: 1;
-			}
-
-			50% {
-				opacity: 0;
-			}
-		}
-
-		@keyframes glow {
-			from {
-				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fbff00, 0 0 40px #fbff00, 0 0 50px #fbff00, 0 0 60px #fbff00, 0 0 70px #fbff00;
-			}
-
-			to {
-				text-shadow: 0 0 20px #fff;
-			}
+		.buton:focus{
+			background-color: #f3e5f5;
+			color: #4A148C;
 		}
 	</style>
 	<script>
 		document.addEventListener('contextmenu', event => event.preventDefault());
 	</script>
-
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3127604696837062"
-crossorigin="anonymous"></script>
-
-
 </head>
 
-<body style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;background-image: url('jee/assets/rose-petals.svg'); background-repeat: no-repeat;background-attachment: fixed;
-background-size:cover; background-position: center;">
-	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+<body style="background-color: #f3e5f5;">
+
+	<nav style="background-color: #4a148c; position: sticky; top: 0; z-index: 10000;"
+		class="navbar navbar-expand-lg navbar-dark" id="navbar">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="/index.html" id="logo">Divastra JEE</a>
+			<a class="navbar-brand" href="index.html" id="logo">
+				<img src="jee\assets\logo.png" style="border-radius: 200px;" alt="Bootstrap" width="24" height="24">
+				Divastra JEE
+			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul class="nav nav-tabs navsize mb-2 mb-lg-0 ms-md-auto">
+				<ul class="nav navsize mb-2 mb-lg-0 ms-md-auto">
 					<li class="nav-item">
-						<a class="nav-link text-white" href="mentorship.html">Mentorship</a>
+						<a class="nav-link text-white" href="/mentorship.html">Mentorship</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="rankPredictor.html">Predictor</a>
+						<a class="nav-link text-white" href="/rankPredictor.html">Predictor</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="books.html">Books</a>
+						<a class="nav-link text-white" href="/books.html">Books</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="video.html">Videos</a>
+						<a class="nav-link text-white" href="/video.html">Videos</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<br><br><br><br><br><br><br>
-	<div style="height: 100vh;">
+	<div style="height: 100vh;background-color:#4A148C; padding-top: 64px;">
 		<section class="py-5 text-center container">
 			<div class="row mx-4">
-				<div class="col-lg-6 col-md-8 mx-auto shadow rounded py-lg-5"
-				style="background-color: rgba(255, 255, 255, 0.1);backdrop-filter: blur(16px);">
-				<img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" class="card-img-top"
-							alt="..." style="height: 64px; width: 64px; margin-bottom: 32px;">
+				<div class="col-lg-6 col-md-8 mx-auto rounded py-lg-5">
+					<img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" class="card-img-top" alt="..."
+						style="height: 64px; width: 64px; margin-bottom: 32px;">
 					<div class="">
 						<h1 class="fw-light">
-							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Books Library</p>
+							<p class="textAbove" style="color:#f3e5f5;">Books Library</p>
 						</h1>
 					</div>
 					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Books have always been the best source to study. Divastra understands it. So scroll down to explore the collection of Divastra JEE books library.</p>
@@ -156,27 +122,29 @@ background-size:cover; background-position: center;">
 				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
 		</a>
 	</div>
+
+
 	<div class="container" id="content">
 		<br><br><br><br>
 		<div class="row">
 			
 			<div class="col m-4">
-				<center>
-					<div class="card p-2 pt-4 shadow text-white"
-						style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+				<center class="rounded shadow"style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0; padding:0">
+					<div class="card p-2 pt-4"
+						style="background-color: rgb(255, 255, 255); border-width: 0;">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/4295/4295897.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
 							<div class="card-body">
-								<h5 class="card-title">Revision Books</h5>
-								<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseRevision"
+								<h5 class="card-title" style="color: #4A148C;">Revision Books</h5>
+								<a class="btn buton mt-3" data-bs-toggle="collapse" href="#collapseRevision"
 									role="button" aria-expanded="false" aria-controls="collapseRevision">Revise</a>
 							</div>
 						</center>
 					</div>
-					<div class="collapse shadow" id="collapseRevision">
+					<div class="collapse" id="collapseRevision">
 						<div class="card card-body"
-							style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+							style="background-color: rgb(255, 255, 255); border-width: 0;">
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item" style="background-color: #EDE7F6;">
 									<p align="Justify"><a
@@ -206,22 +174,22 @@ background-size:cover; background-position: center;">
 				</center>
 			</div>
 			<div class="col m-4">
-				<center>
-					<div class="card p-2 pt-4 shadow text-white"
-						style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+				<center class="rounded shadow"style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0; padding:0">
+					<div class="card p-2 pt-4 text-white"
+					style="background-color: rgb(255, 255, 255); border-width: 0;">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/1467/1467445.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
 							<div class="card-body">
-								<h5 class="card-title">JEE Mains DPP</h5>
-								<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseDPP" role="button"
-									aria-expanded="false" aria-controls="collapseDPP">Solve</a>
+								<h5 class="card-title" style="color: #4A148C;">JEE Mains DPP</h5>
+								<a class="btn buton mt-3" data-bs-toggle="collapse" href="#collapseDPP" role="button"
+									aria-expanded="false" aria-controls="collapseDPP">Practice</a>
 							</div>
 						</center>
 					</div>
-					<div class="collapse shadow" id="collapseDPP">
+					<div class="collapse" id="collapseDPP">
 						<div class="card card-body"
-							style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+						style="background-color: rgb(255, 255, 255); border-width: 0;">
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item" style="background-color: #EDE7F6;">
 									<p align="Justify"><a
@@ -244,22 +212,22 @@ background-size:cover; background-position: center;">
 				</center>
 			</div>
 			<div class="col m-4">
-				<center>
-					<div class="card p-2 pt-4 shadow text-white"
-						style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+				<center class="rounded shadow"style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0; padding:0">
+					<div class="card p-2 pt-4 text-white"
+					style="background-color: rgb(255, 255, 255); border-width: 0;">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/887/887997.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
 							<div class="card-body">
-								<h5 class="card-title">JEE Mains PYQ</h5>
-								<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapsePYQ" role="button"
+								<h5 class="card-title" style="color: #4A148C;">JEE Mains PYQ</h5>
+								<a class="btn buton mt-3" data-bs-toggle="collapse" href="#collapsePYQ" role="button"
 									aria-expanded="false" aria-controls="collapsePYQ">Solve</a>
 							</div>
 						</center>
 					</div>
-					<div class="collapse shadow" id="collapsePYQ">
+					<div class="collapse" id="collapsePYQ">
 						<div class="card card-body"
-							style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+						style="background-color: rgb(255, 255, 255); border-width: 0;">
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item" style="background-color: #EDE7F6;">
 									<p align="Justify"><a
@@ -300,22 +268,22 @@ background-size:cover; background-position: center;">
 				</center>
 			</div>
 			<div class="col m-4">
-				<center>
-					<div class="card p-2 pt-4 shadow text-white"
-						style="min-width: 200px; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+				<center class="rounded shadow"style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0; padding:0">
+					<div class="card p-2 pt-4 text-white"
+					style="background-color: rgb(255, 255, 255); border-width: 0;">
 						<center>
 							<img src="https://cdn-icons-png.flaticon.com/512/887/887997.png" class="card-img-top"
 								alt="..." style="height: 40px; width: 40px">
 							<div class="card-body">
-								<h5 class="card-title">JEE Advanced PYQ</h5>
-								<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapsePYQa" role="button"
+								<h5 class="card-title" style="color: #4A148C;">JEE Advanced PYQ</h5>
+								<a class="btn buton mt-3" data-bs-toggle="collapse" href="#collapsePYQa" role="button"
 									aria-expanded="false" aria-controls="collapsePYQa">Solve</a>
 							</div>
 						</center>
 					</div>
-					<div class="collapse shadow" id="collapsePYQa">
+					<div class="collapse" id="collapsePYQa">
 						<div class="card card-body"
-							style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
+						style="background-color: rgb(255, 255, 255); border-width: 0;">
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item" style="background-color: #EDE7F6;">
 									<p align="Justify"><a
@@ -357,73 +325,65 @@ background-size:cover; background-position: center;">
 			</div>
 		</div>
 	</div>
-	<br><br><br><br><br><br><br><br><br><br>
-	<div class="container shadow rounded bg-dark text-light p-0 text-center">
+	
+	<hr style="margin: 80px; color:#4A148C;">
+	<div class="container shadow text-light p-0 text-center" style="background-color: #6A1B9A; border-radius: 8px; margin-bottom: 80px;">
 		<br>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/index2" target="_blank">Divastra JEE App</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/career" target="_blank">Career</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;" href="https://divastra.github.io/index2"
+			target="_blank">Divastra JEE App</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/privacy" target="_blank">Privacy Policy</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/contact_us" target="_blank">Contact Us</a>
 		<br><br>
 		<section class="m-4">
 			<!-- YouTube -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
-					class="bi bi-youtube text-danger"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
+					class="bi bi-youtube" style="font-size: 1rem;"></i></a>
 
 			<!-- Instagram -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.instagram.com/prabhat_729/" role="button"><i
-				class="bi bi-instagram text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.instagram.com/prabhat_729/" role="button"><i class="bi bi-instagram"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- Facebook -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
-				class="bi bi-facebook text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
+					class="bi bi-facebook" style="font-size: 1rem;"></i></a>
 
 			<!-- LinkedIn -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
-				class="bi bi-linkedin text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
+					class="bi bi-linkedin" style="font-size: 1rem;"></i></a>
 
 			<!-- Twitter -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://twitter.com/PycAnd" role="button"><i
-				class="bi bi-twitter text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://twitter.com/PycAnd" role="button"><i class="bi bi-twitter"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- Quora -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
-				class="bi bi-quora text-warning"  style="font-size: 1rem;"></i></a>
-				
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
+					class="bi bi-quora" style="font-size: 1rem;"></i></a>
+
 			<!-- Telegram -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://telegram.me/prabhat_nit_jsr" role="button"><i
-				class="bi bi-telegram text-warning"  style="font-size: 1rem;"></i></a>
-				
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://telegram.me/prabhat_nit_jsr" role="button"><i class="bi bi-telegram"
+					style="font-size: 1rem;"></i></a>
+
 			<!-- Website -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://divastra.github.io" role="button"><i
-				class="bi bi-globe2 text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://divastra.github.io" role="button"><i class="bi bi-globe2"
+					style="font-size: 1rem;"></i></a>
 		</section>
-		<div class="text-center p-3" style="background-color: rgb(0, 0, 0);">
+		<div class="text-center p-3" style="background-color: #4a148c; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
 			Owned and Managed by Prabhat Ranjan
 		</div>
 	</div>
 	
-	<br><br><br><br><br><br><br>
-	<script>
-		window.addEventListener("load", function () {
-			setTimeout(function () {
-				// This hides the address bar:
-				window.scrollTo(0, 1);
-			}, 0);
-		});
-
-		// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-		window.onscroll = function () { scrollFunction() };
-
-		function scrollFunction() {
-			if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-				document.getElementById("navbar").style.padding = "4px 8px";
-				document.getElementById("logo").style.fontSize = "20px";
-			} else {
-				document.getElementById("navbar").style.padding = "32px 16px";
-				document.getElementById("logo").style.fontSize = "40px";
-			}
-		}
-	</script>
 </body>
 
 </html>

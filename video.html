@@ -35,116 +35,81 @@
 			padding: 0
 		}
 
-		#navbar {
-			position: fixed;
-			top: 0;
-			transition: 0.4s;
-			position: fixed;
-			width: 100%;
-			z-index: 99;
-			background-color: rgb(0, 0, 0);
-			padding: "32px 16px";
+		.nav-item {
+			border-radius: 64px;
+			background-color: #6A1B9A;
+			margin: 4px;
 		}
 
-		#logo {
-			transition: 0.4s;
-			font-size: 40px;
+		.nav-item:hover {
+			background-color: #BA68C8;
 		}
 
-		.navsize {
-			margin-top: 0px;
-			font-size: 16px;
+		
+		.buton{
+			background-color: #4A148C;
+			color: #f3e5f5;
+			transition: 0s;
+			border-radius: 64px;
+			border-width: 1px;
+			border-color: #4A148C;
+			margin-bottom: 64px;
 		}
-
-		@media (max-width:992px) {
-			.navsize {
-				margin-top: 32px;
-				font-size: 12px;
-			}
-		}
-
-		.typeText::after {
-			content: "|";
-			animation: blink 1s step-end infinite;
-		}
-
-		@keyframes blink {
-
-			0%,
-			100% {
-				opacity: 1;
-			}
-
-			50% {
-				opacity: 0;
-			}
-		}
-
-		@keyframes glow {
-			from {
-				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fbff00, 0 0 40px #fbff00, 0 0 50px #fbff00, 0 0 60px #fbff00, 0 0 70px #fbff00;
-			}
-
-			to {
-				text-shadow: 0 0 20px #fff;
-			}
+		.buton:hover{
+			background-color: #f3e5f5;
+			color: #4A148C;
 		}
 	</style>
 	<script>
 		document.addEventListener('contextmenu', event => event.preventDefault());
 	</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3127604696837062"
-     crossorigin="anonymous"></script>
-
 </head>
 
-<body style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;background-image: url('jee/assets/rose-petals.svg'); background-repeat: no-repeat;background-attachment: fixed;
-background-size:cover; background-position: center;">
-	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+<body style="background-color: #f3e5f5;">
+
+	<nav style="background-color: #4a148c; position: sticky; top: 0; z-index: 10000;"
+		class="navbar navbar-expand-lg navbar-dark" id="navbar">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="/index.html" id="logo">Divastra JEE</a>
+			<a class="navbar-brand" href="index.html" id="logo">
+				<img src="jee\assets\logo.png" style="border-radius: 200px;" alt="Bootstrap" width="24" height="24">
+				Divastra JEE
+			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul class="nav nav-tabs navsize mb-2 mb-lg-0 ms-md-auto">
+				<ul class="nav navsize mb-2 mb-lg-0 ms-md-auto">
 					<li class="nav-item">
-						<a class="nav-link text-white" href="mentorship.html">Mentorship</a>
+						<a class="nav-link text-white" href="/mentorship.html">Mentorship</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="rankPredictor.html">Predictor</a>
+						<a class="nav-link text-white" href="/rankPredictor.html">Predictor</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="books.html">Books</a>
+						<a class="nav-link text-white" href="/books.html">Books</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="video.html">Videos</a>
+						<a class="nav-link text-white" href="/video.html">Videos</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<br><br><br><br><br><br><br>
-	<div style="height: 100vh;">
+	<div style="height: 100vh;background-color:#4A148C; padding-top: 64px;">
 		<section class="py-5 text-center container">
 			<div class="row mx-4">
-				<div class="col-lg-6 col-md-8 mx-auto shadow rounded py-lg-5"
-				style="background-color: rgba(255, 255, 255, 0.1);backdrop-filter: blur(16px);">
-				<img src="https://cdn-icons-png.flaticon.com/512/777/777242.png" class="card-img-top"
-							alt="..." style="height: 64px; width: 64px; margin-bottom: 32px;">
+				<div class="col-lg-6 col-md-8 mx-auto rounded py-lg-5">
+					<img src="https://cdn-icons-png.flaticon.com/512/777/777242.png" class="card-img-top" alt="..."
+						style="height: 64px; width: 64px; margin-bottom: 32px;">
 					<div class="">
 						<h1 class="fw-light">
-							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Video Hub</p>
+							<p class="textAbove" style="color:#f3e5f5;">Video Hub</p>
 						</h1>
 					</div>
-					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Something short
-						and
-						leading about the collection below—its contents, the
-						creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
-						entirely.</p>
+					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.
+					</p>
 				</div>
 			</div>
 		</section>
@@ -155,84 +120,80 @@ background-size:cover; background-position: center;">
 				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
 		</a>
 	</div>
-<div id="content"><br><br><br><br></div>
-	<!-- Place <div> tag where you want the feed to appear -->
-<div id="curator-feed-new-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div><!-- The Javascript can be moved to the end of the html page before the </body> tag --><script type="text/javascript">
-	/* curator-feed-new-feed-layout */
-	(function(){
-	var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
-	i.src="https://cdn.curator.io/published/5870c8be-9785-4b76-b056-706ba2ed9303.js";
-	e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-	})();
-	</script>
 
-<br><br><br><br><br><br><br><br><br><br>
-<div class="container shadow rounded bg-dark text-light p-0 text-center">
-	<br>
-	<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/index2" target="_blank">Divastra JEE App</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/career" target="_blank">Career</a>
-		<br><br>
-	<section class="m-4">
-		<!-- YouTube -->
-		<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
-				class="bi bi-youtube text-danger"  style="font-size: 1rem;"></i></a>
 
-		<!-- Instagram -->
-		<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.instagram.com/prabhat_729/" role="button"><i
-			class="bi bi-instagram text-warning"  style="font-size: 1rem;"></i></a>
-
-		<!-- Facebook -->
-		<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
-			class="bi bi-facebook text-warning"  style="font-size: 1rem;"></i></a>
-
-		<!-- LinkedIn -->
-		<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
-			class="bi bi-linkedin text-warning"  style="font-size: 1rem;"></i></a>
-
-		<!-- Twitter -->
-		<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://twitter.com/PycAnd" role="button"><i
-			class="bi bi-twitter text-warning"  style="font-size: 1rem;"></i></a>
-
-		<!-- Quora -->
-		<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
-			class="bi bi-quora text-warning"  style="font-size: 1rem;"></i></a>
-			
-		<!-- Telegram -->
-		<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://telegram.me/prabhat_nit_jsr" role="button"><i
-			class="bi bi-telegram text-warning"  style="font-size: 1rem;"></i></a>
-			
-		<!-- Website -->
-		<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://divastra.github.io" role="button"><i
-			class="bi bi-globe2 text-warning"  style="font-size: 1rem;"></i></a>
-	</section>
-	<div class="text-center p-3" style="background-color: rgb(0, 0, 0);">
-		Owned and Managed by Prabhat Ranjan
+	<div style="padding: 80px; padding-top: 120px;" id="content">
+		<!-- Place <div> tag where you want the feed to appear -->
+	<div id="curator-feed-new-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div><!-- The Javascript can be moved to the end of the html page before the </body> tag --><script type="text/javascript">
+		/* curator-feed-new-feed-layout */
+		(function(){
+		var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+		i.src="https://cdn.curator.io/published/5870c8be-9785-4b76-b056-706ba2ed9303.js";
+		e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+		})();
+		</script>
 	</div>
-</div>
 
-<br><br><br><br><br><br><br>
-	<script>
-		window.addEventListener("load", function () {
-			setTimeout(function () {
-				// This hides the address bar:
-				window.scrollTo(0, 1);
-			}, 0);
-		});
 
-		// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-		window.onscroll = function () { scrollFunction() };
 
-		function scrollFunction() {
-			if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-				document.getElementById("navbar").style.padding = "4px 8px";
-				document.getElementById("logo").style.fontSize = "20px";
-			} else {
-				document.getElementById("navbar").style.padding = "32px 16px";
-				document.getElementById("logo").style.fontSize = "40px";
-			}
-		}
-	</script>
+<hr style="margin: 80px; margin-top: 0;  color:#4A148C;">
+	<div class="container shadow text-light p-0 text-center" style="background-color: #6A1B9A; border-radius: 8px; margin-bottom: 80px;">
+		<br>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;" href="https://divastra.github.io/index2"
+			target="_blank">Divastra JEE App</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/privacy" target="_blank">Privacy Policy</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/contact_us" target="_blank">Contact Us</a>
+		<br><br>
+		<section class="m-4">
+			<!-- YouTube -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
+					class="bi bi-youtube" style="font-size: 1rem;"></i></a>
+
+			<!-- Instagram -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.instagram.com/prabhat_729/" role="button"><i class="bi bi-instagram"
+					style="font-size: 1rem;"></i></a>
+
+			<!-- Facebook -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
+					class="bi bi-facebook" style="font-size: 1rem;"></i></a>
+
+			<!-- LinkedIn -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
+					class="bi bi-linkedin" style="font-size: 1rem;"></i></a>
+
+			<!-- Twitter -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://twitter.com/PycAnd" role="button"><i class="bi bi-twitter"
+					style="font-size: 1rem;"></i></a>
+
+			<!-- Quora -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
+					class="bi bi-quora" style="font-size: 1rem;"></i></a>
+
+			<!-- Telegram -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://telegram.me/prabhat_nit_jsr" role="button"><i class="bi bi-telegram"
+					style="font-size: 1rem;"></i></a>
+
+			<!-- Website -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://divastra.github.io" role="button"><i class="bi bi-globe2"
+					style="font-size: 1rem;"></i></a>
+		</section>
+		<div class="text-center p-3" style="background-color: #4a148c; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
+			Owned and Managed by Prabhat Ranjan
+		</div>
+	</div>
+
 </body>
 
 </html>

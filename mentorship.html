@@ -35,121 +35,77 @@
 			padding: 0
 		}
 
-		#navbar {
-			position: fixed;
-			top: 0;
-			transition: 0.4s;
-			position: fixed;
-			width: 100%;
-			z-index: 99;
-			background-color: rgb(0, 0, 0);
-			padding: "32px 16px";
+		.nav-item {
+			border-radius: 64px;
+			background-color: #6A1B9A;
+			margin: 4px;
 		}
 
-		#logo {
-			transition: 0.4s;
-			font-size: 40px;
+		.nav-item:hover {
+			background-color: #BA68C8;
 		}
 
-		.navsize {
-			margin-top: 0px;
-			font-size: 16px;
+		
+		.buton{
+			background-color: #4A148C;
+			color: #f3e5f5;
+			transition: 0s;
+			border-radius: 64px;
+			border-width: 1px;
+			border-color: #4A148C;
+			margin-bottom: 64px;
 		}
-
-		@media (max-width:992px) {
-			.navsize {
-				margin-top: 32px;
-				font-size: 12px;
-			}
-
-		}
-		.youtube{
-			opacity: 0;
-			transition: 0.4s;
-		}
-		.youtube:hover{
-			opacity: 0.8;
-		}
-
-
-
-		.typeText::after {
-			content: "|";
-			animation: blink 1s step-end infinite;
-		}
-
-		@keyframes blink {
-
-			0%,
-			100% {
-				opacity: 1;
-			}
-
-			50% {
-				opacity: 0;
-			}
-		}
-
-		@keyframes glow {
-			from {
-				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fbff00, 0 0 40px #fbff00, 0 0 50px #fbff00, 0 0 60px #fbff00, 0 0 70px #fbff00;
-			}
-
-			to {
-				text-shadow: 0 0 20px #fff;
-			}
+		.buton:hover{
+			background-color: #f3e5f5;
+			color: #4A148C;
 		}
 	</style>
 	<script>
 		document.addEventListener('contextmenu', event => event.preventDefault());
 	</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3127604696837062"
-crossorigin="anonymous"></script>
-
-
 </head>
 
-<body style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;background-image: url('jee/assets/rose-petals.svg'); background-repeat: no-repeat;background-attachment: fixed;
-background-size:cover; background-position: center;">
+<body style="background-color: #f3e5f5;">
 
-	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+	<nav style="background-color: #4a148c; position: sticky; top: 0; z-index: 10000;"
+		class="navbar navbar-expand-lg navbar-dark" id="navbar">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="/index.html" id="logo">Divastra JEE</a>
+			<a class="navbar-brand" href="index.html" id="logo">
+				<img src="jee\assets\logo.png" style="border-radius: 200px;" alt="Bootstrap" width="24" height="24">
+				Divastra JEE
+			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul class="nav nav-tabs navsize mb-2 mb-lg-0 ms-md-auto">
+				<ul class="nav navsize mb-2 mb-lg-0 ms-md-auto">
 					<li class="nav-item">
-						<a class="nav-link active" area-content="page" href="mentorship.html">Mentorship</a>
+						<a class="nav-link text-white" href="/mentorship.html">Mentorship</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="rankPredictor.html">Predictor</a>
+						<a class="nav-link text-white" href="/rankPredictor.html">Predictor</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="books.html">Books</a>
+						<a class="nav-link text-white" href="/books.html">Books</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="video.html">Videos</a>
+						<a class="nav-link text-white" href="/video.html">Videos</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<br><br><br><br><br><br><br>
-	<div style="height: 100vh;">
+	<div style="height: 100vh;background-color:#4A148C; padding-top: 64px;">
 		<section class="py-5 text-center container">
 			<div class="row mx-4">
-				<div class="col-lg-6 col-md-8 mx-auto shadow rounded py-lg-5"
-					style="background-color: rgba(255, 255, 255, 0.1);backdrop-filter: blur(16px);">
+				<div class="col-lg-6 col-md-8 mx-auto rounded py-lg-5">
 					<img src="https://cdn-icons-png.flaticon.com/512/2643/2643491.png" class="card-img-top" alt="..."
 						style="height: 64px; width: 64px; margin-bottom: 32px;">
 					<div class="">
 						<h1 class="fw-light">
-							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Personal
+							<p class="textAbove" style="color:#f3e5f5;">Personal
 								Mentorship Program</p>
 						</h1>
 					</div>
@@ -166,278 +122,89 @@ background-size:cover; background-position: center;">
 		</a>
 	</div>
 
-
-	<div class="row">
-		<div class="col m-5" id="content">
-			<br><br><br><br>
-			<center>
-				<div class="card p-2 pt-4 text-white"
-					style="min-width: 200px; max-width: 32rem; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.5);border: solid white;">
-					<center>
-						<img src="https://cdn-icons-png.flaticon.com/512/2643/2643491.png" class="card-img-top" alt="..."
-							style="height: 50px; width: 50px; margin: 10px;">
-						<div class="card-body">
-							<h5 class="card-title">Divastra JEE: Personal Mentorship Program</h5>
-							<p class="card-text">Get almost free IIT JEE Mentorship from the specialists 🎉</p>
-							<a href="https://forms.gle/tiJNXh1gRFWQrhzq9" target="_blank"
-								class="btn btn-primary m-2">Register Here</a>
-							<a href="#more" class="btn btn-primary m-2">Know More</a>
+	<div class="col" style="padding-top: 120px; margin-bottom: 80px; margin: 32px;" id="content">
+		<center>
+			<div class="card p-2 pt-4 shadow"
+				style="min-width: 200px; max-width: 32rem; background-color: rgb(255, 255, 255); border-width: 0;">
+				<center>
+					<img src="assets\img\IMG_20220325_210102_422.jpg" class="card-img-top" alt="..."
+						style="height: 100px; width: 100px; margin-top: 16px; border-radius: 400px;">
+					<div class="card-body">
+						<h5 class="card-title" style="color: #4a148c;">Divastra JEE: Personal Mentorship Program</h5>
+						<p class="card-text" style="color: #CE93D8;">Starting from 20th Nov, 2022 🎉</p>
+						<div style="margin-top: 16px; margin-bottom: 32px; border-radius: 8px; max-width: 200px; background-color: #f3e5f5; color: #7B1FA2;font-size: 14px; padding: 16px;">
+						Day: Every Sunday <br>
+						Time: 2:00 PM <br>
+						Venue: YouTube (Live)
 						</div>
-					</center>
-				</div>
-			</center>
-		</div>
-		<div class="col m-5" id="content">
-			<br><br><br><br>
-			<center>
-				<div class="card p-2 pt-4 shadow text-white"
-					style="min-width: 200px; max-width: 32rem; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.5);">
-					<img src="https://cdn-icons-png.flaticon.com/512/3199/3199348.png" alt="..."
-						style="height: 64px; width: 64px; margin-left: -44px; margin-top: -24px;">
-					<center>
-						<img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" class="card-img-top" alt="..."
-							style="height: 50px; width: 50px; margin-top: -40px;">
-						<div class="card-body">
-							<h5 class="card-title">Divastra JEE: Ambassador Program</h5>
-							<p class="card-text">Earn money by bringing students to Divastra JEE: Personal Mentorship Program 💵</p>
-							<a href="https://forms.gle/Qpjst16SfA1CGYbn6"
-								class="btn btn-primary m-2">Register Here</a>
-							<a href="career.html" class="btn btn-primary m-2">Know More</a>
-						</div>
-					</center>
-				</div>
-			</center>
-		</div>
+						<a href="https://www.youtube.com/c/PrabhatRanjan729/" target="_blank" class="btn m-2 buton">YouTube Channel</a>
+						<hr style="margin-top: 32px;">
+						<p style="margin-bottom: -8px;font-size: 12px;">Come in the live YouTube session of Divastra JEE: Personal Mentorship Program every Sunday from 2PM. Ask all your doubts and get IIT JEE guidance free of cost.</p>
+					</div>
+				</center>
+			</div>
+		</center>
 	</div>
-
 	
-
-	<center>
-		<img src="jee/assets/mentorship.png" alt="mentorship" class="m-4"
-			style="height: auto; width: 80vw; max-width: 640px;">
-	</center>
-
-	<div class="row" style="padding-top: 64px;">
-		<div class="col" style="position: relative; min-width: 320px;  margin: 40px 40px 100px 40px; height: auto;">
-			<br><br><br><br>
-			<center>
-				<a href="https://meet.google.com/hkv-dwbs-oju" target="_blank" rel="noopener noreferrer" >
-					<img src="jee\assets\session.png" alt="Divastra JEE: Personal Mentorship Program Launch Video" style="border-radius: 8px;width: 40vw;min-width: 200px; max-width: 480px;height: auto; position: absolute; top: 0; left: 50%; transform: translate(-50%, 0);">
-					<img src="jee\assets\meet.png" alt=""  style="border-radius: 8px;width: 40vw;min-width: 200px; max-width: 480px;height: auto; position: absolute; top: 0; border: solid white; left: 50%; transform: translate(-50%, 0);" class="youtube">
-				</a>
-			</center>
-		</div>
-	</div>
-
-	<br><br><br><br>
-
-	<div class="row" id="more" style="padding-top: 64px;">
-		<div class="col" id="content" style="position: relative; min-width: 320px;  margin: 40px 40px 100px 40px; height: auto;">
-			<br><br><br><br>
-			<center>
-				<a href="https://youtu.be/dq-zUM72fnE" target="_blank" rel="noopener noreferrer" >
-					<img src="jee\assets\launch.png" alt="Divastra JEE: Personal Mentorship Program Launch Video" style="border-radius: 8px;width: 40vw;min-width: 200px; max-width: 480px;height: auto; position: absolute; top: 0; left: 50%; transform: translate(-50%, 0);">
-					<img src="jee\assets\youtube.png" alt=""  style="border-radius: 8px;width: 40vw;min-width: 200px; max-width: 480px;height: auto; position: absolute; top: 0; border: solid white; left: 50%; transform: translate(-50%, 0);" class="youtube">
-				</a>
-			</center>
-		</div>
-		<div class="col m-5" id="content" style="position: relative; min-width: 320px;">
-			<br><br><br><br>
-			<center>
-				<a href="https://youtu.be/flsEPBnFWk8" target="_blank" rel="noopener noreferrer" >
-					<img src="jee\assets\demo.png" alt="Divastra JEE: Personal Mentorship Program Launch Video" style="border-radius: 8px;width: 40vw;min-width: 200px; max-width: 480px;height: auto; position: absolute; top: 0; left: 50%; transform: translate(-50%, 0);">
-					<img src="jee\assets\youtube.png" alt=""  style="border-radius: 8px;width: 40vw;min-width: 200px; max-width: 480px;height: auto; position: absolute; top: 0; border: solid white; left: 50%; transform: translate(-50%, 0);" class="youtube">
-				</a>
-			</center>
-		</div>
-	</div>
-	<br><br>
-
-	<div>
-		<br><br><br><br>
-		<div class="container shadow rounded text-light p-4"
-			style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-			<a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample" role="button"
-				aria-expanded="false" aria-controls="collapseExample">
-				What is Divastra JEE Personal Mentorship Program?
-			</a>
-			<div class="collapse" id="collapseExample" style="color: #cccccc;">
-				<div>
-					<br>
-					Hi Future IITians/NITians. After a long journey of offline mentorship and student satisfaction, now
-					the time have come to deliver Divastra services to students preparaing for IIT JEE all over India
-					through online mode. Divastra (a brand name by Prabhat Ranjan) is already delivering it's services
-					in online mode through YouTube, Telegram, Facebook, Instagram, and Linkedin for free. Now it wants
-					to mentor students one to one with special attention at nominal charges on monthly basis.
-				</div>
-			</div>
-		</div>
-		<br><br>
-		<div class="container shadow rounded text-light p-4"
-			style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-			<a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample2" role="button"
-				aria-expanded="false" aria-controls="collapseExample2">
-				What will I get in Divastra JEE Personal Mentorship Program?
-			</a>
-			<div class="collapse" id="collapseExample2" style="color: #cccccc;">
-				<div>
-					<br>
-					<ul>
-						<li>
-							Pesronal Guidance
-						</li>
-						<li>
-							Personal Mentorship	
-						</li>
-						<li>
-							Motivation
-						</li>
-						<li>
-							Hand holding support at each and every path of your IIT JEE journey
-						</li>
-						<li>
-							Some study materials
-						</li>
-						<li>
-							Self-Doubt solving Telegram group of dedicated students like you free for lifetime. 
-						</li>
-						<li>
-							Topper's secret tips and strategies
-						</li>
-						<li>
-							Time management skills
-						</li>
-					</ul>
-					<br><b><font style="color: white;">Mentorship sessions are held every Saturday, Sunday from 6PM to 8PM. Self doubt solving telegram group is active 24x7.</font></b> 
-				</div>
-			</div>
-		</div>
-		<br><br>
-		<div class="container shadow rounded text-light p-4"
-			style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-			<a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample1" role="button"
-				aria-expanded="false" aria-controls="collapseExample1">
-				Why Divastra JEE Personal Mentorship Program?
-			</a>
-			<div class="collapse" id="collapseExample1" style="color: #cccccc;">
-				<div>
-					<br>
-					In every corner of India there are students always struggling for right coach, guide, mentor who can
-					help them boost up their IIT JEE preparation. There are mentors in the market but they are too have
-					on your pocket. Divastra is providing you a pocket friendly solution at nominal cost because it
-					understands the pain of a student who have already been indulged in money sucking coaching
-					institutes or are not able to take proper coaching due to some financial issues.
-				</div>
-			</div>
-		</div>
-		<br><br>
-		<div class="container shadow rounded text-light p-4"
-			style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-			<a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample4" role="button"
-				aria-expanded="false" aria-controls="collapseExample4">
-				What is the fee?
-			</a>
-			<div class="collapse" id="collapseExample4" style="color: #cccccc;">
-				<div>
-					<br>
-					We provide you mentorship at such an unbelievable low price of Rs. 199 per month. HEY! you heard it
-					right it's just Rs. 199 per month. 100 times cheaper than your coaching.
-				</div>
-			</div>
-		</div>
-		<br><br>
-		<div class="container shadow rounded text-light p-4"
-			style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-			<a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample3" role="button"
-				aria-expanded="false" aria-controls="collapseExample3">
-				How will Divastra provide you mentorship?
-			</a>
-			<div class="collapse" id="collapseExample3" style="color: #cccccc;">
-				<div>
-					<br>
-					As soon as you join our mentorship program by filling this form <a class="btn btn-primary"
-						href="https://forms.gle/tiJNXh1gRFWQrhzq9" target="_blank">Registration form</a>, you will be
-					sent a telegram group link to your
-					registered Email ID within 48 hours. Every Saturday and Sunday you will be shared a google meet link
-					at 6:00 PM. This meet will be of 2 hours. You can ask your doubts one to one within this meet. You
-					will get 16 hours of meet time per month in Rs. 199. Isn't it unbelievable? You can chat within the
-					Telegram group among your groupmates. NOTICE: Keep this discussion only for IIT JEE doubts. If you
-					will destroy the decorum of the group then you will be removed from the group with a warning but
-					without refund. Please do not expect any kind of study material and classes from us because we are
-					not a coaching. But as a gift if we wish, we will provide you with some study materials.
-				</div>
-			</div>
-		</div>
-	</div>
-	<br><br><br><br><br><br><br><br><br><br>
-	<div class="container shadow rounded bg-dark text-light p-0 text-center">
+	<hr style="margin: 80px;  color:#4A148C;">
+	<div class="container shadow text-light p-0 text-center" style="background-color: #6A1B9A; border-radius: 8px; margin-bottom: 80px;">
 		<br>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/index2" target="_blank">Divastra JEE App</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
-		<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/career" target="_blank">Career</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;" href="https://divastra.github.io/index2"
+			target="_blank">Divastra JEE App</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/privacy" target="_blank">Privacy Policy</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/contact_us" target="_blank">Contact Us</a>
 		<br><br>
 		<section class="m-4">
 			<!-- YouTube -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
-					class="bi bi-youtube text-danger"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
+					class="bi bi-youtube" style="font-size: 1rem;"></i></a>
 
 			<!-- Instagram -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.instagram.com/prabhat_729/" role="button"><i
-				class="bi bi-instagram text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.instagram.com/prabhat_729/" role="button"><i class="bi bi-instagram"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- Facebook -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
-				class="bi bi-facebook text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
+					class="bi bi-facebook" style="font-size: 1rem;"></i></a>
 
 			<!-- LinkedIn -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
-				class="bi bi-linkedin text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
+					class="bi bi-linkedin" style="font-size: 1rem;"></i></a>
 
 			<!-- Twitter -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://twitter.com/PycAnd" role="button"><i
-				class="bi bi-twitter text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://twitter.com/PycAnd" role="button"><i class="bi bi-twitter"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- Quora -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
-				class="bi bi-quora text-warning"  style="font-size: 1rem;"></i></a>
-				
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
+					class="bi bi-quora" style="font-size: 1rem;"></i></a>
+
 			<!-- Telegram -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://telegram.me/prabhat_nit_jsr" role="button"><i
-				class="bi bi-telegram text-warning"  style="font-size: 1rem;"></i></a>
-				
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://telegram.me/prabhat_nit_jsr" role="button"><i class="bi bi-telegram"
+					style="font-size: 1rem;"></i></a>
+
 			<!-- Website -->
-			<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank" href="https://divastra.github.io" role="button"><i
-				class="bi bi-globe2 text-warning"  style="font-size: 1rem;"></i></a>
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://divastra.github.io" role="button"><i class="bi bi-globe2"
+					style="font-size: 1rem;"></i></a>
 		</section>
-		<div class="text-center p-3" style="background-color: rgb(0, 0, 0);">
+		<div class="text-center p-3" style="background-color: #4a148c; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
 			Owned and Managed by Prabhat Ranjan
 		</div>
 	</div>
 	
-	<br><br><br><br><br><br><br>
-	<script>
-		window.addEventListener("load", function () {
-			setTimeout(function () {
-				// This hides the address bar:
-				window.scrollTo(0, 1);
-			}, 0);
-		});
-
-		// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-		window.onscroll = function () { scrollFunction() };
-
-		function scrollFunction() {
-			if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-				document.getElementById("navbar").style.padding = "4px 8px";
-				document.getElementById("logo").style.fontSize = "20px";
-			} else {
-				document.getElementById("navbar").style.padding = "32px 16px";
-				document.getElementById("logo").style.fontSize = "40px";
-			}
-		}
-	</script>
-
-	<a href='https://bachelorthesiswritingservice.com/'>BachelorThesisWritingService.com</a>
+		<a href='https://bachelorthesiswritingservice.com/'>BachelorThesisWritingService.com</a>
 	<script type='text/javascript'
 		src='https://www.freevisitorcounters.com/auth.php?id=e4104d5976820e7278f967ba8b4b9dbdf4ef94da'></script>
 	<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/934513/t/10"></script>

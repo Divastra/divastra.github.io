@@ -36,116 +36,81 @@
 			padding: 0
 		}
 
-		#navbar {
-			position: fixed;
-			top: 0;
-			transition: 0.4s;
-			position: fixed;
-			width: 100%;
-			z-index: 99;
-			background-color: rgb(0, 0, 0);
-			padding: "32px 16px";
+		.nav-item {
+			border-radius: 64px;
+			background-color: #6A1B9A;
+			margin: 4px;
 		}
 
-		#logo {
-			transition: 0.4s;
-			font-size: 40px;
+		.nav-item:hover {
+			background-color: #BA68C8;
 		}
 
-		.navsize {
-			margin-top: 0px;
-			font-size: 16px;
+		
+		.buton{
+			background-color: #4A148C;
+			color: #f3e5f5;
+			transition: 0s;
+			border-radius: 64px;
+			border-width: 1px;
+			border-color: #4A148C;
+			margin-bottom: 64px;
 		}
-
-		@media (max-width:992px) {
-			.navsize {
-				margin-top: 32px;
-				font-size: 12px;
-			}
-		}
-
-		.typeText::after {
-			content: "|";
-			animation: blink 1s step-end infinite;
-		}
-
-		@keyframes blink {
-
-			0%,
-			100% {
-				opacity: 1;
-			}
-
-			50% {
-				opacity: 0;
-			}
-		}
-
-		@keyframes glow {
-			from {
-				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fbff00, 0 0 40px #fbff00, 0 0 50px #fbff00, 0 0 60px #fbff00, 0 0 70px #fbff00;
-			}
-
-			to {
-				text-shadow: 0 0 20px #fff;
-			}
+		.buton:hover{
+			background-color: #f3e5f5;
+			color: #4A148C;
 		}
 	</style>
 	<script>
 		document.addEventListener('contextmenu', event => event.preventDefault());
 	</script>
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3127604696837062"
-crossorigin="anonymous"></script>
-
 </head>
 
-<body style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;background-image: url('jee/assets/rose-petals.svg'); background-repeat: no-repeat;background-attachment: fixed;
-background-size:cover; background-position: center;">
-	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+<body style="background-color: #f3e5f5;">
+
+	<nav style="background-color: #4a148c; position: sticky; top: 0; z-index: 10000;"
+		class="navbar navbar-expand-lg navbar-dark" id="navbar">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="/index.html" id="logo">Divastra JEE</a>
+			<a class="navbar-brand" href="index.html" id="logo">
+				<img src="jee\assets\logo.png" style="border-radius: 200px;" alt="Bootstrap" width="24" height="24">
+				Divastra JEE
+			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul class="nav nav-tabs navsize mb-2 mb-lg-0 ms-md-auto">
+				<ul class="nav navsize mb-2 mb-lg-0 ms-md-auto">
 					<li class="nav-item">
-						<a class="nav-link text-white" href="mentorship.html">Mentorship</a>
+						<a class="nav-link text-white" href="/mentorship.html">Mentorship</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="rankPredictor.html">Predictor</a>
+						<a class="nav-link text-white" href="/rankPredictor.html">Predictor</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="books.html">Books</a>
+						<a class="nav-link text-white" href="/books.html">Books</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="video.html">Videos</a>
+						<a class="nav-link text-white" href="/video.html">Videos</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<br><br><br><br><br><br><br>
-	<div style="height: 100vh;">
+	<div style="height: 100vh;background-color:#4A148C; padding-top: 64px;">
 		<section class="py-5 text-center container">
 			<div class="row mx-4">
-				<div class="col-lg-6 col-md-8 mx-auto shadow rounded py-lg-5"
-					style="background-color: rgba(255, 255, 255, 0.1);backdrop-filter: blur(16px);">
+				<div class="col-lg-6 col-md-8 mx-auto rounded py-lg-5">
 					<img src="https://cdn-icons-png.flaticon.com/512/1253/1253668.png" class="card-img-top" alt="..."
 						style="height: 64px; width: 64px; margin-bottom: 32px;">
 					<div class="">
 						<h1 class="fw-light">
-							<p class="textAbove" style="color:white;text-shadow: 2px 2px 3px #ffffff;">Marks/Percentile
-								Predictor</p>
+							<p class="textAbove" style="color:#f3e5f5;">Marks vs Percentile Predictor</p>
 						</h1>
 					</div>
-					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Divastra JEE brings a
-						whole new and simplified JEE Mains Rank Predictor. It is the most accurate and simple JEE Mains
-						Rank Predictor available on the internet.</p>
+					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Divastra JEE brings a whole new and simplified JEE Mains Rank Predictor. It is the most accurate and simple JEE Mains Rank Predictor available on the internet.
+					</p>
 				</div>
 			</div>
 		</section>
@@ -156,68 +121,9 @@ background-size:cover; background-position: center;">
 				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
 		</a>
 	</div>
-	<div id="content" class="container shadow rounded text-light"
-		style="backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.2);">
-		<br><br><br><br>
-		<div class="row">
-			<div class="col" style="min-width:300px">
-				<div class="p-4">
-					<ul>
-						<li>Here is the list of recent JEE Mains exam dates and shifts along with their respective
-							difficulty level.</li>
-						<li>If you want to predict result from these shifts then check its difficulty level from this
-							list and enter it below.</li>
-						<li>If you want to predict result of any other shift then enter its difficulty level below,
-							either by reserching its dfficulty level online or by an approximate guess.</li>
-						<li>Then enter your marks or expected marks.</li>
-						<li>As soon as you enter marks, your predicted percentile and rank will be shown below.</li>
-						<li>A note for the rank calculation have been attached in the result section below. Kindly refer
-							it to know exact or most approximate rank.</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col" style="min-width:300px">
-				<div class="p-4">
-					<h5>Recent JEE Mains (B.E./B.Tech) exam dates and shifts</h5>
-					<ul>
-						<li>24th June, 2022 (Shift 1) : Easy</li>
-						<li>24th June, 2022 (Shift 2) : Easy</li>
-						<li>25th June, 2022 (Shift 1) : To be Anounced</li>
-						<li>25th June, 2022 (Shift 2) : To be Anounced</li>
-						<li>26th June, 2022 (Shift 1) : To be Anounced</li>
-						<li>26th June, 2022 (Shift 2) : To be Anounced</li>
-						<li>27th June, 2022 (Shift 1) : To be Anounced</li>
-						<li>27th June, 2022 (Shift 2) : To be Anounced</li>
-						<li>28th June, 2022 (Shift 1) : To be Anounced</li>
-						<li>28th June, 2022 (Shift 2) : To be Anounced</li>
-						<li>29th June, 2022 (Shift 1) : To be Anounced</li>
-						<li>29th June, 2022 (Shift 2) : To be Anounced</li>
-					</ul>
-					<ul>
-						<li>22nd July, 2022 (Shift 1) : To be Anounced</li>
-						<li>22nd July, 2022 (Shift 2) : To be Anounced</li>
-						<li>23rd July, 2022 (Shift 1) : To be Anounced</li>
-						<li>23rd July, 2022 (Shift 2) : To be Anounced</li>
-						<li>24th July, 2022 (Shift 1) : To be Anounced</li>
-						<li>24th July, 2022 (Shift 2) : To be Anounced</li>
-						<li>25th July, 2022 (Shift 1) : To be Anounced</li>
-						<li>25th July, 2022 (Shift 2) : To be Anounced</li>
-						<li>26th July, 2022 (Shift 1) : To be Anounced</li>
-						<li>26th July, 2022 (Shift 2) : To be Anounced</li>
-						<li>27th July, 2022 (Shift 1) : To be Anounced</li>
-						<li>27th July, 2022 (Shift 2) : To be Anounced</li>
-						<li>28th July, 2022 (Shift 1) : To be Anounced</li>
-						<li>28th July, 2022 (Shift 2) : To be Anounced</li>
-						<li>29th July, 2022 (Shift 1) : To be Anounced</li>
-						<li>29th July, 2022 (Shift 2) : To be Anounced</li>
-						<li>30th July, 2022 (Shift 1) : To be Anounced</li>
-						<li>30th July, 2022 (Shift 2) : To be Anounced</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<center>
+
+	
+	<center style="padding-top: 120px; margin-bottom: 80px;" id="content">
 
 		<div class="p-4" style="max-width: 32rem">
 			<select class="form-select shadow p-2" onchange="disabl()" aria-label="Default select example" id="level"
@@ -242,34 +148,33 @@ background-size:cover; background-position: center;">
 				aria-describedby="basic-addon1"
 				title="If you don't know your actual marks then enter your expected marks here." id="marks"
 				oninput="score()">
-			<button class="input-group-text bg-dark text-light me-4 shadow" onclick="score()"
-				id="basic-addon1">Submit</button>
+			<button class="input-group-text text-light me-4 shadow" onclick="score()"
+				id="basic-addon1"  style="background-color: #4A148C;">Submit</button>
 		</div>
 
 		<div class="card p-2 pt-4 m-4 rounded shadow text-white"
-			style="max-width: 32rem; backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.5);"
-			id="report">
+			style="max-width: 32rem;background-color: white;" id="report">
 			<center>
 				<img src="https://cdn-icons-png.flaticon.com/512/1253/1253668.png" class="card-img-top" alt="..."
 					style="height: 40px; width: 40px">
 				<div class="card-body">
-					<h5 class="card-title">JEE Mains Predicted:</h5>
+					<h5 class="card-title" style="color: #4A148C;">JEE Mains Predicted:</h5>
 
-					<div class="alert alert-primary" role="alert">
+					<div class="alert" style="background-color: #E1BEE7; border-width: 2px; border-color: #4A148C; color: #4A148C;" role="alert">
 						<p class="card-text" id="percentilePre"></p>
 						<p class="card-text" id="rankPre"></p>
 					</div>
-					<div class="alert alert-primary" role="alert">
+					<div class="alert " style="background-color: #E1BEE7; border-width: 2px; border-color: #4A148C; color: #4A148C;" role="alert">
 						<p class="card-text" id="difficultyPre"></p>
 						<p class="card-text" id="marksPre"></p>
 					</div>
-					<div class="input-group mb-4" style="max-width: 32rem">
+					<br>
+					<div class="input-group mb-4" style="max-width: 32rem;">
 						<input type="text" class="form-control" placeholder="Enter your name here"
 							aria-describedby="basic-addon3" title="It is optional field." aria-label="name" id="name">
-						<button class="input-group-text bg-dark text-light" id="basic-addon3">Name</button>
+						<button class="input-group-text text-light" id="basic-addon3" style="background-color: #4A148C;">Name</button>
 					</div>
-					<br><br>
-					<p align="Justify" style="font-size: 12px;">
+					<p align="Justify" style="font-size: 12px;color: #CE93D8;">
 						Predicted rank is by assuming that <b>10,00,000</b> students have registered for the exam and
 						hence applying the formula given by NTA to predict rank: ((100 – P)/100)*N<br>Your Percentile:
 						P<br>Number of students registered for the exam: N<br>Here it have been assumed that 10,00,000
@@ -281,17 +186,17 @@ background-size:cover; background-position: center;">
 							aria-label="Marks" aria-describedby="basic-addon2"
 							title="If you know the actual number of candidates the write here." id="candidates"
 							value="1000000" oninput="score()" style="min-width: 200px">
-						<button class="input-group-text bg-dark text-light shadow" onclick="score()"
-							id="basic-addon2">Re-Predict</button>
+						<button class="input-group-text text-light shadow" onclick="score()"
+							id="basic-addon2"  style="background-color: #4A148C;">Re-Predict</button>
 					</div>
-					<p align="Justify" style="font-size: 12px;">
+					<p align="Justify" style="font-size: 12px;color: #CE93D8;">
 						<br><br><b>NOTICE:</b>
 						It is an approximate result based on previous years data. Actual result may vary from this
 						result. It just gives you an idea that approximately what your result can be.
 					</p>
 					<br>
 					<div class="container">
-						<div class="row">
+						<div class="row" style="color: #4A148C;">
 							<div class="col">
 								By-<br><b>Divastra JEE Rank Predictor</b>
 							</div>
@@ -303,62 +208,63 @@ background-size:cover; background-position: center;">
 				</div>
 			</center>
 		</div>
-		<br><br><br><br><br><br><br><br><br><br>
-		<div class="container shadow rounded bg-dark text-light p-0 text-center">
-			<br>
-			<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;"
-				href="https://divastra.github.io/index2" target="_blank">Divastra JEE App</a>
-			<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;"
-				href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
-				<a class="btn btn-primary p-2 px-4 m-2" style="border-radius: 200px;" href="https://divastra.github.io/career" target="_blank">Career</a>
-				<br><br>
-			<section class="m-4">
-				<!-- YouTube -->
-				<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank"
-					href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
-						class="bi bi-youtube text-danger" style="font-size: 1rem;"></i></a>
+		<hr style="margin: 80px;  color:#4A148C;">
+	<div class="container shadow text-light p-0 text-center" style="background-color: #6A1B9A; border-radius: 8px; margin-bottom: 80px;">
+		<br>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;" href="https://divastra.github.io/index2"
+			target="_blank">Divastra JEE App</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/privacy" target="_blank">Privacy Policy</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://merchant.razorpay.com/policy/KOPBTeKqAfSEZb/contact_us" target="_blank">Contact Us</a>
+		<br><br>
+		<section class="m-4">
+			<!-- YouTube -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
+					class="bi bi-youtube" style="font-size: 1rem;"></i></a>
 
-				<!-- Instagram -->
-				<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank"
-					href="https://www.instagram.com/prabhat_729/" role="button"><i class="bi bi-instagram text-warning"
-						style="font-size: 1rem;"></i></a>
+			<!-- Instagram -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.instagram.com/prabhat_729/" role="button"><i class="bi bi-instagram"
+					style="font-size: 1rem;"></i></a>
 
-				<!-- Facebook -->
-				<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank"
-					href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
-						class="bi bi-facebook text-warning" style="font-size: 1rem;"></i></a>
+			<!-- Facebook -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
+					class="bi bi-facebook" style="font-size: 1rem;"></i></a>
 
-				<!-- LinkedIn -->
-				<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank"
-					href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
-						class="bi bi-linkedin text-warning" style="font-size: 1rem;"></i></a>
+			<!-- LinkedIn -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
+					class="bi bi-linkedin" style="font-size: 1rem;"></i></a>
 
-				<!-- Twitter -->
-				<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank"
-					href="https://twitter.com/PycAnd" role="button"><i class="bi bi-twitter text-warning"
-						style="font-size: 1rem;"></i></a>
+			<!-- Twitter -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://twitter.com/PycAnd" role="button"><i class="bi bi-twitter"
+					style="font-size: 1rem;"></i></a>
 
-				<!-- Quora -->
-				<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank"
-					href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
-						class="bi bi-quora text-warning" style="font-size: 1rem;"></i></a>
+			<!-- Quora -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
+					class="bi bi-quora" style="font-size: 1rem;"></i></a>
 
-				<!-- Telegram -->
-				<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank"
-					href="https://telegram.me/prabhat_nit_jsr" role="button"><i class="bi bi-telegram text-warning"
-						style="font-size: 1rem;"></i></a>
+			<!-- Telegram -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://telegram.me/prabhat_nit_jsr" role="button"><i class="bi bi-telegram"
+					style="font-size: 1rem;"></i></a>
 
-				<!-- Website -->
-				<a class="btn btn-outline-primary btn-floating m-1" style="border-radius: 0.5rem;" target="_blank"
-					href="https://divastra.github.io" role="button"><i class="bi bi-globe2 text-warning"
-						style="font-size: 1rem;"></i></a>
-			</section>
-			<div class="text-center p-3" style="background-color: rgb(0, 0, 0);">
-				Owned and Managed by Prabhat Ranjan
-			</div>
+			<!-- Website -->
+			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
+				href="https://divastra.github.io" role="button"><i class="bi bi-globe2"
+					style="font-size: 1rem;"></i></a>
+		</section>
+		<div class="text-center p-3" style="background-color: #4a148c; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
+			Owned and Managed by Prabhat Ranjan
 		</div>
-
-		<br><br><br><br><br><br><br>
+	</div>
 		<script>
 
 
