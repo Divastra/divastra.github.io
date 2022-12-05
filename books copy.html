@@ -29,10 +29,28 @@
 	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
 	<style type="text/css">
 		@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+		* {
+			-webkit-user-select: none;
+			/* Safari */
+			-ms-user-select: none;
+			/* IE 10 and IE 11 */
+			user-select: none;
+			/* Standard syntax */
+			-webkit-user-drag: none;
+			-khtml-user-drag: none;
+			-moz-user-drag: none;
+			-o-user-drag: none;
+		}
+
 		html,
 		body {
 			margin: 0;
 			padding: 0
+		}
+
+		a {
+			text-decoration: none;
 		}
 
 		.nav-item {
@@ -45,8 +63,8 @@
 			background-color: #BA68C8;
 		}
 
-		
-		.buton{
+
+		.buton {
 			background-color: #4A148C;
 			color: #f3e5f5;
 			transition: 0s;
@@ -54,13 +72,30 @@
 			border-width: 1px;
 			border-color: #4A148C;
 		}
-		.buton:hover{
+
+		.buton:hover {
 			background-color: #f3e5f5;
 			color: #4A148C;
 		}
-		.buton:focus{
+
+		.buton:focus {
 			background-color: #f3e5f5;
 			color: #4A148C;
+		}
+
+
+
+		.filterDiv {
+			display: none;
+		}
+
+		.show {
+			display: block;
+		}
+
+		.container {
+			margin-top: 20px;
+			overflow: hidden;
 		}
 	</style>
 	<script>
@@ -111,7 +146,9 @@
 							<p class="textAbove" style="color:#f3e5f5;">Books Library</p>
 						</h1>
 					</div>
-					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Books have always been the best source to study. Divastra understands it. So scroll down to explore the collection of Divastra JEE books library.</p>
+					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Books have always been
+						the best source to study. Divastra understands it. So scroll down to explore the collection of
+						Divastra JEE books library.</p>
 				</div>
 			</div>
 		</section>
@@ -123,253 +160,241 @@
 		</a>
 	</div>
 
-
-	<div class="container" id="content">
-		<br><br><br><br>
+	<div class="container">
 		<div class="row">
-			
 			<div class="col m-4">
-				<center class="rounded shadow"style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0; padding:0">
-					<div class="card p-2 pt-4"
-						style="background-color: rgb(255, 255, 255); border-width: 0;">
-						<center>
-							<img src="https://cdn-icons-png.flaticon.com/512/4295/4295897.png" class="card-img-top"
-								alt="..." style="height: 40px; width: 40px">
-							<div class="card-body">
-								<h5 class="card-title" style="color: #4A148C;">JEE Revision</h5>
-								<a class="btn buton mt-3" data-bs-toggle="collapse" href="#collapseRevision"
-									role="button" aria-expanded="false" aria-controls="collapseRevision">Revise</a>
-							</div>
+				<center class="rounded shadow"
+					style="background-color: rgb(255, 255, 255); border-width: 0; padding:0;">
+					<a data-bs-toggle="collapse" href="#collapseRevision" role="button" aria-expanded="false"
+						aria-controls="collapseRevision"">
+						<div class=" card" style="width:200px;background-color: rgb(255, 255, 255); border-width: 0;">
+						<center class="m-3" style="color: #4A148C; font-weight: bolder;">
+							Select Subject
 						</center>
-					</div>
-					<div class="collapse" id="collapseRevision">
-						<div class="card card-body"
-							style="background-color: rgb(255, 255, 255); border-width: 0;">
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://www.resonance.ac.in/sc/post/attachment/(2232)-gyan-sutra-p.pdf"
-											class="text-decoration-none" target="blank">Physics (Resonance)</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://www.resonance.ac.in/sc/post/attachment/(968)-chemistry-gyan-sutra-jee-main.pdf"
-											class="text-decoration-none" target="blank">Chemistry (Resonance)</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://www.resonance.ac.in/sc/post/attachment/(969)-maths-gyaan-sutra-jee-main.pdf"
-											class="text-decoration-none" target="blank">Mathematics (Resonance)</a>
-									</p>
-								</li>
-								<li class="list-group-item" style="background-color: #E0F2F1;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1h2NqwPAU20-QjinHtwAI-r6TylMYCj3A/view"
-											class="text-decoration-none" target="blank">Physics (5 Pages)</a>
-									</p>
-								</li>
-							</ul>
+			</div>
+			</a>
+			<div class="collapse" id="collapseRevision">
+				<div class="card card-body pt-0" style="background-color: rgb(255, 255, 255); border-width: 0;">
+					<hr>
+					<ul class="list-group" style="list-style-type: none;">
+						<li class="p-2">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+								<label class="form-check-label float-start" for="flexCheckDefault1">
+									Physics
+								</label>
+							</div>
+						</li>
+						<li class="p-2">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+								<label class="form-check-label float-start" for="flexCheckDefault2">
+									Chemistry
+								</label>
+							</div>
+						</li>
+						<li class="p-2">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+								<label class="form-check-label float-start" for="flexCheckDefault3">
+									Mathematics
+								</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			</center>
+		</div>
+		<div class="col m-4">
+			<center class="rounded shadow" style="background-color: rgb(255, 255, 255); border-width: 0; padding:0;">
+				<a data-bs-toggle="collapse" href="#collapseRevision" role="button" aria-expanded="false"
+					aria-controls="collapseRevision"">
+						<div class=" card" style="width:200px;background-color: rgb(255, 255, 255); border-width: 0;">
+					<center class="m-3" style="color: #4A148C; font-weight: bolder;">
+						Select Subject
+					</center>
+		</div>
+		</a>
+		<div class="collapse" id="collapseRevision">
+			<div class="card card-body pt-0" style="background-color: rgb(255, 255, 255); border-width: 0;">
+				<hr>
+				<ul class="list-group" style="list-style-type: none;">
+					<li class="p-2">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+							<label class="form-check-label float-start" for="flexCheckDefault1">
+								Physics
+							</label>
 						</div>
-					</div>
+					</li>
+					<li class="p-2">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+							<label class="form-check-label float-start" for="flexCheckDefault2">
+								Chemistry
+							</label>
+						</div>
+					</li>
+					<li class="p-2">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+							<label class="form-check-label float-start" for="flexCheckDefault3">
+								Mathematics
+							</label>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</center>
+	</div>
+	</div>
+	</div>
+
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col filterDiv book arihant physics" style="margin: 0px 40px 80px 40px;">
+				<center>
+					<a href="https://amzn.to/3GSB0XB" target="_blank">
+						<div class="card shadow text-white"
+							style="width: 200px;background-color: rgb(255, 255, 255); border-width: 0;">
+							<center>
+								<img src="https://m.media-amazon.com/images/I/51HLIzx9Q4L._SX698_BO1,204,203,200_.jpg"
+									alt=""
+									style="width: 200px; border-top-left-radius: 6px; border-top-right-radius: 6px;">
+								<div class="card-body">
+									<h6 class="card-title" style="color: #4a148c;">CBSE Physics Chapterwise Solved
+										Papers Class 12th for 2023 Exam</h5>
+								</div>
+								<button
+									style="background-color: #4a148c; color: #f3e5f5; padding: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; width: 200px;">Buy
+									Now (Amazon)</button>
+							</center>
+						</div>
+					</a>
 				</center>
 			</div>
-			<div class="col m-4">
-				<center class="rounded shadow"style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0; padding:0">
-					<div class="card p-2 pt-4"
-						style="background-color: rgb(255, 255, 255); border-width: 0;">
-						<center>
-							<img src="https://cdn-icons-png.flaticon.com/512/4295/4295897.png" class="card-img-top"
-								alt="..." style="height: 40px; width: 40px">
-							<div class="card-body">
-								<h5 class="card-title" style="color: #4A148C;">Class 12 Revision</h5>
-								<a class="btn buton mt-3" data-bs-toggle="collapse" href="#collapseRevision12"
-									role="button" aria-expanded="false" aria-controls="collapseRevision12">Revise</a>
-							</div>
-						</center>
-					</div>
-					<div class="collapse" id="collapseRevision12">
-						<div class="card card-body"
-							style="background-color: rgb(255, 255, 255); border-width: 0;">
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1mASWoN8rKiZlK7cqlZ_LXI69cgtxdmkU"
-											class="text-decoration-none" target="blank">Physics</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1_VWN0U_w-Bhmp6MoFMaTNov2CtEX8NAZ"
-											class="text-decoration-none" target="blank">Chemistry</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1KKzw7V9WjrvHfLU50-gj7XIcjwlH4ZfE"
-											class="text-decoration-none" target="blank">Mathematics</a>
-									</p>
-								</li>
-								
-							</ul>
+			<div class="col filterDiv book arihant chemistry" style="margin: 0px 40px 80px 40px;">
+				<center>
+					<a href="https://amzn.to/3GRbulD" target="_blank">
+						<div class="card shadow text-white"
+							style="width: 200px;background-color: rgb(255, 255, 255); border-width: 0;">
+							<center>
+								<img src="https://m.media-amazon.com/images/I/51Y1GAHbTSL._SX698_BO1,204,203,200_.jpg"
+									alt=""
+									style="width: 200px; border-top-left-radius: 6px; border-top-right-radius: 6px;">
+								<div class="card-body">
+									<h6 class="card-title" style="color: #4a148c;">CBSE Chemistry Chapterwise Solved
+										Papers Class 12th for 2023 Exam</h5>
+								</div>
+								<button
+									style="background-color: #4a148c; color: #f3e5f5; padding: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; width: 200px;">Buy
+									Now (Amazon)</button>
+							</center>
 						</div>
-					</div>
+					</a>
 				</center>
 			</div>
-			<div class="col m-4">
-				<center class="rounded shadow"style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0; padding:0">
-					<div class="card p-2 pt-4 text-white"
-					style="background-color: rgb(255, 255, 255); border-width: 0;">
-						<center>
-							<img src="https://cdn-icons-png.flaticon.com/512/1467/1467445.png" class="card-img-top"
-								alt="..." style="height: 40px; width: 40px">
-							<div class="card-body">
-								<h5 class="card-title" style="color: #4A148C;">JEE Mains DPP</h5>
-								<a class="btn buton mt-3" data-bs-toggle="collapse" href="#collapseDPP" role="button"
-									aria-expanded="false" aria-controls="collapseDPP">Practice</a>
-							</div>
-						</center>
-					</div>
-					<div class="collapse" id="collapseDPP">
-						<div class="card card-body"
-						style="background-color: rgb(255, 255, 255); border-width: 0;">
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1Qcg1oLezsbUSsTvp_zYEPUcc7BDNyhRt/view"
-											class="text-decoration-none" target="blank">Physics DPP</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1qaPLdCmFVnYMgw8QbpeeSiWarBFmRpE7/view"
-											class="text-decoration-none" target="blank">Chemistry DPP</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1WYtJS2jDw_QDOmsAYBq8t-YvpIElmgvE/view"
-											class="text-decoration-none" target="blank">Mathematics DPP</a></p>
-								</li>
-							</ul>
+			<div class="col filterDiv book arihant mathematics" style="margin: 0px 40px 80px 40px;">
+				<center>
+					<a href="https://amzn.to/3VCik2i" target="_blank">
+						<div class="card shadow text-white"
+							style="width: 200px;background-color: rgb(255, 255, 255); border-width: 0;">
+							<center>
+								<img src="https://m.media-amazon.com/images/I/611Gv6FjP7L._SX698_BO1,204,203,200_.jpg"
+									alt=""
+									style="width: 200px; border-top-left-radius: 6px; border-top-right-radius: 6px;">
+								<div class="card-body">
+									<h6 class="card-title" style="color: #4a148c;">CBSE Mathematics Chapterwise Solved
+										Papers Class 12th for 2023 Exam</h5>
+								</div>
+								<button
+									style="background-color: #4a148c; color: #f3e5f5; padding: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; width: 200px;">Buy
+									Now (Amazon)</button>
+							</center>
 						</div>
-					</div>
-				</center>
-			</div>
-			<div class="col m-4">
-				<center class="rounded shadow"style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0; padding:0">
-					<div class="card p-2 pt-4 text-white"
-					style="background-color: rgb(255, 255, 255); border-width: 0;">
-						<center>
-							<img src="https://cdn-icons-png.flaticon.com/512/887/887997.png" class="card-img-top"
-								alt="..." style="height: 40px; width: 40px">
-							<div class="card-body">
-								<h5 class="card-title" style="color: #4A148C;">JEE Mains PYQ</h5>
-								<a class="btn buton mt-3" data-bs-toggle="collapse" href="#collapsePYQ" role="button"
-									aria-expanded="false" aria-controls="collapsePYQ">Solve</a>
-							</div>
-						</center>
-					</div>
-					<div class="collapse" id="collapsePYQ">
-						<div class="card card-body"
-						style="background-color: rgb(255, 255, 255); border-width: 0;">
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1G51o8x4xtreks5GV3bNAMT2y61C1hx8X/view"
-											class="text-decoration-none" target="blank">Physics 41 Years Arihant</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1QxjYeauaI18xvZ36qloDz9ikIjFxXkPh/view"
-											class="text-decoration-none" target="blank">Chemistry 41 Years Arihant</a>
-									</p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1BGkca6lKW_NWMQ-9WIFx8ydUIKUM-bfq/view"
-											class="text-decoration-none" target="blank">Mathematics 41 Years Arihant</a>
-									</p>
-								</li>
-								<li class="list-group-item" style="background-color: #E0F2F1;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/15vxvj9RGo6sPlU9HNqsdzMHAnjGfeR6M/view"
-											class="text-decoration-none" target="blank">Physics 71 Years Disha</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #E0F2F1;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1JbeFo7A0Cd2Nw54YZRXN3ok0T_5EsI28/view"
-											class="text-decoration-none" target="blank">Chemistry 71 Years Disha</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #E0F2F1;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1rNQSPCMqfCQ9QE3hotk7cUfb4QpXbjmZ/view"
-											class="text-decoration-none" target="blank">Mathematics 71 Years Disha</a>
-									</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</center>
-			</div>
-			<div class="col m-4">
-				<center class="rounded shadow"style="min-width: 200px;background-color: rgb(255, 255, 255); border-width: 0; padding:0">
-					<div class="card p-2 pt-4 text-white"
-					style="background-color: rgb(255, 255, 255); border-width: 0;">
-						<center>
-							<img src="https://cdn-icons-png.flaticon.com/512/887/887997.png" class="card-img-top"
-								alt="..." style="height: 40px; width: 40px">
-							<div class="card-body">
-								<h5 class="card-title" style="color: #4A148C;">JEE Advanced PYQ</h5>
-								<a class="btn buton mt-3" data-bs-toggle="collapse" href="#collapsePYQa" role="button"
-									aria-expanded="false" aria-controls="collapsePYQa">Solve</a>
-							</div>
-						</center>
-					</div>
-					<div class="collapse" id="collapsePYQa">
-						<div class="card card-body"
-						style="background-color: rgb(255, 255, 255); border-width: 0;">
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1G51o8x4xtreks5GV3bNAMT2y61C1hx8X/view"
-											class="text-decoration-none" target="blank">Physics 41 Years Arihant</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1QxjYeauaI18xvZ36qloDz9ikIjFxXkPh/view"
-											class="text-decoration-none" target="blank">Chemistry 41 Years Arihant</a>
-									</p>
-								</li>
-								<li class="list-group-item" style="background-color: #EDE7F6;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1BGkca6lKW_NWMQ-9WIFx8ydUIKUM-bfq/view"
-											class="text-decoration-none" target="blank">Mathematics 41 Years Arihant</a>
-									</p>
-								</li>
-								<li class="list-group-item" style="background-color: #E0F2F1;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1NuigN7M5NnSi4gBr-AqN9q1p4OHbfbL8/view"
-											class="text-decoration-none" target="blank">Physics 43 Years Disha</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #E0F2F1;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1w6_p2Sy0Tv7cGBywDZR6nkhPu_YXn9Ur/view"
-											class="text-decoration-none" target="blank">Chemistry 43 Years Disha</a></p>
-								</li>
-								<li class="list-group-item" style="background-color: #E0F2F1;">
-									<p align="Justify"><a
-											href="https://drive.google.com/file/d/1PypygeDNtOW_ESSDC7x9oZbFNYnoFnBy/view"
-											class="text-decoration-none" target="blank">Mathematics 43 Years Disha</a>
-									</p>
-								</li>
-							</ul>
-						</div>
-					</div>
+					</a>
 				</center>
 			</div>
 		</div>
 	</div>
-	
+
+
+	<div id="myBtnContainer">
+		<button class="btn" onclick="filterSelection('all')"> Show all</button>
+		<button class="btn" onclick="filterSelection('cars')"> Cars</button>
+		<button class="btn" onclick="filterSelection('animals')"> Animals</button>
+		<button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+		<button class="btn" onclick="filterSelection('colors')"> Colors</button>
+	</div>
+
+
+	<script>
+		filterSelections("all")
+		function filterSelections(c) {
+			var x;
+			x = document.getElementsByClassName("filterDiv");
+			if (c == "all") {
+				for (let i = 0; i < x.length; i++) {
+					x[i].style.display = "block";
+				}
+			}
+		}
+	</script>
+
+	<script>
+		filterSelectio("all")
+		function filterSelection(c) {
+			var x, i;
+			x = document.getElementsByClassName("filterDiv");
+			if (c == "all") c = "";
+			for (i = 0; i < x.length; i++) {
+				w3RemoveClass(x[i], "show");
+				if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+			}
+		}
+
+		function w3AddClass(element, name) {
+			var i, arr1, arr2;
+			arr1 = element.className.split(" ");
+			arr2 = name.split(" ");
+			for (i = 0; i < arr2.length; i++) {
+				if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+			}
+		}
+
+		function w3RemoveClass(element, name) {
+			var i, arr1, arr2;
+			arr1 = element.className.split(" ");
+			arr2 = name.split(" ");
+			for (i = 0; i < arr2.length; i++) {
+				while (arr1.indexOf(arr2[i]) > -1) {
+					arr1.splice(arr1.indexOf(arr2[i]), 1);
+				}
+			}
+			element.className = arr1.join(" ");
+		}
+
+		// Add active class to the current button (highlight it)
+		var btnContainer = document.getElementById("myBtnContainer");
+		var btns = btnContainer.getElementsByClassName("btn");
+		for (var i = 0; i < btns.length; i++) {
+			btns[i].addEventListener("click", function () {
+				var current = document.getElementsByClassName("active");
+				current[0].className = current[0].className.replace(" active", "");
+				this.className += " active";
+			});
+		}
+	</script>
+
 	<div class="shadow text-light p-0 text-center" style="background-color: #6A1B9A;margin-top: 80px;">
 		<br>
-		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;" href="https://divastra.github.io/index2"
-			target="_blank">Divastra JEE App</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://divastra.github.io/index2" target="_blank">Divastra JEE App</a>
 		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
 			href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
 		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
@@ -380,8 +405,8 @@
 		<section class="m-4">
 			<!-- YouTube -->
 			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-				href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
-					class="bi bi-youtube" style="font-size: 1rem;"></i></a>
+				href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i class="bi bi-youtube"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- Instagram -->
 			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
@@ -390,13 +415,13 @@
 
 			<!-- Facebook -->
 			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-				href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i
-					class="bi bi-facebook" style="font-size: 1rem;"></i></a>
+				href="https://www.facebook.com/profile.php?id=100076517252583" role="button"><i class="bi bi-facebook"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- LinkedIn -->
 			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-				href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i
-					class="bi bi-linkedin" style="font-size: 1rem;"></i></a>
+				href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i class="bi bi-linkedin"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- Twitter -->
 			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
@@ -405,8 +430,8 @@
 
 			<!-- Quora -->
 			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-				href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i
-					class="bi bi-quora" style="font-size: 1rem;"></i></a>
+				href="https://www.quora.com/profile/Prabhat-Ranjan-427" role="button"><i class="bi bi-quora"
+					style="font-size: 1rem;"></i></a>
 
 			<!-- Telegram -->
 			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
@@ -422,6 +447,38 @@
 			Owned and Managed by Prabhat Ranjan
 		</div>
 	</div>
+
+	<script>
+		window.oncontextmenu = function () {
+			rightc();
+			return false;     // cancel default menu
+		}
+		function rightc() {
+			if (navigator.share) {
+				navigator.share({
+
+					// Title that occurs over
+					// web share dialog
+					title: 'GeeksForGeeks',
+
+					// URL to share
+					url: 'https://geeksforgeeks.org'
+				}).then(() => {
+					console.log('Thanks for sharing!');
+				}).catch(err => {
+
+					// Handle errors, if occured
+					console.log(
+						"Error while using Web share API:");
+					console.log(err);
+				});
+			} else {
+
+				// Alerts user if API not available 
+				alert("Browser doesn't support this API !");
+			}
+		}
+	</script>
 </body>
 
 </html>
