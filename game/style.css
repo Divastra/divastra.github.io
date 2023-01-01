@@ -1,0 +1,50 @@
+/* Add your CSS styles here */
+
+/* Style the leaderboard table */
+table {
+    width: 100%;
+  }
+  
+  /* Style the feedback boxes */
+  .feedbackBox {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    display: inline-block;
+  }
+  
+  /* Style the red feedback boxes */
+  .feedbackBox.red {
+    background-color: red;
+  }
+  
+  /* Style the green feedback box */
+  .feedbackBox.green {
+    background-color: green;
+  }
+  
+  /* Style the timer container */
+  #timerContainer {
+    margin-bottom: 20px;
+  }
+  
+  /* Style the game container */
+  #gameContainer {
+    margin-bottom: 20px;
+  }
+  
+  /* Style the guess input field */
+  #guessInput {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  /* Style the feedback container */
+  #feedbackContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  

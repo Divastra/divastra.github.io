@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add your CSS styles here */
+  </style>
+  <script>
+    // Add your JavaScript code here
+  </script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Game Leaderboard</h1>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Instagram ID</th>
+              <th>Time (seconds)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Add table rows for each player here -->
+            <tr>
+              <td id="1r">1</td>
+              <td id="1n">wait</td>
+              <td id="1i">wait</td>
+              <td id="1t">wait</td>
+            </tr>
+            <tr>
+              <td id="2r">2</td>
+              <td id="2n">wait</td>
+              <td id="2i">wait</td>
+              <td id="2t">wait</td>
+            </tr>
+            <tr>
+              <td id="3r">3</td>
+              <td id="3n">wait</td>
+              <td id="3i">wait</td>
+              <td id="3t">wait</td>
+            </tr>
+            <tr>
+              <td id="4r">4</td>
+              <td id="4n">wait</td>
+              <td id="4i">wait</td>
+              <td id="4t">wait</td>
+            </tr>
+            <tr>
+              <td id="5r">5</td>
+              <td id="5n">wait</td>
+              <td id="5i">wait</td>
+              <td id="5t">wait</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button id="startGameButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#gameModal">Start Game</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="gameModalLabel">Game</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                   <div id="timerContainer">
+            <p>Time elapsed: <span id="timer">0</span> seconds</p>
+          </div>
+          <div id="messageContainer">
+            <!-- Add witty messages here -->
+          </div>
+          <div id="gameContainer">
+            <input type="text" id="guessInput" oninput="checkGuess()">
+            <div id="feedbackContainer">
+              <div id="lessThan" class="feedbackBox"></div>
+              <div id="equalTo" class="feedbackBox"></div>
+              <div id="greaterThan" class="feedbackBox"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <form id="playerForm" style="display: none;">
+            <div class="form-group">
+              <label for="nameInput">Name:</label>
+              <input type="text" class="form-control" id="nameInput">
+            </div>
+            <div class="form-group">
+              <label for="instagramInput">Instagram ID:</label>
+              <input type="text" class="form-control" id="instagramInput">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="whatsappButton" class="btn btn-success" style="display: none;">Share on WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
