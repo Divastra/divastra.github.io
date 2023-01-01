@@ -11,19 +11,45 @@ firebase.initializeApp({
   measurementId: "G-G3GMJJ3RWC"
   });
 
-  const playersRef = firebase.database();
+  var a=[0,0,0,0,0];
+
+  var playersRef = firebase.database().ref("guess");
+  const playersRe = firebase.database();
   playersRef.on('value', (snapshot) => {
     const data1 = snapshot.child("1").val();
     const data2 = snapshot.child("2").val();
     const data3 = snapshot.child("3").val();
     const data4 = snapshot.child("4").val();
     const data5 = snapshot.child("5").val();
+    document.getElementById("1n").innerHTML=data1.name;
     document.getElementById("1i").innerHTML=data1.instagramId;
+    document.getElementById("1t").innerHTML=data1.time;
+    document.getElementById("2n").innerHTML=data2.name;
+    document.getElementById("2i").innerHTML=data2.instagramId;
+    document.getElementById("2t").innerHTML=data2.time;
+    document.getElementById("3n").innerHTML=data3.name;
+    document.getElementById("3i").innerHTML=data3.instagramId;
+    document.getElementById("3t").innerHTML=data3.time;
+    document.getElementById("4n").innerHTML=data4.name;
+    document.getElementById("4i").innerHTML=data4.instagramId;
+    document.getElementById("4t").innerHTML=data4.time;
+    document.getElementById("5n").innerHTML=data5.name;
+    document.getElementById("5i").innerHTML=data5.instagramId;
+    document.getElementById("5t").innerHTML=data5.time;
+    console.log(data1.instagramId);
+    a[0]=parseFloat(data1.time);
+    a[1]=parseFloat(data2.time);
+    a[2]=parseFloat(data3.time);
+    a[3]=parseFloat(data4.time);
+    a[4]=parseFloat(data5.time);
+    document.getElementById("startGameButton").disabled=false;
+    document.getElementById("startGameButton").innerText="Start Game";
+    console.log(a);
   });
 
 // Generate a random number between -100000 and 100000
 const randomNumber = Math.floor(Math.random() * 100001);
-alert(randomNumber);
+console.log(randomNumber);
 
 
 // Initialize player rank variable
@@ -53,6 +79,8 @@ const lessThanBox = document.getElementById('lessThan');
 const equalToBox = document.getElementById('equalTo');
 const greaterThanBox = document.getElementById('greaterThan');
 
+
+
 // Check guess and update feedback boxes
 function checkGuess() {
     const guess = document.getElementById('guessInput').value;
@@ -80,7 +108,8 @@ function checkGuess() {
 
         //playerRank = setPlayerRank(timer);
         // Player has made it onto the leaderboard
-        playerForm.style.display = 'block';
+        if(parseFloat(document.getElementById('timer').innerText)<a[4])
+            playerForm.style.display = 'block';
         whatsappButton.style.display = 'block';
     }
 }
@@ -91,15 +120,40 @@ playerForm.addEventListener('submit', function (event) {
     event.preventDefault();
     const name = document.getElementById('nameInput').value;
     const instagramId = document.getElementById('instagramInput').value;
-    const time = parseInt(document.getElementById('timer').innerText);
+    const time = parseFloat(document.getElementById('timer').innerText);
+    var refr="1";
+    if(time<a[0])
+    {
+        refr="1";
+    }
+    else if(time<a[1])
+    {
+        refr="2";
+    }
+    else if(time<a[2])
+    {
+        refr="3";
+    }
+    else if(time<a[3])
+    {
+        refr="4";
+    }
+    else if(time<a[4])
+    {
+        refr="5";
+    }
+    else
+    {
+        return 0;
+    }
     const player = {
         name: name,
         instagramId: instagramId,
         time: time
       };
       // Write player to database
-  playersRef.set(player);
-    alert("saved")
+  playersRe.ref('guess/'+refr).set(player);
+    alert("saved");
 
     // Add player's data to the CSV file and update the leaderboard
 
