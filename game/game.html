@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +20,7 @@
     // Add your JavaScript code here
   </script>
 </head>
+
 <body>
   <div class="container-fluid">
     <div class="row">
@@ -71,26 +73,28 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <button id="startGameButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#gameModal" disabled>Wait for the game to start</button>
+        <button id="startGameButton" onclick="gamecontain()" type="button" class="btn btn-primary" disabled>Wait for the game to start</button>
+        <button id="REstartGameButton" onclick="location.reload()" type="button" class="btn btn-primary" style="display: none;">Restart Game</button>
       </div>
     </div>
   </div>
   <!-- Modal -->
-  <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="gameModalLabel">Game</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="location.reload();">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-                   <div id="timerContainer">
+          <div id="timerContainer">
             <p>Time elapsed: <span id="timer">0</span> seconds</p>
           </div>
           <div id="messageContainer">
-            <!-- Add witty messages here -->
+             Add witty messages here 
           </div>
           <div id="gameContainer">
             <input type="text" id="guessInput" oninput="checkGuess()">
@@ -113,13 +117,45 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" id="whatsappButton" class="btn btn-success" style="display: none;">Share on WhatsApp</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+            onclick="location.reload();">Close</button>
+          <button type="button" id="whatsappButton" class="btn btn-success" style="display: none;">Share on
+            WhatsApp</button>
         </div>
       </div>
     </div>
+  </div> -->
+  <div id="gamecontainer" style="display: none; margin:24px; padding: 8px; border-color: green; border-radius: 8px; border-width: 4px; border-style: groove;">
+    <div id="timerContainer">
+      <p>Time elapsed: <span id="timer">0</span> seconds</p>
+    </div>
+    <div id="messageContainer">
+      <!-- Add witty messages here -->
+    </div>
+    <div id="gameContainer">
+      <div id="feedbackContainer" class="row">
+        <div id="lessThan" class="col feedbackBox" style="background-color: #FFEBEE;"><center>SMALL</center></div>
+        <div id="equalTo" class="col feedbackBox" style="background-color: #E8F5E9;"><center>CORRECT</center></div>
+        <div id="greaterThan" class="col feedbackBox" style="background-color: #FFEBEE;"><center>BIG</center></div>
+      </div>
+      <input type="text" id="guessInput" oninput="checkGuess()" placeholder="Guess the number">
+      
+    </div>
+    <form id="playerForm" style="display: none;">
+      <div class="form-group">
+        <label for="nameInput">Name:</label>
+        <input type="text" class="form-control" id="nameInput">
+      </div>
+      <div class="form-group">
+        <label for="instagramInput">Instagram ID:</label>
+        <input type="text" class="form-control" id="instagramInput">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <button type="button" id="whatsappButton" class="btn btn-success" style="display: none;">Share on WhatsApp</button>
   </div>
+
   <script src="script.js"></script>
 </body>
-</html>
 
+</html>

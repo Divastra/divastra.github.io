@@ -7,10 +7,12 @@ table {
   
   /* Style the feedback boxes */
   .feedbackBox {
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+    border: 2px solid black;
     display: inline-block;
+    margin: 16px;
+    border-radius: 4px;
+    padding: 8px;
+    color: white;
   }
   
   /* Style the red feedback boxes */
