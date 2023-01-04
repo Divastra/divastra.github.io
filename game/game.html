@@ -73,8 +73,10 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <button id="startGameButton" onclick="gamecontain()" type="button" class="btn btn-primary" disabled>Wait for the game to start</button>
-        <button id="REstartGameButton" onclick="location.reload()" type="button" class="btn btn-primary" style="display: none;">Restart Game</button>
+        <button id="startGameButton" onclick="gamecontain()" type="button" class="btn btn-primary" disabled>Wait for the
+          game to start</button>
+        <button id="REstartGameButton" onclick="location.reload()" type="button" class="btn btn-primary"
+          style="display: none;">Restart Game</button>
       </div>
     </div>
   </div>
@@ -125,21 +127,49 @@
       </div>
     </div>
   </div> -->
-  <div id="gamecontainer" style="display: none; margin:24px; padding: 8px; border-color: green; border-radius: 8px; border-width: 4px; border-style: groove;">
+  <div id="gamecontainer"
+    style="display: none; margin:24px; padding: 8px; border-color: green; border-radius: 8px; border-width: 4px; border-style: groove;">
+        <div id="messageContainer">
+      Divastra have guessed a number. Now you have to guess that number. Type your guessed number in the place given
+      below. Divastra will help you by glowing one of these 3 boxes:
+      <ul>
+        <li>
+          Left Red Box: Your number is smaller than actual number
+        </li>
+        <li>
+          Green Box: Your guessed the actual number
+        </li>
+        <li>
+          Right Red Box: Your number is bigger than actual number
+        </li>
+      </ul>
+    </div>
+    <hr>
+    
+    <center style="font-weight: 800;">
+      <div>
+        <p><span id="witty">Timer will start once you start typing something</span><span id="loading"></span></p>
+        
+      </div>
+    </center>
+    <hr>
     <div id="timerContainer">
       <p>Time elapsed: <span id="timer">0</span> seconds</p>
     </div>
-    <div id="messageContainer">
-      <!-- Add witty messages here -->
-    </div>
     <div id="gameContainer">
       <div id="feedbackContainer" class="row">
-        <div id="lessThan" class="col feedbackBox" style="background-color: #FFEBEE;"><center>SMALL</center></div>
-        <div id="equalTo" class="col feedbackBox" style="background-color: #E8F5E9;"><center>CORRECT</center></div>
-        <div id="greaterThan" class="col feedbackBox" style="background-color: #FFEBEE;"><center>BIG</center></div>
+        <div id="lessThan" class="col feedbackBox" style="background-color: #FFEBEE;">
+          <center>SMALL</center>
+        </div>
+        <div id="equalTo" class="col feedbackBox" style="background-color: #E8F5E9;">
+          <center>CORRECT</center>
+        </div>
+        <div id="greaterThan" class="col feedbackBox" style="background-color: #FFEBEE;">
+          <center>BIG</center>
+        </div>
       </div>
-      <input type="number" id="guessInput" oninput="checkGuess()" placeholder="Guess the number">
-      
+      <input type="number" id="guessInput" oninput="checkGuess()" placeholder="Guess the number" autocomplete="off">
+
     </div>
     <form id="playerForm" style="display: none;">
       <div class="form-group">
