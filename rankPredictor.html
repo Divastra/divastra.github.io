@@ -218,7 +218,7 @@
 						<input type="number" class="form-control shadow" placeholder="Number of candidates"
 							aria-label="Marks" aria-describedby="basic-addon2"
 							title="If you know the actual number of candidates the write here." id="candidates"
-							value="1000000" oninput="score()" style="min-width: 200px">
+							value="1230000" oninput="score()" style="min-width: 200px">
 						<button class="input-group-text text-light shadow" onclick="score()" id="basic-addon2"
 							style="background-color: #4A148C;">Re-Predict</button>
 					</div>
@@ -327,8 +327,8 @@
 				var buttonClass2 = document.getElementById("basic-addon2").classList;
 
 				if (document.getElementById('candidates').value == "" || document.getElementById('candidates').value == null) {
-					document.getElementById('candidates').value = "1000000";
-					n = 1000000;
+					document.getElementById('candidates').value = "1230000";
+					n = 1230000;
 				}
 
 				if (difficulty === "Very Easy") {
