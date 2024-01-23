@@ -128,6 +128,7 @@
 			</div>
 		</div>
 	</nav>
+	
 	<div style="height: 100vh;background-color:#4A148C; padding-top: 64px;">
 		<section class="py-5 text-center container">
 			<div class="row mx-4">
@@ -155,8 +156,31 @@
 		</a>
 	</div>
 
+	<center>
+		<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false" style="margin-top: 80px;">
+			<div class="toast-header">
+			  <img src="https://cdn-icons-png.flaticon.com/128/12744/12744435.png" style="width: 20px; height: 20px;" class="rounded me-2" alt="...">
+			  <strong class="me-auto">Did you know?</strong>
+			  <small>New</small>
+			  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body" align="left" style="background-color: #ede6fc; font-size: 13px; color: #4A148C;">
+			  We have launched JoSAA/CSAB counselling to help you to make final preference order of IIT/NIT/IIIT/GFTI/IIEST Shibpur colleges and their branches.
+			  <br><br>
+			  <a href="collegecounselling.html" class="btn btn-primary">Know more</a>
+				<br>
+			</div>
+		  </div>
+		</center>
+  <script>
+	var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+  var toastList = toastElList.map(function(toastEl) {
+    return new bootstrap.Toast(toastEl)
+  })
+  toastList.forEach(toast => toast.show())
+  </script>
 
-	<center style="padding-top: 120px;" id="content">
+	<center style="padding-top: 100px;" id="content">
 
 		<h2 style="color: #4A148C;">JEE Mains Marks vs Percentile vs Rank Predictor</h2>
 		<h4 style="color: #4A148C;">(JEE Mains 2024 1st Attempt)</h4>
