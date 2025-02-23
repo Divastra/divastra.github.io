@@ -293,9 +293,10 @@
 				</div>
 				<div class="toast-body" align="left"
 					style="background-color: #ede6fc; font-size: 13px; color: #4A148C;">
-					We have launched counselling to help you in JoSAA/CSAB choice filling, Class 10, 12, IIT JEE
-					preparation, choosing best engineering college, engineering college life, or anything related
-					similar to it in student life.
+					We are excited to announce the launch of our extensive counseling services! Get personalized
+					guidance for Class 10 & Below, Class 11, 12 Boards, IIT JEE, Engineering College Admission, and
+					Engineering College Guidance & Placement Preparation. Join our mentorship programs and take the next
+					step towards your academic success!
 					<br><br>
 					<a href="counselling.html" class="btn btn-primary">Know more</a>
 					<br>
@@ -439,7 +440,7 @@
 		</div>
 	</div>
 
-	<div style="padding: 32px; color: #ab78b4;">
+	<div style="padding: 32px; color: #ab78b4; display: none">
 		<h2>
 			Your Ultimate Destination for IIT JEE Preparation and Engineering
 		</h2>
@@ -1177,6 +1178,42 @@
 		}
 		// start animation
 		playAnim()
+	</script>
+
+	<script>
+		// Disable zoom using keyboard shortcuts (Ctrl +, Ctrl -, Ctrl + Mouse Wheel)
+		document.addEventListener("keydown", function (event) {
+			if (
+				event.ctrlKey &&
+				(event.key === "=" || event.key === "-" || event.key === "0")
+			) {
+				event.preventDefault();
+			}
+		});
+
+		// Disable zoom using mouse wheel + Ctrl
+		document.addEventListener("wheel", function (event) {
+			if (event.ctrlKey) {
+				event.preventDefault();
+			}
+		}, { passive: false });
+
+		// Disable pinch zoom on mobile devices
+		document.addEventListener("touchmove", function (event) {
+			if (event.touches.length > 1) {
+				event.preventDefault();
+			}
+		}, { passive: false });
+
+		// Prevent double-tap zooming
+		let lastTouchEnd = 0;
+		document.addEventListener("touchend", function (event) {
+			let now = new Date().getTime();
+			if (now - lastTouchEnd <= 300) {
+				event.preventDefault();
+			}
+			lastTouchEnd = now;
+		}, false);
 	</script>
 </body>
 

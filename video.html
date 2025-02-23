@@ -29,6 +29,7 @@
 	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
 	<style type="text/css">
 		@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
 		* {
 			-webkit-user-select: none;
 			/* Safari */
@@ -41,6 +42,7 @@
 			-moz-user-drag: none;
 			-o-user-drag: none;
 		}
+
 		html,
 		body {
 			margin: 0;
@@ -75,20 +77,20 @@
 			transform: scale(1.15);
 		}
 	</style>
-<script>
-	document.addEventListener('contextmenu', event => event.preventDefault());
-	document.addEventListener("keydown", function (e) {
-		
-		if (e.ctrlKey && e.shiftKey && e.which == 73) {
-			e.preventDefault();
-			rightc() ;  // you can remove this line on the live website
-		}
-		else if (e.ctrlKey) {
-			e.preventDefault();
-			rightc() ;  // you can remove this line on the live website
-		}
-	});
-</script>
+	<script>
+		document.addEventListener('contextmenu', event => event.preventDefault());
+		document.addEventListener("keydown", function (e) {
+
+			if (e.ctrlKey && e.shiftKey && e.which == 73) {
+				e.preventDefault();
+				rightc();  // you can remove this line on the live website
+			}
+			else if (e.ctrlKey) {
+				e.preventDefault();
+				rightc();  // you can remove this line on the live website
+			}
+		});
+	</script>
 </head>
 
 <body style="background-color: #f3e5f5;">
@@ -145,7 +147,9 @@
 							<p class="textAbove" style="color:#f3e5f5;">Prabhat Ranjan YouTube Video</p>
 						</h1>
 					</div>
-					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Watch all YouTube videos by Prabhat Ranjan related to IIT JEE, engineering, education, college, career without leaving the website.
+					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Watch all YouTube videos
+						by Prabhat Ranjan related to IIT JEE, engineering, education, college, career without leaving
+						the website.
 					</p>
 				</div>
 			</div>
@@ -165,95 +169,126 @@
 		<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false"
 			style="margin-bottom: 80px;">
 			<div class="toast-header">
-				<img src="https://cdn-icons-png.flaticon.com/128/12744/12744435.png"
-					style="width: 20px; height: 20px;" class="rounded me-2" alt="...">
+				<img src="https://cdn-icons-png.flaticon.com/128/12744/12744435.png" style="width: 20px; height: 20px;"
+					class="rounded me-2" alt="...">
 				<strong class="me-auto">Did you know?</strong>
 				<small>New</small>
 				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
 			</div>
-			<div class="toast-body" align="left"
-				style="background-color: #ede6fc; font-size: 13px; color: #4A148C;">
-				We have launched counselling to help you in JoSAA/CSAB choice filling, Class 10, 12, IIT JEE
-				preparation, choosing best engineering college, engineering college life, or anything related
-				similar to it in student life.
+			<div class="toast-body" align="left" style="background-color: #ede6fc; font-size: 13px; color: #4A148C;">
+				We are excited to announce the launch of our extensive counseling services! Get personalized guidance
+				for Class 10 & Below, Class 11, 12 Boards, IIT JEE, Engineering College Admission, and Engineering
+				College Guidance & Placement Preparation. Join our mentorship programs and take the next step towards
+				your academic success!
 				<br><br>
 				<a href="counselling.html" class="btn btn-primary">Know more</a>
 				<br>
 			</div>
 		</div>
 	</center>
-  <script>
-	var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-  var toastList = toastElList.map(function(toastEl) {
-    return new bootstrap.Toast(toastEl)
-  })
-  toastList.forEach(toast => toast.show())
-  </script>
+	<script>
+		var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+		var toastList = toastElList.map(function (toastEl) {
+			return new bootstrap.Toast(toastEl)
+		})
+		toastList.forEach(toast => toast.show())
+	</script>
 
 
-		
+
 
 
 	<div style="padding: 16px; padding-top: 32px;" id="content">
 		<!-- Place <div> tag where you want the feed to appear -->
-	<div id="curator-feed-new-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div><!-- The Javascript can be moved to the end of the html page before the </body> tag --><script type="text/javascript">
-		/* curator-feed-new-feed-layout */
-		(function(){
-		var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
-		i.src="https://cdn.curator.io/published/5870c8be-9785-4b76-b056-706ba2ed9303.js";
-		e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-		})();
+		<div id="curator-feed-new-feed-layout"><a href="https://curator.io" target="_blank"
+				class="crt-logo crt-tag">Powered by Curator.io</a></div>
+		<!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+		<script type="text/javascript">
+				/* curator-feed-new-feed-layout */
+				(function () {
+					var i, e, d = document, s = "script"; i = d.createElement("script"); i.async = 1; i.charset = "UTF-8";
+					i.src = "https://cdn.curator.io/published/5870c8be-9785-4b76-b056-706ba2ed9303.js";
+					e = d.getElementsByTagName(s)[0]; e.parentNode.insertBefore(i, e);
+				})();
 		</script>
 	</div>
 
-	<div style="padding: 32px; color: #ab78b4;">
+	<div style="padding: 32px; color: #ab78b4; display: none;">
 		<h2>
-			Divastra Video Hub: Your Comprehensive Resource for Prabhat Ranjan's YouTube Videos on IIT JEE Preparation, Strategy, Engineering, College Life, and More
+			Divastra Video Hub: Your Comprehensive Resource for Prabhat Ranjan's YouTube Videos on IIT JEE Preparation,
+			Strategy, Engineering, College Life, and More
 		</h2>
 		<p>
-			Divastra's Video Hub is a dedicated section on the Divastra website where students can access a vast collection of Prabhat Ranjan's YouTube videos covering a wide range of topics related to IIT JEE preparation, exam strategy, engineering, college life, youth, career, society, education, and career counseling. This guide explores the features and benefits of Divastra's Video Hub, providing insights into how students can leverage this resource to enhance their academic and personal growth.
+			Divastra's Video Hub is a dedicated section on the Divastra website where students can access a vast
+			collection of Prabhat Ranjan's YouTube videos covering a wide range of topics related to IIT JEE
+			preparation, exam strategy, engineering, college life, youth, career, society, education, and career
+			counseling. This guide explores the features and benefits of Divastra's Video Hub, providing insights into
+			how students can leverage this resource to enhance their academic and personal growth.
 		</p>
 		<h4>
 			Comprehensive Coverage of Topics:
 		</h4>
 		<p>
-			Divastra's Video Hub offers students a comprehensive repository of Prabhat Ranjan's YouTube videos, covering a diverse range of topics relevant to their academic and personal development. From exam preparation tips and strategies to insights into college life, career guidance, and societal issues, students can find valuable content to support their journey through various stages of education and beyond.
+			Divastra's Video Hub offers students a comprehensive repository of Prabhat Ranjan's YouTube videos, covering
+			a diverse range of topics relevant to their academic and personal development. From exam preparation tips
+			and strategies to insights into college life, career guidance, and societal issues, students can find
+			valuable content to support their journey through various stages of education and beyond.
 		</p>
 		<h4>
 			IIT JEE Preparation and Exam Strategy:
 		</h4>
 		<p>
-			For students preparing for the IIT JEE exam, Divastra's Video Hub provides a wealth of resources, including Prabhat Ranjan's YouTube videos offering expert guidance, study tips, and exam strategies. Whether it's understanding key concepts, solving complex problems, or managing time effectively during the exam, students can find valuable insights to enhance their preparation and performance.
+			For students preparing for the IIT JEE exam, Divastra's Video Hub provides a wealth of resources, including
+			Prabhat Ranjan's YouTube videos offering expert guidance, study tips, and exam strategies. Whether it's
+			understanding key concepts, solving complex problems, or managing time effectively during the exam, students
+			can find valuable insights to enhance their preparation and performance.
 		</p>
 		<h4>
 			Engineering and College Life:
 		</h4>
 		<p>
-			Prabhat Ranjan's YouTube videos featured in Divastra's Video Hub also delve into the intricacies of engineering education and college life, offering students valuable perspectives and advice on navigating the challenges and opportunities they encounter in their academic journey. From choosing the right college and branch to thriving in the college environment, students can gain valuable insights to make the most of their engineering education.
+			Prabhat Ranjan's YouTube videos featured in Divastra's Video Hub also delve into the intricacies of
+			engineering education and college life, offering students valuable perspectives and advice on navigating the
+			challenges and opportunities they encounter in their academic journey. From choosing the right college and
+			branch to thriving in the college environment, students can gain valuable insights to make the most of their
+			engineering education.
 		</p>
 		<h4>
 			Youth, Career, and Society:
 		</h4>
 		<p>
-			Beyond academics, Divastra's Video Hub offers students insights into broader aspects of youth, career, and society. Prabhat Ranjan's YouTube videos cover topics such as personal growth, career exploration, societal issues, and the role of youth in shaping the future. These videos inspire students to think critically, explore their interests, and contribute positively to society, fostering holistic development beyond the classroom.
+			Beyond academics, Divastra's Video Hub offers students insights into broader aspects of youth, career, and
+			society. Prabhat Ranjan's YouTube videos cover topics such as personal growth, career exploration, societal
+			issues, and the role of youth in shaping the future. These videos inspire students to think critically,
+			explore their interests, and contribute positively to society, fostering holistic development beyond the
+			classroom.
 		</p>
 		<h4>
 			Education and Career Counseling:
 		</h4>
 		<p>
-			Prabhat Ranjan's expertise in education and career counseling shines through in his YouTube videos featured in Divastra's Video Hub. Whether it's providing guidance on choosing the right career path, navigating college admissions, or preparing for job interviews, students can benefit from Prabhat's valuable advice and insights to make informed decisions about their education and career.
+			Prabhat Ranjan's expertise in education and career counseling shines through in his YouTube videos featured
+			in Divastra's Video Hub. Whether it's providing guidance on choosing the right career path, navigating
+			college admissions, or preparing for job interviews, students can benefit from Prabhat's valuable advice and
+			insights to make informed decisions about their education and career.
 		</p>
 		<h4>
 			Seamless Integration with Divastra Website:
 		</h4>
 		<p>
-			Divastra's Video Hub offers students the convenience of accessing Prabhat Ranjan's YouTube videos without leaving the website. This seamless integration ensures that students can explore valuable content related to their academic and personal growth without the hassle of navigating multiple platforms, enhancing their overall user experience and engagement.
+			Divastra's Video Hub offers students the convenience of accessing Prabhat Ranjan's YouTube videos without
+			leaving the website. This seamless integration ensures that students can explore valuable content related to
+			their academic and personal growth without the hassle of navigating multiple platforms, enhancing their
+			overall user experience and engagement.
 		</p>
 		<h4>
 			Empowering Students for Success:
 		</h4>
 		<p>
-			Divastra's Video Hub empowers students to take control of their academic and personal growth by providing access to Prabhat Ranjan's expertise and insights on a wide range of topics. Whether it's seeking guidance on exam preparation, exploring career options, or understanding societal issues, students can leverage Divastra's Video Hub to enrich their learning and shape their future success.
+			Divastra's Video Hub empowers students to take control of their academic and personal growth by providing
+			access to Prabhat Ranjan's expertise and insights on a wide range of topics. Whether it's seeking guidance
+			on exam preparation, exploring career options, or understanding societal issues, students can leverage
+			Divastra's Video Hub to enrich their learning and shape their future success.
 		</p>
 		<h2>
 			Your Ultimate Destination for IIT JEE Preparation and Engineering
@@ -776,8 +811,8 @@
 
 	<div class="shadow text-light p-0 text-center" style="background-color: #6A1B9A;margin-top: 80px;">
 		<br>
-		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;" href="https://divastra.github.io/index2"
-			target="_blank">Divastra App</a>
+		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
+			href="https://divastra.github.io/index2" target="_blank">Divastra App</a>
 		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
 			href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
 		<br><br>
@@ -836,6 +871,42 @@
 				alert("Browser doesn't support this API !");
 			}
 		}
+	</script>
+
+	<script>
+		// Disable zoom using keyboard shortcuts (Ctrl +, Ctrl -, Ctrl + Mouse Wheel)
+		document.addEventListener("keydown", function (event) {
+			if (
+				event.ctrlKey &&
+				(event.key === "=" || event.key === "-" || event.key === "0")
+			) {
+				event.preventDefault();
+			}
+		});
+
+		// Disable zoom using mouse wheel + Ctrl
+		document.addEventListener("wheel", function (event) {
+			if (event.ctrlKey) {
+				event.preventDefault();
+			}
+		}, { passive: false });
+
+		// Disable pinch zoom on mobile devices
+		document.addEventListener("touchmove", function (event) {
+			if (event.touches.length > 1) {
+				event.preventDefault();
+			}
+		}, { passive: false });
+
+		// Prevent double-tap zooming
+		let lastTouchEnd = 0;
+		document.addEventListener("touchend", function (event) {
+			let now = new Date().getTime();
+			if (now - lastTouchEnd <= 300) {
+				event.preventDefault();
+			}
+			lastTouchEnd = now;
+		}, false);
 	</script>
 </body>
 
