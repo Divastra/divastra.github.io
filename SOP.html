@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsorship SOP Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .tab-button { transition: all 0.3s; }
+        .card-header { transition: background-color 0.3s; cursor: pointer; }
+        .detail-card { transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; overflow: hidden; max-height: 0; opacity: 0; }
+        .detail-card.open { max-height: 1000px; opacity: 1; padding-top: 1rem; }
+        .sub-detail { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; overflow: hidden; max-height: 0; opacity: 0; }
+        .sub-detail.open { max-height: 500px; opacity: 1; padding-top: 0.5rem; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-xl">
+        <header class="p-6 border-b border-gray-100">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800">Prabhat Ranjan Sponsorship SOP</h1>
+            <p class="text-lg text-gray-500 mt-1">Standard Operating Procedure broken down into 4 actionable phases.</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <div class="flex flex-col md:flex-row border-b border-gray-200 sticky top-0 bg-white z-10">
+            <button class="tab-button flex-1 px-4 py-3 text-sm font-semibold md:text-base border-b-2 border-transparent text-gray-500 hover:text-blue-600 hover:border-blue-300" data-tab="phase1">
+                <span class="text-blue-500 text-xl mr-2">1</span> Phase: Planning & Prep
+            </button>
+            <button class="tab-button flex-1 px-4 py-3 text-sm font-semibold md:text-base border-b-2 border-transparent text-gray-500 hover:text-yellow-600 hover:border-yellow-300" data-tab="phase2">
+                <span class="text-yellow-500 text-xl mr-2">2</span> Phase: Outreach & Negotiation
+            </button>
+            <button class="tab-button flex-1 px-4 py-3 text-sm font-semibold md:text-base border-b-2 border-transparent text-gray-500 hover:text-green-600 hover:border-green-300" data-tab="phase3">
+                <span class="text-green-500 text-xl mr-2">3</span> Phase: Contracting & Finalization
+            </button>
+            <button class="tab-button flex-1 px-4 py-3 text-sm font-semibold md:text-base border-b-2 border-transparent text-gray-500 hover:text-red-600 hover:border-red-300" data-tab="phase4">
+                <span class="text-red-500 text-xl mr-2">4</span> Phase: Execution & Follow-up
+            </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="tab-content" class="p-6 md:p-8">
+            <!-- Phase 1: Planning & Preparation (Initial state: open) -->
+            <div id="phase1" class="tab-pane active">
+                <h2 class="text-2xl font-bold mb-6 text-blue-600">Phase 1: Planning & Preparation (The Foundation)</h2>
+
+                <!-- Card 1. Weekly Planning -->
+                <div class="bg-blue-50 border-l-4 border-blue-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-blue-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>1. Weekly Planning & Assignment</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <ul class="space-y-3 list-disc pl-5">
+                            <li><strong class="text-blue-700">Target Lists:</strong> Each team (A/B/C/D) prepares a weekly list of target colleges.</li>
+                            <li><strong class="text-blue-700">Clear Ownership:</strong> Distribute colleges among associates; one associate per college at a time.</li>
+                            <li>
+                                <strong class="text-blue-700">Ownership Change Rules:</strong>
+                                <div class="sub-detail-trigger mt-2 cursor-pointer text-sm text-blue-600 flex items-center" onclick="toggleSubDetails(this)">
+                                    <svg class="w-4 h-4 mr-1 transform transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    Mandatory Handover Process
+                                </div>
+                                <div class="sub-detail ml-4 p-3 bg-blue-100 rounded-lg text-xs">
+                                    <p><strong>Mandatory:</strong> Document background, obtain Prabhat Ranjan’s permission, and update the <strong>Sponsorship Details</strong> sheet.</p>
+                                    <p class="mt-1"><strong>Handover:</strong> Share call notes, emails, prior quotations, objections, and current status with the new associate.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2. Professional Presentation -->
+                <div class="bg-blue-50 border-l-4 border-blue-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-blue-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>2. Professional Presentation & Tone</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <ul class="space-y-3 list-disc pl-5">
+                            <li><strong class="text-blue-700">Profile Hygiene:</strong> DPs (WhatsApp, Telegram, Insta) must be professional, mature, and neutral.</li>
+                            <li><strong class="text-blue-700">Avoid:</strong> Funky/cringe/meme visuals and casual selfies. (If unsure, remove the DP entirely).</li>
+                            <li><strong class="text-blue-700">Dress Code:</strong> Not formal, but must look decent and professional.</li>
+                            <li><strong class="text-blue-700">Communication:</strong> Use clear grammar, concise messages, and a standard email signature (Name, Designation, Channel).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3. Collecting College Contact Details -->
+                <div class="bg-blue-50 border-l-4 border-blue-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-blue-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>3. Data Collection & Verification</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <p class="mb-3 font-medium text-blue-700">Sources to Collect Data:</p>
+                        <ul class="space-y-1 list-disc pl-5 mb-4 text-sm">
+                            <li>Official college websites (Admissions/Contact Us)</li>
+                            <li>Friends, alumni, and professional networks</li>
+                            <li>Google Maps (Admissions/Marketing office listings)</li>
+                        </ul>
+                        <p class="mb-2 font-medium text-blue-700">Mandatory Data Fields:</p>
+                        <ul class="space-y-1 list-disc pl-5 text-sm">
+                            <li><strong class="font-semibold">College:</strong> Official Name, Official Phone Number, Official Email ID.</li>
+                            <li><strong class="font-semibold">Contact Person:</strong> Name, Phone, Email, Designation/Department (Prefer Admissions/Marketing/Management).</li>
+                            <li><strong class="font-semibold">Verification:</strong> Prefer official domains (.edu/.ac.in). Cross-verify phone via website or receptionist.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4. Sponsorship Details Tracking -->
+                <div class="bg-blue-50 border-l-4 border-blue-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-blue-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>4. Tracking Sheet & Color Coding (Mandatory)</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <ul class="space-y-2 list-disc pl-5">
+                            <li><strong class="text-blue-700">Daily Check:</strong> Maintain and check the sheet every morning before outreach. Do not contact active colleges without permission.</li>
+                            <li><strong class="text-blue-700">Status Rule:</strong> Status must be a clear, actionable note (e.g., “Intro call done; proposal sent”).</li>
+                            <li>
+                                <strong class="text-blue-700">Color Coding for Status:</strong>
+                                <div class="space-y-1 mt-2">
+                                    <div class="p-2 rounded-md bg-white border border-gray-200 text-sm flex items-center"><span class="w-3 h-3 rounded-full bg-white border mr-2"></span> <strong>White:</strong> Contact not started yet.</div>
+                                    <div class="p-2 rounded-md bg-yellow-100 border border-yellow-300 text-sm flex items-center"><span class="w-3 h-3 rounded-full bg-yellow-400 mr-2"></span> <strong>Yellow:</strong> Negotiation in progress.</div>
+                                    <div class="p-2 rounded-md bg-green-100 border border-green-300 text-sm flex items-center"><span class="w-3 h-3 rounded-full bg-green-400 mr-2"></span> <strong>Green:</strong> Deal converted (<span class="font-bold">include amount & date</span> in Status).</div>
+                                    <div class="p-2 rounded-md bg-red-100 border border-red-300 text-sm flex items-center"><span class="w-3 h-3 rounded-full bg-red-400 mr-2"></span> <strong>Red:</strong> Deal cancelled (<span class="font-bold">include clear reason & date</span> in Status).</div>
+                                    <div class="p-2 rounded-md bg-blue-100 border border-blue-300 text-sm flex items-center"><span class="w-3 h-3 rounded-full bg-blue-400 mr-2"></span> <strong>Blue:</strong> Restarted cancelled deal (mention context & current step).</div>
+                                </div>
+                            </li>
+                            <li><strong class="text-blue-700">Restart Rule:</strong> Speak to the previous associate and get permission from Prabhat Ranjan before restarting a cancelled deal.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Outreach & Negotiation -->
+            <div id="phase2" class="tab-pane hidden">
+                <h2 class="text-2xl font-bold mb-6 text-yellow-600">Phase 2: Outreach & Negotiation (The Sale)</h2>
+
+                <!-- Card 5. Outreach Process -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-yellow-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>5. Outreach & Follow-up Discipline</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <ul class="space-y-3 list-disc pl-5">
+                            <li><strong class="text-yellow-700">Immediate Action:</strong> Send cold email blast, then start calls right after. <strong>Do not wait for responses.</strong></li>
+                            <li><strong class="text-yellow-700">Max Timeline:</strong> Follow-ups must conclude within <span class="font-bold">15 days maximum</span>.</li>
+                            <li><strong class="text-yellow-700">Thread Discipline:</strong> Keep every communication in the same email thread (Reply All).</li>
+                            <li><strong class="text-yellow-700">Call Summary:</strong> Summarize call outcomes via email within <span class="font-bold">24 hours</span>.</li>
+                            <li>
+                                <strong class="text-yellow-700">The 15-Day Follow-up Cycle:</strong>
+                                <div class="sub-detail-trigger mt-2 cursor-pointer text-sm text-yellow-600 flex items-center" onclick="toggleSubDetails(this)">
+                                    <svg class="w-4 h-4 mr-1 transform transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    Progressive Value Sharing
+                                </div>
+                                <div class="sub-detail ml-4 p-3 bg-yellow-100 rounded-lg text-xs">
+                                    <p><strong>Day 1–3:</strong> Call + email reminder; share channel overview and outcomes.</p>
+                                    <p><strong>Day 4–7:</strong> Share value deck + indicative mixed pricing; position benefits.</p>
+                                    <p><strong>Day 8–12:</strong> Handle objections; propose tailored mixed model; confirm next steps.</p>
+                                    <p><strong>Day 13–15:</strong> Final push; schedule decision call; seek closure or formal next date.</p>
+                                    <p class="mt-2 font-semibold">If not closed by Day 15, transfer the lead with background and get PR approval.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 6. Negotiation Strategy -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-yellow-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>6. Core Negotiation Strategy</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <ol class="space-y-3 list-decimal pl-5">
+                            <li><strong class="text-yellow-700">Step 1 – Need Awareness:</strong> Message that colleges miss reach/trust/queries without strong social presence.</li>
+                            <li><strong class="text-yellow-700">Step 2 – Solution Positioning:</strong> Our audience, credibility, and content drive awareness, queries, and admissions (use prior collabs as proof).</li>
+                            <li><strong class="text-yellow-700">Step 3 – Payment Terms:</strong> Present models and insist on a <span class="font-bold">mixed structure</span> (Fixed + Commission).</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Card 7. Pricing Models -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-yellow-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>7. Pricing Models & Thresholds (Goal: Mixed Fee)</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <ul class="space-y-3 list-disc pl-5">
+                            <!-- Corrected $\ge ₹10,000$ -->
+                            <li><strong class="text-yellow-700">Fixed Fee Minimum:</strong> <span class="font-bold">≥ ₹10,000</span> (Absolute floor, aim higher).</li>
+                            <li><strong class="text-yellow-700">Mix Requirement:</strong> <strong>NEVER</strong> accept only fixed fee or only commission. Both must be present.</li>
+                            <li>
+                                <strong class="text-yellow-700">Discount Clause (Last Resort):</strong>
+                                <div class="sub-detail-trigger mt-2 cursor-pointer text-sm text-yellow-600 flex items-center" onclick="toggleSubDetails(this)">
+                                    <svg class="w-4 h-4 mr-1 transform transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    50% Discount Condition
+                                </div>
+                                <div class="sub-detail ml-4 p-3 bg-yellow-100 rounded-lg text-xs">
+                                    <!-- Corrected $\mathbf{\ge ₹5,000}$ and **commission-based model** -->
+                                    <p>Discount to <span class="font-bold">≥ ₹5,000</span> ONLY if the college also agrees to a <strong>commission-based model</strong>.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="text-yellow-700">Per Admission (Commission):</strong>
+                                <div class="sub-detail-trigger mt-2 cursor-pointer text-sm text-yellow-600 flex items-center" onclick="toggleSubDetails(this)">
+                                    <svg class="w-4 h-4 mr-1 transform transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    Commission Rules & Bands
+                                </div>
+                                <div class="sub-detail ml-4 p-3 bg-yellow-100 rounded-lg text-xs">
+                                    <p><strong>Requirement:</strong> Must provide a <span class="font-bold">live admissions dashboard</span> (Excel/manual tallies *not* accepted).</p>
+                                    <p><strong>Basis:</strong> Percentage of the total 4-year fee (Inst. + Tuition + Hostel + Mess).</p>
+                                    <p><strong>Bands:</strong> Minimum: 2% (threshold), <span class="font-bold">Recommended: 5%</span>.</p>
+                                    <p><strong>Evidence:</strong> Request detailed fee structure via email.</p>
+                                </div>
+                            </li>
+                            <!-- Corrected $\mathbf{\ge 1/20}$ -->
+                            <li><strong class="text-yellow-700">Per Lead Charges:</strong> Rate floor must be <span class="font-bold">≥ 1/20</span> of the per admission commission. Negotiate higher for premium programs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3: Contracting & Finalization -->
+            <div id="phase3" class="tab-pane hidden">
+                <h2 class="text-2xl font-bold mb-6 text-green-600">Phase 3: Contracting & Finalization (The Agreement)</h2>
+
+                <!-- Card 10. Finalization Process -->
+                <div class="bg-green-50 border-l-4 border-green-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-green-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>10. Contract Finalization & Sign-off</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <ul class="space-y-3 list-disc pl-5">
+                            <li><strong class="text-green-700">Decision Call:</strong> Arrange a call with <span class="font-bold">Prabhat Ranjan</span> and the college to finalize terms.</li>
+                            <li><strong class="text-green-700">Contract Drafting:</strong> Fill the <span class="font-bold">Sponsorship Contract</span> Excel sheet completely and accurately.</li>
+                            <li><strong class="text-green-700">Email Circulation:</strong> Send the filled contract to the college and Prabhat Ranjan (attach the sheet, keep the thread intact).</li>
+                            <li><strong class="text-green-700">Kickoff Trigger:</strong> Wait for <span class="font-bold">explicit email acknowledgements</span> from <span class="font-bold">both</span> parties before starting production.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card Contract Details (B, C, D) -->
+                <div class="bg-green-50 border-l-4 border-green-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-green-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>Contract Sections: Key Filling Rules</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <div class="space-y-4">
+                            <!-- Sub Card B -->
+                            <div class="p-3 bg-green-100 rounded-lg border border-green-300">
+                                <strong class="text-green-800">Section B/C: Contact Details</strong>
+                                <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+                                    <li>Use only <span class="font-bold">Official Details</span> (main line, official domain emails).</li>
+                                    <li>Contact must be empowered to approve budgets (Admissions/Marketing/Management).</li>
+                                    <li>Ensure consistency in spelling/designations.</li>
+                                </ul>
+                            </div>
+                            <!-- Sub Card D -->
+                            <div class="p-3 bg-green-100 rounded-lg border border-green-300">
+                                <strong class="text-green-800">Section D: Payment Agreement</strong>
+                                <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+                                    <li>Mark agreed contract types in <span class="font-bold">GREEN</span> background.</li>
+                                    <li>Enter amounts clearly (e.g., “INR 20,000 per Video”).</li>
+                                    <li><span class="font-bold">Mandatory Check:</span> Validate Per Lead Charges ≥ (Per Admission Commission / 20).</li>
+                                    <li><span class="font-bold">Payment Cycles:</span> Use consistent DD/MM/YYYY format.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11. Email Format for Contract -->
+                <div class="bg-green-50 border-l-4 border-green-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-green-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>11. Email Protocol for Contract Circulation</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <ul class="space-y-3 list-disc pl-5">
+                            <li><strong class="text-green-700">Recipients:</strong> <span class="font-bold">TO:</span> Prabhat Ranjan, College Contact Person. <span class="font-bold">CC:</span> College Official Email ID.</li>
+                            <li><strong class="text-green-700">Subject:</strong> Sponsorship Contract between Prabhat Ranjan (YouTube Channel) and [College Name].</li>
+                            <li><strong class="text-green-700">Action:</strong> Explicitly ask for email acknowledgment from both the Content Creator and the College Contact Person.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4: Execution & Follow-up -->
+            <div id="phase4" class="tab-pane hidden">
+                <h2 class="text-2xl font-bold mb-6 text-red-600">Phase 4: Execution & Follow-up (Delivery & Enforcement)</h2>
+
+                <!-- Card 8 & 9. Payment & Incentives -->
+                <div class="bg-red-50 border-l-4 border-red-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-red-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>8 & 9. Payment Terms & Associate Incentives</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <ul class="space-y-3 list-disc pl-5">
+                            <li><strong class="text-red-700">Fixed Fee Best Term:</strong> Before video goes public.</li>
+                            <li><strong class="text-red-700">Commission Payout:</strong> Seasonal (After admissions, ≈ September) or Monthly (1st of every month).</li>
+                            <li><strong class="text-red-700">Associate Payout:</strong> <span class="font-bold">10% of total payment</span> for deals converted.</li>
+                            <li><strong class="text-red-700">Condition:</strong> Payout is only made <span class="font-bold">after</span> the college's payment is actually received.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 12. Terms & Conditions -->
+                <div class="bg-red-50 border-l-4 border-red-400 rounded-lg shadow-md mb-6">
+                    <div class="card-header p-4 flex justify-between items-center text-red-800 font-semibold" onclick="toggleDetails(this)">
+                        <span>12. Core Terms & Enforcement Rules</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="detail-card p-4 text-gray-600">
+                        <div class="space-y-4">
+                            <!-- Sub Card Enforcement -->
+                            <div class="p-3 bg-red-100 rounded-lg border border-red-300">
+                                <strong class="text-red-800">Payment Enforcement</strong>
+                                <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+                                    <li><strong class="text-red-700">Penalty:</strong> If payment is overdue, the video will be switched to <span class="font-bold">Private</span> until payment is cleared.</li>
+                                    <!-- Corrected $\mathbf{1}$ -->
+                                    <li><strong class="text-red-700">Escalation:</strong> If still unpaid <span class="font-bold">1</span> month after the due date, legal action may be considered.</li>
+                                    <li><strong class="text-red-700">Clock Start:</strong> Payment term countdown starts when video becomes <span class="font-bold">Public</span> (unless <span class="font-bold">Before Public</span> agreed).</li>
+                                </ul>
+                            </div>
+                            <!-- Sub Card Production -->
+                            <div class="p-3 bg-red-100 rounded-lg border border-red-300">
+                                <strong class="text-red-800">Production & Revision Protocol</strong>
+                                <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+                                    <!-- Corrected $\mathbf{15}$ and $\mathbf{7}$ -->
+                                    <li><strong class="text-red-700">First Version:</strong> Delivered within <span class="font-bold">15</span> days (<span class="font-bold">7</span> days recommended).</li>
+                                    <!-- Corrected $\mathbf{7}$ -->
+                                    <li><strong class="text-red-700">Review Window:</strong> College must respond within <span class="font-bold">7</span> days of receiving the Unlisted link.</li>
+                                    <!-- Corrected $\mathbf{2}$ -->
+                                    <li><strong class="text-red-700">Revision Cap:</strong> Maximum <span class="font-bold">2</span> revisions per video.</li>
+                                    <!-- Corrected $\mathbf{INR 5,000}$ -->
+                                    <li><strong class="text-red-700">Revision Advance:</strong> <span class="font-bold">INR 5,000</span> non-refundable fee required for any revision cycle.</li>
+                                    <!-- Corrected $\mathbf{7}$ and $\mathbf{cancelled}$ -->
+                                    <li><strong class="text-red-700">No Response:</strong> If no reply within <span class="font-bold">7</span> days, contract may be <span class="font-bold">cancelled</span> without refund.</li>
+                                </ul>
+                            </div>
+                            <!-- Sub Card Lead & Commission -->
+                            <div class="p-3 bg-red-100 rounded-lg border border-red-300">
+                                <strong class="text-red-800">Lead & Commission Handling</strong>
+                                <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+                                    <li>Leads collected via Google Form, shared via Excel.</li>
+                                    <li><span class="font-bold">Admissions Dashboard:</span> A <span class="font-bold">live dashboard</span> must be provided for commission verification (Excel/manual tallies are <span class="italic">not</span> accepted).</li>
+                                    <li>Commission statements shared monthly/seasonally.</li>
+                                </ul>
+                            </div>
+                            <!-- Sub Card Rights -->
+                            <div class="p-3 bg-red-100 rounded-lg border border-red-300">
+                                <strong class="text-red-800">Communication & Rights</strong>
+                                <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+                                    <li><span class="font-bold">Single Thread:</span> Keep all communication in the same email thread.</li>
+                                    <li><span class="font-bold">Ownership:</span> Content creator retains rights; college requires written permission for reuploads/edits.</li>
+                                    <li><span class="font-bold">Confidentiality:</span> Pricing, commission rates, and lead data are confidential.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state to track the active tab (using Phase 1 color as default)
+        let activeColor = 'blue';
+
+        // Initialize Tab System
+        const tabs = document.querySelectorAll('.tab-button');
+        const panes = document.querySelectorAll('.tab-pane');
+
+        function toggleTab(event) {
+            const tabName = event.target.closest('.tab-button').dataset.tab;
+            const tabButton = event.target.closest('.tab-button');
+            const newColor = tabButton.querySelector('span').classList[0].split('-')[1]; // Extracts 'blue', 'yellow', 'green', or 'red'
+
+            // Remove active classes and styling from all tabs/panes
+            tabs.forEach(tab => {
+                tab.classList.remove('border-blue-600', 'border-yellow-600', 'border-green-600', 'border-red-600', `text-${activeColor}-600`);
+                tab.classList.add('border-transparent', 'text-gray-500');
+            });
+            panes.forEach(pane => pane.classList.add('hidden'));
+
+            // Set active tab styling
+            tabButton.classList.remove('border-transparent', 'text-gray-500');
+            tabButton.classList.add(`border-${newColor}-600`, `text-${newColor}-600`);
+
+            // Show active pane
+            document.getElementById(tabName).classList.remove('hidden');
+
+            // Update global active color
+            activeColor = newColor;
+        }
+
+        tabs.forEach(tab => tab.addEventListener('click', toggleTab));
+
+        // Set initial active state for Phase 1
+        document.querySelector('.tab-button[data-tab="phase1"]').classList.remove('border-transparent', 'text-gray-500');
+        document.querySelector('.tab-button[data-tab="phase1"]').classList.add('border-blue-600', 'text-blue-600');
+        document.getElementById('phase1').classList.remove('hidden');
+
+        // Card & Sub-Card Toggle Logic
+        function toggleDetails(headerElement) {
+            const cardBody = headerElement.nextElementSibling;
+            const arrow = headerElement.querySelector('svg');
+
+            // Check if the card is currently open
+            const isOpen = cardBody.classList.contains('open');
+
+            // Close all other open cards in the same phase (optional, but good UX)
+            // Note: This logic could be expanded to only close siblings if performance is not an issue.
+            // For now, only toggle the clicked card.
+
+            cardBody.classList.toggle('open', !isOpen);
+            arrow.classList.toggle('rotate-180', !isOpen);
+        }
+
+        function toggleSubDetails(triggerElement) {
+            const subDetailBody = triggerElement.nextElementSibling;
+            const arrow = triggerElement.querySelector('svg');
+
+            subDetailBody.classList.toggle('open');
+            arrow.classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+</html>
