@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155 130" fill="none" role="img" aria-label="Divastra">
+  <defs>
+    <!-- Main brand gradient (board) -->
+    <linearGradient id="g-board" x1="15" y1="0" x2="155" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#6366f1"/>
+      <stop offset="55%"  stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+
+    <!-- Cap body gradient -->
+    <linearGradient id="g-body" x1="155" y1="50" x2="35" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.88"/>
+    </linearGradient>
+
+    <!-- Tassel cord + bullion -->
+    <linearGradient id="g-cord" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#a5b4fc"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+
+    <!-- Tassel bundle — subtle left-to-right shading for 3-D look -->
+    <linearGradient id="g-bundle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#3730a3"/>
+      <stop offset="40%"  stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Board glow filter -->
+    <filter id="f-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Tassel soft shadow -->
+    <filter id="f-tassel" x="-30%" y="-10%" width="160%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#4f46e5" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- ─── Cap body / crown (below board) ─── -->
+  <path
+    d="M53,56 L53,82
+       Q53,102 85,110
+       Q117,102 117,82
+       L117,56
+       Q85,69 53,56 Z"
+    fill="url(#g-body)"
+  />
+  <!-- Inner fold highlight on crown -->
+  <path d="M67,62 Q85,72 103,62"
+        stroke="rgba(255,255,255,0.14)" stroke-width="1.5"
+        fill="none" stroke-linecap="round"/>
+
+  <!-- ─── Mortarboard board (diamond) ─── -->
+  <polygon
+    points="85,10 147,42 85,74 23,42"
+    fill="url(#g-board)"
+    filter="url(#f-glow)"
+  />
+  <!-- Board edge highlight (top-left face) -->
+  <polygon
+    points="85,10 147,42 85,74 23,42"
+    fill="none"
+    stroke="rgba(255,255,255,0.16)"
+    stroke-width="1"
+  />
+
+  <!-- ─── Board shimmer pulse ─── -->
+  <polygon points="85,10 147,42 85,74 23,42" fill="rgba(255,255,255,0.08)">
+    <animate attributeName="opacity" values="0;0.7;0" dur="3.2s" repeatCount="indefinite"/>
+  </polygon>
+
+  <!-- ─── Tassel (pivots from left corner of board at 23,42) ─── -->
+  <g id="divastra-tassel" filter="url(#f-tassel)">
+
+    <!-- Decorative loop at cap corner (goes up slightly) -->
+    <path d="M 23,42 C 23,36 23,30 23,25"
+          stroke="url(#g-cord)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+
+    <!-- Main cord down to bullion -->
+    <path d="M 23,42 L 23,57"
+          stroke="url(#g-cord)" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- Bullion cap (rounded rectangle with slight depth) -->
+    <rect x="18" y="57" width="10" height="9" rx="3" fill="url(#g-board)"/>
+    <!-- Bullion highlight edge -->
+    <rect x="18" y="57" width="10" height="9" rx="3"
+          fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
+
+    <!-- Crimp band (where cord meets bundle) -->
+    <rect x="17.5" y="66" width="11" height="2.5" rx="1.2"
+          fill="#22d3ee" opacity="0.55"/>
+
+    <!-- Thread bundle — single solid teardrop shape, NOT lines -->
+    <path d="
+      M 23,69
+      C 29.5,69 30.5,77 30,85
+      C 29.5,93 27,101 23,103
+      C 19,101 16.5,93 16,85
+      C 15.5,77 16.5,69 23,69 Z"
+      fill="url(#g-bundle)"
+    />
+
+    <!-- Subtle thread-texture lines inside the bundle for realism -->
+    <path d="M 21,72 C 20.5,79 20.5,88 21.5,98"
+          stroke="rgba(255,255,255,0.15)" stroke-width="0.9"
+          fill="none" stroke-linecap="round"/>
+    <path d="M 23,71 C 23,79 23,88 23,100"
+          stroke="rgba(255,255,255,0.1)" stroke-width="0.9"
+          fill="none" stroke-linecap="round"/>
+    <path d="M 25,72 C 25.5,79 25.5,88 24.5,98"
+          stroke="rgba(255,255,255,0.08)" stroke-width="0.9"
+          fill="none" stroke-linecap="round"/>
+
+    <!-- Left-edge highlight for 3-D depth -->
+    <path d="M 17.5,75 C 17,81 17,90 18.5,99"
+          stroke="rgba(255,255,255,0.22)" stroke-width="1.1"
+          fill="none" stroke-linecap="round"/>
+
+    <!-- Tassel tip highlight dot -->
+    <circle cx="23" cy="103" r="1.5" fill="rgba(255,255,255,0.3)"/>
+
+    <!-- Pendulum swing animation around the attachment point (23,42) -->
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      values="0 23 42; 11 23 42; 0 23 42; -11 23 42; 0 23 42"
+      dur="4s"
+      repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+      keyTimes="0; 0.25; 0.5; 0.75; 1"
+    />
+  </g>
+</svg>
