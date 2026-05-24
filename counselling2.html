@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counselling — Divastra</title>
+  <meta name="description" content="Get personalised college counselling, JoSAA/CSAB preference PDFs, and 1-on-1 Google Meet sessions with Prabhat Ranjan from NIT Jamshedpur.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --brand:   #6366f1;
+      --brand-l: #818cf8;
+      --violet:  #8b5cf6;
+      --cyan:    #22d3ee;
+      /* ── Counselling page: deep navy-teal, distinct from home's purple-black ── */
+      --bg:      #040d16;
+      --border:  rgba(255,255,255,0.07);
+      --grad:    linear-gradient(135deg,#6366f1,#8b5cf6,#22d3ee);
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+
+    body {
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:white;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a { text-decoration:none; color:inherit; }
+
+    /* Particle canvas */
+    #particle-canvas { position:fixed; inset:0; z-index:1; pointer-events:none; }
+
+    /* Page background — teal/blue accent instead of home's indigo/violet */
+    body::before {
+      content:'';
+      position:fixed; inset:0; z-index:0;
+      background:
+        radial-gradient(ellipse 65% 50% at 15% 25%, rgba(6,182,212,0.11), transparent),
+        radial-gradient(ellipse 55% 45% at 85% 70%, rgba(99,102,241,0.09), transparent),
+        radial-gradient(ellipse 40% 35% at 50% 0%,  rgba(34,211,238,0.06), transparent);
+      pointer-events:none;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      padding:1rem 2rem;
+      display:flex; align-items:center; justify-content:space-between;
+      transition:background .35s, padding .35s;
+    }
+    nav.solid {
+      background:rgba(4,13,22,.92);
+      backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px);
+      border-bottom:1px solid var(--border);
+      padding:.7rem 2rem;
+    }
+    .nav-logo { display:flex; align-items:center; gap:.55rem; }
+    .nav-logo-img { width:30px; height:auto; transition:transform .3s; }
+    .nav-logo:hover .nav-logo-img { transform:scale(1.12) rotate(-5deg); }
+    .nav-logo-name {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-weight:800; font-size:1.2rem;
+      background:var(--grad);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text; letter-spacing:-.3px;
+    }
+    .nav-links { display:flex; align-items:center; gap:.15rem; list-style:none; }
+    .nav-links a {
+      display:flex; align-items:center; gap:.3rem;
+      padding:.45rem .8rem; color:rgba(255,255,255,.6);
+      font-size:.875rem; font-weight:500; border-radius:8px;
+      transition:color .2s, background .2s;
+    }
+    .nav-links a i { font-size:.72rem; }
+    .nav-links a:hover { color:white; background:rgba(255,255,255,.08); }
+    .nav-links a.active { color:#22d3ee; background:rgba(34,211,238,.08); }
+
+    .burger {
+      display:none; flex-direction:column; gap:5px;
+      padding:8px 10px;
+      background:rgba(255,255,255,.07); border:1px solid var(--border);
+      border-radius:8px; cursor:pointer;
+    }
+    .burger span { display:block; width:20px; height:2px; background:white; border-radius:2px; }
+
+    /* Mobile overlay */
+    .mob {
+      position:fixed; inset:0; z-index:200;
+      background:rgba(4,13,22,.97); backdrop-filter:blur(24px);
+      display:flex; flex-direction:column; padding:1.5rem;
+      opacity:0; pointer-events:none; transition:opacity .3s;
+    }
+    .mob.open { opacity:1; pointer-events:all; }
+    .mob-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:2.5rem; }
+    .mob-close {
+      width:38px; height:38px; background:rgba(255,255,255,.08);
+      border:none; border-radius:8px; color:white; font-size:1.1rem;
+      cursor:pointer; display:flex; align-items:center; justify-content:center;
+    }
+    .mob-items { list-style:none; display:flex; flex-direction:column; gap:.3rem; }
+    .mob-items a {
+      display:flex; align-items:center; gap:.85rem;
+      padding:.9rem 1rem; color:rgba(255,255,255,.7);
+      font-size:1rem; font-weight:600; border-radius:10px; transition:all .2s;
+    }
+    .mob-items a i { color:var(--brand-l); width:20px; text-align:center; }
+    .mob-items a:hover { color:white; background:rgba(255,255,255,.06); }
+
+    /* ── PAGE ── */
+    .page { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; }
+
+    .grad-text {
+      background:var(--grad);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      width:100%; max-width:820px;
+      padding:7.5rem 1.5rem 4rem;
+      text-align:center;
+      display:flex; flex-direction:column; align-items:center;
+    }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.35rem .95rem;
+      background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.25);
+      border-radius:100px; color:#22d3ee;
+      font-size:.76rem; font-weight:700; letter-spacing:.7px; text-transform:uppercase;
+      margin-bottom:1.6rem;
+    }
+    .badge-dot { width:6px; height:6px; background:#22d3ee; border-radius:50%; animation:blinkDot 2.2s ease-in-out infinite; }
+    @keyframes blinkDot { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+    .hero-title {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(2.2rem,5.5vw,3.6rem);
+      font-weight:900; line-height:1.1; letter-spacing:-2px; margin-bottom:1.2rem;
+    }
+    .hero-desc {
+      color:rgba(255,255,255,.5);
+      font-size:1.05rem; line-height:1.78;
+      max-width:540px; margin-bottom:2rem;
+    }
+    .profile-chip {
+      display:inline-flex; align-items:center; gap:.75rem;
+      padding:.5rem 1rem .5rem .5rem;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+      border-radius:100px; margin-bottom:2.2rem;
+    }
+    .profile-photo {
+      width:38px; height:38px; border-radius:50%; flex-shrink:0;
+      object-fit:cover;
+      border:2px solid rgba(34,211,238,.35);
+    }
+    .profile-name { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:.92rem; }
+    .profile-role { color:rgba(255,255,255,.38); font-size:.72rem; margin-top:1px; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; }
+    .pill {
+      display:inline-flex; align-items:center; gap:.42rem;
+      padding:.4rem .95rem;
+      background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.09);
+      border-radius:100px; font-size:.79rem; font-weight:600; color:rgba(255,255,255,.72);
+    }
+    .pill-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+    .pd-b { background:linear-gradient(135deg,#6366f1,#22d3ee); }
+    .pd-g { background:#22c55e; }
+    .pd-y { background:#fbbf24; }
+    .pd-c { background:#22d3ee; }
+
+    /* ── SERVICES ── */
+    .services {
+      width:100%; max-width:1060px;
+      padding:1rem 1.5rem 5rem;
+      display:flex; flex-direction:column; align-items:center; gap:2.5rem;
+    }
+    .services-header { text-align:center; }
+    .section-label {
+      display:inline-flex; align-items:center; gap:.4rem;
+      padding:.3rem .85rem;
+      background:rgba(34,211,238,.08); border:1px solid rgba(34,211,238,.2);
+      border-radius:100px; color:#22d3ee;
+      font-size:.7rem; font-weight:800; letter-spacing:.8px; text-transform:uppercase;
+      margin-bottom:1rem;
+    }
+    .section-title {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(1.7rem,3.5vw,2.3rem);
+      font-weight:900; line-height:1.15; letter-spacing:-.8px;
+    }
+
+    .services-grid {
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.4rem;
+      align-items:start;
+    }
+
+    /* ─── Base service card ─── */
+    .svc-card {
+      border-radius:24px; padding:0;
+      display:flex; flex-direction:column;
+      position:relative; overflow:hidden;
+      transition:all .38s cubic-bezier(.4,0,.2,1);
+      border:1px solid var(--c-border, rgba(255,255,255,.08));
+      background:var(--c-bg, rgba(255,255,255,.03));
+    }
+    .svc-card:hover {
+      transform:translateY(-8px);
+      box-shadow:var(--c-shadow, 0 28px 60px -12px rgba(99,102,241,.2));
+      border-color:var(--c-border-h, rgba(99,102,241,.25));
+    }
+
+    /* Coloured top stripe */
+    .svc-top-bar {
+      height:3.5px; width:100%;
+      background:var(--c-stripe, var(--grad));
+      flex-shrink:0;
+    }
+
+    .svc-body { padding:1.75rem 1.6rem 1.6rem; display:flex; flex-direction:column; flex:1; }
+
+    /* Card tier badge */
+    .svc-tier {
+      display:inline-flex; align-items:center; gap:.35rem;
+      padding:.22rem .65rem;
+      border-radius:100px; font-size:.67rem; font-weight:800;
+      letter-spacing:.6px; text-transform:uppercase;
+      margin-bottom:1.35rem; width:fit-content;
+      background:var(--c-badge-bg); color:var(--c-badge); border:1px solid var(--c-badge-border);
+    }
+
+    /* Counsellor trust strip */
+    .svc-counsellor {
+      display:flex; align-items:center; gap:.75rem;
+      padding:.65rem .8rem;
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07);
+      border-radius:12px; margin-bottom:1.3rem;
+    }
+    .svc-photo {
+      width:40px; height:40px; border-radius:50%; flex-shrink:0;
+      object-fit:cover;
+      border:2px solid var(--c-stripe-solid, rgba(255,255,255,.2));
+    }
+    .svc-cname { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:.88rem; line-height:1.2; }
+    .svc-ccred { color:rgba(255,255,255,.38); font-size:.72rem; margin-top:2px; }
+
+    .svc-icon {
+      width:50px; height:50px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.25rem; margin-bottom:1rem;
+      background:var(--c-icon-bg); color:var(--c-icon);
+      transition:transform .3s;
+    }
+    .svc-card:hover .svc-icon { transform:scale(1.1) rotate(-5deg); }
+
+    .svc-title {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:1.05rem; font-weight:800;
+      line-height:1.3; letter-spacing:-.2px;
+      margin-bottom:.85rem;
+    }
+
+    .svc-price-row { display:flex; align-items:baseline; gap:.35rem; margin-bottom:1.25rem; }
+    .svc-price {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:2.2rem; font-weight:900;
+      background:var(--c-price-grad);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text; line-height:1;
+    }
+    .svc-price-note { color:rgba(255,255,255,.32); font-size:.78rem; font-weight:500; }
+
+    .svc-features {
+      list-style:none; display:flex; flex-direction:column;
+      gap:.52rem; margin-bottom:1.5rem; flex:1;
+    }
+    .svc-features li {
+      display:flex; align-items:flex-start; gap:.6rem;
+      font-size:.85rem; color:rgba(255,255,255,.52); line-height:1.5;
+    }
+    .feat-check {
+      width:18px; height:18px; flex-shrink:0;
+      background:var(--c-check-bg, rgba(99,102,241,.15));
+      border-radius:5px; display:flex; align-items:center; justify-content:center;
+      color:var(--c-check, var(--brand-l)); font-size:.58rem; margin-top:1px;
+    }
+
+    .svc-note {
+      display:flex; align-items:flex-start; gap:.55rem;
+      padding:.65rem .85rem;
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
+      font-size:.78rem; color:rgba(255,255,255,.38); line-height:1.55;
+      margin-bottom:1.4rem;
+    }
+    .svc-note i { color:var(--c-icon, #22d3ee); font-size:.75rem; margin-top:2px; flex-shrink:0; }
+
+    .svc-buttons { display:flex; flex-direction:column; gap:.5rem; }
+    .btn-primary {
+      display:flex; align-items:center; justify-content:center; gap:.45rem;
+      padding:.74rem 1rem;
+      background:var(--c-btn-bg, linear-gradient(135deg,#6366f1,#8b5cf6));
+      color:white; font-weight:700; font-size:.85rem;
+      border-radius:11px; border:none; cursor:pointer; transition:all .25s;
+      box-shadow:var(--c-btn-shadow, 0 4px 16px rgba(99,102,241,.3));
+    }
+    .btn-primary:hover { opacity:.88; transform:translateY(-2px); }
+    .btn-secondary {
+      display:flex; align-items:center; justify-content:center; gap:.4rem;
+      padding:.68rem 1rem;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+      color:rgba(255,255,255,.7); font-size:.84rem; font-weight:600;
+      border-radius:11px; cursor:pointer; transition:all .25s;
+    }
+    .btn-secondary:hover { background:rgba(255,255,255,.1); color:white; }
+    .btn-outline {
+      display:flex; align-items:center; justify-content:center; gap:.4rem;
+      padding:.68rem 1rem;
+      background:transparent; border:1px solid var(--c-outline-border, rgba(34,211,238,.3));
+      color:var(--c-outline, #22d3ee); font-size:.84rem; font-weight:600;
+      border-radius:11px; cursor:pointer; transition:all .25s;
+    }
+    .btn-outline:hover { background:var(--c-outline-bg, rgba(34,211,238,.08)); }
+
+    /* ─── TIER COLOUR TOKENS ─── */
+
+    /* Violet — JoSAA PDF ₹501 */
+    .tier-violet {
+      --c-bg:            rgba(139,92,246,.04);
+      --c-border:        rgba(139,92,246,.14);
+      --c-border-h:      rgba(139,92,246,.3);
+      --c-shadow:        0 28px 60px -12px rgba(139,92,246,.22);
+      --c-stripe:        linear-gradient(90deg,#7c3aed,#a78bfa);
+      --c-stripe-solid:  rgba(167,139,250,.4);
+      --c-badge-bg:      rgba(139,92,246,.12);
+      --c-badge:         #c084fc;
+      --c-badge-border:  rgba(192,132,252,.25);
+      --c-icon-bg:       rgba(139,92,246,.14);
+      --c-icon:          #c084fc;
+      --c-price-grad:    linear-gradient(135deg,#7c3aed,#a78bfa,#c084fc);
+      --c-check-bg:      rgba(139,92,246,.15);
+      --c-check:         #c084fc;
+      --c-btn-bg:        linear-gradient(135deg,#7c3aed,#8b5cf6);
+      --c-btn-shadow:    0 4px 16px rgba(124,58,237,.35);
+      --c-outline-border:rgba(167,139,250,.3);
+      --c-outline:       #a78bfa;
+      --c-outline-bg:    rgba(139,92,246,.08);
+    }
+
+    /* Gold — 1-on-1 ₹5000 (premium) */
+    .tier-gold {
+      --c-bg:            rgba(245,158,11,.04);
+      --c-border:        rgba(245,158,11,.18);
+      --c-border-h:      rgba(251,191,36,.38);
+      --c-shadow:        0 32px 72px -12px rgba(217,119,6,.3);
+      --c-stripe:        linear-gradient(90deg,#d97706,#fbbf24,#fde68a);
+      --c-stripe-solid:  rgba(251,191,36,.5);
+      --c-badge-bg:      rgba(251,191,36,.1);
+      --c-badge:         #fbbf24;
+      --c-badge-border:  rgba(251,191,36,.28);
+      --c-icon-bg:       rgba(251,191,36,.1);
+      --c-icon:          #fbbf24;
+      --c-price-grad:    linear-gradient(135deg,#d97706,#f59e0b,#fde68a);
+      --c-check-bg:      rgba(251,191,36,.12);
+      --c-check:         #fbbf24;
+      --c-btn-bg:        linear-gradient(135deg,#b45309,#d97706,#f59e0b);
+      --c-btn-shadow:    0 4px 18px rgba(217,119,6,.4);
+      --c-outline-border:rgba(251,191,36,.3);
+      --c-outline:       #fbbf24;
+      --c-outline-bg:    rgba(251,191,36,.07);
+    }
+
+    /* Emerald — UPTAC PDF ₹501 */
+    .tier-emerald {
+      --c-bg:            rgba(16,185,129,.03);
+      --c-border:        rgba(16,185,129,.13);
+      --c-border-h:      rgba(52,211,153,.3);
+      --c-shadow:        0 28px 60px -12px rgba(5,150,105,.22);
+      --c-stripe:        linear-gradient(90deg,#059669,#10b981,#6ee7b7);
+      --c-stripe-solid:  rgba(52,211,153,.42);
+      --c-badge-bg:      rgba(16,185,129,.1);
+      --c-badge:         #34d399;
+      --c-badge-border:  rgba(52,211,153,.25);
+      --c-icon-bg:       rgba(16,185,129,.12);
+      --c-icon:          #34d399;
+      --c-price-grad:    linear-gradient(135deg,#059669,#10b981,#a7f3d0);
+      --c-check-bg:      rgba(16,185,129,.12);
+      --c-check:         #34d399;
+      --c-btn-bg:        linear-gradient(135deg,#047857,#059669,#10b981);
+      --c-btn-shadow:    0 4px 16px rgba(5,150,105,.38);
+      --c-outline-border:rgba(52,211,153,.3);
+      --c-outline:       #6ee7b7;
+      --c-outline-bg:    rgba(16,185,129,.07);
+    }
+
+    /* Gold card glow pulse on the stripe */
+    .tier-gold .svc-top-bar { animation:goldShimmer 3s ease-in-out infinite; }
+    @keyframes goldShimmer { 0%,100%{opacity:1} 50%{opacity:.7} }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      width:100%; max-width:860px;
+      padding:4rem 1.5rem 5rem; position:relative;
+    }
+    .how::before {
+      content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+      width:100%; max-width:860px; height:1px;
+      background:linear-gradient(90deg,transparent,rgba(34,211,238,.3),rgba(99,102,241,.2),transparent);
+    }
+    .how-header { text-align:center; margin-bottom:3rem; }
+    .section-desc { color:rgba(255,255,255,.42); font-size:.94rem; line-height:1.8; }
+
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; position:relative; }
+    .steps::before {
+      content:''; position:absolute;
+      top:22px; left:calc(33.33% - 4px); right:calc(33.33% - 4px); height:1px;
+      background:linear-gradient(90deg,rgba(34,211,238,.35),rgba(99,102,241,.25));
+    }
+    .step { display:flex; flex-direction:column; align-items:center; text-align:center; gap:.9rem; position:relative; z-index:1; }
+    .step-num {
+      width:46px; height:46px; border-radius:14px;
+      background:rgba(34,211,238,.1); border:1.5px solid rgba(34,211,238,.25);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Plus Jakarta Sans',sans-serif; font-weight:900; font-size:1.1rem; color:#22d3ee;
+    }
+    .step-title { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:.97rem; margin-bottom:.25rem; }
+    .step-desc { color:rgba(255,255,255,.4); font-size:.83rem; line-height:1.65; }
+
+    /* ── FREE RESOURCES ── */
+    .resources {
+      width:100%; max-width:860px;
+      padding:0 1.5rem 5.5rem;
+    }
+    .resources-header { text-align:center; margin-bottom:2rem; }
+
+    .res-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+
+    .res-card {
+      background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08);
+      border-radius:20px; padding:1.5rem 1.6rem;
+      display:flex; flex-direction:column; gap:1.1rem;
+      position:relative; overflow:hidden;
+      transition:all .3s cubic-bezier(.4,0,.2,1);
+    }
+    .res-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:var(--r-stripe, linear-gradient(90deg,#22d3ee,#6366f1));
+      transform:scaleX(0); transform-origin:left; transition:transform .4s ease;
+    }
+    .res-card:hover { transform:translateY(-5px); border-color:rgba(34,211,238,.18); box-shadow:0 20px 48px -10px rgba(6,182,212,.12); }
+    .res-card:hover::before { transform:scaleX(1); }
+
+    .res-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; }
+    .res-icon-wrap {
+      width:48px; height:48px; border-radius:14px; flex-shrink:0;
+      background:var(--r-icon-bg, rgba(34,211,238,.1));
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.15rem; color:var(--r-icon, #22d3ee);
+    }
+    .res-badge-free {
+      display:inline-flex; align-items:center; gap:.3rem;
+      padding:.22rem .6rem;
+      background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.25);
+      border-radius:100px; color:#4ade80; font-size:.66rem; font-weight:800;
+      letter-spacing:.5px; text-transform:uppercase;
+    }
+    .res-title { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:1rem; line-height:1.3; }
+    .res-desc  { color:rgba(255,255,255,.4); font-size:.83rem; line-height:1.65; flex:1; }
+
+    .res-tags { display:flex; flex-wrap:wrap; gap:.35rem; }
+    .res-tag {
+      padding:.2rem .58rem;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
+      border-radius:100px; font-size:.69rem; font-weight:600; color:rgba(255,255,255,.45);
+    }
+    .res-link {
+      display:inline-flex; align-items:center; gap:.42rem;
+      padding:.65rem 1rem;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+      border-radius:10px; color:rgba(255,255,255,.72);
+      font-size:.83rem; font-weight:600; transition:all .22s;
+      align-self:flex-start;
+    }
+    .res-link:hover { background:rgba(255,255,255,.11); color:white; transform:translateX(3px); }
+
+    /* Second resource card accent */
+    .res-card:nth-child(2) {
+      --r-stripe:   linear-gradient(90deg,#6366f1,#8b5cf6);
+      --r-icon-bg:  rgba(139,92,246,.12);
+      --r-icon:     #c084fc;
+    }
+    .res-card:nth-child(2):hover { border-color:rgba(139,92,246,.2); box-shadow:0 20px 48px -10px rgba(139,92,246,.12); }
+
+    /* ── FOOTER ── */
+    footer {
+      position:relative; z-index:2;
+      width:100%; padding:3rem 1.5rem 2.5rem;
+      border-top:1px solid rgba(255,255,255,.06);
+      display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    }
+    .footer-logo { display:flex; align-items:center; gap:.5rem; }
+    .footer-logo img { width:26px; height:auto; }
+    .footer-logo-name {
+      font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:1.05rem;
+      background:var(--grad);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .footer-tag { color:rgba(255,255,255,.22); font-size:.78rem; font-style:italic; }
+    .footer-socials { display:flex; gap:.7rem; }
+    .soc-btn {
+      width:42px; height:42px;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.09);
+      border-radius:12px; display:flex; align-items:center; justify-content:center;
+      font-size:.95rem; color:rgba(255,255,255,.5); transition:all .25s;
+    }
+    .soc-btn:hover { transform:translateY(-3px); }
+    .soc-yt:hover { background:#ff0000; border-color:#ff0000; color:white; box-shadow:0 6px 20px rgba(255,0,0,.35); }
+    .soc-ig:hover { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-color:transparent; color:white; }
+    .soc-li:hover { background:#0a66c2; border-color:#0a66c2; color:white; }
+
+    /* Scroll reveal */
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity:1; transform:translateY(0); }
+    .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s}
+
+    /* Responsive */
+    @media(max-width:960px){
+      .services-grid { grid-template-columns:1fr 1fr; }
+      /* Gold/premium card spans full width at tablet */
+      .tier-gold { grid-column:1 / -1; max-width:520px; margin:0 auto; }
+      .steps::before { display:none; }
+    }
+    @media(max-width:620px){
+      .nav-links { display:none; } .burger { display:flex; }
+      nav { padding:.9rem 1.25rem; } nav.solid { padding:.75rem 1.25rem; }
+      .hero { padding:6.5rem 1.25rem 3rem; } .hero-title { letter-spacing:-1.5px; }
+      .services-grid { grid-template-columns:1fr; }
+      .tier-gold { grid-column:auto; max-width:none; }
+      .steps { grid-template-columns:1fr; gap:2rem; }
+      .res-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particle-canvas"></canvas>
+
+<div class="mob" id="mobNav">
+  <div class="mob-head">
+    <div class="nav-logo">
+      <img src="logo.svg" class="nav-logo-img" alt="Divastra">
+      <span class="nav-logo-name">Divastra</span>
+    </div>
+    <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mob-items">
+    <li><a href="counselling.html" onclick="closeMob()"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="https://divastra.github.io/rankPredictor.html" onclick="closeMob()"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html" onclick="closeMob()"><i class="fas fa-book-open"></i> Books</a></li>
+    <li><a href="https://divastra.github.io/video.html" onclick="closeMob()"><i class="fab fa-youtube"></i> Videos</a></li>
+  </ul>
+</div>
+
+<nav id="nav">
+  <a href="https://divastra.github.io/" class="nav-logo">
+    <img src="logo.svg" class="nav-logo-img" alt="Divastra logo">
+    <span class="nav-logo-name">Divastra</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="counselling.html" class="active"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="https://divastra.github.io/rankPredictor.html"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html"><i class="fas fa-book-open"></i> Books</a></li>
+    <li><a href="https://divastra.github.io/video.html"><i class="fab fa-youtube"></i> Videos</a></li>
+  </ul>
+  <div class="burger" onclick="openMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page">
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-badge"><span class="badge-dot"></span>Expert Counselling</div>
+
+    <h1 class="hero-title">
+      Your JEE Journey,<br>
+      <span class="grad-text">Personally Guided</span>
+    </h1>
+    <p class="hero-desc">
+      I'm Prabhat Ranjan — I help you navigate Class 10/12 Boards, IIT JEE prep, and choosing the right engineering college. No generic advice. Real, experience-backed guidance.
+    </p>
+
+    <div class="profile-chip">
+      <img src="https://divastra.github.io/assets/img/thumbnail1.png"
+           class="profile-photo" alt="Prabhat Ranjan"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="profile-avatar-fb" style="display:none;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#22d3ee);align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:.8rem;flex-shrink:0">PR</div>
+      <div>
+        <div class="profile-name">Prabhat Ranjan</div>
+        <div class="profile-role">Mech Eng · NIT Jamshedpur · "Blue T-shirt Bhaiya"</div>
+      </div>
+    </div>
+
+    <div class="hero-pills">
+      <span class="pill"><span class="pill-dot pd-b"></span>10,000+ Students</span>
+      <span class="pill"><span class="pill-dot pd-g"></span>NIT Jamshedpur</span>
+      <span class="pill"><span class="pill-dot pd-y"></span>JEE + Boards</span>
+      <span class="pill"><span class="pill-dot pd-c"></span>1-on-1 Sessions</span>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="services">
+    <div class="services-header reveal">
+      <div class="section-label"><i class="fas fa-layer-group"></i>&nbsp;What's Available</div>
+      <h2 class="section-title">Pick the guidance <span class="grad-text">that fits you</span></h2>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- ① JoSAA / CSAB PDF — Violet ₹501 -->
+      <div class="svc-card tier-violet reveal">
+        <div class="svc-top-bar"></div>
+        <div class="svc-body">
+          <span class="svc-tier"><i class="fas fa-file-pdf"></i> Comprehensive PDF</span>
+
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png"
+                 class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div style=\'width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a78bfa);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.8rem;flex-shrink:0\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Curated by hand</div>
+            </div>
+          </div>
+
+          <div class="svc-icon"><i class="fas fa-list-ol"></i></div>
+
+          <div class="svc-title">JoSAA / CSAB Full<br>Preference Order PDF</div>
+
+          <div class="svc-price-row">
+            <span class="svc-price">₹501</span>
+            <span class="svc-price-note">one-time · 1-yr access</span>
+          </div>
+
+          <ul class="svc-features">
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>813 engineering program options in one PDF</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>IITs, NITs, IIITs, GFTIs &amp; IIEST Shibpur</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>All branches (excl. B.Arch &amp; B.Plan)</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
+          </ul>
+
+          <div class="svc-note">
+            <i class="fas fa-clock"></i>
+            Processing: a few hours to 48 hours after form submission.
+          </div>
+
+          <div class="svc-buttons">
+            <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary">
+              <i class="fas fa-pen-to-square"></i> Fill ₹501 Form
+            </a>
+            <a href="https://drive.google.com/file/d/1wBwq7X3qEY1zLd-3-0mTXGBQmCJ6iXeK/view" target="_blank" rel="noopener" class="btn-secondary">
+              <i class="fas fa-eye"></i> View Full PDF
+            </a>
+            <a href="https://drive.google.com/file/d/1Vkz70SZqlwRCbTK-6J6JqbIfQ6X4NWnO/view?usp=drive_link" target="_blank" rel="noopener" class="btn-outline">
+              <i class="fas fa-gift"></i> Free Demo — 1st Page
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ② 1-on-1 Session — Gold ₹5000 (FEATURED) -->
+      <div class="svc-card tier-gold reveal d1">
+        <div class="svc-top-bar"></div>
+        <div class="svc-body">
+          <span class="svc-tier"><i class="fas fa-crown"></i> Premium · Most Popular</span>
+
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png"
+                 class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div style=\'width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#d97706,#fbbf24);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.8rem;flex-shrink:0\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Live 1-on-1 Session</div>
+            </div>
+          </div>
+
+          <div class="svc-icon"><i class="fas fa-video"></i></div>
+
+          <div class="svc-title">1-on-1 College Admission<br>Guidance Session</div>
+
+          <div class="svc-price-row">
+            <span class="svc-price">₹5,000</span>
+            <span class="svc-price-note">per session</span>
+          </div>
+
+          <ul class="svc-features">
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Live Google Meet with Prabhat Ranjan</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>College, branch &amp; career path selection</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>4 available time slots — you choose</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Session recorded for your reference &amp; security</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Confirmation within 48 hours of form</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Same email used throughout the process</li>
+          </ul>
+
+          <div class="svc-note" style="margin-right:0">
+            <i class="fas fa-envelope"></i>
+            <span>Queries before booking: <span style="color:rgba(255,255,255,.62)">divastra729@gmail.com</span></span>
+          </div>
+
+          <div class="svc-buttons">
+            <a href="https://forms.gle/DRyB23ebHPCPAK296" target="_blank" rel="noopener" class="btn-primary">
+              <i class="fas fa-pen-to-square"></i> Fill ₹5,000 Form
+            </a>
+            <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" rel="noopener" class="btn-secondary">
+              <i class="fab fa-youtube"></i> See My Channel First
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ③ UPTAC Counselling PDF — Emerald ₹501 -->
+      <div class="svc-card tier-emerald reveal d2">
+        <div class="svc-top-bar"></div>
+        <div class="svc-body">
+          <span class="svc-tier"><i class="fas fa-map-location-dot"></i> UP State Counselling</span>
+
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png"
+                 class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div style=\'width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#047857,#10b981);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.8rem;flex-shrink:0\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Curated &amp; organised</div>
+            </div>
+          </div>
+
+          <div class="svc-icon"><i class="fas fa-file-pdf"></i></div>
+
+          <div class="svc-title">UPTAC Counselling<br>Preference Order PDF</div>
+
+          <div class="svc-price-row">
+            <span class="svc-price">₹501</span>
+            <span class="svc-price-note">one-time · 1-yr access</span>
+          </div>
+
+          <ul class="svc-features">
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Full preference order for UP state colleges</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>AKTU-affiliated institutes covered</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Branches, ranks &amp; college tiers sorted</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
+          </ul>
+
+          <div class="svc-note">
+            <i class="fas fa-clock"></i>
+            Processing: a few hours to 48 hours after form submission.
+          </div>
+
+          <div class="svc-buttons">
+            <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary">
+              <i class="fas fa-pen-to-square"></i> Fill ₹501 Form
+            </a>
+            <a href="https://drive.google.com/file/d/1YnFGRa6nhZCF6jBsHVvFGW7qs4UxOnjY/view?usp=drive_link" target="_blank" rel="noopener" class="btn-secondary">
+              <i class="fas fa-eye"></i> View Full PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="how">
+    <div class="how-header reveal">
+      <div class="section-label"><i class="fas fa-route"></i>&nbsp;The Process</div>
+      <h2 class="section-title" style="margin-bottom:.6rem">Simple. Fast. <span class="grad-text">Personal.</span></h2>
+      <p class="section-desc" style="max-width:440px;margin:0 auto">Three steps between you and the guidance that changes everything.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Fill the Form</div>
+          <p class="step-desc">Submit the payment form with your details, preferences, and time slot. Use the same email throughout.</p>
+        </div>
+      </div>
+      <div class="step reveal d1">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Get Confirmed</div>
+          <p class="step-desc">Receive a confirmation on your email within 48 hours. PDF orders are processed as fast as a few hours.</p>
+        </div>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Guidance Begins</div>
+          <p class="step-desc">Access your PDF for a full year, or join your live session with Prabhat — recorded for your reference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FREE RESOURCES ── -->
+  <section class="resources">
+    <div class="resources-header reveal">
+      <div class="section-label"><i class="fas fa-table-cells-large"></i>&nbsp;Free Tools</div>
+      <h2 class="section-title" style="margin-bottom:.5rem">Start for free. <span class="grad-text">No sign-up needed.</span></h2>
+      <p class="section-desc" style="max-width:440px;margin:0 auto">These spreadsheets are fully open — explore before you spend a rupee.</p>
+    </div>
+    <div class="res-grid reveal" style="margin-top:2rem">
+
+      <div class="res-card">
+        <div class="res-card-top">
+          <div class="res-icon-wrap"><i class="fas fa-code-compare"></i></div>
+          <span class="res-badge-free"><i class="fas fa-unlock"></i> Free</span>
+        </div>
+        <div>
+          <div class="res-title">College Comparison Tool</div>
+          <div class="res-desc" style="margin-top:.4rem">
+            Compare any two colleges side by side — fees, placement, rankings, location, and more. Built to cut through the noise.
+          </div>
+        </div>
+        <div class="res-tags">
+          <span class="res-tag">Placement</span>
+          <span class="res-tag">Fees</span>
+          <span class="res-tag">Rankings</span>
+          <span class="res-tag">Location</span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1nmWcFF1r3odmjC_IR5tsCi00VFPxjotQUJ1JxcYXWvA/edit?usp=sharing"
+           target="_blank" rel="noopener" class="res-link">
+          Open Spreadsheet <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-top">
+          <div class="res-icon-wrap"><i class="fas fa-chart-bar"></i></div>
+          <span class="res-badge-free"><i class="fas fa-unlock"></i> Free</span>
+        </div>
+        <div>
+          <div class="res-title">College Ranking Database</div>
+          <div class="res-desc" style="margin-top:.4rem">
+            Comprehensive ranking data for NITs, IIITs, GFTIs, and IITs — sorted, filterable, and kept updated for every JoSAA cycle.
+          </div>
+        </div>
+        <div class="res-tags">
+          <span class="res-tag">NITs</span>
+          <span class="res-tag">IIITs</span>
+          <span class="res-tag">GFTIs</span>
+          <span class="res-tag">IITs</span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1JFaVjSuRLTRsBDK1ZkTb7tHJrqDbjipoNLMIldbP7xI/edit?usp=sharing"
+           target="_blank" rel="noopener" class="res-link">
+          Open Spreadsheet <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.svg" alt="">
+      <span class="footer-logo-name">Divastra</span>
+    </div>
+    <p class="footer-tag">Divya + Astra — Divine Weapon for Every Student</p>
+    <div class="footer-socials">
+      <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" class="soc-btn soc-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com/itsprabhatranjan"  target="_blank" class="soc-btn soc-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/itsprabhatranjan" target="_blank" class="soc-btn soc-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+/* ── PARTICLES (same system as homepage) ── */
+(function(){
+  const canvas=document.getElementById('particle-canvas'), ctx=canvas.getContext('2d');
+  function resize(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
+  resize(); window.addEventListener('resize',resize,{passive:true});
+  const windAngle=Math.random()*Math.PI*2, BASE_SPD=0.55, ATTRACT_R=180, COUNT=110;
+  const mouse={x:canvas.width/2,y:canvas.height/2};
+  let prevMX=mouse.x,prevMY=mouse.y,cursorSpeed=0;
+  let cursorDirX=Math.cos(windAngle),cursorDirY=Math.sin(windAngle),cursorStrength=0,cursorSpeedBoost=0;
+  window.addEventListener('mousemove',e=>{
+    const dvx=e.clientX-prevMX,dvy=e.clientY-prevMY;
+    cursorSpeed=Math.sqrt(dvx*dvx+dvy*dvy);
+    if(cursorSpeed>2){ cursorDirX=dvx/cursorSpeed; cursorDirY=dvy/cursorSpeed; cursorStrength=Math.min(1,cursorSpeed/15); cursorSpeedBoost=Math.min(cursorSpeed*0.04,3.0); }
+    prevMX=mouse.x; prevMY=mouse.y; mouse.x=e.clientX; mouse.y=e.clientY;
+  },{passive:true});
+  window.addEventListener('touchmove',e=>{ const t=e.touches[0]; mouse.x=t.clientX; mouse.y=t.clientY; cursorStrength=0.6; cursorSpeedBoost=1.5; },{passive:true});
+  const PALETTE=['#6366f1','#818cf8','#8b5cf6','#a5b4fc','#22d3ee','#67e8f9'];
+  class Particle{
+    constructor(){ this.init(); }
+    init(){
+      this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height;
+      this.r=Math.random()*1.8+0.5; this.spd=0.5+Math.random()*0.8;
+      this.vx=Math.cos(windAngle)*BASE_SPD*this.spd; this.vy=Math.sin(windAngle)*BASE_SPD*this.spd;
+      this.alpha=Math.random()*0.55+0.2; this.color=PALETTE[Math.floor(Math.random()*PALETTE.length)];
+      this.phase=Math.random()*Math.PI*2; this.phSpd=0.018+Math.random()*0.018;
+      this.trail=[]; this.nearFactor=0;
+    }
+    update(){
+      const tSpd=(BASE_SPD+cursorSpeedBoost)*this.spd;
+      const wx=Math.cos(windAngle),wy=Math.sin(windAngle);
+      this.vx+=(( wx*(1-cursorStrength)+cursorDirX*cursorStrength)*tSpd-this.vx)*0.04;
+      this.vy+=(( wy*(1-cursorStrength)+cursorDirY*cursorStrength)*tSpd-this.vy)*0.04;
+      const dx=mouse.x-this.x,dy=mouse.y-this.y,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<ATTRACT_R&&dist>1){ const t=(ATTRACT_R-dist)/ATTRACT_R,pow=t*t,str=0.045+Math.min(cursorSpeed,40)*0.0025; this.vx+=(dx/dist)*pow*str; this.vy+=(dy/dist)*pow*str; this.nearFactor=Math.min(1,this.nearFactor+pow*0.18); } else { this.nearFactor*=0.92; }
+      const spd=Math.sqrt(this.vx*this.vx+this.vy*this.vy),maxSpd=BASE_SPD*4+cursorSpeedBoost*2;
+      if(spd>maxSpd){ this.vx=(this.vx/spd)*maxSpd; this.vy=(this.vy/spd)*maxSpd; }
+      this.trail.unshift({x:this.x,y:this.y}); if(this.trail.length>6)this.trail.pop();
+      this.x+=this.vx; this.y+=this.vy; this.phase+=this.phSpd;
+      const m=12;
+      if(this.x<-m)this.x=canvas.width+m; if(this.x>canvas.width+m)this.x=-m;
+      if(this.y<-m)this.y=canvas.height+m; if(this.y>canvas.height+m)this.y=-m;
+    }
+    draw(){
+      const pulse=0.55+Math.sin(this.phase)*0.35,boost=1+this.nearFactor*1.8;
+      for(let i=0;i<this.trail.length;i++){ const frac=(this.trail.length-i)/this.trail.length; ctx.beginPath(); ctx.arc(this.trail[i].x,this.trail[i].y,this.r*frac,0,Math.PI*2); ctx.fillStyle=this.color; ctx.globalAlpha=this.alpha*pulse*frac*0.38; ctx.fill(); }
+      ctx.beginPath(); ctx.arc(this.x,this.y,this.r*(0.85+this.nearFactor*0.4),0,Math.PI*2); ctx.fillStyle=this.color; ctx.globalAlpha=this.alpha*pulse; ctx.fill();
+      const hR=this.r*3.5*boost,g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,hR);
+      g.addColorStop(0,this.color+'aa'); g.addColorStop(1,this.color+'00');
+      ctx.beginPath(); ctx.arc(this.x,this.y,hR,0,Math.PI*2); ctx.fillStyle=g; ctx.globalAlpha=this.alpha*pulse*(0.4+this.nearFactor*0.35); ctx.fill();
+    }
+  }
+  const particles=Array.from({length:COUNT},()=>new Particle());
+  function loop(){
+    ctx.clearRect(0,0,canvas.width,canvas.height); ctx.globalAlpha=1;
+    particles.forEach(p=>{p.update();p.draw();});
+    cursorStrength*=0.97; cursorSpeedBoost*=0.95; cursorSpeed*=0.88;
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ── NAVBAR ── */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>40),{passive:true});
+
+/* ── MOBILE NAV ── */
+const mobNav=document.getElementById('mobNav');
+function openMob(){ mobNav.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMob(){ mobNav.classList.remove('open'); document.body.style.overflow=''; }
+
+/* ── SCROLL REVEAL ── */
+const revEls=document.querySelectorAll('.reveal');
+const revObs=new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); revObs.unobserve(e.target); } }); },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+revEls.forEach(el=>revObs.observe(el));
+</script>
+</body>
+</html>

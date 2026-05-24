@@ -1,913 +1,442 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>Divastra Video Hub</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-		crossorigin="anonymous"></script>
-	<meta name="theme-color" content="#4A148C" />
-	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/favicon/manifest.json">
-	<meta name="msapplication-TileColor" content="#4A148C">
-	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-	<style type="text/css">
-		@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Divastra Video Hub – JEE Videos by Prabhat Ranjan | NIT Jamshedpur</title>
+  <meta name="description" content="Watch JEE strategy, college reviews, book reviews, and counselling videos by Prabhat Ranjan (NIT Jamshedpur). Free video hub for every JEE aspirant.">
+  <meta name="author" content="Prabhat Ranjan">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://divastra.github.io/video.html">
+  <meta property="og:title" content="Divastra Video Hub – JEE Videos by Prabhat Ranjan">
+  <meta property="og:description" content="College reviews, book reviews, JEE tips & counselling — all in one place.">
+  <meta property="og:image" content="https://divastra.github.io/assets/img/thumbnail1.png">
+  <meta property="og:url" content="https://divastra.github.io/video.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --brand:#6366f1;--brand-l:#818cf8;--violet:#8b5cf6;--cyan:#22d3ee;
+      --bg:#06000e;--border:rgba(255,255,255,.07);
+      --grad:linear-gradient(135deg,#6366f1,#8b5cf6,#22d3ee);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;overflow-x:hidden;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:white;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    *,*::before,*::after{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none;}
+    input,textarea,select,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;user-select:text;}
+    img{-webkit-user-drag:none;pointer-events:none;}
+    a img,button img{pointer-events:auto;}
 
-		* {
-			-webkit-user-select: none;
-			/* Safari */
-			-ms-user-select: none;
-			/* IE 10 and IE 11 */
-			user-select: none;
-			/* Standard syntax */
-			-webkit-user-drag: none;
-			-khtml-user-drag: none;
-			-moz-user-drag: none;
-			-o-user-drag: none;
-		}
+    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+      background:radial-gradient(ellipse 60% 50% at 20% 20%,rgba(99,102,241,.1),transparent),
+                 radial-gradient(ellipse 55% 45% at 80% 70%,rgba(34,211,238,.08),transparent),
+                 radial-gradient(ellipse 40% 35% at 50% 100%,rgba(139,92,246,.07),transparent);}
+    #particle-canvas{position:fixed;inset:0;z-index:1;pointer-events:none;}
+    .cur-dot{position:fixed;width:8px;height:8px;border-radius:50%;background:white;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+    .cur-ring{position:fixed;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .22s,height .22s,border-color .22s;mix-blend-mode:difference;}
+    body:has(a:hover) .cur-ring,body:has(button:hover) .cur-ring{width:48px;height:48px;border-color:rgba(255,255,255,.8);}
+    #progressBar{position:fixed;top:0;left:0;height:2.5px;z-index:9001;width:0%;background:linear-gradient(90deg,#6366f1,#8b5cf6,#22d3ee);transition:width .1s;border-radius:0 2px 2px 0;box-shadow:0 0 8px rgba(99,102,241,.7);}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+    .grad-text{background:linear-gradient(90deg,#6366f1 0%,#8b5cf6 20%,#22d3ee 45%,#a5b4fc 55%,#22d3ee 70%,#8b5cf6 85%,#6366f1 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradShimmer 4s linear infinite;}
+    @keyframes gradShimmer{0%{background-position:0% center}100%{background-position:200% center}}
 
-		html,
-		body {
-			margin: 0;
-			padding: 0
-		}
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s;}
+    #nav.solid{background:rgba(6,0,14,.92);backdrop-filter:blur(22px);border-bottom:1px solid var(--border);padding:.7rem 2rem;}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;}
+    .nav-logo-img{width:30px;height:auto;transition:transform .3s;}
+    .nav-logo:hover .nav-logo-img{transform:scale(1.12) rotate(-5deg);}
+    .nav-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.3px;}
+    .nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;}
+    .nav-links a{display:flex;align-items:center;gap:.3rem;padding:.45rem .8rem;color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;border-radius:8px;transition:color .2s,background .2s;position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:2px;left:.8rem;right:.8rem;height:1.5px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;border-radius:2px;}
+    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+    .nav-links a i{font-size:.72rem;}
+    .nav-links a:hover{color:white;background:rgba(255,255,255,.08);}
+    .nav-links a.active{color:#22d3ee;}
+    .burger{display:none;flex-direction:column;gap:5px;padding:8px 10px;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:8px;cursor:pointer;}
+    .burger span{display:block;width:20px;height:2px;background:white;border-radius:2px;}
+    .mob{position:fixed;inset:0;z-index:600;background:rgba(6,0,14,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s;}
+    .mob.open{opacity:1;pointer-events:all;}
+    .mob-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem;}
+    .mob-close{width:38px;height:38px;background:rgba(255,255,255,.08);border:none;border-radius:8px;color:white;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .mob-items{list-style:none;display:flex;flex-direction:column;gap:.3rem;}
+    .mob-items a{display:flex;align-items:center;gap:.85rem;padding:.9rem 1rem;color:rgba(255,255,255,.7);font-size:1rem;font-weight:600;border-radius:10px;transition:all .2s;}
+    .mob-items a i{color:var(--brand-l);width:20px;text-align:center;}
+    .mob-items a:hover{color:white;background:rgba(255,255,255,.06);}
+    #backTop{position:fixed;bottom:2rem;right:1.5rem;z-index:500;width:44px;height:44px;border-radius:14px;background:rgba(99,102,241,.18);border:1px solid rgba(99,102,241,.3);color:var(--brand-l);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s,background .2s;pointer-events:none;}
+    #backTop.show{opacity:1;transform:translateY(0);pointer-events:all;}
+    #backTop:hover{background:rgba(99,102,241,.3);}
 
-		.nav-item {
-			border-radius: 64px;
-			background-color: #6A1B9A;
-			margin: 4px;
-			transition: 0.4s;
-		}
+    /* SHARE */
+    .share-overlay{position:fixed;inset:0;z-index:800;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .25s;}
+    .share-overlay.show{opacity:1;pointer-events:all;}
+    .share-popup{position:fixed;z-index:801;width:318px;background:rgba(14,10,30,.96);border:1px solid rgba(99,102,241,.28);border-radius:20px;padding:1.4rem 1.35rem 1.2rem;box-shadow:0 24px 60px rgba(0,0,0,.6);opacity:0;transform:scale(.9) translateY(6px);pointer-events:none;transition:opacity .25s,transform .25s;}
+    .share-popup.show{opacity:1;transform:scale(1) translateY(0);pointer-events:all;}
+    .share-popup-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+    .share-popup-title{font-weight:700;font-size:1rem;}
+    .share-popup-close{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.07);border:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;}
+    .share-popup-url{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.55rem .75rem;font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .share-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin-bottom:.75rem;}
+    .share-btn{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:.6rem .3rem;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);cursor:pointer;font-size:.68rem;color:rgba(255,255,255,.7);transition:background .2s;}
+    .share-btn:hover{background:rgba(255,255,255,.1);}
+    .share-btn i{font-size:1.1rem;}
+    .share-copy-btn{width:100%;padding:.6rem;border-radius:10px;background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.3);color:var(--brand-l);font-size:.82rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.4rem;transition:background .2s;}
+    .share-copy-btn:hover{background:rgba(99,102,241,.3);}
+    .share-hint{text-align:center;font-size:.7rem;color:rgba(255,255,255,.3);margin-top:.6rem;}
 
-		.nav-item:hover {
-			background-color: #BA68C8;
-			transform: scale(1.15);
-		}
+    /* HERO */
+    .hero{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7rem 1.5rem 4rem;text-align:center;}
+    .hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.38rem 1rem;border-radius:99px;border:1px solid rgba(248,113,113,.3);background:rgba(248,113,113,.08);color:#f87171;font-size:.78rem;font-weight:600;letter-spacing:.04em;margin-bottom:1.5rem;}
+    .hero-badge i{font-size:.75rem;}
+    .hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.2rem,7vw,4.2rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;max-width:820px;margin:0 auto .9rem;}
+    .hero p{font-size:clamp(.95rem,2.2vw,1.12rem);color:rgba(255,255,255,.55);max-width:600px;margin:0 auto 2.2rem;line-height:1.7;}
+    .hero-stats{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+    .hero-stat{display:flex;flex-direction:column;align-items:center;gap:.15rem;}
+    .hero-stat-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.9rem;font-weight:900;line-height:1;}
+    .hero-stat-lbl{font-size:.72rem;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.4);text-transform:uppercase;}
+    .hero-stat-div{width:1px;height:36px;background:rgba(255,255,255,.1);}
+    .hero-ctas{display:flex;align-items:center;justify-content:center;gap:.85rem;flex-wrap:wrap;}
+    .btn-yt{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1.6rem;border-radius:12px;background:#ff0000;color:white;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(255,0,0,.35);}
+    .btn-yt:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,0,0,.5);}
+    .btn-outline{display:inline-flex;align-items:center;gap:.55rem;padding:.72rem 1.5rem;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s;}
+    .btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
 
-		.buton {
-			background-color: #4A148C;
-			color: #f3e5f5;
-			transition: 0s;
-			border-radius: 64px;
-			border-width: 1px;
-			border-color: #4A148C;
-			transition: 0.4s;
-		}
+    /* CHANNEL BANNER */
+    .channel-banner{position:relative;z-index:10;padding:0 1.5rem 3rem;max-width:1280px;margin:0 auto;width:100%;}
+    .channel-card{background:linear-gradient(135deg,rgba(99,102,241,.12),rgba(139,92,246,.1),rgba(34,211,238,.08));border:1px solid rgba(99,102,241,.25);border-radius:20px;padding:2rem 2.2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+    .channel-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6,#22d3ee);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;box-shadow:0 0 0 3px rgba(99,102,241,.3);}
+    .channel-info{flex:1;min-width:200px;}
+    .channel-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;margin-bottom:.2rem;}
+    .channel-handle{font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:.6rem;}
+    .channel-tags{display:flex;gap:.5rem;flex-wrap:wrap;}
+    .channel-tag{padding:.2rem .6rem;border-radius:6px;font-size:.7rem;font-weight:600;background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);}
+    .channel-actions{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;}
+    .btn-subscribe{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.4rem;border-radius:11px;background:#ff0000;color:white;font-weight:700;font-size:.87rem;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(255,0,0,.3);}
+    .btn-subscribe:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,0,0,.45);}
 
-		.buton:hover {
-			background-color: #f3e5f5;
-			color: #4A148C;
-			transform: scale(1.15);
-		}
-	</style>
-	<script>
-		document.addEventListener('contextmenu', event => event.preventDefault());
-		document.addEventListener("keydown", function (e) {
+    /* CURATOR FEED SECTION */
+    .feed-section{position:relative;z-index:10;padding:0 1.5rem 5rem;max-width:1400px;margin:0 auto;width:100%;}
+    .feed-hd{display:flex;align-items:center;gap:.85rem;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.06);}
+    .feed-hd-icon{width:38px;height:38px;border-radius:10px;background:rgba(248,113,113,.15);color:#f87171;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+    .feed-hd-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.15rem;}
+    .feed-hd-sub{font-size:.8rem;color:rgba(255,255,255,.35);margin-left:auto;}
 
-			if (e.ctrlKey && e.shiftKey && e.which == 73) {
-				e.preventDefault();
-				rightc();  // you can remove this line on the live website
-			}
-			else if (e.ctrlKey) {
-				e.preventDefault();
-				rightc();  // you can remove this line on the live website
-			}
-		});
-	</script>
+    /* Override curator.io feed colours for dark theme */
+    #curator-feed-new-feed-layout{
+      --crt-color-primary: #6366f1;
+      background: transparent !important;
+    }
+    #curator-feed-new-feed-layout .crt-feed-window{background:transparent !important;}
+    #curator-feed-new-feed-layout .crt-post{
+      background:rgba(255,255,255,.04) !important;
+      border:1px solid rgba(255,255,255,.08) !important;
+      border-radius:14px !important;
+      transition:transform .25s,border-color .25s,box-shadow .25s !important;
+    }
+    #curator-feed-new-feed-layout .crt-post:hover{
+      transform:translateY(-4px) !important;
+      border-color:rgba(255,255,255,.2) !important;
+      box-shadow:0 16px 40px rgba(0,0,0,.5) !important;
+    }
+    #curator-feed-new-feed-layout .crt-post-text{color:rgba(255,255,255,.8) !important;}
+    #curator-feed-new-feed-layout .crt-post-username{color:var(--brand-l) !important;}
+    #curator-feed-new-feed-layout .crt-post-share-button{color:rgba(255,255,255,.5) !important;}
+    #curator-feed-new-feed-layout .crt-logo{color:rgba(255,255,255,.25) !important;font-size:.72rem;}
+    /* Load more button */
+    #curator-feed-new-feed-layout .crt-load-more{
+      background:rgba(99,102,241,.2) !important;
+      border:1px solid rgba(99,102,241,.4) !important;
+      color:var(--brand-l) !important;
+      border-radius:12px !important;
+      padding:.65rem 1.8rem !important;
+      font-weight:600 !important;
+      transition:background .2s !important;
+    }
+    #curator-feed-new-feed-layout .crt-load-more:hover{background:rgba(99,102,241,.35) !important;}
+
+    /* FOOTER */
+    .footer-nav{position:relative;z-index:10;border-top:1px solid rgba(255,255,255,.06);padding:2.5rem 1.5rem;margin-top:2rem;}
+    .footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
+    .footer-brand{display:flex;align-items:center;gap:.5rem;}
+    .footer-brand-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .footer-copy{font-size:.78rem;color:rgba(255,255,255,.3);}
+    .footer-links{display:flex;gap:1.5rem;}
+    .footer-links a{font-size:.78rem;color:rgba(255,255,255,.4);transition:color .2s;}
+    .footer-links a:hover{color:rgba(255,255,255,.75);}
+
+    @media(max-width:768px){
+      #nav .nav-links{display:none;}
+      .burger{display:flex;}
+      .hero h1{font-size:2.2rem;}
+      .hero-stats{gap:1.5rem;}
+      .channel-card{flex-direction:column;text-align:center;}
+      .channel-tags{justify-content:center;}
+      .channel-actions{justify-content:center;}
+      .footer-inner{flex-direction:column;text-align:center;}
+      .footer-links{justify-content:center;}
+    }
+    @media(max-width:480px){
+      .share-btns{grid-template-columns:1fr 1fr;}
+    }
+  </style>
 </head>
+<body>
 
-<body style="background-color: #f3e5f5;">
+<!-- Cursor -->
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
 
-	<nav style="background-color: #4a148c; position: sticky; top: 0; z-index: 10000;"
-		class="navbar navbar-expand-lg navbar-dark" id="navbar">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html" id="logo">
-				<img src="jee\assets\logo.png" style="border-radius: 200px;" alt="Bootstrap" width="24" height="24">
-				Divastra
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul class="nav navsize mb-2 mb-lg-0 ms-md-auto">
-					<!--
-						<li class="nav-item">
-							<a class="nav-link text-white" href="/mentorship.html">Mentorship</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-white" href="/guidance.html">Guidance</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-white" href="/affiliate.html">Affiliate</a>
-						</li>
-					-->
-					<li class="nav-item">
-						<a class="nav-link text-white" href="/counselling.html">Counselling</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-white" href="/rankPredictor.html">Predictor</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-white" href="/books.html">Books</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-white" href="/video.html">Videos</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div style="height: 100vh;background-color:#4A148C; padding-top: 64px;">
-		<section class="py-5 text-center container">
-			<div class="row mx-4">
-				<div class="col-lg-6 col-md-8 mx-auto rounded py-lg-5">
-					<img src="https://cdn-icons-png.flaticon.com/512/777/777242.png" class="card-img-top" alt="..."
-						style="height: 64px; width: 64px; margin-bottom: 32px;">
-					<div class="">
-						<h1 class="fw-light">
-							<p class="textAbove" style="color:#f3e5f5;">Prabhat Ranjan YouTube Video</p>
-						</h1>
-					</div>
-					<p class="lead" style="color:rgba(192, 227, 241, 0.664); font-size: 16px;">Watch all YouTube videos
-						by Prabhat Ranjan related to IIT JEE, engineering, education, college, career without leaving
-						the website.
-					</p>
-				</div>
-			</div>
-		</section>
-		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-		<a href="#content">
-			<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_02udvnaf.json" background="transparent"
-				speed="1" style="width: 100px; height: 100px;"
-				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
-		</a>
-	</div>
+<!-- Progress bar -->
+<div id="progressBar"></div>
 
+<!-- Particle canvas -->
+<canvas id="particle-canvas"></canvas>
 
-	<br><br><br><br>
+<!-- Share popup -->
+<div class="share-overlay" id="shareOverlay" onclick="closeShare()"></div>
+<div class="share-popup" id="sharePopup">
+  <div class="share-popup-hd">
+    <span class="share-popup-title">Share Divastra</span>
+    <button class="share-popup-close" onclick="closeShare()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="share-popup-url">divastra.github.io/video.html</div>
+  <div class="share-btns">
+    <a class="share-btn" href="https://wa.me/?text=Watch%20JEE%20videos%20by%20Prabhat%20Ranjan%20on%20Divastra%3A%20https%3A%2F%2Fdivastra.github.io%2Fvideo.html" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="color:#25D366"></i>WhatsApp</a>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?text=Watch%20JEE%20videos%20by%20Prabhat%20Ranjan%20on%20Divastra%20%F0%9F%8E%AF&url=https%3A%2F%2Fdivastra.github.io%2Fvideo.html" target="_blank" rel="noopener"><i class="fab fa-twitter" style="color:#1DA1F2"></i>Twitter</a>
+    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdivastra.github.io%2Fvideo.html" target="_blank" rel="noopener"><i class="fab fa-linkedin" style="color:#0A66C2"></i>LinkedIn</a>
+    <a class="share-btn" href="https://t.me/share/url?url=https%3A%2F%2Fdivastra.github.io%2Fvideo.html&text=Watch%20JEE%20videos%20by%20Prabhat%20Ranjan%20on%20Divastra" target="_blank" rel="noopener"><i class="fab fa-telegram" style="color:#2CA5E0"></i>Telegram</a>
+    <button class="share-btn" onclick="copyShareLink()"><i class="fas fa-link" style="color:var(--brand-l)"></i>Copy Link</button>
+    <a class="share-btn" href="https://www.instagram.com/itsprabhatranjan/" target="_blank" rel="noopener"><i class="fab fa-instagram" style="color:#E1306C"></i>Instagram</a>
+  </div>
+  <p class="share-hint">Right-click · Ctrl key · Long-press to share ✨</p>
+</div>
 
-	<center>
-		<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false"
-			style="margin-bottom: 80px;">
-			<div class="toast-header">
-				<img src="https://cdn-icons-png.flaticon.com/128/12744/12744435.png" style="width: 20px; height: 20px;"
-					class="rounded me-2" alt="...">
-				<strong class="me-auto">Did you know?</strong>
-				<small>New</small>
-				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-			</div>
-			<div class="toast-body" align="left" style="background-color: #ede6fc; font-size: 13px; color: #4A148C;">
-				We are excited to announce the launch of our extensive counseling services! Get personalized guidance
-				for Class 10 & Below, Class 11, 12 Boards, IIT JEE, Engineering College Admission, and Engineering
-				College Guidance & Placement Preparation. Join our mentorship programs and take the next step towards
-				your academic success!
-				<br><br>
-				<a href="counselling.html" class="btn btn-primary">Know more</a>
-				<br>
-			</div>
-		</div>
-	</center>
-	<script>
-		var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-		var toastList = toastElList.map(function (toastEl) {
-			return new bootstrap.Toast(toastEl)
-		})
-		toastList.forEach(toast => toast.show())
-	</script>
+<!-- Mobile nav -->
+<div class="mob" id="mobNav">
+  <div class="mob-head">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.svg" alt="Divastra" class="nav-logo-img">
+      <span class="nav-logo-name">Divastra</span>
+    </a>
+    <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mob-items">
+    <li><a href="counselling.html"><i class="fas fa-user-tie"></i>Counselling</a></li>
+    <li><a href="rankPredictor.html"><i class="fas fa-chart-line"></i>Predictor</a></li>
+    <li><a href="books.html"><i class="fas fa-book"></i>Books</a></li>
+    <li><a href="video.html"><i class="fas fa-play-circle"></i>Videos</a></li>
+  </ul>
+</div>
 
+<!-- Nav -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.svg" alt="Divastra logo" class="nav-logo-img">
+    <span class="nav-logo-name">Divastra</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="counselling.html"><i class="fas fa-user-tie"></i> Counselling</a></li>
+    <li><a href="rankPredictor.html"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="books.html"><i class="fas fa-book"></i> Books</a></li>
+    <li><a href="video.html" class="active"><i class="fas fa-play-circle"></i> Videos</a></li>
+  </ul>
+  <button class="burger" onclick="openMob()"><span></span><span></span><span></span></button>
+</nav>
 
+<!-- Back to top -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge reveal"><i class="fab fa-youtube"></i> YouTube Video Hub</div>
+  <h1 class="reveal d1">Watch & Learn,<br><span class="grad-text">Zero Distractions.</span></h1>
+  <p class="reveal d2">JEE strategy, 300+ college reviews, 100+ book reviews, and mentorship sessions — all by Prabhat Ranjan, directly inside Divastra.</p>
+  <div class="hero-stats reveal d2">
+    <div class="hero-stat">
+      <span class="hero-stat-val grad-text">35k+</span>
+      <span class="hero-stat-lbl">Subscribers</span>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-val grad-text">1Cr+</span>
+      <span class="hero-stat-lbl">Total Views</span>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-val grad-text">400+</span>
+      <span class="hero-stat-lbl">Videos</span>
+    </div>
+  </div>
+  <div class="hero-ctas reveal d3">
+    <a class="btn-yt" href="https://www.youtube.com/@iam_prabhatranjan" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Watch on YouTube</a>
+    <button class="btn-outline" onclick="document.getElementById('feedAnchor').scrollIntoView({behavior:'smooth'})"><i class="fas fa-play"></i> Browse Videos</button>
+  </div>
+</section>
 
+<!-- Channel Banner -->
+<div class="channel-banner reveal">
+  <div class="channel-card">
+    <div class="channel-avatar">🎓</div>
+    <div class="channel-info">
+      <div class="channel-name">Prabhat Ranjan</div>
+      <div class="channel-handle">@iam_prabhatranjan &nbsp;·&nbsp; NIT Jamshedpur, Mechanical Engineering</div>
+      <div class="channel-tags">
+        <span class="channel-tag">IIT JEE Tips</span>
+        <span class="channel-tag">300+ College Reviews</span>
+        <span class="channel-tag">100+ Book Reviews</span>
+        <span class="channel-tag">JEE Counselling</span>
+        <span class="channel-tag">JEE Maths</span>
+      </div>
+    </div>
+    <div class="channel-actions">
+      <a class="btn-subscribe" href="https://www.youtube.com/@iam_prabhatranjan?sub_confirmation=1" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Subscribe Free</a>
+      <a class="btn-outline" href="https://www.youtube.com/@iam_prabhatranjan/videos" target="_blank" rel="noopener" style="font-size:.85rem;padding:.6rem 1.2rem;"><i class="fas fa-film"></i> All Videos</a>
+    </div>
+  </div>
+</div>
 
-	<div style="padding: 16px; padding-top: 32px;" id="content">
-		<!-- Place <div> tag where you want the feed to appear -->
-		<div id="curator-feed-new-feed-layout"><a href="https://curator.io" target="_blank"
-				class="crt-logo crt-tag">Powered by Curator.io</a></div>
-		<!-- The Javascript can be moved to the end of the html page before the </body> tag -->
-		<script type="text/javascript">
-				/* curator-feed-new-feed-layout */
-				(function () {
-					var i, e, d = document, s = "script"; i = d.createElement("script"); i.async = 1; i.charset = "UTF-8";
-					i.src = "https://cdn.curator.io/published/5870c8be-9785-4b76-b056-706ba2ed9303.js";
-					e = d.getElementsByTagName(s)[0]; e.parentNode.insertBefore(i, e);
-				})();
-		</script>
-	</div>
+<!-- Curator.io Feed -->
+<div class="feed-section" id="feedAnchor">
+  <div class="feed-hd reveal">
+    <div class="feed-hd-icon"><i class="fab fa-youtube"></i></div>
+    <span class="feed-hd-title">Latest Videos</span>
+    <span class="feed-hd-sub">Auto-updated from YouTube · Powered by Curator.io</span>
+  </div>
 
-	<div style="padding: 32px; color: #ab78b4; display: none;">
-		<h2>
-			Divastra Video Hub: Your Comprehensive Resource for Prabhat Ranjan's YouTube Videos on IIT JEE Preparation,
-			Strategy, Engineering, College Life, and More
-		</h2>
-		<p>
-			Divastra's Video Hub is a dedicated section on the Divastra website where students can access a vast
-			collection of Prabhat Ranjan's YouTube videos covering a wide range of topics related to IIT JEE
-			preparation, exam strategy, engineering, college life, youth, career, society, education, and career
-			counseling. This guide explores the features and benefits of Divastra's Video Hub, providing insights into
-			how students can leverage this resource to enhance their academic and personal growth.
-		</p>
-		<h4>
-			Comprehensive Coverage of Topics:
-		</h4>
-		<p>
-			Divastra's Video Hub offers students a comprehensive repository of Prabhat Ranjan's YouTube videos, covering
-			a diverse range of topics relevant to their academic and personal development. From exam preparation tips
-			and strategies to insights into college life, career guidance, and societal issues, students can find
-			valuable content to support their journey through various stages of education and beyond.
-		</p>
-		<h4>
-			IIT JEE Preparation and Exam Strategy:
-		</h4>
-		<p>
-			For students preparing for the IIT JEE exam, Divastra's Video Hub provides a wealth of resources, including
-			Prabhat Ranjan's YouTube videos offering expert guidance, study tips, and exam strategies. Whether it's
-			understanding key concepts, solving complex problems, or managing time effectively during the exam, students
-			can find valuable insights to enhance their preparation and performance.
-		</p>
-		<h4>
-			Engineering and College Life:
-		</h4>
-		<p>
-			Prabhat Ranjan's YouTube videos featured in Divastra's Video Hub also delve into the intricacies of
-			engineering education and college life, offering students valuable perspectives and advice on navigating the
-			challenges and opportunities they encounter in their academic journey. From choosing the right college and
-			branch to thriving in the college environment, students can gain valuable insights to make the most of their
-			engineering education.
-		</p>
-		<h4>
-			Youth, Career, and Society:
-		</h4>
-		<p>
-			Beyond academics, Divastra's Video Hub offers students insights into broader aspects of youth, career, and
-			society. Prabhat Ranjan's YouTube videos cover topics such as personal growth, career exploration, societal
-			issues, and the role of youth in shaping the future. These videos inspire students to think critically,
-			explore their interests, and contribute positively to society, fostering holistic development beyond the
-			classroom.
-		</p>
-		<h4>
-			Education and Career Counseling:
-		</h4>
-		<p>
-			Prabhat Ranjan's expertise in education and career counseling shines through in his YouTube videos featured
-			in Divastra's Video Hub. Whether it's providing guidance on choosing the right career path, navigating
-			college admissions, or preparing for job interviews, students can benefit from Prabhat's valuable advice and
-			insights to make informed decisions about their education and career.
-		</p>
-		<h4>
-			Seamless Integration with Divastra Website:
-		</h4>
-		<p>
-			Divastra's Video Hub offers students the convenience of accessing Prabhat Ranjan's YouTube videos without
-			leaving the website. This seamless integration ensures that students can explore valuable content related to
-			their academic and personal growth without the hassle of navigating multiple platforms, enhancing their
-			overall user experience and engagement.
-		</p>
-		<h4>
-			Empowering Students for Success:
-		</h4>
-		<p>
-			Divastra's Video Hub empowers students to take control of their academic and personal growth by providing
-			access to Prabhat Ranjan's expertise and insights on a wide range of topics. Whether it's seeking guidance
-			on exam preparation, exploring career options, or understanding societal issues, students can leverage
-			Divastra's Video Hub to enrich their learning and shape their future success.
-		</p>
-		<h2>
-			Your Ultimate Destination for IIT JEE Preparation and Engineering
-		</h2>
-		<p>
-			Welcome to Divastra, your premier destination for comprehensive resources, expert guidance, and personalized
-			mentorship tailored for IIT JEE aspirants and engineering enthusiasts. Whether you're embarking on your
-			journey towards academic success or seeking valuable insights to excel in competitive exams like JEE Main
-			and JEE Advanced, Divastra is here to empower you every step of the way.
-		</p>
-		<h4>
-			Navigating the Path to Success
-		</h4>
-		<p>
-			In today's competitive academic landscape, aspiring engineers face myriad challenges as they strive to
-			achieve their academic and professional goals. From mastering complex concepts to navigating the intricacies
-			of exam preparation, the journey towards engineering excellence demands dedication, perseverance, and access
-			to high-quality resources. That's where Divastra comes in.
-		</p>
-		<h4>
-			Empowering IIT JEE Aspirants
-		</h4>
-		<p>
-			Divastra is more than just a website – it's a vibrant community of learners, educators, and mentors united
-			by a shared passion for academic excellence. With a diverse range of resources, personalized mentorship
-			programs, and expert guidance, Divastra is dedicated to empowering IIT JEE aspirants with the tools and
-			support they need to succeed. Whether you're aiming to ace the JEE Main or JEE Advanced exams, Divastra
-			provides comprehensive study materials, practice tests, and exam strategies to help you achieve your goals.
-		</p>
-		<h4>
-			Harnessing the Power of Engineering Education
-		</h4>
-		<p>
-			At Divastra, we believe in the transformative power of engineering education to shape the future and drive
-			innovation. Our platform is designed to foster a deep understanding of fundamental concepts, cultivate
-			problem-solving skills, and inspire creativity among aspiring engineers. Through engaging content,
-			interactive learning experiences, and real-world applications, Divastra equips students with the knowledge
-			and skills they need to thrive in today's dynamic engineering landscape.
-		</p>
-		<h4>
-			The Prabhat Ranjan Difference
-		</h4>
-		<p>
-			Central to Divastra's mission is the guiding presence of Prabhat Ranjan, a dedicated mentor and Mechanical
-			Engineering student at NIT Jamshedpur. Known affectionately as the "blue t-shirt wale bhaiya," Prabhat
-			brings a wealth of knowledge, experience, and enthusiasm to his role as a mentor. With a deep understanding
-			of the challenges faced by engineering students, Prabhat provides personalized guidance, academic support,
-			and mentorship to help students navigate the complexities of their academic journey.
-		</p>
-		<h4>
-			Comprehensive Resources for Academic Excellence
-		</h4>
-		<p>
-			Prepare for success with Divastra's comprehensive resources for IIT JEE preparation and engineering
-			excellence. From our JEE Main 2024 marks vs percentile vs rank predictor to free PDF downloads of essential
-			books for IIT JEE, Class 11, and Class 12, Divastra offers a wide range of tools and resources to enhance
-			your exam readiness. Our meticulously curated study materials, practice tests, and exam resources are
-			designed to help you tackle the toughest challenges with confidence and clarity.
-		</p>
-		<h4>
-			Unlocking Your Potential
-		</h4>
-		<p>
-			At Divastra, we understand that every student is unique, with their own strengths, weaknesses, and
-			aspirations. That's why we offer personalized mentorship and career counseling services to help you unlock
-			your full potential. Whether you're seeking guidance on college selection, career paths, or exam preparation
-			strategies, our experienced mentors are here to provide you with tailored advice and support. With Divastra
-			by your side, you can confidently navigate the complexities of your academic and professional journey.
-		</p>
-		<h4>
-			Join the Divastra Community
-		</h4>
-		<p>
-			Join thousands of students who have benefited from Divastra's comprehensive resources and expert guidance.
-			Whether you're aiming for success in IIT JEE, exploring top engineering colleges, or seeking valuable
-			insights into academic and professional development, Divastra is here to support you every step of the way.
-			Connect with us today and embark on your journey to academic excellence with Divastra.
-		</p>
-		<h2>
-			About Divastra: Empowering IIT JEE Aspirants and Engineering Students
-		</h2>
-		<p>
-			Welcome to the heart of Divastra, your ultimate destination for comprehensive resources, expert guidance,
-			and personalized mentorship tailored for IIT JEE aspirants and engineering enthusiasts. In this section, we
-			delve deep into the ethos, mission, and offerings of Divastra, shedding light on how we empower students to
-			thrive in their academic journey and excel in competitive exams like JEE Main and JEE Advanced.
-		</p>
-		<h4>
-			Unveiling the Essence of Divastra:
-		</h4>
-		<p>
-			Divastra is not just a website; it's a vibrant ecosystem of learning, growth, and community engagement. Our
-			platform is designed to cater to the diverse needs of engineering students, providing them with the tools,
-			resources, and support they need to succeed. From comprehensive study materials to personalized mentorship
-			programs, Divastra offers a holistic approach to IIT JEE preparation and engineering education.
-		</p>
-		<h4>
-			A Glimpse into Divastra's Mission:
-		</h4>
-		<p>
-			At Divastra, our mission is simple yet profound: to empower IIT JEE aspirants and engineering students with
-			the knowledge, skills, and confidence they need to thrive in today's competitive academic landscape. We
-			believe in the transformative power of education to shape lives, drive innovation, and create positive
-			change in the world. Through our platform, we aim to inspire a passion for learning, foster intellectual
-			curiosity, and equip students with the tools they need to succeed.
-		</p>
-		<h4>
-			The Divastra Experience:
-		</h4>
-		<p>
-			What sets Divastra apart is our unwavering commitment to academic excellence, personalized mentorship, and
-			student-centric approach. Our platform is designed to cater to the unique needs and aspirations of every
-			student, providing them with a supportive learning environment where they can grow, learn, and excel.
-			Whether you're preparing for JEE Main or JEE Advanced, seeking career guidance, or exploring top engineering
-			colleges, Divastra is your ultimate companion on the path to success.
-		</p>
-		<h4>
-			Meet Prabhat Ranjan: The Driving Force Behind Divastra:
-		</h4>
-		<p>
-			At the helm of Divastra is Prabhat Ranjan, a dedicated mentor and Mechanical Engineering student at NIT
-			Jamshedpur. Prabhat's passion for education, coupled with his deep knowledge of IIT JEE preparation
-			strategies, makes him a trusted mentor and guide for students seeking to achieve their academic goals. Known
-			affectionately as the "blue t-shirt wale bhaiya" among his students, Prabhat brings a unique blend of
-			expertise, empathy, and enthusiasm to his role as a mentor at Divastra.
-		</p>
-		<h4>
-			Comprehensive Resources for Academic Excellence:
-		</h4>
-		<p>
-			Prepare for success with Divastra's comprehensive resources for IIT JEE preparation and engineering
-			excellence. Our platform offers a wide range of free tools and resources to aid you in your exam readiness,
-			including our JEE Main 2024 marks vs percentile vs rank predictor, free PDF downloads of essential books for
-			IIT JEE, Class 11, and Class 12, practice tests, mock exams, and more. Whether you're brushing up on key
-			concepts, solving practice problems, or fine-tuning your exam strategies, Divastra provides everything you
-			need to succeed.
-		</p>
-		<h4>
-			Personalized Mentorship and Career Counseling:
-		</h4>
-		<p>
-			At Divastra, we understand that every student is unique, with their own strengths, weaknesses, and
-			aspirations. That's why we offer personalized mentorship and career counseling services to help you unlock
-			your full potential. Our experienced mentors provide tailored advice and support, helping you make informed
-			decisions about your academic and career path, whether it's college selection, exam preparation strategies,
-			or career planning.
-		</p>
-		<h2>
-			Prabhat Ranjan: Your Mentor and Guide
-		</h2>
-		<p>
-			Prabhat Ranjan, a beacon of guidance and inspiration in the world of engineering education, stands as a
-			trusted mentor and guide for countless IIT JEE aspirants and engineering students. With a passion for
-			education and a deep understanding of the challenges faced by students, Prabhat embodies the spirit of
-			mentorship, offering invaluable support and guidance to help students navigate their academic journey with
-			confidence and clarity.
-		</p>
-		<h4>
-			The Journey of Prabhat Ranjan:
-		</h4>
-		<p>
-			Prabhat's journey as a mentor and guide traces back to his own experiences as a student pursuing Mechanical
-			Engineering at NIT Jamshedpur. Through his academic pursuits and extracurricular endeavors, Prabhat
-			cultivated a deep passion for learning and a commitment to academic excellence. Alongside his academic
-			pursuits, Prabhat embraced the role of a mentor, offering guidance and support to his peers and fellow
-			students.
-		</p>
-		<h4>
-			The Role of Mentorship in Academic Success:
-		</h4>
-		<p>
-			Prabhat understands firsthand the transformative power of mentorship in shaping the academic journey of
-			students. As a mentor, Prabhat goes above and beyond to provide personalized guidance, academic support, and
-			mentorship to students, helping them navigate the complexities of their academic and professional
-			aspirations. Through one-on-one interactions, mentoring sessions, and personalized guidance, Prabhat
-			empowers students to unlock their full potential and achieve academic success.
-		</p>
-		<h4>
-			Prabhat Ranjan: The "Blue T-shirt Wale Bhaiya":
-		</h4>
-		<p>
-			Affectionately known as the "blue t-shirt wale bhaiya" among his students, Prabhat embodies the qualities of
-			a mentor who is approachable, relatable, and empathetic. His friendly demeanor, coupled with his deep
-			knowledge and expertise in engineering education, makes him a trusted mentor and guide for students seeking
-			academic guidance and support. Whether it's answering academic queries, providing exam preparation tips, or
-			offering career advice, Prabhat is always there to lend a helping hand.
-		</p>
-		<h4>
-			The Prabhat Ranjan Difference:
-		</h4>
-		<p>
-			What sets Prabhat apart as a mentor is his genuine passion for education and his unwavering commitment to
-			student success. With a deep understanding of the challenges faced by students, Prabhat tailors his guidance
-			and support to meet the unique needs and aspirations of each student. Whether it's providing academic
-			guidance, offering career counseling, or sharing motivational insights, Prabhat's mentorship leaves a
-			lasting impact on students, empowering them to achieve their academic and professional goals.
-		</p>
-		<h4>
-			Comprehensive Support for IIT JEE Aspirants:
-		</h4>
-		<p>
-			Prabhat's mentorship extends beyond academic guidance to encompass comprehensive support for IIT JEE
-			aspirants. Through Divastra, Prabhat provides a wide range of resources, study materials, and exam
-			preparation strategies to help students prepare effectively for the JEE Main and JEE Advanced exams. From
-			detailed study plans to practice tests and mock exams, Prabhat's mentorship equips students with the tools
-			and resources they need to excel in their exams.
-		</p>
-		<h4>
-			Navigating the Path to Success with Prabhat Ranjan:
-		</h4>
-		<p>
-			For students embarking on their academic journey, Prabhat serves as a guiding light, offering invaluable
-			support and mentorship every step of the way. Whether it's providing academic guidance, offering career
-			counseling, or sharing motivational insights, Prabhat empowers students to overcome challenges, seize
-			opportunities, and achieve their academic and professional goals with confidence and clarity.
-		</p>
-		<h2>
-			Comprehensive Resources for IIT JEE Preparation: Your Mentor and Guide
-		</h2>
-		<p>
-			In the pursuit of success in competitive exams like the IIT JEE, having access to comprehensive resources is
-			paramount. This section explores the myriad resources available for IIT JEE preparation and the pivotal role
-			of a mentor in guiding students through this challenging journey.
-		</p>
-		<h4>
-			Understanding the Importance of Comprehensive Resources:
-		</h4>
-		<p>
-			Preparing for the IIT JEE requires a multifaceted approach that encompasses a wide range of resources,
-			including study materials, practice tests, mock exams, and expert guidance. These resources serve as the
-			building blocks of a robust preparation strategy, providing students with the tools they need to master key
-			concepts, hone their problem-solving skills, and excel in their exams.
-		</p>
-		<h4>
-			Navigating the IIT JEE Landscape:
-		</h4>
-		<p>
-			The IIT JEE is one of the most competitive exams in India, with lakhs of students vying for a limited number
-			of seats in prestigious engineering colleges. Navigating this competitive landscape requires careful
-			planning, diligent preparation, and access to high-quality resources. From understanding the exam syllabus
-			to practicing previous years' question papers, students need comprehensive resources to prepare effectively
-			for the IIT JEE.
-		</p>
-		<h4>
-			The Role of a Mentor in IIT JEE Preparation:
-		</h4>
-		<p>
-			While resources play a crucial role in IIT JEE preparation, the guidance of a mentor is equally important. A
-			mentor provides personalized guidance, academic support, and motivation to help students navigate the
-			complexities of their preparation journey. From devising a study plan to identifying strengths and
-			weaknesses, a mentor plays a pivotal role in shaping students' preparation strategy and instilling
-			confidence in their abilities.
-		</p>
-		<h4>
-			Comprehensive Study Materials:
-		</h4>
-		<p>
-			One of the cornerstones of IIT JEE preparation is access to comprehensive study materials that cover the
-			entire syllabus in-depth. From textbooks and reference books to online study materials and video lectures,
-			students have a plethora of resources at their disposal to enhance their understanding of key concepts and
-			topics. These study materials serve as a valuable resource for self-study and revision, allowing students to
-			reinforce their learning and build a strong foundation for the exam.
-		</p>
-		<h4>
-			Practice Tests and Mock Exams:
-		</h4>
-		<p>
-			Practice tests and mock exams are indispensable resources for IIT JEE aspirants, allowing them to gauge
-			their preparation level, identify areas of improvement, and simulate the exam environment. These tests
-			provide students with valuable insights into their strengths and weaknesses, helping them tailor their
-			preparation strategy accordingly. Additionally, mock exams help students familiarize themselves with the
-			exam pattern, time management techniques, and question-solving strategies, thereby boosting their confidence
-			and performance on the day of the exam.
-		</p>
-		<h4>
-			Expert Guidance and Mentorship:
-		</h4>
-		<p>
-			In addition to study materials and practice tests, expert guidance and mentorship play a crucial role in IIT
-			JEE preparation. A mentor provides personalized guidance, academic support, and motivation to help students
-			navigate the challenges of their preparation journey. Whether it's clarifying doubts, providing exam tips,
-			or offering motivational insights, a mentor empowers students to stay focused, motivated, and confident in
-			their abilities.
-		</p>
-		<h4>
-			Online Resources and Learning Platforms:
-		</h4>
-		<p>
-			With the advent of technology, students now have access to a wide range of online resources and learning
-			platforms that cater to their diverse learning needs. From online video lectures and interactive tutorials
-			to online forums and discussion groups, students can leverage these resources to supplement their
-			traditional study materials and enhance their understanding of key concepts. These online resources provide
-			students with the flexibility to learn at their own pace, revisit challenging topics, and engage with peers
-			and experts in the field.
-		</p>
-		<h2>
-			Personalized Mentorship and Career Counseling
-		</h2>
-		<p>
-			Personalized mentorship and career counseling are invaluable resources for students navigating the
-			complexities of academic and professional development. This section explores the importance of personalized
-			mentorship and career counseling in guiding students towards success and fulfillment in their academic and
-			professional endeavors.
-		</p>
-		<h4>
-			Understanding Personalized Mentorship:
-		</h4>
-		<p>
-			Personalized mentorship goes beyond traditional academic guidance to provide individualized support,
-			encouragement, and advice tailored to each student's unique needs and aspirations. A personalized mentor
-			serves as a trusted advisor, offering guidance on academic, personal, and professional matters, and helping
-			students navigate the challenges and opportunities they encounter along their journey.
-		</p>
-		<h4>
-			The Role of a Mentor in Academic Success:
-		</h4>
-		<p>
-			A mentor plays a pivotal role in shaping a student's academic journey and fostering their growth and
-			development. From providing academic guidance and support to offering encouragement and motivation, a mentor
-			empowers students to overcome challenges, set goals, and achieve their full potential. Through personalized
-			mentorship, students gain valuable insights, develop essential skills, and build confidence in their
-			abilities, setting them on the path to academic success and excellence.
-		</p>
-		<h4>
-			Navigating Career Choices:
-		</h4>
-		<p>
-			Career counseling plays a crucial role in helping students navigate the complex landscape of career choices
-			and opportunities. A career counselor provides guidance, information, and support to help students explore
-			their interests, strengths, and values, and make informed decisions about their academic and professional
-			future. Whether it's choosing a college major, exploring career paths, or planning for further education,
-			career counseling empowers students to make confident and informed choices that align with their aspirations
-			and goals.
-		</p>
-		<h4>
-			Tailored Guidance for Academic and Professional Development:
-		</h4>
-		<p>
-			Personalized mentorship and career counseling provide students with tailored guidance and support to
-			navigate the various stages of their academic and professional development. Whether it's developing study
-			skills, setting academic goals, exploring career options, or planning for further education, personalized
-			mentorship and career counseling help students navigate the challenges and opportunities they encounter,
-			empowering them to make informed decisions and achieve their goals.
-		</p>
-		<h4>
-			The Benefits of Personalized Mentorship:
-		</h4>
-		<p>
-			Personalized mentorship offers a myriad of benefits for students, including individualized support,
-			guidance, and encouragement tailored to their unique needs and aspirations. By working closely with a
-			mentor, students gain valuable insights, develop essential skills, and build confidence in their abilities,
-			setting them on the path to success and fulfillment in their academic and professional endeavors.
-		</p>
-		<h4>
-			Access to Expert Guidance and Support:
-		</h4>
-		<p>
-			Personalized mentorship and career counseling provide students with access to expert guidance and support
-			from experienced mentors and career counselors who are dedicated to helping students succeed. Whether it's
-			clarifying academic concepts, providing study tips, offering career advice, or addressing personal
-			challenges, mentors and career counselors offer invaluable support and guidance to help students overcome
-			obstacles and achieve their goals.
-		</p>
-		<h4>
-			Empowering Students to Achieve Their Goals:
-		</h4>
-		<p>
-			Personalized mentorship and career counseling empower students to take control of their academic and
-			professional development, set meaningful goals, and pursue their passions with confidence and clarity. By
-			working closely with a mentor and career counselor, students gain the knowledge, skills, and support they
-			need to navigate the complexities of academic and professional life, ultimately achieving their goals and
-			realizing their full potential.
-		</p>
-		<h2>
-			Prabhat Ranjan's YouTube Channel: Your Ultimate Academic Companion
-		</h2>
-		<p>
-			Prabhat Ranjan's YouTube channel stands as a beacon of academic excellence and guidance for students seeking
-			comprehensive support and resources for their academic journey. This section explores the multifaceted
-			offerings of Prabhat Ranjan's YouTube channel and its role as the ultimate academic companion for students.
-		</p>
-		<h4>
-			Exploring Prabhat Ranjan's YouTube Channel:
-		</h4>
-		<p>
-			Prabhat Ranjan's YouTube channel serves as a treasure trove of academic insights, preparation strategies,
-			and expert advice for students navigating the complexities of their academic journey. From detailed exam
-			preparation tactics to in-depth book reviews and college recommendations, Prabhat's channel offers a diverse
-			range of content tailored to meet the unique needs and aspirations of students.
-		</p>
-		<h4>
-			A Comprehensive Resource for Academic Success:
-		</h4>
-		<p>Prabhat Ranjan's YouTube channel is more than just a repository of videos – it's a comprehensive resource for
-			academic success, providing students with the tools, resources, and guidance they need to excel in their
-			studies. Whether it's mastering key concepts, preparing for competitive exams, or exploring career options,
-			Prabhat's channel offers invaluable insights and advice to help students achieve their academic goals.
-		</p>
-		<h4>
-			Exam Preparation Strategies and Tips:
-		</h4>
-		<p>
-			Prabhat Ranjan's YouTube channel is a go-to destination for students seeking exam preparation strategies and
-			tips to enhance their performance in competitive exams. From JEE Main and JEE Advanced to NEET, CET, and
-			other competitive exams, Prabhat's channel offers expert guidance, study techniques, and time management
-			strategies to help students maximize their potential and ace their exams with confidence.
-		</p>
-		<h4>
-			Book Reviews and Recommendations:
-		</h4>
-		<p>
-			One of the highlights of Prabhat Ranjan's YouTube channel is its extensive collection of book reviews and
-			recommendations covering a wide range of subjects and exams. Whether it's textbooks for Class 10, Class 12,
-			or reference books for competitive exams like JEE Main, JEE Advanced, NEET, or other entrance exams,
-			Prabhat's channel offers detailed insights and recommendations to help students choose the right resources
-			for their studies.
-		</p>
-		<h4>
-			College Reviews and Recommendations:
-		</h4>
-		<p>
-			Prabhat Ranjan's YouTube channel also serves as a valuable resource for students exploring college options
-			and seeking insights into different colleges and universities. From IITs and NITs to other engineering
-			colleges and universities, Prabhat's channel offers detailed reviews, rankings, and recommendations to help
-			students make informed decisions about their academic and professional future.
-		</p>
-		<h4>
-			Career Guidance and Insights:
-		</h4>
-		<p>
-			In addition to exam preparation and college recommendations, Prabhat Ranjan's YouTube channel offers
-			valuable career guidance and insights for students exploring various career paths and options. From
-			exploring different career fields to offering advice on resume building, internships, and job interviews,
-			Prabhat's channel equips students with the knowledge and skills they need to navigate the job market and
-			pursue their career aspirations.
-		</p>
-		<h4>
-			Interactive Learning Experiences:
-		</h4>
-		<p>
-			Prabhat Ranjan's YouTube channel fosters interactive learning experiences through engaging content, live
-			sessions, and Q&A sessions with viewers. By fostering a sense of community and collaboration, Prabhat's
-			channel creates a supportive learning environment where students can connect with peers, ask questions, and
-			exchange ideas, enhancing their learning experience and fostering intellectual growth.
-		</p>
-		<h2>
-			Book Reviews and Exam Resources: Your Comprehensive Guide to Academic Success
-		</h2>
-		<p>
-			Book reviews and exam resources play a pivotal role in the academic journey of students, offering valuable
-			insights, guidance, and preparation strategies to help them excel in their studies. This section explores
-			the significance of book reviews and exam resources as indispensable tools for academic success and provides
-			a comprehensive guide to leveraging these resources effectively.
-		</p>
-		<h4>
-			The Importance of Book Reviews:
-		</h4>
-		<p>
-			Book reviews serve as a valuable resource for students seeking guidance on choosing the right study
-			materials, textbooks, and reference books for their academic pursuits. By offering detailed insights,
-			analysis, and critiques of various books, book reviews help students make informed decisions about the
-			resources they use to enhance their learning and understanding of key concepts.
-		</p>
-		<h4>
-			Navigating Exam Resources:
-		</h4>
-		<p>
-			Exam resources encompass a wide range of materials, including practice tests, mock exams, study guides, and
-			exam preparation strategies, designed to help students prepare effectively for their exams. These resources
-			play a crucial role in familiarizing students with the exam format, testing their knowledge and
-			understanding of key concepts, and boosting their confidence and performance on the day of the exam.
-		</p>
-		<h4>
-			Book Reviews for Academic Excellence:
-		</h4>
-		<p>
-			Book reviews serve as an indispensable resource for students seeking to achieve academic excellence in their
-			studies. Whether it's reviewing textbooks for Class 10, Class 12, or reference books for competitive exams
-			like JEE Main, JEE Advanced, NEET, or other entrance exams, book reviews offer valuable insights into the
-			content, quality, and relevance of the books, helping students choose the right resources to supplement
-			their learning and preparation.
-		</p>
-		<h4>
-			Choosing the Right Study Materials:
-		</h4>
-		<p>
-			With a plethora of study materials and textbooks available in the market, choosing the right resources can
-			be a daunting task for students. Book reviews provide students with valuable information about the content,
-			structure, and effectiveness of various study materials, helping them select the resources that best suit
-			their learning style, academic needs, and exam preparation goals.
-		</p>
-		<h4>
-			Exam Resources for Effective Preparation:
-		</h4>
-		<p>
-			Exam resources are essential tools for students preparing for competitive exams, offering a wide range of
-			materials and strategies to help them succeed. From practice tests and mock exams to study guides and exam
-			preparation tips, exam resources provide students with the tools and support they need to master key
-			concepts, hone their problem-solving skills, and excel in their exams.
-		</p>
-		<h4>
-			The Role of Expert Guidance:
-		</h4>
-		<p>
-			Expert guidance plays a crucial role in leveraging book reviews and exam resources effectively. Mentors,
-			teachers, and academic advisors offer valuable insights, advice, and recommendations to help students
-			navigate the complexities of their academic journey, choose the right study materials, and prepare
-			effectively for their exams.
-		</p>
-		<h4>
-			Utilizing Exam Resources for Success:
-		</h4>
-		<p>
-			Exam resources are invaluable tools for students seeking success in competitive exams. By utilizing practice
-			tests, mock exams, study guides, and exam preparation strategies, students can familiarize themselves with
-			the exam format, identify areas of improvement, and develop effective study plans to maximize their
-			potential and achieve their academic goals.
-		</p>
-	</div>
+  <!-- curator.io embed — feed ID: 5870c8be-9785-4b76-b056-706ba2ed9303 -->
+  <div id="curator-feed-new-feed-layout">
+    <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
+  </div>
+  <script type="text/javascript">
+    /* curator-feed-new-feed-layout */
+    (function(){
+      var i,e,d=document,s='script';
+      i=d.createElement(s); i.async=1; i.charset='UTF-8';
+      i.src='https://cdn.curator.io/published/5870c8be-9785-4b76-b056-706ba2ed9303.js';
+      e=d.getElementsByTagName(s)[0]; e.parentNode.insertBefore(i,e);
+    })();
+  </script>
+</div>
 
-	<div class="shadow text-light p-0 text-center" style="background-color: #6A1B9A;margin-top: 80px;">
-		<br>
-		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
-			href="https://divastra.github.io/index2" target="_blank">Divastra App</a>
-		<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
-			href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
-		<br><br>
-		<section class="m-4">
-			<!-- YouTube -->
-			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-				href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i class="bi bi-youtube"
-					style="font-size: 1rem;"></i></a>
+<!-- Footer -->
+<footer class="footer-nav">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.svg" alt="Divastra" style="width:22px;pointer-events:none;">
+      <span class="footer-brand-name">Divastra</span>
+    </div>
+    <span class="footer-copy">© 2024 Prabhat Ranjan · NIT Jamshedpur</span>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@iam_prabhatranjan" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/itsprabhatranjan/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="counselling.html">Counselling</a>
+      <a href="books.html">Books</a>
+    </div>
+  </div>
+</footer>
 
-			<!-- Instagram -->
-			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-				href="https://www.instagram.com/itsprabhatranjan/" role="button"><i class="bi bi-instagram"
-					style="font-size: 1rem;"></i></a>
+<script>
+/* ── SHARE ── */
+function openShare(e){
+  const popup=document.getElementById('sharePopup'),overlay=document.getElementById('shareOverlay');
+  const pw=318,ph=300;
+  let left=(e?e.clientX:window.innerWidth/2)-pw/2, top=(e?e.clientY:window.innerHeight/2)+10;
+  left=Math.max(10,Math.min(left,window.innerWidth-pw-10));
+  top=Math.max(10,Math.min(top,window.innerHeight-ph-10));
+  popup.style.left=left+'px'; popup.style.top=top+'px';
+  overlay.classList.add('show'); popup.classList.add('show');
+}
+function closeShare(){
+  document.getElementById('sharePopup').classList.remove('show');
+  document.getElementById('shareOverlay').classList.remove('show');
+}
+function copyShareLink(){
+  navigator.clipboard.writeText('https://divastra.github.io/video.html').then(()=>{
+    const btn=document.querySelector('.share-copy-btn');
+    if(btn){const t=btn.innerHTML;btn.innerHTML='<i class="fas fa-check"></i> Copied!';setTimeout(()=>btn.innerHTML=t,2000);}
+  });
+}
 
-			<!-- LinkedIn -->
-			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-				href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i class="bi bi-linkedin"
-					style="font-size: 1rem;"></i></a>
+/* ── NAV ── */
+function openMob(){document.getElementById('mobNav').classList.add('open');}
+function closeMob(){document.getElementById('mobNav').classList.remove('open');}
 
-			<!-- Website -->
-			<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-				href="https://divastra.github.io" role="button"><i class="bi bi-globe2"
-					style="font-size: 1rem;"></i></a>
-		</section>
-		<div class="text-center p-3" style="background-color: #4a148c;">
-			Owned and Managed by Prabhat Ranjan
-		</div>
-	</div>
-	<script>
-		window.oncontextmenu = function () {
-			rightc();
-			return false;     // cancel default menu
-		}
-		function rightc() {
-			if (navigator.share) {
-				navigator.share({
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  document.getElementById('nav').classList.toggle('solid',y>40);
+  document.getElementById('backTop').classList.toggle('show',y>300);
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('progressBar').style.width=(h>0?(y/h*100):0)+'%';
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-60) el.classList.add('show');
+  });
+},{passive:true});
 
-					// Title that occurs over
-					// web share dialog
-					title: 'Divastra Video Hub',
+/* ── CURSOR ── */
+const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';},{passive:true});
+(function ac(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ac);})();
 
-					// URL to share
-					url: 'https://divastra.github.io/video.html'
-				}).then(() => {
-					console.log('Thanks for sharing!');
-				}).catch(err => {
+/* ── APP LOCKS ── */
+document.addEventListener('contextmenu',e=>{e.preventDefault();openShare(e);});
+document.addEventListener('keydown',e=>{
+  if(e.ctrlKey||e.metaKey){
+    if(e.key==='Control'||e.key==='Meta') return;
+    if(e.key==='c'||e.key==='x'||e.key==='v') return;
+    e.preventDefault();
+    if(!e.shiftKey&&!e.altKey) openShare(e);
+  }
+  if(e.key&&e.key.startsWith('F')&&e.key.length<=3) e.preventDefault();
+  if(e.altKey) e.preventDefault();
+},true);
+let lpt;
+document.addEventListener('touchstart',()=>{lpt=setTimeout(()=>openShare(),600);},{passive:true});
+document.addEventListener('touchend',()=>clearTimeout(lpt),{passive:true});
+document.addEventListener('touchmove',()=>clearTimeout(lpt),{passive:true});
 
-					// Handle errors, if occured
-					console.log(
-						"Error while using Web share API:");
-					console.log(err);
-				});
-			} else {
+/* ── PARTICLES ── */
+(function(){
+  const canvas=document.getElementById('particle-canvas'),ctx=canvas.getContext('2d');
+  let W,H;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  resize(); window.addEventListener('resize',resize,{passive:true});
+  class P{
+    constructor(){this.reset(true);}
+    reset(init){this.x=Math.random()*W;this.y=init?Math.random()*H:H+10;this.r=Math.random()*2.2+.5;this.sp=Math.random()*.35+.08;this.op=Math.random()*.45+.05;this.dx=(Math.random()-.5)*.3;}
+    update(){this.y-=this.sp;this.x+=this.dx;if(this.y<-10)this.reset(false);}
+    draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${this.op})`;ctx.fill();}
+  }
+  const particles=Array.from({length:110},()=>new P());
+  const ripples=[],shockwaves=[],tempBubbles=[];
+  let gcp=0;
+  document.addEventListener('click',e=>{
+    const x=e.clientX,y=e.clientY;
+    ripples.push({x,y,r:0,op:.7,max:80});
+    shockwaves.push({x,y,r:0,op:.5,max:120});
+    gcp=1;
+    for(let i=0;i<8;i++){const a=Math.random()*Math.PI*2,sp=Math.random()*3+1;tempBubbles.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,r:Math.random()*3+1,op:.8,life:1});}
+  });
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{p.update();p.draw();});
+    ripples.forEach((rp,i)=>{rp.r+=3;rp.op-=.025;ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.strokeStyle=`rgba(99,102,241,${rp.op})`;ctx.lineWidth=1.5;ctx.stroke();if(rp.op<=0)ripples.splice(i,1);});
+    shockwaves.forEach((sw,i)=>{sw.r+=5;sw.op-=.015;ctx.beginPath();ctx.arc(sw.x,sw.y,sw.r,0,Math.PI*2);ctx.strokeStyle=`rgba(34,211,238,${sw.op})`;ctx.lineWidth=1;ctx.stroke();if(sw.op<=0)shockwaves.splice(i,1);});
+    tempBubbles.forEach((tb,i)=>{tb.x+=tb.vx;tb.y+=tb.vy;tb.vy+=.06;tb.op-=.02;tb.life-=.02;ctx.beginPath();ctx.arc(tb.x,tb.y,tb.r,0,Math.PI*2);ctx.fillStyle=`rgba(139,92,246,${tb.op})`;ctx.fill();if(tb.life<=0)tempBubbles.splice(i,1);});
+    if(gcp>0){ctx.fillStyle=`rgba(99,102,241,${gcp*.04})`;ctx.fillRect(0,0,W,H);gcp-=.05;}
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
 
-				// Alerts user if API not available 
-				alert("Browser doesn't support this API !");
-			}
-		}
-	</script>
-
-	<script>
-		// Disable zoom using keyboard shortcuts (Ctrl +, Ctrl -, Ctrl + Mouse Wheel)
-		document.addEventListener("keydown", function (event) {
-			if (
-				event.ctrlKey &&
-				(event.key === "=" || event.key === "-" || event.key === "0")
-			) {
-				event.preventDefault();
-			}
-		});
-
-		// Disable zoom using mouse wheel + Ctrl
-		document.addEventListener("wheel", function (event) {
-			if (event.ctrlKey) {
-				event.preventDefault();
-			}
-		}, { passive: false });
-
-		// Disable pinch zoom on mobile devices
-		document.addEventListener("touchmove", function (event) {
-			if (event.touches.length > 1) {
-				event.preventDefault();
-			}
-		}, { passive: false });
-
-		// Prevent double-tap zooming
-		let lastTouchEnd = 0;
-		document.addEventListener("touchend", function (event) {
-			let now = new Date().getTime();
-			if (now - lastTouchEnd <= 300) {
-				event.preventDefault();
-			}
-			lastTouchEnd = now;
-		}, false);
-	</script>
+window.dispatchEvent(new Event('scroll'));
+</script>
 </body>
-
 </html>

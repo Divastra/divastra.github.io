@@ -1,1204 +1,1595 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>Divastra IIT JEE Rank Predictor: JEE Main 2026 Session 1</title>
-	<meta name="description"
-		content="Divastra IIT JEE Rank Predictor, by Prabhat Ranjan, of NIT Jamshedpur with YouTube Channel. Predict JEE Main 2026 Session 1 marks vs pecrentile vs rank.">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-		crossorigin="anonymous"></script>
-	<meta name="theme-color" content="#4A148C" />
-	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/favicon/manifest.json">
-	<meta name="msapplication-TileColor" content="#4A148C">
-	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-	<style type="text/css">
-		@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>JEE Main 2026 Rank Predictor – Free Percentile to Rank Calculator | Divastra by Prabhat Ranjan</title>
+  <meta name="description" content="Free JEE Main 2026 Rank Predictor by Prabhat Ranjan (NIT Jamshedpur). Convert your percentile to rank instantly using NTA's official formula. Supports difficulty adjustment for Very Easy to Very Hard papers. Share your predicted rank with friends.">
+  <meta name="keywords" content="JEE Main rank predictor, JEE Main 2026 rank predictor, JEE percentile to rank, JEE rank calculator, NTA rank formula, JEE Main rank estimator, JEE rank predictor free, Divastra rank predictor, Prabhat Ranjan rank predictor">
+  <meta name="author" content="Prabhat Ranjan">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://divastra.github.io/rankPredictor.html">
 
-		* {
-			-webkit-user-select: none;
-			/* Safari */
-			-ms-user-select: none;
-			/* IE 10 and IE 11 */
-			user-select: none;
-			/* Standard syntax */
-			-webkit-user-drag: none;
-			-khtml-user-drag: none;
-			-moz-user-drag: none;
-			-o-user-drag: none;
-		}
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://divastra.github.io/rankPredictor.html">
+  <meta property="og:site_name"   content="Divastra">
+  <meta property="og:title"       content="JEE Main 2026 Rank Predictor – Free | Divastra">
+  <meta property="og:description" content="Instantly predict your JEE Main rank from percentile. Built by Prabhat Ranjan (NIT Jamshedpur). Free, no sign-up.">
+  <meta property="og:image"       content="https://divastra.github.io/assets/img/thumbnail1.png">
+  <meta property="og:locale"      content="en_IN">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="JEE Main 2026 Rank Predictor – Divastra">
+  <meta name="twitter:image"      content="https://divastra.github.io/assets/img/thumbnail1.png">
 
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-		}
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-		.nav-item {
-			border-radius: 64px;
-			background-color: #1565C0;
-			margin: 4px;
-			transition: 0.4s;
-		}
+  <style>
+    /* ══════════════════════════════════════
+       ROOT TOKENS + RESET
+    ══════════════════════════════════════ */
+    :root{
+      --brand:#6366f1; --brand-l:#818cf8; --violet:#8b5cf6; --cyan:#22d3ee;
+      --bg:#06000e; --border:rgba(255,255,255,0.07);
+      --grad:linear-gradient(135deg,#6366f1,#8b5cf6,#22d3ee);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;overflow-x:hidden;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:white;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%;}
+    a{text-decoration:none;color:inherit;}
 
-		.nav-item:hover {
-			background-color: #1E88E5;
-			transform: scale(1.15);
-		}
+    /* App-like: no selection, no drag */
+    *,*::before,*::after{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none;}
+    input,textarea,select,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;user-select:text;}
+    img{-webkit-user-drag:none;user-drag:none;pointer-events:none;}
+    a img,button img{pointer-events:auto;}
 
-		.buton {
-			background-color: #0D47A1;
-			color: #E3F2FD;
-			transition: 0s;
-			border-radius: 64px;
-			border-width: 1px;
-			border-color: #0D47A1;
-			transition: 0.4s;
-		}
+    /* Background orbs */
+    body::before{
+      content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 20%,rgba(99,102,241,.1),transparent),
+        radial-gradient(ellipse 55% 45% at 80% 70%,rgba(34,211,238,.08),transparent),
+        radial-gradient(ellipse 40% 35% at 50% 100%,rgba(139,92,246,.07),transparent);
+    }
 
-		.buton:hover {
-			background-color: #E3F2FD;
-			color: #0D47A1;
-			transform: scale(1.15);
-		}
-	</style>
-	<script>
-		document.addEventListener('contextmenu', event => event.preventDefault());
-		document.addEventListener("keydown", function (e) {
+    /* Particle canvas */
+    #particle-canvas{position:fixed;inset:0;z-index:1;pointer-events:none;}
 
-			if (e.ctrlKey && e.shiftKey && e.which == 73) {
-				e.preventDefault();
-				rightc();  // you can remove this line on the live website
-			}
-			else if (e.ctrlKey) {
-				e.preventDefault();
-				rightc();  // you can remove this line on the live website
-			}
-		});
-	</script>
+    /* Custom cursor */
+    .cur-dot{position:fixed;width:8px;height:8px;border-radius:50%;background:white;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,background .2s;mix-blend-mode:difference;}
+    .cur-ring{position:fixed;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .22s,height .22s,border-color .22s,opacity .22s;mix-blend-mode:difference;}
+    body:has(a:hover) .cur-ring,body:has(button:hover) .cur-ring{width:48px;height:48px;border-color:rgba(255,255,255,.8);}
 
+    /* Progress bar */
+    #progressBar{position:fixed;top:0;left:0;height:2.5px;z-index:9001;width:0%;background:linear-gradient(90deg,#6366f1,#8b5cf6,#22d3ee);transition:width .1s;border-radius:0 2px 2px 0;box-shadow:0 0 8px rgba(99,102,241,.7);}
+
+    /* Scroll-reveal */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+    /* Gradient shimmer text */
+    .grad-text{
+      background:linear-gradient(90deg,#6366f1 0%,#8b5cf6 20%,#22d3ee 45%,#a5b4fc 55%,#22d3ee 70%,#8b5cf6 85%,#6366f1 100%);
+      background-size:200% auto;
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+      animation:gradShimmer 4s linear infinite;
+    }
+    @keyframes gradShimmer{0%{background-position:0% center}100%{background-position:200% center}}
+
+    /* ── NAVBAR ── */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s;}
+    #nav.solid{background:rgba(6,0,14,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid var(--border);padding:.7rem 2rem;}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;}
+    .nav-logo-img{width:30px;height:auto;transition:transform .3s;}
+    .nav-logo:hover .nav-logo-img{transform:scale(1.12) rotate(-5deg);}
+    .nav-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.3px;}
+    .nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;}
+    .nav-links a{display:flex;align-items:center;gap:.3rem;padding:.45rem .8rem;color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;border-radius:8px;transition:color .2s,background .2s;position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:2px;left:.8rem;right:.8rem;height:1.5px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;border-radius:2px;}
+    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+    .nav-links a i{font-size:.72rem;}
+    .nav-links a:hover{color:white;background:rgba(255,255,255,.08);}
+    .nav-links a.active{color:#22d3ee;}
+    .burger{display:none;flex-direction:column;gap:5px;padding:8px 10px;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:8px;cursor:pointer;}
+    .burger span{display:block;width:20px;height:2px;background:white;border-radius:2px;}
+
+    /* Mobile nav */
+    .mob{position:fixed;inset:0;z-index:600;background:rgba(6,0,14,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s;}
+    .mob.open{opacity:1;pointer-events:all;}
+    .mob-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem;}
+    .mob-close{width:38px;height:38px;background:rgba(255,255,255,.08);border:none;border-radius:8px;color:white;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .mob-items{list-style:none;display:flex;flex-direction:column;gap:.3rem;}
+    .mob-items a{display:flex;align-items:center;gap:.85rem;padding:.9rem 1rem;color:rgba(255,255,255,.7);font-size:1rem;font-weight:600;border-radius:10px;transition:all .2s;}
+    .mob-items a i{color:var(--brand-l);width:20px;text-align:center;}
+    .mob-items a:hover{color:white;background:rgba(255,255,255,.06);}
+
+    /* Back-to-top */
+    #backTop{position:fixed;bottom:2rem;right:1.5rem;z-index:500;width:44px;height:44px;border-radius:14px;background:rgba(99,102,241,.18);border:1px solid rgba(99,102,241,.3);color:var(--brand-l);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s,background .2s;pointer-events:none;}
+    #backTop.show{opacity:1;transform:translateY(0);pointer-events:all;}
+    #backTop:hover{background:rgba(99,102,241,.3);}
+
+    /* Share overlay + popup */
+    .share-overlay{position:fixed;inset:0;z-index:800;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .25s;}
+    .share-overlay.show{opacity:1;pointer-events:all;}
+    .share-popup{position:fixed;z-index:801;width:318px;background:rgba(14,10,30,.96);border:1px solid rgba(99,102,241,.28);border-radius:20px;padding:1.4rem 1.35rem 1.2rem;box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);opacity:0;transform:scale(.9) translateY(6px);pointer-events:none;transition:opacity .25s,transform .25s;}
+    .share-popup.show{opacity:1;transform:scale(1) translateY(0);pointer-events:all;}
+    .share-popup-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+    .share-popup-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;display:flex;align-items:center;gap:.5rem;color:#a5b4fc;}
+    .share-popup-close{width:30px;height:30px;background:rgba(255,255,255,.07);border:none;border-radius:7px;color:rgba(255,255,255,.5);cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;}
+    .share-popup-close:hover{background:rgba(255,255,255,.13);color:white;}
+    .share-popup-url{font-size:.73rem;color:rgba(255,255,255,.28);margin-bottom:1rem;padding:.4rem .7rem;background:rgba(255,255,255,.04);border-radius:7px;font-family:monospace;letter-spacing:.3px;}
+    .share-btns{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+    .share-btn{display:flex;align-items:center;justify-content:center;gap:.42rem;padding:.6rem .7rem;border-radius:10px;font-size:.78rem;font-weight:700;cursor:pointer;border:1px solid;transition:background .2s,box-shadow .2s;}
+    .share-wa{background:rgba(37,211,102,.12);border-color:rgba(37,211,102,.25);color:#25d366;}
+    .share-wa:hover{background:rgba(37,211,102,.22);box-shadow:0 6px 18px rgba(37,211,102,.18);}
+    .share-tw{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.8);}
+    .share-tw:hover{background:rgba(255,255,255,.14);box-shadow:0 6px 18px rgba(255,255,255,.08);}
+    .share-li{background:rgba(10,102,194,.12);border-color:rgba(10,102,194,.25);color:#0a66c2;}
+    .share-li:hover{background:rgba(10,102,194,.22);box-shadow:0 6px 18px rgba(10,102,194,.18);}
+    .share-tg{background:rgba(0,136,204,.12);border-color:rgba(0,136,204,.25);color:#0088cc;}
+    .share-tg:hover{background:rgba(0,136,204,.22);box-shadow:0 6px 18px rgba(0,136,204,.18);}
+    .share-copy{grid-column:1/-1;background:rgba(99,102,241,.14);border-color:rgba(99,102,241,.28);color:#a5b4fc;}
+    .share-copy:hover{background:rgba(99,102,241,.24);box-shadow:0 6px 18px rgba(99,102,241,.2);}
+    .share-copy.copied{background:rgba(34,197,94,.18)!important;border-color:rgba(34,197,94,.35)!important;color:#4ade80!important;}
+    .share-ig{grid-column:1/-1;background:rgba(225,48,108,.12);border-color:rgba(225,48,108,.25);color:#e1306c;}
+    .share-ig:hover{background:rgba(225,48,108,.22);box-shadow:0 6px 18px rgba(225,48,108,.18);}
+    .share-hint{margin-top:.85rem;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.07);font-size:.66rem;color:rgba(255,255,255,.2);text-align:center;letter-spacing:.3px;}
+
+    /* ── PAGE ── */
+    .page{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;}
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero{
+      width:100%;max-width:860px;
+      padding:7.5rem 1.5rem 3.5rem;
+      text-align:center;
+      display:flex;flex-direction:column;align-items:center;
+      position:relative;
+    }
+    .hero::before{
+      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:700px;height:500px;border-radius:50%;pointer-events:none;z-index:-1;
+      background:radial-gradient(ellipse at center,rgba(99,102,241,.1) 0%,rgba(34,211,238,.05) 45%,transparent 70%);
+      animation:heroGlow 5s ease-in-out infinite;
+    }
+    @keyframes heroGlow{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.35rem .95rem;
+      background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.25);
+      border-radius:100px;color:#22d3ee;
+      font-size:.76rem;font-weight:700;letter-spacing:.7px;text-transform:uppercase;
+      margin-bottom:1.6rem;
+      animation:badgeBob 4.4s ease-in-out .6s infinite;
+    }
+    .badge-dot{width:6px;height:6px;background:#22d3ee;border-radius:50%;animation:blinkDot 2.2s ease-in-out infinite;box-shadow:0 0 8px rgba(34,211,238,.7);}
+    @keyframes blinkDot{0%,100%{opacity:1}50%{opacity:.25}}
+    @keyframes badgeBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .hero-title{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(2.2rem,5.5vw,3.6rem);
+      font-weight:900;line-height:1.08;letter-spacing:-2px;margin-bottom:1.2rem;
+    }
+    .hero-desc{color:rgba(255,255,255,.5);font-size:1rem;line-height:1.78;max-width:520px;margin-bottom:1.8rem;}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;}
+    .pill{display:inline-flex;align-items:center;gap:.42rem;padding:.4rem .95rem;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:100px;font-size:.79rem;font-weight:600;color:rgba(255,255,255,.72);transition:transform .22s,box-shadow .22s,border-color .22s,background .22s;}
+    .pill:hover{transform:translateY(-4px) scale(1.06);border-color:rgba(255,255,255,.2);box-shadow:0 8px 22px rgba(99,102,241,.22);}
+    .pill-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+    .pd-b{background:linear-gradient(135deg,#6366f1,#22d3ee);}
+    .pd-g{background:#22c55e;}
+    .pd-y{background:#fbbf24;}
+    .pd-c{background:#22d3ee;}
+
+    /* ══════════════════════════════════════
+       REPORT CARD (shown via shared URL)
+    ══════════════════════════════════════ */
+    .report-section{
+      width:100%;max-width:680px;
+      padding:0 1.5rem 3.5rem;
+      display:none; /* shown by JS when URL has rank params */
+    }
+    .report-section.visible{display:block;}
+    .report-card{
+      position:relative;
+      border-radius:28px;
+      overflow:hidden;
+      background:rgba(6,0,14,.85);
+      border:1px solid rgba(99,102,241,.25);
+      box-shadow:0 32px 80px -12px rgba(99,102,241,.3),0 0 0 1px rgba(255,255,255,.04);
+    }
+    /* Animated top gradient bar */
+    .report-bar{
+      height:4px;
+      background:linear-gradient(90deg,#6366f1,#8b5cf6,#22d3ee,#fbbf24,#f97316,#22d3ee,#6366f1);
+      background-size:300% 100%;
+      animation:barShift 4s linear infinite;
+    }
+    @keyframes barShift{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+    .report-inner{padding:2.2rem 2rem 2rem;}
+    .report-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.8rem;flex-wrap:wrap;gap:1rem;}
+    .report-logo{display:flex;align-items:center;gap:.55rem;}
+    .report-logo-img{width:26px;height:auto;}
+    .report-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .report-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .75rem;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.22);border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#22d3ee;}
+    .report-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.85rem;font-weight:900;letter-spacing:-.5px;margin-bottom:.3rem;line-height:1.1;}
+    .report-name-label{font-size:.72rem;color:rgba(255,255,255,.32);font-weight:600;letter-spacing:.8px;text-transform:uppercase;margin-bottom:.25rem;}
+    .report-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(99,102,241,.3),rgba(34,211,238,.2),transparent);margin:1.5rem 0;}
+    .report-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem;}
+    .report-stat{
+      padding:1.1rem .9rem;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:16px;
+      text-align:center;
+    }
+    .report-stat-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:900;line-height:1;margin-bottom:.35rem;}
+    .report-stat-val.blue{background:linear-gradient(135deg,#6366f1,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .report-stat-val.cyan{background:linear-gradient(135deg,#22d3ee,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .report-stat-val.amber{background:linear-gradient(135deg,#fbbf24,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .report-stat-lbl{font-size:.68rem;color:rgba(255,255,255,.32);font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+    .report-meta{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.6rem;}
+    .report-meta-chip{display:flex;align-items:center;gap:.4rem;padding:.3rem .75rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:100px;font-size:.74rem;color:rgba(255,255,255,.55);font-weight:500;}
+    .report-meta-chip i{font-size:.65rem;color:var(--brand-l);}
+    .report-zone{
+      display:flex;align-items:center;gap:.75rem;
+      padding:1rem 1.2rem;
+      border-radius:14px;
+      background:rgba(99,102,241,.08);
+      border:1px solid rgba(99,102,241,.2);
+      margin-bottom:1.5rem;
+    }
+    .report-zone-icon{font-size:1.5rem;}
+    .report-zone-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;color:#a5b4fc;}
+    .report-zone-sub{font-size:.73rem;color:rgba(255,255,255,.35);margin-top:2px;}
+    .report-cta{
+      display:flex;align-items:center;justify-content:center;gap:.5rem;
+      width:100%;padding:.82rem 1.2rem;
+      background:linear-gradient(135deg,#6366f1,#8b5cf6);
+      color:white;font-weight:700;font-size:.9rem;
+      border-radius:12px;border:none;cursor:pointer;
+      transition:opacity .25s,transform .25s;
+      box-shadow:0 6px 22px rgba(99,102,241,.4);
+    }
+    .report-cta:hover{opacity:.88;transform:translateY(-2px);}
+    .report-footer-note{margin-top:1rem;text-align:center;font-size:.69rem;color:rgba(255,255,255,.2);line-height:1.6;}
+
+    /* ══════════════════════════════════════
+       ROTATING RING WRAPPER
+    ══════════════════════════════════════ */
+    @property --ba{syntax:'<angle>';initial-value:0deg;inherits:false;}
+    .ring-wrap{
+      position:relative;
+      width:100%;
+      padding:14px;
+      border-radius:28px;
+    }
+    .ring-wrap::before{
+      content:'';position:absolute;inset:0;border-radius:28px;padding:4px;
+      background:conic-gradient(
+        from var(--ba),
+        #6366f1  0%, #8b5cf6 12%, #fbbf24 24%, #f97316 34%,
+        #22d3ee 46%, #67e8f9 54%, #22d3ee 64%, #f97316 74%,
+        #fbbf24 82%, #8b5cf6 90%, #6366f1 100%
+      );
+      -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;mask-composite:exclude;
+      animation:spinBorder 5s linear infinite;
+      pointer-events:none;z-index:1;
+    }
+    .ring-wrap::after{
+      content:'';position:absolute;inset:0;border-radius:28px;pointer-events:none;z-index:0;
+      background:conic-gradient(
+        from var(--ba),
+        rgba(99,102,241,.12)  0%, rgba(139,92,246,.09) 14%,
+        rgba(251,191,36,.09) 24%, rgba(249,115,22,.11) 34%,
+        rgba(34,211,238,.10) 48%, rgba(103,232,249,.07) 58%,
+        rgba(34,211,238,.09) 68%, rgba(139,92,246,.09) 82%,
+        rgba(99,102,241,.11) 100%
+      );
+      opacity:0;transition:opacity .45s ease;
+      animation:spinBorder 5s linear infinite;
+    }
+    .ring-wrap:hover::after{opacity:1;}
+    @keyframes spinBorder{to{--ba:360deg;}}
+    .ring-wrap>.predictor-card{position:relative;z-index:1;}
+
+    /* ══════════════════════════════════════
+       PREDICTOR SECTION
+    ══════════════════════════════════════ */
+    .predictor-section{
+      width:100%;max-width:740px;
+      padding:0 1.5rem 5rem;
+    }
+    .section-header{text-align:center;margin-bottom:2.2rem;}
+    .section-eyebrow{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .85rem;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);border-radius:100px;color:var(--brand-l);font-size:.7rem;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-bottom:1rem;}
+    .section-eyebrow i{font-size:.75rem;color:#22d3ee;}
+    .section-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:900;line-height:1.15;letter-spacing:-.8px;}
+    .section-sub{color:rgba(255,255,255,.4);font-size:.9rem;line-height:1.7;max-width:440px;margin:.5rem auto 0;}
+
+    /* ── Predictor Card ── */
+    .predictor-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      overflow:hidden;
+    }
+    .pred-card-top{
+      height:3px;
+      background:linear-gradient(90deg,#6366f1,#8b5cf6,#22d3ee,#6366f1);
+      background-size:300% 100%;
+      animation:barShift 4s linear infinite;
+    }
+    .pred-card-body{padding:2rem 2rem 1.75rem;}
+
+    /* Input groups */
+    .pred-label{display:block;font-size:.75rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.55rem;}
+    .pred-input-wrap{position:relative;margin-bottom:1.35rem;}
+    .pred-input-icon{
+      position:absolute;left:1rem;top:50%;transform:translateY(-50%);
+      color:rgba(255,255,255,.3);font-size:.85rem;pointer-events:none;
+      transition:color .2s;
+    }
+    .pred-input{
+      width:100%;
+      padding:.82rem 1rem .82rem 2.65rem;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:12px;
+      color:white;
+      font-size:.95rem;
+      font-family:'Inter',sans-serif;
+      transition:border-color .2s,background .2s,box-shadow .2s;
+      outline:none;
+    }
+    .pred-input:focus{
+      border-color:rgba(99,102,241,.55);
+      background:rgba(99,102,241,.07);
+      box-shadow:0 0 0 3px rgba(99,102,241,.12);
+    }
+    .pred-input::placeholder{color:rgba(255,255,255,.2);}
+    .pred-input:focus+.pred-input-focus-icon,
+    .pred-input-wrap:focus-within .pred-input-icon{color:var(--brand-l);}
+    select.pred-input{cursor:pointer;appearance:none;-webkit-appearance:none;}
+    select.pred-input option{background:#12091e;color:white;}
+    .pred-select-arrow{
+      position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+      color:rgba(255,255,255,.3);font-size:.75rem;pointer-events:none;
+    }
+
+    /* Two column layout for inputs */
+    .pred-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 1.2rem;}
+
+    /* Optional badge on name field */
+    .pred-optional{
+      font-size:.66rem;font-weight:600;letter-spacing:.4px;color:rgba(255,255,255,.25);
+      text-transform:uppercase;margin-left:.4rem;
+    }
+
+    /* Difficulty info chips */
+    .diff-info{
+      display:flex;flex-wrap:wrap;gap:.4rem;
+      margin-bottom:1.35rem;margin-top:-.6rem;
+    }
+    .diff-chip{
+      padding:.22rem .6rem;
+      border-radius:100px;
+      font-size:.68rem;font-weight:600;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.35);
+      transition:background .2s,border-color .2s,color .2s;
+      cursor:default;
+    }
+    .diff-chip.active-ve{background:rgba(34,211,238,.12);border-color:rgba(34,211,238,.28);color:#22d3ee;}
+    .diff-chip.active-e{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.28);color:#4ade80;}
+    .diff-chip.active-m{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.28);color:#fbbf24;}
+    .diff-chip.active-h{background:rgba(249,115,22,.12);border-color:rgba(249,115,22,.28);color:#fb923c;}
+    .diff-chip.active-vh{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.28);color:#f87171;}
+
+    /* Predict button */
+    .pred-btn{
+      width:100%;padding:.92rem 1.5rem;
+      background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#22d3ee 100%);
+      background-size:200% auto;
+      color:white;font-weight:800;font-size:1rem;
+      border-radius:14px;border:none;cursor:pointer;
+      transition:background-position .4s,transform .25s,box-shadow .25s,opacity .25s;
+      box-shadow:0 8px 28px rgba(99,102,241,.4);
+      display:flex;align-items:center;justify-content:center;gap:.55rem;
+      margin-top:.5rem;
+    }
+    .pred-btn:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 14px 36px rgba(99,102,241,.5);}
+    .pred-btn:active{transform:translateY(-1px);}
+    .pred-btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none;}
+    .pred-btn-arrow{transition:transform .25s;}
+    .pred-btn:hover .pred-btn-arrow{transform:translateX(4px);}
+
+    /* Results panel */
+    .pred-results{
+      margin-top:1.75rem;
+      padding-top:1.75rem;
+      border-top:1px solid rgba(255,255,255,.07);
+      display:none;
+    }
+    .pred-results.show{display:block;animation:resultSlide .5s cubic-bezier(.34,1.2,.64,1) both;}
+    @keyframes resultSlide{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .pred-results-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+    .pred-result-box{
+      padding:1.3rem 1rem;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      text-align:center;
+      transition:border-color .3s,background .3s;
+    }
+    .pred-result-box.highlight-rank{
+      background:rgba(99,102,241,.08);
+      border-color:rgba(99,102,241,.25);
+      box-shadow:0 8px 28px rgba(99,102,241,.15);
+    }
+    .pred-result-box.highlight-pct{
+      background:rgba(34,211,238,.06);
+      border-color:rgba(34,211,238,.2);
+      box-shadow:0 8px 28px rgba(34,211,238,.1);
+    }
+    .pred-result-lbl{font-size:.68rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:.55rem;}
+    .pred-result-val{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:2rem;font-weight:900;line-height:1;
+    }
+    .pred-result-val.blue{background:linear-gradient(135deg,#6366f1,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .pred-result-val.cyan{background:linear-gradient(135deg,#22d3ee,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .pred-result-sub{font-size:.72rem;color:rgba(255,255,255,.28);margin-top:.4rem;font-weight:500;}
+
+    /* Percentile bar */
+    .pct-bar-wrap{margin-bottom:1.2rem;}
+    .pct-bar-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;}
+    .pct-bar-label{font-size:.72rem;color:rgba(255,255,255,.35);font-weight:600;}
+    .pct-bar-val{font-size:.8rem;font-weight:700;color:#22d3ee;}
+    .pct-bar-track{height:7px;background:rgba(255,255,255,.06);border-radius:100px;overflow:hidden;}
+    .pct-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,#6366f1,#22d3ee);width:0%;transition:width 1s cubic-bezier(.4,0,.2,1);}
+
+    /* Zone badge */
+    .pred-zone{
+      display:flex;align-items:center;gap:.75rem;
+      padding:.9rem 1.1rem;
+      border-radius:14px;
+      margin-bottom:1.2rem;
+    }
+    .pred-zone-icon{font-size:1.4rem;flex-shrink:0;}
+    .pred-zone-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.9rem;}
+    .pred-zone-sub{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1px;}
+
+    /* Details row */
+    .pred-details-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.4rem;}
+    .pred-detail-chip{display:flex;align-items:center;gap:.38rem;padding:.28rem .75rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:100px;font-size:.73rem;color:rgba(255,255,255,.45);font-weight:500;}
+    .pred-detail-chip i{font-size:.62rem;color:var(--brand-l);}
+
+    /* Share result button */
+    .pred-share-btn{
+      width:100%;display:flex;align-items:center;justify-content:center;gap:.5rem;
+      padding:.78rem 1.2rem;
+      background:rgba(99,102,241,.14);
+      border:1px solid rgba(99,102,241,.28);
+      color:#a5b4fc;font-weight:700;font-size:.88rem;
+      border-radius:12px;cursor:pointer;
+      transition:background .25s,box-shadow .25s,transform .25s;
+    }
+    .pred-share-btn:hover{background:rgba(99,102,241,.24);box-shadow:0 8px 22px rgba(99,102,241,.2);transform:translateY(-2px);}
+    .pred-share-btn.copied{background:rgba(34,197,94,.14)!important;border-color:rgba(34,197,94,.3)!important;color:#4ade80!important;}
+
+    /* Disclaimer */
+    .pred-disclaimer{
+      margin-top:1.4rem;
+      padding:.85rem 1rem;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:12px;
+      font-size:.74rem;
+      color:rgba(255,255,255,.3);
+      line-height:1.65;
+      display:flex;align-items:flex-start;gap:.6rem;
+    }
+    .pred-disclaimer i{color:#fbbf24;font-size:.75rem;flex-shrink:0;margin-top:2px;}
+
+    /* Advanced toggle */
+    .pred-advanced-toggle{
+      display:flex;align-items:center;gap:.4rem;
+      font-size:.76rem;font-weight:600;color:rgba(255,255,255,.3);
+      cursor:pointer;margin-bottom:1rem;margin-top:-.3rem;
+      transition:color .2s;
+    }
+    .pred-advanced-toggle:hover{color:rgba(255,255,255,.55);}
+    .pred-advanced-toggle i{font-size:.68rem;transition:transform .25s;}
+    .pred-advanced-toggle.open i{transform:rotate(180deg);}
+    .pred-advanced{display:none;}
+    .pred-advanced.open{display:block;}
+
+    /* ══════════════════════════════════════
+       ABOUT SECTION
+    ══════════════════════════════════════ */
+    .about-section{
+      width:100%;max-width:740px;
+      padding:0 1.5rem 3rem;
+    }
+    .about-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:20px;
+      padding:1.6rem 1.8rem;
+      display:flex;align-items:flex-start;gap:1.2rem;
+    }
+    .about-avatar{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#6366f1,#22d3ee);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:.95rem;border:2px solid rgba(99,102,241,.3);}
+    .about-photo{width:52px;height:52px;border-radius:50%;flex-shrink:0;object-fit:cover;border:2px solid rgba(34,211,238,.35);}
+    .about-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;margin-bottom:.25rem;}
+    .about-cred{font-size:.78rem;color:rgba(255,255,255,.38);margin-bottom:.7rem;}
+    .about-text{font-size:.83rem;color:rgba(255,255,255,.42);line-height:1.7;}
+    .about-links{display:flex;gap:.55rem;margin-top:.85rem;flex-wrap:wrap;}
+    .about-link{display:flex;align-items:center;gap:.35rem;padding:.3rem .75rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:100px;font-size:.74rem;color:rgba(255,255,255,.6);font-weight:600;transition:background .2s,color .2s;}
+    .about-link:hover{background:rgba(255,255,255,.1);color:white;}
+    .about-link i{font-size:.7rem;}
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer{
+      width:100%;max-width:860px;
+      padding:2rem 1.5rem 2.5rem;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .footer-nav-links{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-bottom:1.2rem;}
+    .footer-nav-links a{font-size:.82rem;color:rgba(255,255,255,.35);font-weight:500;transition:color .2s;}
+    .footer-nav-links a:hover{color:rgba(255,255,255,.75);}
+    .footer-socials{display:flex;justify-content:center;gap:.65rem;margin-bottom:1rem;}
+    .soc-btn{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:background .2s,transform .2s;}
+    .soc-yt{background:rgba(255,0,0,.12);color:#ff4444;border:1px solid rgba(255,0,0,.2);}
+    .soc-yt:hover{background:rgba(255,0,0,.22);transform:translateY(-3px);}
+    .soc-ig{background:rgba(225,48,108,.12);color:#e1306c;border:1px solid rgba(225,48,108,.2);}
+    .soc-ig:hover{background:rgba(225,48,108,.22);transform:translateY(-3px);}
+    .soc-li{background:rgba(10,102,194,.12);color:#0a66c2;border:1px solid rgba(10,102,194,.2);}
+    .soc-li:hover{background:rgba(10,102,194,.22);transform:translateY(-3px);}
+    .footer-copy{font-size:.73rem;color:rgba(255,255,255,.18);}
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media(max-width:620px){
+      .nav-links{display:none;}.burger{display:flex;}
+      #nav{padding:.9rem 1.25rem;}#nav.solid{padding:.75rem 1.25rem;}
+      .hero{padding:6.5rem 1.25rem 3rem;}.hero-title{letter-spacing:-1.5px;}
+      .pred-grid{grid-template-columns:1fr;}
+      .pred-results-grid{grid-template-columns:1fr;}
+      .report-stats{grid-template-columns:1fr 1fr;}
+      .ring-wrap{padding:10px;}.ring-wrap::after{display:none;}
+      .about-card{flex-direction:column;gap:.85rem;}
+      .report-inner{padding:1.5rem 1.2rem;}
+    }
+    @media(max-width:420px){
+      .report-stats{grid-template-columns:1fr;}
+    }
+  </style>
 </head>
+<body>
 
-<body style="background-color: #E1F5FE;">
+<canvas id="particle-canvas"></canvas>
+<div id="progressBar"></div>
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
+<button id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-	<nav style="background-color: #0D47A1; position: sticky; top: 0; z-index: 10000;"
-		class="navbar navbar-expand-lg navbar-dark" id="navbar">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html" id="logo">
-				<img src="jee\assets\logo.png" style="border-radius: 200px;" alt="Bootstrap" width="24" height="24">
-				Divastra
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul class="nav navsize mb-2 mb-lg-0 ms-md-auto">
-					<!--
-						<li class="nav-item">
-							<a class="nav-link text-white" href="/mentorship.html">Mentorship</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-white" href="/guidance.html">Guidance</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-white" href="/affiliate.html">Affiliate</a>
-						</li>
-					-->
-					<li class="nav-item">
-						<a class="nav-link text-white" href="/counselling.html">Counselling</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-white" href="/rankPredictor.html">Predictor</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-white" href="/books.html">Books</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-white" href="/video.html">Videos</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<!-- Share overlay + popup -->
+<div class="share-overlay" id="shareOverlay" onclick="closeShare()"></div>
+<div class="share-popup" id="sharePopup">
+  <div class="share-popup-hd">
+    <div class="share-popup-title"><i class="fas fa-share-nodes"></i> Share Divastra</div>
+    <button class="share-popup-close" onclick="closeShare()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="share-popup-url">divastra.github.io</div>
+  <div class="share-btns">
+    <a id="shareWa" class="share-btn share-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a id="shareTw" class="share-btn share-tw" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> Twitter</a>
+    <a id="shareLi" class="share-btn share-li" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    <a id="shareTg" class="share-btn share-tg" target="_blank" rel="noopener"><i class="fab fa-telegram"></i> Telegram</a>
+    <button class="share-btn share-copy" onclick="copyShareLink()"><i class="fas fa-link"></i> Copy Link</button>
+    <a class="share-btn share-ig" href="https://www.instagram.com/itsprabhatranjan" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
+  <div class="share-hint">Right-click · Ctrl key · Long-press to share ✨</div>
+</div>
 
-	<div style="height: 100vh;background-color:#0D47A1; padding-top: 64px;">
-		<section class="py-5 text-center container">
-			<div class="row mx-4">
-				<div class="col-lg-6 col-md-8 mx-auto rounded py-lg-5">
-					<img src="https://cdn-icons-png.flaticon.com/512/1253/1253668.png" class="card-img-top" alt="..."
-						style="height: 64px; width: 64px; margin-bottom: 32px;">
-					<div class="">
-						<h1 class="fw-light">
-							<p class="textAbove" style="color:#BBDEFB;">Divastra Rank Predictor</p>
-						</h1>
-					</div>
-					<h6 class="lead" style="color:#64B5F6; font-size: 16px;">Divastra IIT JEE Rank
-						Predictor by Prabhat Ranjan: Your Key to JEE Main 2026 Success. Divastra brings a whole
-						new and simplified JEE Mains Rank Predictor. It is the most accurate and simple JEE Mains Rank
-						Predictor available on the internet.
-					</h6>
-				</div>
-			</div>
-		</section>
-		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-		<a href="#content">
-			<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_02udvnaf.json" background="transparent"
-				speed="1" style="width: 100px; height: 100px;"
-				class="position-absolute bottom-0 start-50 translate-middle-x" loop autoplay></lottie-player>
-		</a>
-	</div>
-	<br><br><br><br>
-	<center>
-		<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false"
-			style="margin-bottom: 80px;">
-			<div class="toast-header" style="background-color: #0D47A1; color: #4FC3F7;">
-				<img src="https://cdn-icons-png.flaticon.com/128/12744/12744435.png" style="width: 20px; height: 20px;"
-					class="rounded me-2" alt="...">
-				<strong class="me-auto">Did you know?</strong>
-				<small>New</small>
-				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-			</div>
-			<div class="toast-body" align="left" style="background-color: #4FC3F7; font-size: 13px; color: #E1F5FE;">
-				We are excited to announce the launch of our extensive counseling services! Get personalized guidance
-				for Class 10 & Below, Class 11, 12 Boards, IIT JEE, Engineering College Admission, and Engineering
-				College Guidance & Placement Preparation. Join our mentorship programs and take the next step towards
-				your academic success!
-				<br><br>
-				<a href="counselling.html" class="btn btn-primary" style="background-color: #0D47A1;">Know more</a>
-				<br>
-			</div>
-		</div>
-	</center>
-	<script>
-		var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-		var toastList = toastElList.map(function (toastEl) {
-			return new bootstrap.Toast(toastEl)
-		})
-		toastList.forEach(toast => toast.show())
-	</script>
+<!-- Mobile nav -->
+<div class="mob" id="mobNav">
+  <div class="mob-head">
+    <div class="nav-logo">
+      <img src="logo.svg" class="nav-logo-img" alt="Divastra">
+      <span class="nav-logo-name">Divastra</span>
+    </div>
+    <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mob-items">
+    <li><a href="counselling.html" onclick="closeMob()"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="rankPredictor.html" onclick="closeMob()"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html" onclick="closeMob()"><i class="fas fa-book-open"></i> Books</a></li>
+    <li><a href="https://divastra.github.io/video.html" onclick="closeMob()"><i class="fab fa-youtube"></i> Videos</a></li>
+  </ul>
+</div>
 
-	<center style="padding-top: 32px;" id="content">
+<nav id="nav">
+  <a href="https://divastra.github.io/" class="nav-logo">
+    <img src="logo.svg" class="nav-logo-img" alt="Divastra logo">
+    <span class="nav-logo-name">Divastra</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="counselling.html"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="rankPredictor.html" class="active"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html"><i class="fas fa-book-open"></i> Books</a></li>
+    <li><a href="https://divastra.github.io/video.html"><i class="fab fa-youtube"></i> Videos</a></li>
+  </ul>
+  <div class="burger" onclick="openMob()"><span></span><span></span><span></span></div>
+</nav>
 
-		<h2 style="color: #01579B;">JEE Mains Marks vs Percentile vs Rank Predictor</h2>
-		<h4 style="color: #01579B;">(JEE Mains 2026 2nd Attempt)</h4>
+<div class="page">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-badge reveal"><span class="badge-dot"></span> JEE Main 2026</div>
+    <h1 class="hero-title reveal d1">
+      Predict Your JEE<br>
+      <span class="grad-text">Rank Instantly</span>
+    </h1>
+    <p class="hero-desc reveal d2">
+      Enter your marks and paper difficulty — get your predicted rank and percentile using NTA's official formula. Built by Prabhat Ranjan, NIT Jamshedpur.
+    </p>
+    <div class="hero-pills reveal d3">
+      <span class="pill"><span class="pill-dot pd-b"></span>NTA Formula</span>
+      <span class="pill"><span class="pill-dot pd-g"></span>Difficulty Adjusted</span>
+      <span class="pill"><span class="pill-dot pd-y"></span>Shareable Results</span>
+      <span class="pill"><span class="pill-dot pd-c"></span>100% Free</span>
+    </div>
+  </section>
+
+  <!-- ══ REPORT CARD (shown only when URL has shared rank params) ══ -->
+  <section class="report-section reveal" id="reportSection">
+    <div class="section-header" style="margin-bottom:1.5rem;">
+      <div class="section-eyebrow"><i class="fas fa-trophy"></i>&nbsp;Shared Result</div>
+      <h2 class="section-title">Your Friend's <span class="grad-text">Rank Report</span></h2>
+      <p class="section-sub">Shared via Divastra Rank Predictor · Scroll down to predict yours →</p>
+    </div>
+    <div class="report-card">
+      <div class="report-bar"></div>
+      <div class="report-inner">
+        <div class="report-header">
+          <div class="report-logo">
+            <img src="logo.svg" class="report-logo-img" alt="Divastra"
+                 onerror="this.style.display='none'">
+            <span class="report-logo-name">Divastra</span>
+          </div>
+          <div class="report-badge"><i class="fas fa-chart-line"></i>&nbsp;JEE Main 2026 Prediction</div>
+        </div>
+        <div class="report-name-label">Student Name</div>
+        <div class="report-name" id="rcName">—</div>
+        <div class="report-divider"></div>
+        <div class="report-stats">
+          <div class="report-stat">
+            <div class="report-stat-val blue" id="rcRank">—</div>
+            <div class="report-stat-lbl">Predicted Rank</div>
+          </div>
+          <div class="report-stat">
+            <div class="report-stat-val cyan" id="rcPct">—</div>
+            <div class="report-stat-lbl">Percentile</div>
+          </div>
+          <div class="report-stat">
+            <div class="report-stat-val amber" id="rcMarks">—</div>
+            <div class="report-stat-lbl">Marks</div>
+          </div>
+        </div>
+        <div class="report-meta">
+          <div class="report-meta-chip"><i class="fas fa-gauge-high"></i><span id="rcDiff">—</span></div>
+          <div class="report-meta-chip"><i class="fas fa-users"></i><span id="rcCand">—</span></div>
+          <div class="report-meta-chip"><i class="fas fa-calendar"></i><span id="rcDate">—</span></div>
+        </div>
+        <div class="report-zone" id="rcZoneWrap">
+          <div class="report-zone-icon" id="rcZoneIcon">🎯</div>
+          <div>
+            <div class="report-zone-text" id="rcZoneName">—</div>
+            <div class="report-zone-sub" id="rcZoneSub">—</div>
+          </div>
+        </div>
+        <button class="report-cta" onclick="document.getElementById('predictorAnchor').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-calculator"></i> Predict My Own Rank Below
+        </button>
+        <p class="report-footer-note">Predictions are approximate and based on historical NTA data. Actual rank may vary.<br>Made with ❤️ by Divastra · <a href="https://divastra.github.io/" style="color:rgba(255,255,255,.3);text-decoration:underline">divastra.github.io</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PREDICTOR CARD ══ -->
+  <section class="predictor-section" id="predictorAnchor">
+    <div class="section-header reveal">
+      <div class="section-eyebrow"><i class="fas fa-calculator"></i>&nbsp;Rank Calculator</div>
+      <h2 class="section-title">Enter Your <span class="grad-text">Details</span></h2>
+      <p class="section-sub">Select difficulty level, enter marks, and hit predict.</p>
+    </div>
+
+    <div class="ring-wrap reveal d1">
+    <div class="predictor-card">
+      <div class="pred-card-top"></div>
+      <div class="pred-card-body">
+
+        <!-- ── Row 1: Difficulty + Marks ── -->
+        <div class="pred-grid">
+          <div>
+            <label class="pred-label" for="level">Paper Difficulty</label>
+            <div class="pred-input-wrap">
+              <i class="fas fa-sliders pred-input-icon"></i>
+              <select class="pred-input" id="level" name="level" onchange="handleDifficultyChange()">
+                <option value="" disabled selected>Select difficulty</option>
+                <option value="Very Easy">Very Easy</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+                <option value="Very Hard">Very Hard</option>
+              </select>
+              <i class="fas fa-chevron-down pred-select-arrow"></i>
+            </div>
+          </div>
+          <div>
+            <label class="pred-label" for="marks">Your Marks <span style="color:rgba(255,255,255,.18)">(out of 300)</span></label>
+            <div class="pred-input-wrap">
+              <i class="fas fa-pen pred-input-icon"></i>
+              <input type="number" class="pred-input" id="marks"
+                     placeholder="e.g. 185"
+                     min="-75" max="300" step="1"
+                     oninput="handleMarksInput()">
+            </div>
+          </div>
+        </div>
+
+        <!-- Difficulty info chips -->
+        <div class="diff-info" id="diffInfoRow">
+          <span class="diff-chip" id="dc-ve">⚡ Very Easy: +9% boost</span>
+          <span class="diff-chip" id="dc-e">✅ Easy: +5.2% boost</span>
+          <span class="diff-chip" id="dc-m">⚖️ Medium: ~neutral</span>
+          <span class="diff-chip" id="dc-h">🔥 Hard: −4.3% cut</span>
+          <span class="diff-chip" id="dc-vh">💀 Very Hard: −9% cut</span>
+        </div>
+
+        <!-- ── Row 2: Name (optional) ── -->
+        <div>
+          <label class="pred-label" for="studentName">Your Name <span class="pred-optional">optional · for sharing</span></label>
+          <div class="pred-input-wrap">
+            <i class="fas fa-user pred-input-icon"></i>
+            <input type="text" class="pred-input" id="studentName"
+                   placeholder="e.g. Arjun Sharma"
+                   maxlength="50">
+          </div>
+        </div>
+
+        <!-- ── Advanced: Candidates count ── -->
+        <div class="pred-advanced-toggle" id="advToggle" onclick="toggleAdvanced()">
+          <i class="fas fa-chevron-down"></i> Advanced options
+        </div>
+        <div class="pred-advanced" id="advPanel">
+          <label class="pred-label" for="candidates">Registered Candidates <span style="color:rgba(255,255,255,.18)">(default 16,00,000)</span></label>
+          <div class="pred-input-wrap">
+            <i class="fas fa-users pred-input-icon"></i>
+            <input type="number" class="pred-input" id="candidates"
+                   placeholder="1600000"
+                   value="1600000"
+                   min="100000" max="5000000">
+          </div>
+        </div>
+
+        <!-- ── Predict Button ── -->
+        <button class="pred-btn" id="predictBtn" onclick="score()" disabled>
+          <i class="fas fa-bolt"></i> Predict My Rank <i class="fas fa-arrow-right pred-btn-arrow"></i>
+        </button>
+
+        <!-- ══════════════════════════════════════
+             RESULTS PANEL
+             (Shown after score() runs)
+        ══════════════════════════════════════ -->
+        <div class="pred-results" id="resultsPanel">
+
+          <!-- Main result boxes -->
+          <div class="pred-results-grid">
+            <div class="pred-result-box highlight-rank">
+              <div class="pred-result-lbl"><i class="fas fa-ranking-star" style="margin-right:.3rem"></i>Predicted Rank</div>
+              <div class="pred-result-val blue" id="rankDisplay">—</div>
+              <div class="pred-result-sub" id="rankSubDisplay"></div>
+            </div>
+            <div class="pred-result-box highlight-pct">
+              <div class="pred-result-lbl"><i class="fas fa-percent" style="margin-right:.3rem"></i>Percentile</div>
+              <div class="pred-result-val cyan" id="pctDisplay">—</div>
+              <div class="pred-result-sub">NTA Score</div>
+            </div>
+          </div>
+
+          <!-- Percentile bar -->
+          <div class="pct-bar-wrap">
+            <div class="pct-bar-top">
+              <span class="pct-bar-label">Better than</span>
+              <span class="pct-bar-val" id="pctBarLabel">—% of students</span>
+            </div>
+            <div class="pct-bar-track"><div class="pct-bar-fill" id="pctBarFill"></div></div>
+          </div>
+
+          <!-- Zone badge -->
+          <div class="pred-zone" id="predZone">
+            <div class="pred-zone-icon" id="zoneIcon">🎯</div>
+            <div>
+              <div class="pred-zone-name" id="zoneName">—</div>
+              <div class="pred-zone-sub" id="zoneSub">—</div>
+            </div>
+          </div>
+
+          <!-- Details chips -->
+          <div class="pred-details-row" id="detailsRow"></div>
+
+          <!-- Share result button -->
+          <button class="pred-share-btn" id="shareResultBtn" onclick="shareResult()">
+            <i class="fas fa-share-nodes"></i> Share My Result with Friends
+          </button>
+
+          <!-- Disclaimer -->
+          <div class="pred-disclaimer">
+            <i class="fas fa-triangle-exclamation"></i>
+            <span>Predictions are based on historical NTA data and piecewise interpolation. Actual rank may differ. This tool is for estimation only — always verify with official NTA results.</span>
+          </div>
+        </div>
+        <!-- /.pred-results -->
+
+        <!-- Hidden output elements used by the preserved score() algorithm -->
+        <!-- These are required by the algorithm; styled results are shown above -->
+        <div style="display:none" aria-hidden="true">
+          <p id="percentilePre"></p>
+          <p id="rankPre"></p>
+          <p id="difficultyPre"></p>
+          <p id="marksPre"></p>
+          <button id="basic-addon1" onclick="score()"></button>
+          <button id="basic-addon2"></button>
+        </div>
+
+      </div><!-- /.pred-card-body -->
+    </div><!-- /.predictor-card -->
+    </div><!-- /.ring-wrap -->
+  </section>
+
+  <!-- ══ ABOUT CREATOR ══ -->
+  <section class="about-section">
+    <div class="about-card reveal">
+      <img src="https://divastra.github.io/assets/img/thumbnail1.png"
+           class="about-photo" alt="Prabhat Ranjan"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="about-avatar" style="display:none">PR</div>
+      <div>
+        <div class="about-name">Prabhat Ranjan · "Blue T-shirt Bhaiya"</div>
+        <div class="about-cred">Mechanical Engineering · NIT Jamshedpur · Working in IT Sector</div>
+        <div class="about-text">This rank predictor is built using NTA's official formula and piecewise linear interpolation calibrated on real historical data. It accounts for paper difficulty to give the most accurate estimate. For 1-on-1 college counselling, check the Counselling page.</div>
+        <div class="about-links">
+          <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" class="about-link"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://instagram.com/itsprabhatranjan" target="_blank" class="about-link"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="counselling.html" class="about-link"><i class="fas fa-graduation-cap"></i> Counselling</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-nav-links">
+      <a href="https://divastra.github.io/">Home</a>
+      <a href="counselling.html">Counselling</a>
+      <a href="rankPredictor.html">Predictor</a>
+      <a href="https://divastra.github.io/books.html">Books</a>
+      <a href="https://divastra.github.io/video.html">Videos</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" class="soc-btn soc-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com/itsprabhatranjan" target="_blank" class="soc-btn soc-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/itsprabhatranjan" target="_blank" class="soc-btn soc-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p class="footer-copy">© 2026 Divastra · Made with ❤️ by Prabhat Ranjan</p>
+  </footer>
+
+</div><!-- /.page -->
+
+<script>
+/* ════════════════════════════════════════════════
+   1. BUBBLE PARTICLE SYSTEM
+════════════════════════════════════════════════ */
+(function(){
+  const canvas=document.getElementById('particle-canvas'),ctx=canvas.getContext('2d');
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+  resize();window.addEventListener('resize',resize,{passive:true});
+  const windAngle=Math.random()*Math.PI*2,BASE_SPD=0.55,ATTRACT_R=180,COUNT=110;
+  const mouse={x:canvas.width/2,y:canvas.height/2};
+  let prevMX=mouse.x,prevMY=mouse.y,cursorSpeed=0;
+  let cursorDirX=Math.cos(windAngle),cursorDirY=Math.sin(windAngle),cursorStrength=0,cursorSpeedBoost=0;
+  window.addEventListener('mousemove',e=>{
+    const dvx=e.clientX-prevMX,dvy=e.clientY-prevMY;
+    cursorSpeed=Math.sqrt(dvx*dvx+dvy*dvy);
+    if(cursorSpeed>2){cursorDirX=dvx/cursorSpeed;cursorDirY=dvy/cursorSpeed;cursorStrength=Math.min(1,cursorSpeed/15);cursorSpeedBoost=Math.min(cursorSpeed*0.04,3);}
+    prevMX=mouse.x;prevMY=mouse.y;mouse.x=e.clientX;mouse.y=e.clientY;
+  },{passive:true});
+  window.addEventListener('touchmove',e=>{const t=e.touches[0];mouse.x=t.clientX;mouse.y=t.clientY;cursorStrength=0.6;cursorSpeedBoost=1.5;},{passive:true});
+  const PAL=['#6366f1','#818cf8','#8b5cf6','#a5b4fc','#22d3ee','#67e8f9','#fbbf24','#f97316','#f43f5e','#4ade80'];
+  const ripples=[],tempBubbles=[],shockwaves=[];
+  let globalClickPulse=0;
+
+  class P{
+    constructor(){this.init(true);}
+    init(rp){
+      if(rp){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;}
+      this.r=Math.random()*1.8+0.5;this.spd=0.5+Math.random()*0.8;
+      this.vx=Math.cos(windAngle)*BASE_SPD*this.spd;this.vy=Math.sin(windAngle)*BASE_SPD*this.spd;
+      this.alpha=Math.random()*0.55+0.2;this.color=PAL[Math.floor(Math.random()*PAL.length)];
+      this.phase=Math.random()*Math.PI*2;this.phSpd=0.018+Math.random()*0.018;
+      this.trail=[];this.nf=0;this.popCd=0;
+    }
+    update(){
+      const tS=(BASE_SPD+cursorSpeedBoost)*this.spd,wx=Math.cos(windAngle),wy=Math.sin(windAngle);
+      this.vx+=((wx*(1-cursorStrength)+cursorDirX*cursorStrength)*tS-this.vx)*0.04;
+      this.vy+=((wy*(1-cursorStrength)+cursorDirY*cursorStrength)*tS-this.vy)*0.04;
+      const dx=mouse.x-this.x,dy=mouse.y-this.y,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<20&&cursorSpeed>14&&this.popCd<=0){
+        ripples.push({x:this.x,y:this.y,r:this.r*2,maxR:45,life:1,color:this.color,fast:true});
+        this.init(false);this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;return;
+      }
+      if(this.popCd>0)this.popCd--;
+      if(dist<ATTRACT_R&&dist>1){const t=(ATTRACT_R-dist)/ATTRACT_R,pow=t*t,str=0.045+Math.min(cursorSpeed,40)*0.0025;this.vx+=(dx/dist)*pow*str;this.vy+=(dy/dist)*pow*str;this.nf=Math.min(1,this.nf+pow*0.18);}else{this.nf*=0.92;}
+      const spd=Math.sqrt(this.vx*this.vx+this.vy*this.vy),maxS=BASE_SPD*4+cursorSpeedBoost*2;
+      if(spd>maxS){this.vx=(this.vx/spd)*maxS;this.vy=(this.vy/spd)*maxS;}
+      this.trail.unshift({x:this.x,y:this.y});if(this.trail.length>8)this.trail.pop();
+      this.x+=this.vx;this.y+=this.vy;this.phase+=this.phSpd;
+      const m=12;
+      if(this.x<-m)this.x=canvas.width+m;if(this.x>canvas.width+m)this.x=-m;
+      if(this.y<-m)this.y=canvas.height+m;if(this.y>canvas.height+m)this.y=-m;
+    }
+    draw(){
+      const pulse=0.55+Math.sin(this.phase)*0.35,boost=1+this.nf*1.8,cb=1+globalClickPulse*0.6;
+      for(let i=0;i<this.trail.length;i++){const frac=(this.trail.length-i)/this.trail.length;ctx.beginPath();ctx.arc(this.trail[i].x,this.trail[i].y,this.r*frac,0,Math.PI*2);ctx.fillStyle=this.color;ctx.globalAlpha=this.alpha*pulse*frac*0.4;ctx.fill();}
+      ctx.beginPath();ctx.arc(this.x,this.y,this.r*(0.85+this.nf*0.5)*cb,0,Math.PI*2);ctx.fillStyle=this.nf>0.4?'#ffffff':this.color;ctx.globalAlpha=this.alpha*pulse*cb;ctx.fill();
+      const hR=this.r*3.8*boost*cb,g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,hR);
+      g.addColorStop(0,this.color+'bb');g.addColorStop(1,this.color+'00');
+      ctx.beginPath();ctx.arc(this.x,this.y,hR,0,Math.PI*2);ctx.fillStyle=g;ctx.globalAlpha=this.alpha*pulse*(0.42+this.nf*0.4)*cb;ctx.fill();
+    }
+  }
+
+  class TB{
+    constructor(x,y,angle,speed){
+      this.x=x;this.y=y;this.vx=Math.cos(angle)*speed;this.vy=Math.sin(angle)*speed-0.3;
+      this.r=Math.random()*3.5+1;this.life=1;this.decay=0.01+Math.random()*0.016;
+      this.color=PAL[Math.floor(Math.random()*PAL.length)];this.phase=Math.random()*Math.PI*2;
+      this.phSpd=0.05+Math.random()*0.04;this.wobble=Math.random()*0.4-0.2;this.wPhase=Math.random()*Math.PI*2;
+    }
+    update(){
+      this.wPhase+=0.06;this.vx+=Math.sin(this.wPhase)*this.wobble*0.05;
+      this.vx*=0.98;this.vy*=0.98;this.vy-=0.06;
+      this.x+=this.vx;this.y+=this.vy;this.life-=this.decay;this.phase+=this.phSpd;
+      return this.life>0;
+    }
+    draw(){
+      const pulse=0.72+Math.sin(this.phase)*0.28,sz=this.r*pulse;
+      ctx.beginPath();ctx.arc(this.x,this.y,sz,0,Math.PI*2);ctx.fillStyle=this.color;ctx.globalAlpha=this.life*0.55;ctx.fill();
+      ctx.beginPath();ctx.arc(this.x,this.y,sz,0,Math.PI*2);ctx.strokeStyle='#ffffff';ctx.lineWidth=0.7;ctx.globalAlpha=this.life*0.35;ctx.stroke();
+      ctx.beginPath();ctx.arc(this.x-sz*0.28,this.y-sz*0.28,sz*0.28,0,Math.PI*2);ctx.fillStyle='#ffffff';ctx.globalAlpha=this.life*0.3;ctx.fill();
+      const g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,sz*4);g.addColorStop(0,this.color+'88');g.addColorStop(1,this.color+'00');
+      ctx.beginPath();ctx.arc(this.x,this.y,sz*4,0,Math.PI*2);ctx.fillStyle=g;ctx.globalAlpha=this.life*0.35;ctx.fill();
+    }
+  }
+
+  window.__bubbleClick=function(x,y){
+    globalClickPulse=1;
+    ripples.push({x,y,r:5,maxR:90,life:1,color:PAL[Math.floor(Math.random()*PAL.length)],fast:false});
+    ripples.push({x,y,r:5,maxR:55,life:1,color:PAL[Math.floor(Math.random()*PAL.length)],fast:false});
+    shockwaves.push({x,y,r:0,life:1});
+    const n=20+Math.floor(Math.random()*9);
+    for(let i=0;i<n;i++){const ang=Math.random()*Math.PI*2,spd=1.2+Math.random()*4.5;tempBubbles.push(new TB(x,y,ang,spd));}
+    parts.forEach(p=>{const dx=p.x-x,dy=p.y-y,d=Math.sqrt(dx*dx+dy*dy);if(d<160&&d>0){const f=(160-d)/160*9;p.vx+=(dx/d)*f;p.vy+=(dy/d)*f;p.nf=Math.min(1,p.nf+0.9);}});
+  };
+
+  /* Long-press mobile → share */
+  let lpTimer=null;
+  window.addEventListener('touchstart',e=>{
+    if(e.touches.length!==1)return;
+    const t=e.touches[0];
+    lpTimer=setTimeout(()=>{if(window.__shareOpenFn)window.__shareOpenFn(t.clientX,t.clientY);},500);
+  },{passive:true});
+  window.addEventListener('touchend',()=>clearTimeout(lpTimer),{passive:true});
+  window.addEventListener('touchmove',()=>clearTimeout(lpTimer),{passive:true});
+
+  const parts=Array.from({length:COUNT},()=>new P());
+
+  (function loop(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);ctx.globalAlpha=1;
+    for(let i=shockwaves.length-1;i>=0;i--){const sw=shockwaves[i];sw.r+=5;sw.life-=0.04;if(sw.life<=0){shockwaves.splice(i,1);continue;}ctx.beginPath();ctx.arc(sw.x,sw.y,sw.r,0,Math.PI*2);ctx.strokeStyle='rgba(255,255,255,'+sw.life*0.22+')';ctx.lineWidth=2.5;ctx.stroke();}
+    for(let i=ripples.length-1;i>=0;i--){const rp=ripples[i];rp.r+=rp.fast?3:1.6;rp.life-=rp.fast?0.05:0.022;if(rp.life<=0){ripples.splice(i,1);continue;}ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.strokeStyle=rp.color;ctx.lineWidth=rp.fast?1.2:1.8;ctx.globalAlpha=rp.life*(rp.fast?0.7:0.5);ctx.stroke();}
+    for(let i=tempBubbles.length-1;i>=0;i--){if(!tempBubbles[i].update()){tempBubbles.splice(i,1);continue;}tempBubbles[i].draw();}
+    parts.forEach(p=>{p.update();p.draw();});
+    cursorStrength*=0.97;cursorSpeedBoost*=0.95;cursorSpeed*=0.88;globalClickPulse*=0.88;
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ════════════════════════════════════════════════
+   2. PROGRESS BAR + SCROLL + BACK-TO-TOP
+════════════════════════════════════════════════ */
+const navEl=document.getElementById('nav');
+const pb=document.getElementById('progressBar');
+const bt=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY,max=document.documentElement.scrollHeight-window.innerHeight;
+  navEl.classList.toggle('solid',s>40);
+  pb.style.width=(max>0?(s/max)*100:0)+'%';
+  bt.classList.toggle('show',s>400);
+},{passive:true});
+bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ════════════════════════════════════════════════
+   3. MOBILE NAV
+════════════════════════════════════════════════ */
+const mobNavEl=document.getElementById('mobNav');
+function openMob(){mobNavEl.classList.add('open');document.body.style.overflow='hidden';}
+function closeMob(){mobNavEl.classList.remove('open');document.body.style.overflow='';}
+
+/* ════════════════════════════════════════════════
+   4. SCROLL REVEAL
+════════════════════════════════════════════════ */
+const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');revObs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* ════════════════════════════════════════════════
+   5. CUSTOM CURSOR
+════════════════════════════════════════════════ */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches)return;
+  const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
+  let mx=0,my=0,rx=0,ry=0;
+  window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;},{passive:true});
+  (function animate(){
+    dot.style.left=mx+'px';dot.style.top=my+'px';
+    rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(animate);
+  })();
+})();
+
+/* ════════════════════════════════════════════════
+   6. SHARE POPUP — Right-click, Ctrl alone, Long-press
+════════════════════════════════════════════════ */
+(function(){
+  const SHARE_URL='https://divastra.github.io/rankPredictor.html';
+  const SHARE_TEXT='🎯 Free JEE Main Rank Predictor by Prabhat Ranjan (NIT Jamshedpur) — predict your rank from percentile instantly! Check Divastra:';
+  document.getElementById('shareWa').href='https://wa.me/?text='+encodeURIComponent(SHARE_TEXT+'\n'+SHARE_URL);
+  document.getElementById('shareTw').href='https://twitter.com/intent/tweet?url='+encodeURIComponent(SHARE_URL)+'&text='+encodeURIComponent(SHARE_TEXT);
+  document.getElementById('shareLi').href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(SHARE_URL);
+  document.getElementById('shareTg').href='https://t.me/share/url?url='+encodeURIComponent(SHARE_URL)+'&text='+encodeURIComponent(SHARE_TEXT);
+
+  const popup=document.getElementById('sharePopup'),overlay=document.getElementById('shareOverlay');
+
+  function openShare(cx,cy){
+    const vw=window.innerWidth,vh=window.innerHeight,W=318,pad=14;
+    let x,y;
+    if(cx!==null&&cy!==null){x=Math.min(cx,vw-W-pad);x=Math.max(x,pad);y=Math.min(cy,vh-320-pad);y=Math.max(y,pad);}
+    else{x=vw/2-W/2;y=vh/2-160;}
+    popup.style.left=x+'px';popup.style.top=y+'px';
+    overlay.classList.add('show');popup.classList.add('show');
+  }
+  window.__shareOpenFn=openShare;
+  window.closeShare=function(){overlay.classList.remove('show');popup.classList.remove('show');};
+
+  document.addEventListener('contextmenu',e=>{e.preventDefault();openShare(e.clientX,e.clientY);});
+
+  let ctrlDown=false;
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){window.closeShare();return;}
+    if(e.key==='Tab')return;
+    if(e.key==='Control'||e.key==='Meta'){ctrlDown=true;return;}
+    if(/^F\d+$/.test(e.key)){e.preventDefault();e.stopPropagation();return;}
+    if(e.ctrlKey||e.metaKey){ctrlDown=false;e.preventDefault();e.stopPropagation();return;}
+    if(e.altKey){e.preventDefault();e.stopPropagation();return;}
+  },true);
+  document.addEventListener('keyup',e=>{
+    if((e.key==='Control'||e.key==='Meta')&&ctrlDown){openShare(null,null);ctrlDown=false;}
+    if(e.key==='Control'||e.key==='Meta')ctrlDown=false;
+  },true);
+
+  window.copyShareLink=function(){
+    const btn=document.querySelector('.share-copy'),orig=btn.innerHTML;
+    const doFb=()=>{btn.innerHTML='<i class="fas fa-check"></i> Copied!';btn.classList.add('copied');setTimeout(()=>{btn.innerHTML=orig;btn.classList.remove('copied');},2500);};
+    if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(SHARE_URL).then(doFb).catch(doFb);
+    else{const el=document.createElement('textarea');el.value=SHARE_URL;el.style.cssText='position:fixed;opacity:0';document.body.appendChild(el);el.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(el);doFb();}
+  };
+})();
+
+/* ════════════════════════════════════════════════
+   7. CLICK → BUBBLES
+════════════════════════════════════════════════ */
+(function(){
+  document.addEventListener('click',e=>{
+    if(e.target.closest('a,button,input,select,textarea,.share-popup,.share-overlay'))return;
+    if(window.__bubbleClick)window.__bubbleClick(e.clientX,e.clientY);
+  });
+  let lastTap=0;
+  document.addEventListener('touchend',e=>{
+    if(e.target.closest('a,button,input,select,textarea,.share-popup,.share-overlay'))return;
+    const now=Date.now();if(now-lastTap<300)return;lastTap=now;
+    const t=e.changedTouches[0];if(window.__bubbleClick)window.__bubbleClick(t.clientX,t.clientY);
+  },{passive:true});
+})();
+
+/* ════════════════════════════════════════════════
+   8. APP-LIKE LOCKS
+════════════════════════════════════════════════ */
+(function(){
+  document.addEventListener('selectstart',e=>{if(!e.target.closest('input,textarea,select,[contenteditable]'))e.preventDefault();});
+  document.addEventListener('dragstart',e=>{e.preventDefault();});
+  window.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey)e.preventDefault();},{passive:false});
+  document.addEventListener('touchstart',e=>{if(e.touches.length>1)e.preventDefault();},{passive:false});
+  let lastT=0;
+  document.addEventListener('touchend',e=>{
+    const now=Date.now();
+    if(now-lastT<300&&!e.target.closest('a,button,input,select,textarea'))e.preventDefault();
+    lastT=now;
+  },{passive:false});
+  document.addEventListener('copy',e=>{if(!e.target.closest('input,textarea,select,[contenteditable]'))e.preventDefault();});
+  document.addEventListener('cut',e=>{if(!e.target.closest('input,textarea,select,[contenteditable]'))e.preventDefault();});
+})();
+
+/* ════════════════════════════════════════════════
+   9. 3D TILT ON PREDICTOR CARD
+════════════════════════════════════════════════ */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches)return;
+  const card=document.querySelector('.predictor-card');
+  if(!card)return;
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const nx=(e.clientX-r.left)/r.width-0.5,ny=(e.clientY-r.top)/r.height-0.5;
+    card.style.transform=`perspective(1200px) rotateX(${ny*-5}deg) rotateY(${nx*5}deg)`;
+  });
+  card.addEventListener('mouseleave',()=>{card.style.transform='';});
+})();
+
+/* ════════════════════════════════════════════════
+   ══════════════════════════════════════════════
+   PREDICTOR ALGORITHM — PRESERVED EXACTLY
+   ══════════════════════════════════════════════
+   Original algorithm from Divastra JEE Main Rank
+   Predictor. DO NOT MODIFY THIS FUNCTION.
+
+   To update for next year / new session:
+   ┌─────────────────────────────────────────────┐
+   │ 1. DIFFICULTY MULTIPLIERS (g values)        │
+   │    Change the g = X.XXXXX values below for  │
+   │    each difficulty level.                   │
+   │    Current values:                          │
+   │      Very Easy : g =  0.09                  │
+   │      Easy      : g =  0.05175               │
+   │      Medium    : g =  0.0045                │
+   │      Hard      : g = -0.04275               │
+   │      Very Hard : g = -0.09                  │
+   │                                             │
+   │ 2. PIECEWISE PERCENTILE TABLE               │
+   │    The nested if-else blocks with (a,b)     │
+   │    pairs define a piecewise linear curve    │
+   │    mapping marks → percentile.              │
+   │    Each segment: b = slope*(a-a0) + b0      │
+   │    Data points (marks, percentile):         │
+   │     (0, 6)         (56, 69.5797271)         │
+   │     (83, 84.22540213)                       │
+   │     (105, 91.59517945)                      │
+   │     (117, 92.88745828)                      │
+   │     (123, 93.89928202)                      │
+   │     (130, 94.96737888)                      │
+   │     (140, 95.983027)                        │
+   │     (152, 96.93721175)                      │
+   │     (163.5, 97.97507774)                    │
+   │     (172.5, 98.49801724)                    │
+   │     (181.5, 98.99673561)                    │
+   │     (196, 99.3487614)                       │
+   │     (206, 99.56019541)                      │
+   │     (218, 99.73930423)                      │
+   │     (235, 99.87060821)                      │
+   │     (300, 100)                              │
+   │    Update these pairs using new NTA data    │
+   │                                             │
+   │ 3. REGISTERED CANDIDATES                   │
+   │    Default is 1,600,000. Update below:      │
+   │    - In the null-check at top of score()    │
+   │    - In the HTML input default value        │
+   │    - Formula: rank = ((100-P)/100)*N + 1    │
+   └─────────────────────────────────────────────┘
+════════════════════════════════════════════════ */
+function score() {
+    /* ── INPUT READING ── */
+    var a = parseFloat(document.getElementById('marks').value);
+    var n = parseFloat(document.getElementById('candidates').value);
+    var b, g = 0.0;
+    var f = document.getElementById("level");
+    var difficulty = f.options[f.selectedIndex].text;
+    var inputClass2 = document.getElementById("candidates").classList;
+    var buttonClass2 = document.getElementById("basic-addon2").classList;
+
+    /* ── DEFAULT CANDIDATES (update this number each year) ── */
+    if (document.getElementById('candidates').value == "" || document.getElementById('candidates').value == null) {
+        document.getElementById('candidates').value = "1600000";
+        n = 1600000;
+    }
+
+    /* ── DIFFICULTY MULTIPLIERS (g)
+       Positive g  → paper was Easy   → inflate marks (students score lower vs normal)
+       Negative g  → paper was Hard   → deflate marks (students score higher vs normal)
+       The adjustment shifts raw marks to a "normalised" equivalent. ── */
+    if (difficulty === "Very Easy") {
+        g = 0.09;
+    }
+    else if (difficulty === "Easy") {
+        g = 0.05175;
+    }
+    else if (difficulty === "Medium") {
+        g = 0.0045;
+    }
+    else if (difficulty === "Hard") {
+        g = -0.04275;
+    }
+    else if (difficulty === "Very Hard") {
+        g = -0.09;
+    }
+
+    /* ── MARKS ADJUSTMENT
+       For marks ≤ 180: adjust proportionally to marks
+       For marks > 180: adjust proportionally to headroom (300 - marks),
+       scaled by the 180/120 ratio to keep the adjustment smooth. ── */
+    if (a <= 180) {
+        a = a - a * g;
+    }
+    else {
+        a = a - (300 - a) * g * 180 / 120;
+    }
+
+    /* ── CLAMP adjusted marks to valid range ── */
+    if (a < (-60)) {
+        document.getElementById('marks').value = "-60";
+        a = -60;
+    }
+    if (a > 300) {
+        document.getElementById('marks').value = "300";
+        a = 300;
+    }
+
+    /* ── COMPUTE PERCENTILE + RANK ── */
+    if (difficulty === "Select difficulty level") { }
+    else {
+        document.getElementById("candidates").disabled = false;
+        document.getElementById("basic-addon2").disabled = false;
+        document.getElementById("marksPre").innerHTML = "<b>Marks</b>: " + document.getElementById('marks').value;
+        inputClass2.add("shadow");
+        buttonClass2.add("shadow");
+
+        if (document.getElementById('marks').value == "" || document.getElementById('marks').value == null) {
+            document.getElementById("candidates").disabled = true;
+            document.getElementById("basic-addon2").disabled = true;
+            inputClass2.remove("shadow");
+            buttonClass2.remove("shadow");
+            document.getElementById("percentilePre").innerHTML = "";
+            document.getElementById("rankPre").innerHTML = "";
+            document.getElementById("marksPre").innerHTML = "";
+        }
+        else if (a < 0) {
+            /* ── Below minimum threshold → percentile < 6 ── */
+            document.getElementById("percentilePre").innerHTML = "<b>Percentile</b>: less than 6";
+            document.getElementById("rankPre").innerHTML = "<b>Rank</b>: less than " + (((100 - 6) / 1000) * n) + 1;
+        }
+        else {
+            /* ── PIECEWISE LINEAR INTERPOLATION
+               Maps normalised marks (a) → percentile (b)
+               using 18 known calibration segments from historical NTA data.
+               Each block: b = ((a - a0) / (a1 - a0)) * (b1 - b0) + b0 ── */
+            if (a <= 56) {
+                b = 69.5797271 - 6;
+                b = (a - 0) * b / (56 - 0) + 6;
+            }
+            else if (a <= 83) {
+                b = 84.22540213 - 69.5797271;
+                b = (a - 56) * b / (83 - 56) + 69.5797271;
+            }
+            else if (a <= 105) {
+                b = 91.59517945 - 84.22540213;
+                b = (a - 83) * b / (105 - 83) + 84.22540213;
+            }
+            else if (a <= 117) {
+                b = 92.88745828 - 91.59517945;
+                b = (a - 105) * b / (117 - 105) + 91.59517945;
+            }
+            else if (a <= 123) {
+                b = 93.89928202 - 92.88745828;
+                b = (a - 117) * b / (123 - 117) + 92.88745828;
+            }
+            else if (a <= 130) {
+                b = 94.96737888 - 93.89928202;
+                b = (a - 123) * b / (130 - 123) + 93.89928202;
+            }
+            else if (a <= 140) {
+                b = 95.983027 - 94.96737888;
+                b = (a - 130) * b / (140 - 130) + 94.96737888;
+            }
+            else if (a <= 152) {
+                b = 96.93721175 - 95.983027;
+                b = (a - 140) * b / (152 - 140) + 95.983027;
+            }
+            else if (a <= 163.5) {
+                b = 97.97507774 - 96.93721175;
+                b = (a - 152) * b / (163.5 - 152) + 96.93721175;
+            }
+            else if (a <= 172.5) {
+                b = 98.49801724 - 97.97507774;
+                b = (a - 163.5) * b / (172.5 - 163.5) + 97.97507774;
+            }
+            else if (a <= 181.5) {
+                b = 98.99673561 - 98.49801724;
+                b = (a - 172.5) * b / (181.5 - 172.5) + 98.49801724;
+            }
+            else if (a <= 196) {
+                b = 99.3487614 - 98.99673561;
+                b = (a - 181.5) * b / (196 - 181.5) + 98.99673561;
+            }
+            else if (a <= 206) {
+                b = 99.56019541 - 99.3487614;
+                b = (a - 196) * b / (206 - 196) + 99.3487614;
+            }
+            else if (a <= 218) {
+                b = 99.73930423 - 99.56019541;
+                b = (a - 206) * b / (218 - 206) + 99.56019541;
+            }
+            else if (a <= 235) {
+                b = 99.87060821 - 99.73930423;
+                b = (a - 218) * b / (235 - 218) + 99.73930423;
+            }
+            else if (a <= 300) {
+                b = 100 - 99.87060821;
+                b = (a - 235) * b / (300 - 235) + 99.87060821;
+            }
+
+            /* ── RANK FORMULA (NTA official formula) ── */
+            var c = ((100 - b) / 100) * n + 1;
+
+            /* ── Write to hidden output elements (required by algorithm) ── */
+            document.getElementById("percentilePre").innerHTML = "<b>Percentile</b>: " + b.toFixed(7);
+            document.getElementById("rankPre").innerHTML = "<b>Rank</b>: " + Math.round(c);
+        }
+    }
+
+    /* ── After algorithm runs, update the beautiful results UI ── */
+    updateResultsUI();
+}
+/* ════════════════════════════════════════════════
+   END OF PRESERVED ALGORITHM
+════════════════════════════════════════════════ */
 
 
-		<div class="card p-2 pt-4 m-4 rounded shadow text-white"
-			style="max-width: 32rem;background-color: #01579B; color: #E1F5FE;" id="report">
-			<center>
+/* ════════════════════════════════════════════════
+   PREDICTOR UI LOGIC
+   (Controls form state, results display, etc.)
+════════════════════════════════════════════════ */
 
-				<div class="p-4" style="max-width: 32rem">
-					<select class="form-select shadow p-2" onchange="disabl()" aria-label="Default select example"
-						id="level" name="level">
-						<option selected disabled>Select difficulty level</option>
-						<option value="1">Very Easy</option>
-						<option value="2">Easy</option>
-						<option value="3">Medium</option>
-						<option value="4">Hard</option>
-						<option value="5">Very Hard</option>
-					</select>
-				</div>
-				<div class="p-4" style="max-width: 32rem">
-					<div class="alert alert-success" role="alert" id="message">
-						Select difficulty level above ☝️ to enter your marks below 👇
-					</div>
-				</div>
+/* Enable/disable predict button based on form state */
+function handleDifficultyChange(){
+  const diff=document.getElementById('level').value;
+  const marks=document.getElementById('marks').value;
+  const btn=document.getElementById('predictBtn');
+  btn.disabled=!(diff && marks!=='');
+  updateDiffChips(diff);
+  /* If marks already entered, run prediction */
+  if(diff && marks!==''){}
+}
+
+function handleMarksInput(){
+  const diff=document.getElementById('level').value;
+  const marks=document.getElementById('marks').value;
+  const btn=document.getElementById('predictBtn');
+  btn.disabled=!(diff && marks!=='');
+}
+
+function updateDiffChips(diff){
+  const map={
+    'Very Easy':'ve','Easy':'e','Medium':'m','Hard':'h','Very Hard':'vh'
+  };
+  const clsMap={
+    've':'active-ve','e':'active-e','m':'active-m','h':'active-h','vh':'active-vh'
+  };
+  document.querySelectorAll('.diff-chip').forEach(c=>c.className='diff-chip');
+  if(diff&&map[diff]){
+    const el=document.getElementById('dc-'+map[diff]);
+    if(el)el.classList.add(clsMap[map[diff]]);
+  }
+}
+
+function toggleAdvanced(){
+  const panel=document.getElementById('advPanel');
+  const toggle=document.getElementById('advToggle');
+  const open=panel.classList.toggle('open');
+  toggle.classList.toggle('open',open);
+}
+
+/* ════════════════════════════════════════════════
+   RESULTS UI UPDATE
+   Reads from the hidden algorithm output elements
+   and populates the beautiful results panel.
+════════════════════════════════════════════════ */
+function updateResultsUI(){
+  const rankHTML=document.getElementById('rankPre').innerHTML;
+  const pctHTML=document.getElementById('percentilePre').innerHTML;
+  const marksHTML=document.getElementById('marksPre').innerHTML;
+
+  if(!rankHTML&&!pctHTML)return; /* No results yet */
+
+  const resultsPanel=document.getElementById('resultsPanel');
+  resultsPanel.classList.add('show');
+
+  /* Parse rank */
+  let rankVal='—', rankSub='', pctVal='—', pctNum=0;
+
+  if(pctHTML.includes('less than')){
+    pctVal='< 6';pctNum=6;
+    rankVal='> '+numberWithCommas(Math.round(((100-6)/1000)*parseFloat(document.getElementById('candidates').value||1600000)));
+    rankSub='Approximate lower bound';
+  } else {
+    const pctMatch=pctHTML.match(/[\d.]+/);
+    if(pctMatch){pctNum=parseFloat(pctMatch[0]);pctVal=pctNum.toFixed(4)+'%';}
+    const rankMatch=rankHTML.match(/[\d]+/);
+    if(rankMatch){
+      rankVal=numberWithCommas(parseInt(rankMatch[0]));
+      rankSub='out of ~'+numberWithCommas(parseInt(document.getElementById('candidates').value||1600000));
+    }
+  }
+
+  document.getElementById('rankDisplay').textContent=rankVal;
+  document.getElementById('rankSubDisplay').textContent=rankSub;
+  document.getElementById('pctDisplay').textContent=pctVal;
+
+  /* Percentile bar */
+  const pctBarFill=document.getElementById('pctBarFill');
+  const pctBarLabel=document.getElementById('pctBarLabel');
+  setTimeout(()=>{ pctBarFill.style.width=Math.min(pctNum,100)+'%'; },50);
+  pctBarLabel.textContent=pctNum.toFixed(2)+'% of students';
+
+  /* Zone classification */
+  const rawRank=rankHTML.match(/[\d]+/);
+  const rank=rawRank?parseInt(rawRank[0]):9999999;
+  const zone=getZone(rank,pctNum);
+  const predZone=document.getElementById('predZone');
+  predZone.style.background=zone.bg;
+  predZone.style.border='1px solid '+zone.border;
+  document.getElementById('zoneIcon').textContent=zone.icon;
+  document.getElementById('zoneName').textContent=zone.name;
+  document.getElementById('zoneSub').textContent=zone.sub;
+  document.getElementById('zoneName').style.color=zone.color;
+
+  /* Details row */
+  const diff=document.getElementById('level').options[document.getElementById('level').selectedIndex].text;
+  const marksRaw=document.getElementById('marks').value;
+  const cands=parseInt(document.getElementById('candidates').value||1600000);
+  const dr=document.getElementById('detailsRow');
+  dr.innerHTML=`
+    <div class="pred-detail-chip"><i class="fas fa-gauge-high"></i>${diff}</div>
+    <div class="pred-detail-chip"><i class="fas fa-pen"></i>Marks: ${marksRaw}</div>
+    <div class="pred-detail-chip"><i class="fas fa-users"></i>${numberWithCommas(cands)} candidates</div>
+    <div class="pred-detail-chip"><i class="fas fa-calendar"></i>${getTodayStr()}</div>
+  `;
+
+  /* Store result globally for sharing */
+  window._lastResult={
+    name: document.getElementById('studentName').value.trim()||'JEE Aspirant',
+    date: getTodayStr(),
+    marks: marksRaw,
+    pct: pctNum.toFixed(7),
+    rank: rank,
+    diff: diff,
+    cands: cands
+  };
+}
+
+/* Zone classification based on predicted rank */
+function getZone(rank, pct){
+  if(pct<6||rank>1200000) return {icon:'📖',name:'State / Private College Zone',sub:'Keep pushing — every attempt is a step forward.',bg:'rgba(255,255,255,.04)',border:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.7)'};
+  if(rank<=2500)  return {icon:'🏆',name:'IIT (Top Tier) Zone',sub:'IIT Bombay, Delhi, Madras, Kanpur, Kharagpur range.',bg:'rgba(251,191,36,.08)',border:'rgba(251,191,36,.25)',color:'#fbbf24'};
+  if(rank<=10000) return {icon:'🥇',name:'IIT Zone',sub:'Good IIT branches — Roorkee, Guwahati, Hyderabad range.',bg:'rgba(251,191,36,.06)',border:'rgba(251,191,36,.18)',color:'#fcd34d'};
+  if(rank<=25000) return {icon:'⭐',name:'NIT (Top Tier) Zone',sub:'NIT Trichy, Warangal, Surathkal, Jamshedpur range.',bg:'rgba(99,102,241,.08)',border:'rgba(99,102,241,.25)',color:'#818cf8'};
+  if(rank<=50000) return {icon:'🎯',name:'NIT Zone',sub:'Good NITs across India — strong placement records.',bg:'rgba(99,102,241,.06)',border:'rgba(99,102,241,.18)',color:'#a5b4fc'};
+  if(rank<=120000) return {icon:'💡',name:'IIIT / GFTI Zone',sub:'IIITs, GFTIs, and some NITs — solid options.',bg:'rgba(34,211,238,.06)',border:'rgba(34,211,238,.18)',color:'#22d3ee'};
+  return {icon:'📚',name:'State / Private College Zone',sub:'Consider UPTAC, AKTU, and top private colleges.',bg:'rgba(255,255,255,.04)',border:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.6)'};
+}
+
+function numberWithCommas(x){return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+function getTodayStr(){const d=new Date();return d.getDate().toString().padStart(2,'0')+'/'+(d.getMonth()+1).toString().padStart(2,'0')+'/'+d.getFullYear();}
 
 
-				<div class="input-group mb-4" style="max-width: 32rem">
-					<input type="number" class="form-control ms-4 shadow" placeholder="Enter your marks here"
-						aria-label="Marks" aria-describedby="basic-addon1"
-						title="If you don't know your actual marks then enter your expected marks here." id="marks"
-						oninput="score()">
-					<button class="input-group-text me-4 shadow" onclick="score()" id="basic-addon1"
-						style="background-color: #0288D1;color: #E1F5FE;">Submit</button>
-				</div>
+/* ════════════════════════════════════════════════
+   SHARE RESULT — Encode result in URL
+   URL format: ?rp_n=NAME&rp_d=DATE&rp_m=MARKS
+               &rp_p=PERCENTILE&rp_r=RANK
+               &rp_diff=DIFFICULTY&rp_c=CANDIDATES
+════════════════════════════════════════════════ */
+function shareResult(){
+  const res=window._lastResult;
+  if(!res){alert('Please predict your rank first!');return;}
+  const params=new URLSearchParams({
+    rp_n: res.name,
+    rp_d: res.date,
+    rp_m: res.marks,
+    rp_p: res.pct,
+    rp_r: res.rank,
+    rp_diff: res.diff,
+    rp_c: res.cands
+  });
+  const url=window.location.origin+window.location.pathname+'?'+params.toString();
+  const btn=document.getElementById('shareResultBtn');
+  const orig=btn.innerHTML;
+  const doFb=()=>{
+    btn.innerHTML='<i class="fas fa-check"></i> Link Copied! Share it with friends 🎉';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.innerHTML=orig;btn.classList.remove('copied');},3000);
+  };
+  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(url).then(doFb).catch(doFb);
+  else{const el=document.createElement('textarea');el.value=url;el.style.cssText='position:fixed;opacity:0';document.body.appendChild(el);el.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(el);doFb();}
+}
 
-			</center>
-		</div>
 
-		<div class="card p-2 pt-4 m-4 rounded shadow text-white" style="max-width: 32rem;background-color: #01579B; color: #E1F5FE;"
-			id="report">
-			<center>
-				
-				<img src="https://cdn-icons-png.flaticon.com/128/2285/2285663.png" class="card-img-top" alt="..."
-					style="height: 40px; width: 40px">
-				<div class="card-body">
-					<h5 class="card-title" style="color: #29B6F6;">JEE Mains Predicted:</h5>
+/* ════════════════════════════════════════════════
+   REPORT CARD — Load from URL params on page load
+   Shows above predictor if URL has rank params.
+   If no params: report card section is hidden.
+════════════════════════════════════════════════ */
+(function loadReportCard(){
+  const params=new URLSearchParams(window.location.search);
+  const rp_n=params.get('rp_n');
+  const rp_d=params.get('rp_d');
+  const rp_m=params.get('rp_m');
+  const rp_p=params.get('rp_p');
+  const rp_r=params.get('rp_r');
+  const rp_diff=params.get('rp_diff');
+  const rp_c=params.get('rp_c');
 
-					<div class="alert"
-						style="background-color: #E1F5FE; border-width: 2px; border-color: #0D47A1; color: #0D47A1;"
-						role="alert">
-						<p class="card-text" id="percentilePre"></p>
-						<p class="card-text" id="rankPre"></p>
-					</div>
-					<div class="alert "
-						style="background-color: #E1F5FE; border-width: 2px; border-color: #0D47A1; color: #0D47A1;"
-						role="alert">
-						<p class="card-text" id="difficultyPre"></p>
-						<p class="card-text" id="marksPre"></p>
-					</div>
-					<br>
-					<div class="input-group mb-4" style="max-width: 32rem;">
-						<input type="text" class="form-control" placeholder="Enter your name here"
-							aria-describedby="basic-addon3" title="It is optional field." aria-label="name" id="name">
-						<button class="input-group-text" id="basic-addon3"
-							style="background-color: #0288D1;color: #E1F5FE;">Name</button>
-					</div>
-					<p align="Justify" style="font-size: 12px;color: #4FC3F7;">
-						Predicted rank is by assuming that <b>12,30,000</b> students have registered for the exam and
-						hence applying the formula given by NTA to predict rank: ((100 – P)/100)*N<br>Your Percentile:
-						P<br>Number of students registered for the exam: N<br>Here it have been assumed that 12,30,000
-						students have registered for the exam which is an average number of all year.<br><br>If you have
-						some another data of number of students then enter it below and repredict.
-					</p>
-					<div class="input-group">
-						<input type="number" class="form-control shadow" placeholder="Number of candidates"
-							aria-label="Marks" aria-describedby="basic-addon2"
-							title="If you know the actual number of candidates the write here." id="candidates"
-							value="1600000" oninput="score()" style="min-width: 200px">
-						<button class="input-group-text text-light shadow" onclick="score()" id="basic-addon2"
-							style="background-color: #0288D1;color: #E1F5FE;">Re-Predict</button>
-					</div>
-					<p align="Justify" style="font-size: 12px;color: #4FC3F7;">
-						<br><br><b>NOTICE:</b>
-						It is an approximate result based on previous years data. Actual result may vary from this
-						result. It just gives you an idea that approximately what your result can be.
-					</p>
-					<br>
-					<div class="container">
-						<div class="row" style="color: #E1F5FE;">
-							<div class="col">
-								By-<br><b>Divastra Rank Predictor</b>
-							</div>
-							<div class="col">
-								Owner-<br><b>Prabhat Ranjan</b>
-							</div>
-						</div>
-					</div>
-				</div>
-			</center>
-		</div>
+  /* Only show report card if rank param exists */
+  if(!rp_r)return;
 
-		<div class="card p-4 m-4 rounded shadow"
-			style="max-width: 32rem;background-color: rgba(255, 255, 255, 0); font-size: 12px; color: #4FC3F7;">
-			<p align="Justify">
-				Welcome to Divastra's IIT JEE Rank Predictor, brought to you by Prabhat Ranjan, a passionate 3rd-year
-				Mechanical Engineering student at NIT Jamshedpur. Dive into the world of precise rank estimation for JEE
-				Main 2026 Session 2.
-			</p>
-			<p align="Justify">
-				Why Choose Divastra IIT JEE Rank Predictor:
-				<br>
-			<ul align="Justify">
-				<li>
-					Expertly crafted by Prabhat Ranjan for accuracy
-				</li>
-				<li>
-					User-friendly interface tailored for JEE Main aspirants
-				</li>
-				<li>
-					Realize your JEE Main 2026 goals with confidence
-				</li>
-			</ul>
-			</p>
-			<p align="Justify">
-				Prabhat Ranjan, the mind behind this predictor, also shares invaluable insights on IIT JEE, engineering
-				colleges, and career paths on his YouTube channel. Stay ahead in your JEE Main 2026 preparation – try
-				Divastra's IIT JEE Rank Predictor today!
-			</p>
+  const section=document.getElementById('reportSection');
+  section.classList.add('visible');
 
-		</div>
+  /* Populate fields */
+  document.getElementById('rcName').textContent=rp_n||'JEE Aspirant';
+  document.getElementById('rcRank').textContent=rp_r?numberWithCommas(parseInt(rp_r)):'—';
+  document.getElementById('rcPct').textContent=rp_p?parseFloat(rp_p).toFixed(4)+'%':'—';
+  document.getElementById('rcMarks').textContent=rp_m||'—';
+  document.getElementById('rcDiff').textContent=rp_diff||'—';
+  document.getElementById('rcCand').textContent=rp_c?numberWithCommas(parseInt(rp_c))+' candidates':'—';
+  document.getElementById('rcDate').textContent=rp_d||'—';
 
-	</center>
-	<div style="padding: 32px; color: #ab78b4; display: none;">
-		<h2>
-			Divastra JEE Main 2026 Session 2 Marks vs Percentile vs Rank Predictor: Accurate Rank Predictions for Your
-			Success
-		</h2>
-		<p>
-			As students gear up for the JEE Main 2026 Session 2, having access to accurate marks vs percentile vs rank
-			predictor tools is essential for planning and strategizing their exam preparation. This comprehensive guide
-			delves into Divastra's JEE Main 2026 Session 2 marks vs percentile vs rank predictor, offering valuable
-			insights and strategies to help students predict their ranks with precision and accuracy.
-		</p>
-		<h4>
-			Understanding the Importance of JEE Main 2026 Session 2 Marks vs Percentile vs Rank Predictor:
-		</h4>
-		<p>
-			The JEE Main exam is highly competitive, with ranks playing a crucial role in determining students'
-			admissions to prestigious engineering colleges across India. A marks vs percentile vs rank predictor tool
-			helps students gauge their performance in the exam and predict their ranks based on their scores and the
-			expected cutoffs. This information is invaluable for students as they plan their further studies and college
-			admissions.
-		</p>
-		<h4>
-			Features of Divastra's JEE Main 2026 Session 2 Marks vs Percentile vs Rank Predictor:
-		</h4>
-		<p>
-			Divastra's JEE Main 2026 Session 2 marks vs percentile vs rank predictor is designed to provide students
-			with accurate and reliable predictions of their ranks based on their exam scores. The tool takes into
-			account various factors such as the difficulty level of the exam, previous year's cutoffs, and the overall
-			performance of students to generate precise rank predictions. Additionally, the predictor is updated
-			regularly to reflect any changes in the exam pattern or cutoffs, ensuring that students have access to the
-			latest information.
-		</p>
-		<h4>
-			How to Use Divastra's JEE Main 2026 Session 2 Marks vs Percentile vs Rank Predictor:
-		</h4>
-		<p>
-			Using Divastra's JEE Main 2026 Session 2 marks vs percentile vs rank predictor is simple and
-			straightforward. Students can input their exam scores, and the tool will generate a predicted rank based on
-			their performance. It is important to note that while the predictor provides an estimate of the rank, actual
-			ranks may vary based on various factors such as the difficulty level of the exam and the performance of
-			other students.
-		</p>
-		<h4>
-			Factors Affecting JEE Main 2026 Session 2 Marks vs Percentile vs Rank:
-		</h4>
-		<p>
-			Several factors can influence a student's rank in the JEE Main exam. These include the difficulty level of
-			the exam, the number of students appearing for the exam, the distribution of scores, and the cutoff marks
-			set by different colleges. Divastra's marks vs percentile vs rank predictor takes these factors into account
-			to provide students with accurate rank predictions.
-		</p>
-		<h4>
-			Strategies for Improving JEE Main 2026 Session 2 Performance:
-		</h4>
-		<p>
-			While the marks vs percentile vs rank predictor provides students with valuable insights into their
-			performance, it is essential to remember that it is just a tool. To improve their performance in the JEE
-			Main 2026 Session 2 exam, students should focus on thorough preparation, time management, and regular
-			practice. Divastra offers a wide range of resources, including study materials, practice tests, and exam
-			strategies, to help students prepare effectively for the exam.
-		</p>
-		<h2>
-			Your Ultimate Destination for IIT JEE Preparation and Engineering
-		</h2>
-		<p>
-			Welcome to Divastra, your premier destination for comprehensive resources, expert guidance, and personalized
-			mentorship tailored for IIT JEE aspirants and engineering enthusiasts. Whether you're embarking on your
-			journey towards academic success or seeking valuable insights to excel in competitive exams like JEE Main
-			and JEE Advanced, Divastra is here to empower you every step of the way.
-		</p>
-		<h4>
-			Navigating the Path to Success
-		</h4>
-		<p>
-			In today's competitive academic landscape, aspiring engineers face myriad challenges as they strive to
-			achieve their academic and professional goals. From mastering complex concepts to navigating the intricacies
-			of exam preparation, the journey towards engineering excellence demands dedication, perseverance, and access
-			to high-quality resources. That's where Divastra comes in.
-		</p>
-		<h4>
-			Empowering IIT JEE Aspirants
-		</h4>
-		<p>
-			Divastra is more than just a website – it's a vibrant community of learners, educators, and mentors united
-			by a shared passion for academic excellence. With a diverse range of resources, personalized mentorship
-			programs, and expert guidance, Divastra is dedicated to empowering IIT JEE aspirants with the tools and
-			support they need to succeed. Whether you're aiming to ace the JEE Main or JEE Advanced exams, Divastra
-			provides comprehensive study materials, practice tests, and exam strategies to help you achieve your goals.
-		</p>
-		<h4>
-			Harnessing the Power of Engineering Education
-		</h4>
-		<p>
-			At Divastra, we believe in the transformative power of engineering education to shape the future and drive
-			innovation. Our platform is designed to foster a deep understanding of fundamental concepts, cultivate
-			problem-solving skills, and inspire creativity among aspiring engineers. Through engaging content,
-			interactive learning experiences, and real-world applications, Divastra equips students with the knowledge
-			and skills they need to thrive in today's dynamic engineering landscape.
-		</p>
-		<h4>
-			The Prabhat Ranjan Difference
-		</h4>
-		<p>
-			Central to Divastra's mission is the guiding presence of Prabhat Ranjan, a dedicated mentor and Mechanical
-			Engineering student at NIT Jamshedpur. Known affectionately as the "blue t-shirt wale bhaiya," Prabhat
-			brings a wealth of knowledge, experience, and enthusiasm to his role as a mentor. With a deep understanding
-			of the challenges faced by engineering students, Prabhat provides personalized guidance, academic support,
-			and mentorship to help students navigate the complexities of their academic journey.
-		</p>
-		<h4>
-			Comprehensive Resources for Academic Excellence
-		</h4>
-		<p>
-			Prepare for success with Divastra's comprehensive resources for IIT JEE preparation and engineering
-			excellence. From our JEE Main 2026 marks vs percentile vs rank predictor to free PDF downloads of essential
-			books for IIT JEE, Class 11, and Class 12, Divastra offers a wide range of tools and resources to enhance
-			your exam readiness. Our meticulously curated study materials, practice tests, and exam resources are
-			designed to help you tackle the toughest challenges with confidence and clarity.
-		</p>
-		<h4>
-			Unlocking Your Potential
-		</h4>
-		<p>
-			At Divastra, we understand that every student is unique, with their own strengths, weaknesses, and
-			aspirations. That's why we offer personalized mentorship and career counseling services to help you unlock
-			your full potential. Whether you're seeking guidance on college selection, career paths, or exam preparation
-			strategies, our experienced mentors are here to provide you with tailored advice and support. With Divastra
-			by your side, you can confidently navigate the complexities of your academic and professional journey.
-		</p>
-		<h4>
-			Join the Divastra Community
-		</h4>
-		<p>
-			Join thousands of students who have benefited from Divastra's comprehensive resources and expert guidance.
-			Whether you're aiming for success in IIT JEE, exploring top engineering colleges, or seeking valuable
-			insights into academic and professional development, Divastra is here to support you every step of the way.
-			Connect with us today and embark on your journey to academic excellence with Divastra.
-		</p>
-		<h2>
-			About Divastra: Empowering IIT JEE Aspirants and Engineering Students
-		</h2>
-		<p>
-			Welcome to the heart of Divastra, your ultimate destination for comprehensive resources, expert guidance,
-			and personalized mentorship tailored for IIT JEE aspirants and engineering enthusiasts. In this section, we
-			delve deep into the ethos, mission, and offerings of Divastra, shedding light on how we empower students to
-			thrive in their academic journey and excel in competitive exams like JEE Main and JEE Advanced.
-		</p>
-		<h4>
-			Unveiling the Essence of Divastra:
-		</h4>
-		<p>
-			Divastra is not just a website; it's a vibrant ecosystem of learning, growth, and community engagement. Our
-			platform is designed to cater to the diverse needs of engineering students, providing them with the tools,
-			resources, and support they need to succeed. From comprehensive study materials to personalized mentorship
-			programs, Divastra offers a holistic approach to IIT JEE preparation and engineering education.
-		</p>
-		<h4>
-			A Glimpse into Divastra's Mission:
-		</h4>
-		<p>
-			At Divastra, our mission is simple yet profound: to empower IIT JEE aspirants and engineering students with
-			the knowledge, skills, and confidence they need to thrive in today's competitive academic landscape. We
-			believe in the transformative power of education to shape lives, drive innovation, and create positive
-			change in the world. Through our platform, we aim to inspire a passion for learning, foster intellectual
-			curiosity, and equip students with the tools they need to succeed.
-		</p>
-		<h4>
-			The Divastra Experience:
-		</h4>
-		<p>
-			What sets Divastra apart is our unwavering commitment to academic excellence, personalized mentorship, and
-			student-centric approach. Our platform is designed to cater to the unique needs and aspirations of every
-			student, providing them with a supportive learning environment where they can grow, learn, and excel.
-			Whether you're preparing for JEE Main or JEE Advanced, seeking career guidance, or exploring top engineering
-			colleges, Divastra is your ultimate companion on the path to success.
-		</p>
-		<h4>
-			Meet Prabhat Ranjan: The Driving Force Behind Divastra:
-		</h4>
-		<p>
-			At the helm of Divastra is Prabhat Ranjan, a dedicated mentor and Mechanical Engineering student at NIT
-			Jamshedpur. Prabhat's passion for education, coupled with his deep knowledge of IIT JEE preparation
-			strategies, makes him a trusted mentor and guide for students seeking to achieve their academic goals. Known
-			affectionately as the "blue t-shirt wale bhaiya" among his students, Prabhat brings a unique blend of
-			expertise, empathy, and enthusiasm to his role as a mentor at Divastra.
-		</p>
-		<h4>
-			Comprehensive Resources for Academic Excellence:
-		</h4>
-		<p>
-			Prepare for success with Divastra's comprehensive resources for IIT JEE preparation and engineering
-			excellence. Our platform offers a wide range of free tools and resources to aid you in your exam readiness,
-			including our JEE Main 2026 marks vs percentile vs rank predictor, free PDF downloads of essential books for
-			IIT JEE, Class 11, and Class 12, practice tests, mock exams, and more. Whether you're brushing up on key
-			concepts, solving practice problems, or fine-tuning your exam strategies, Divastra provides everything you
-			need to succeed.
-		</p>
-		<h4>
-			Personalized Mentorship and Career Counseling:
-		</h4>
-		<p>
-			At Divastra, we understand that every student is unique, with their own strengths, weaknesses, and
-			aspirations. That's why we offer personalized mentorship and career counseling services to help you unlock
-			your full potential. Our experienced mentors provide tailored advice and support, helping you make informed
-			decisions about your academic and career path, whether it's college selection, exam preparation strategies,
-			or career planning.
-		</p>
-		<h2>
-			Prabhat Ranjan: Your Mentor and Guide
-		</h2>
-		<p>
-			Prabhat Ranjan, a beacon of guidance and inspiration in the world of engineering education, stands as a
-			trusted mentor and guide for countless IIT JEE aspirants and engineering students. With a passion for
-			education and a deep understanding of the challenges faced by students, Prabhat embodies the spirit of
-			mentorship, offering invaluable support and guidance to help students navigate their academic journey with
-			confidence and clarity.
-		</p>
-		<h4>
-			The Journey of Prabhat Ranjan:
-		</h4>
-		<p>
-			Prabhat's journey as a mentor and guide traces back to his own experiences as a student pursuing Mechanical
-			Engineering at NIT Jamshedpur. Through his academic pursuits and extracurricular endeavors, Prabhat
-			cultivated a deep passion for learning and a commitment to academic excellence. Alongside his academic
-			pursuits, Prabhat embraced the role of a mentor, offering guidance and support to his peers and fellow
-			students.
-		</p>
-		<h4>
-			The Role of Mentorship in Academic Success:
-		</h4>
-		<p>
-			Prabhat understands firsthand the transformative power of mentorship in shaping the academic journey of
-			students. As a mentor, Prabhat goes above and beyond to provide personalized guidance, academic support, and
-			mentorship to students, helping them navigate the complexities of their academic and professional
-			aspirations. Through one-on-one interactions, mentoring sessions, and personalized guidance, Prabhat
-			empowers students to unlock their full potential and achieve academic success.
-		</p>
-		<h4>
-			Prabhat Ranjan: The "Blue T-shirt Wale Bhaiya":
-		</h4>
-		<p>
-			Affectionately known as the "blue t-shirt wale bhaiya" among his students, Prabhat embodies the qualities of
-			a mentor who is approachable, relatable, and empathetic. His friendly demeanor, coupled with his deep
-			knowledge and expertise in engineering education, makes him a trusted mentor and guide for students seeking
-			academic guidance and support. Whether it's answering academic queries, providing exam preparation tips, or
-			offering career advice, Prabhat is always there to lend a helping hand.
-		</p>
-		<h4>
-			The Prabhat Ranjan Difference:
-		</h4>
-		<p>
-			What sets Prabhat apart as a mentor is his genuine passion for education and his unwavering commitment to
-			student success. With a deep understanding of the challenges faced by students, Prabhat tailors his guidance
-			and support to meet the unique needs and aspirations of each student. Whether it's providing academic
-			guidance, offering career counseling, or sharing motivational insights, Prabhat's mentorship leaves a
-			lasting impact on students, empowering them to achieve their academic and professional goals.
-		</p>
-		<h4>
-			Comprehensive Support for IIT JEE Aspirants:
-		</h4>
-		<p>
-			Prabhat's mentorship extends beyond academic guidance to encompass comprehensive support for IIT JEE
-			aspirants. Through Divastra, Prabhat provides a wide range of resources, study materials, and exam
-			preparation strategies to help students prepare effectively for the JEE Main and JEE Advanced exams. From
-			detailed study plans to practice tests and mock exams, Prabhat's mentorship equips students with the tools
-			and resources they need to excel in their exams.
-		</p>
-		<h4>
-			Navigating the Path to Success with Prabhat Ranjan:
-		</h4>
-		<p>
-			For students embarking on their academic journey, Prabhat serves as a guiding light, offering invaluable
-			support and mentorship every step of the way. Whether it's providing academic guidance, offering career
-			counseling, or sharing motivational insights, Prabhat empowers students to overcome challenges, seize
-			opportunities, and achieve their academic and professional goals with confidence and clarity.
-		</p>
-		<h2>
-			Comprehensive Resources for IIT JEE Preparation: Your Mentor and Guide
-		</h2>
-		<p>
-			In the pursuit of success in competitive exams like the IIT JEE, having access to comprehensive resources is
-			paramount. This section explores the myriad resources available for IIT JEE preparation and the pivotal role
-			of a mentor in guiding students through this challenging journey.
-		</p>
-		<h4>
-			Understanding the Importance of Comprehensive Resources:
-		</h4>
-		<p>
-			Preparing for the IIT JEE requires a multifaceted approach that encompasses a wide range of resources,
-			including study materials, practice tests, mock exams, and expert guidance. These resources serve as the
-			building blocks of a robust preparation strategy, providing students with the tools they need to master key
-			concepts, hone their problem-solving skills, and excel in their exams.
-		</p>
-		<h4>
-			Navigating the IIT JEE Landscape:
-		</h4>
-		<p>
-			The IIT JEE is one of the most competitive exams in India, with lakhs of students vying for a limited number
-			of seats in prestigious engineering colleges. Navigating this competitive landscape requires careful
-			planning, diligent preparation, and access to high-quality resources. From understanding the exam syllabus
-			to practicing previous years' question papers, students need comprehensive resources to prepare effectively
-			for the IIT JEE.
-		</p>
-		<h4>
-			The Role of a Mentor in IIT JEE Preparation:
-		</h4>
-		<p>
-			While resources play a crucial role in IIT JEE preparation, the guidance of a mentor is equally important. A
-			mentor provides personalized guidance, academic support, and motivation to help students navigate the
-			complexities of their preparation journey. From devising a study plan to identifying strengths and
-			weaknesses, a mentor plays a pivotal role in shaping students' preparation strategy and instilling
-			confidence in their abilities.
-		</p>
-		<h4>
-			Comprehensive Study Materials:
-		</h4>
-		<p>
-			One of the cornerstones of IIT JEE preparation is access to comprehensive study materials that cover the
-			entire syllabus in-depth. From textbooks and reference books to online study materials and video lectures,
-			students have a plethora of resources at their disposal to enhance their understanding of key concepts and
-			topics. These study materials serve as a valuable resource for self-study and revision, allowing students to
-			reinforce their learning and build a strong foundation for the exam.
-		</p>
-		<h4>
-			Practice Tests and Mock Exams:
-		</h4>
-		<p>
-			Practice tests and mock exams are indispensable resources for IIT JEE aspirants, allowing them to gauge
-			their preparation level, identify areas of improvement, and simulate the exam environment. These tests
-			provide students with valuable insights into their strengths and weaknesses, helping them tailor their
-			preparation strategy accordingly. Additionally, mock exams help students familiarize themselves with the
-			exam pattern, time management techniques, and question-solving strategies, thereby boosting their confidence
-			and performance on the day of the exam.
-		</p>
-		<h4>
-			Expert Guidance and Mentorship:
-		</h4>
-		<p>
-			In addition to study materials and practice tests, expert guidance and mentorship play a crucial role in IIT
-			JEE preparation. A mentor provides personalized guidance, academic support, and motivation to help students
-			navigate the challenges of their preparation journey. Whether it's clarifying doubts, providing exam tips,
-			or offering motivational insights, a mentor empowers students to stay focused, motivated, and confident in
-			their abilities.
-		</p>
-		<h4>
-			Online Resources and Learning Platforms:
-		</h4>
-		<p>
-			With the advent of technology, students now have access to a wide range of online resources and learning
-			platforms that cater to their diverse learning needs. From online video lectures and interactive tutorials
-			to online forums and discussion groups, students can leverage these resources to supplement their
-			traditional study materials and enhance their understanding of key concepts. These online resources provide
-			students with the flexibility to learn at their own pace, revisit challenging topics, and engage with peers
-			and experts in the field.
-		</p>
-		<h2>
-			Personalized Mentorship and Career Counseling
-		</h2>
-		<p>
-			Personalized mentorship and career counseling are invaluable resources for students navigating the
-			complexities of academic and professional development. This section explores the importance of personalized
-			mentorship and career counseling in guiding students towards success and fulfillment in their academic and
-			professional endeavors.
-		</p>
-		<h4>
-			Understanding Personalized Mentorship:
-		</h4>
-		<p>
-			Personalized mentorship goes beyond traditional academic guidance to provide individualized support,
-			encouragement, and advice tailored to each student's unique needs and aspirations. A personalized mentor
-			serves as a trusted advisor, offering guidance on academic, personal, and professional matters, and helping
-			students navigate the challenges and opportunities they encounter along their journey.
-		</p>
-		<h4>
-			The Role of a Mentor in Academic Success:
-		</h4>
-		<p>
-			A mentor plays a pivotal role in shaping a student's academic journey and fostering their growth and
-			development. From providing academic guidance and support to offering encouragement and motivation, a mentor
-			empowers students to overcome challenges, set goals, and achieve their full potential. Through personalized
-			mentorship, students gain valuable insights, develop essential skills, and build confidence in their
-			abilities, setting them on the path to academic success and excellence.
-		</p>
-		<h4>
-			Navigating Career Choices:
-		</h4>
-		<p>
-			Career counseling plays a crucial role in helping students navigate the complex landscape of career choices
-			and opportunities. A career counselor provides guidance, information, and support to help students explore
-			their interests, strengths, and values, and make informed decisions about their academic and professional
-			future. Whether it's choosing a college major, exploring career paths, or planning for further education,
-			career counseling empowers students to make confident and informed choices that align with their aspirations
-			and goals.
-		</p>
-		<h4>
-			Tailored Guidance for Academic and Professional Development:
-		</h4>
-		<p>
-			Personalized mentorship and career counseling provide students with tailored guidance and support to
-			navigate the various stages of their academic and professional development. Whether it's developing study
-			skills, setting academic goals, exploring career options, or planning for further education, personalized
-			mentorship and career counseling help students navigate the challenges and opportunities they encounter,
-			empowering them to make informed decisions and achieve their goals.
-		</p>
-		<h4>
-			The Benefits of Personalized Mentorship:
-		</h4>
-		<p>
-			Personalized mentorship offers a myriad of benefits for students, including individualized support,
-			guidance, and encouragement tailored to their unique needs and aspirations. By working closely with a
-			mentor, students gain valuable insights, develop essential skills, and build confidence in their abilities,
-			setting them on the path to success and fulfillment in their academic and professional endeavors.
-		</p>
-		<h4>
-			Access to Expert Guidance and Support:
-		</h4>
-		<p>
-			Personalized mentorship and career counseling provide students with access to expert guidance and support
-			from experienced mentors and career counselors who are dedicated to helping students succeed. Whether it's
-			clarifying academic concepts, providing study tips, offering career advice, or addressing personal
-			challenges, mentors and career counselors offer invaluable support and guidance to help students overcome
-			obstacles and achieve their goals.
-		</p>
-		<h4>
-			Empowering Students to Achieve Their Goals:
-		</h4>
-		<p>
-			Personalized mentorship and career counseling empower students to take control of their academic and
-			professional development, set meaningful goals, and pursue their passions with confidence and clarity. By
-			working closely with a mentor and career counselor, students gain the knowledge, skills, and support they
-			need to navigate the complexities of academic and professional life, ultimately achieving their goals and
-			realizing their full potential.
-		</p>
-		<h2>
-			Prabhat Ranjan's YouTube Channel: Your Ultimate Academic Companion
-		</h2>
-		<p>
-			Prabhat Ranjan's YouTube channel stands as a beacon of academic excellence and guidance for students seeking
-			comprehensive support and resources for their academic journey. This section explores the multifaceted
-			offerings of Prabhat Ranjan's YouTube channel and its role as the ultimate academic companion for students.
-		</p>
-		<h4>
-			Exploring Prabhat Ranjan's YouTube Channel:
-		</h4>
-		<p>
-			Prabhat Ranjan's YouTube channel serves as a treasure trove of academic insights, preparation strategies,
-			and expert advice for students navigating the complexities of their academic journey. From detailed exam
-			preparation tactics to in-depth book reviews and college recommendations, Prabhat's channel offers a diverse
-			range of content tailored to meet the unique needs and aspirations of students.
-		</p>
-		<h4>
-			A Comprehensive Resource for Academic Success:
-		</h4>
-		<p>Prabhat Ranjan's YouTube channel is more than just a repository of videos – it's a comprehensive resource for
-			academic success, providing students with the tools, resources, and guidance they need to excel in their
-			studies. Whether it's mastering key concepts, preparing for competitive exams, or exploring career options,
-			Prabhat's channel offers invaluable insights and advice to help students achieve their academic goals.
-		</p>
-		<h4>
-			Exam Preparation Strategies and Tips:
-		</h4>
-		<p>
-			Prabhat Ranjan's YouTube channel is a go-to destination for students seeking exam preparation strategies and
-			tips to enhance their performance in competitive exams. From JEE Main and JEE Advanced to NEET, CET, and
-			other competitive exams, Prabhat's channel offers expert guidance, study techniques, and time management
-			strategies to help students maximize their potential and ace their exams with confidence.
-		</p>
-		<h4>
-			Book Reviews and Recommendations:
-		</h4>
-		<p>
-			One of the highlights of Prabhat Ranjan's YouTube channel is its extensive collection of book reviews and
-			recommendations covering a wide range of subjects and exams. Whether it's textbooks for Class 10, Class 12,
-			or reference books for competitive exams like JEE Main, JEE Advanced, NEET, or other entrance exams,
-			Prabhat's channel offers detailed insights and recommendations to help students choose the right resources
-			for their studies.
-		</p>
-		<h4>
-			College Reviews and Recommendations:
-		</h4>
-		<p>
-			Prabhat Ranjan's YouTube channel also serves as a valuable resource for students exploring college options
-			and seeking insights into different colleges and universities. From IITs and NITs to other engineering
-			colleges and universities, Prabhat's channel offers detailed reviews, rankings, and recommendations to help
-			students make informed decisions about their academic and professional future.
-		</p>
-		<h4>
-			Career Guidance and Insights:
-		</h4>
-		<p>
-			In addition to exam preparation and college recommendations, Prabhat Ranjan's YouTube channel offers
-			valuable career guidance and insights for students exploring various career paths and options. From
-			exploring different career fields to offering advice on resume building, internships, and job interviews,
-			Prabhat's channel equips students with the knowledge and skills they need to navigate the job market and
-			pursue their career aspirations.
-		</p>
-		<h4>
-			Interactive Learning Experiences:
-		</h4>
-		<p>
-			Prabhat Ranjan's YouTube channel fosters interactive learning experiences through engaging content, live
-			sessions, and Q&A sessions with viewers. By fostering a sense of community and collaboration, Prabhat's
-			channel creates a supportive learning environment where students can connect with peers, ask questions, and
-			exchange ideas, enhancing their learning experience and fostering intellectual growth.
-		</p>
-		<h2>
-			Book Reviews and Exam Resources: Your Comprehensive Guide to Academic Success
-		</h2>
-		<p>
-			Book reviews and exam resources play a pivotal role in the academic journey of students, offering valuable
-			insights, guidance, and preparation strategies to help them excel in their studies. This section explores
-			the significance of book reviews and exam resources as indispensable tools for academic success and provides
-			a comprehensive guide to leveraging these resources effectively.
-		</p>
-		<h4>
-			The Importance of Book Reviews:
-		</h4>
-		<p>
-			Book reviews serve as a valuable resource for students seeking guidance on choosing the right study
-			materials, textbooks, and reference books for their academic pursuits. By offering detailed insights,
-			analysis, and critiques of various books, book reviews help students make informed decisions about the
-			resources they use to enhance their learning and understanding of key concepts.
-		</p>
-		<h4>
-			Navigating Exam Resources:
-		</h4>
-		<p>
-			Exam resources encompass a wide range of materials, including practice tests, mock exams, study guides, and
-			exam preparation strategies, designed to help students prepare effectively for their exams. These resources
-			play a crucial role in familiarizing students with the exam format, testing their knowledge and
-			understanding of key concepts, and boosting their confidence and performance on the day of the exam.
-		</p>
-		<h4>
-			Book Reviews for Academic Excellence:
-		</h4>
-		<p>
-			Book reviews serve as an indispensable resource for students seeking to achieve academic excellence in their
-			studies. Whether it's reviewing textbooks for Class 10, Class 12, or reference books for competitive exams
-			like JEE Main, JEE Advanced, NEET, or other entrance exams, book reviews offer valuable insights into the
-			content, quality, and relevance of the books, helping students choose the right resources to supplement
-			their learning and preparation.
-		</p>
-		<h4>
-			Choosing the Right Study Materials:
-		</h4>
-		<p>
-			With a plethora of study materials and textbooks available in the market, choosing the right resources can
-			be a daunting task for students. Book reviews provide students with valuable information about the content,
-			structure, and effectiveness of various study materials, helping them select the resources that best suit
-			their learning style, academic needs, and exam preparation goals.
-		</p>
-		<h4>
-			Exam Resources for Effective Preparation:
-		</h4>
-		<p>
-			Exam resources are essential tools for students preparing for competitive exams, offering a wide range of
-			materials and strategies to help them succeed. From practice tests and mock exams to study guides and exam
-			preparation tips, exam resources provide students with the tools and support they need to master key
-			concepts, hone their problem-solving skills, and excel in their exams.
-		</p>
-		<h4>
-			The Role of Expert Guidance:
-		</h4>
-		<p>
-			Expert guidance plays a crucial role in leveraging book reviews and exam resources effectively. Mentors,
-			teachers, and academic advisors offer valuable insights, advice, and recommendations to help students
-			navigate the complexities of their academic journey, choose the right study materials, and prepare
-			effectively for their exams.
-		</p>
-		<h4>
-			Utilizing Exam Resources for Success:
-		</h4>
-		<p>
-			Exam resources are invaluable tools for students seeking success in competitive exams. By utilizing practice
-			tests, mock exams, study guides, and exam preparation strategies, students can familiarize themselves with
-			the exam format, identify areas of improvement, and develop effective study plans to maximize their
-			potential and achieve their academic goals.
-		</p>
-	</div>
+  /* Zone */
+  const rank=parseInt(rp_r)||9999999;
+  const pct=parseFloat(rp_p)||0;
+  const zone=getZone(rank,pct);
+  const zoneWrap=document.getElementById('rcZoneWrap');
+  zoneWrap.style.background=zone.bg;
+  zoneWrap.style.border='1px solid '+zone.border;
+  document.getElementById('rcZoneIcon').textContent=zone.icon;
+  document.getElementById('rcZoneName').textContent=zone.name;
+  document.getElementById('rcZoneName').style.color=zone.color;
+  document.getElementById('rcZoneSub').textContent=zone.sub;
+})();
 
-	<center>
-		<a href='https://www.free-counters.org/'>free HitCounter</a>
-		<script type='text/javascript'
-			src='https://www.freevisitorcounters.com/auth.php?id=b15c8cd71307ce340f786f9c28de6e61a8a49b24'></script>
-		<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1132633/t/10"></script>
-
-		<div class="shadow text-light p-0 text-center" style="background-color: #1565C0;margin-top: 80px;">
-			<br>
-			<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
-				href="https://divastra.github.io/index2" target="_blank">Divastra App</a>
-			<a class="btn btn-primary p-2 px-4 m-2 buton" style="border-radius: 200px;"
-				href="https://divastra.github.io/index2#about" target="_blank">About Us</a>
-			<br><br>
-			<section class="m-4">
-				<!-- YouTube -->
-				<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-					href="https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA" role="button"><i
-						class="bi bi-youtube" style="font-size: 1rem;"></i></a>
-
-				<!-- Instagram -->
-				<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-					href="https://www.instagram.com/itsprabhatranjan/" role="button"><i class="bi bi-instagram"
-						style="font-size: 1rem;"></i></a>
-
-				<!-- LinkedIn -->
-				<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-					href="https://www.linkedin.com/in/prabhat-ranjan-36602b213/" role="button"><i class="bi bi-linkedin"
-						style="font-size: 1rem;"></i></a>
-
-				<!-- Website -->
-				<a class="btn btn-floating m-1 buton" style="border-radius: 0.5rem;" target="_blank"
-					href="https://divastra.github.io" role="button"><i class="bi bi-globe2"
-						style="font-size: 1rem;"></i></a>
-			</section>
-			<div class="text-center p-3" style="background-color: #0D47A1;">
-				Owned and Managed by Prabhat Ranjan
-			</div>
-		</div>
-		<script>
-
-			disabl();
-			function disabl() {
-				var e = document.getElementById("level");
-				var inputClass = document.getElementById("marks").classList;
-				var buttonClass = document.getElementById("basic-addon1").classList;
-				var inputClass2 = document.getElementById("candidates").classList;
-				var buttonClass2 = document.getElementById("basic-addon2").classList;
-				var messageClass = document.getElementById("message").classList;
-				if (e.options[e.selectedIndex].text === "Select difficulty level") {
-					document.getElementById("marks").disabled = true;
-					document.getElementById("basic-addon1").disabled = true;
-					document.getElementById("candidates").disabled = true;
-					document.getElementById("basic-addon2").disabled = true;
-					inputClass.remove("shadow");
-					buttonClass.remove("shadow");
-					inputClass2.remove("shadow");
-					buttonClass2.remove("shadow");
-					messageClass.remove("alert-success");
-					messageClass.add("alert-danger");
-					document.getElementById("message").innerHTML = "Select difficulty level above ☝️ to enter your marks below 👇";
-					document.getElementById("percentilePre").innerHTML = "";
-					document.getElementById("rankPre").innerHTML = "";
-					document.getElementById("difficultyPre").innerHTML = "";
-				}
-				else {
-					document.getElementById("marks").disabled = false;
-					document.getElementById("basic-addon1").disabled = false;
-					inputClass.add("shadow");
-					buttonClass.add("shadow");
-					messageClass.remove("alert-danger");
-					messageClass.add("alert-success");
-					document.getElementById("message").innerHTML = "Now enter your marks below 👇";
-					document.getElementById("difficultyPre").innerHTML = "<b>Difficulty</b>: " + e.options[e.selectedIndex].text;
-				}
-				score();
-			}
-
-			function score() {
-				var a = parseFloat(document.getElementById('marks').value);
-				var n = parseFloat(document.getElementById('candidates').value);
-				var b, g = 0.0;
-				var f = document.getElementById("level");
-				var difficulty = f.options[f.selectedIndex].text;
-				var inputClass2 = document.getElementById("candidates").classList;
-				var buttonClass2 = document.getElementById("basic-addon2").classList;
-
-				if (document.getElementById('candidates').value == "" || document.getElementById('candidates').value == null) {
-					document.getElementById('candidates').value = "1600000";
-					n = 1600000;
-				}
-
-				
-
-				if (difficulty === "Very Easy") {
-					g = 0.09;
-				}
-				else if (difficulty === "Easy") {
-					g = 0.05175;
-				}
-				else if (difficulty === "Medium") {
-					g = 0.0045;
-				}
-				else if (difficulty === "Hard") {
-					g = -0.04275;
-				}
-				else if (difficulty === "Very Hard") {
-					g = -0.09;
-				}
-				else {
-				}
-
-				
-
-				if (a <= 180) {
-					a = a - a * g;
-				}
-				else {
-					a = a - (300 - a) * g * 180 / 120;
-				}
-
-				if (a < (-60)) {
-					document.getElementById('marks').value = "-60";
-					a = -60;
-				}
-				if (a > 300) {
-					document.getElementById('marks').value = "300";
-					a = 300;
-				}
-				if (difficulty === "Select difficulty level") { }
-				else {
-					document.getElementById("candidates").disabled = false;
-					document.getElementById("basic-addon2").disabled = false;
-					document.getElementById("marksPre").innerHTML = "<b>Marks</b>: " + document.getElementById('marks').value;
-					inputClass2.add("shadow");
-					buttonClass2.add("shadow");
-					if (document.getElementById('marks').value == "" || document.getElementById('marks').value == null) {
-						document.getElementById("candidates").disabled = true;
-						document.getElementById("basic-addon2").disabled = true;
-						inputClass2.remove("shadow");
-						buttonClass2.remove("shadow");
-						document.getElementById("percentilePre").innerHTML = "";
-						document.getElementById("rankPre").innerHTML = "";
-						document.getElementById("marksPre").innerHTML = "";
-					}
-					else if (a < 0) {
-						document.getElementById("percentilePre").innerHTML = "<b>Percentile</b>: less than 6";
-						document.getElementById("rankPre").innerHTML = "<b>Rank</b>: less than " + (((100 - 6) / 1000) * n) + 1;
-					}
-					else {
-						if (a <= 56) {
-							b = 69.5797271 - 6;
-							b = (a - 0) * b / (56 - 0) + 6;
-						}
-						else if (a <= 83) {
-							b = 84.22540213 - 69.5797271;
-							b = (a - 56) * b / (83 - 56) + 69.5797271;
-						}
-						else if (a <= 105) {
-							b = 91.59517945 - 84.22540213;
-							b = (a - 83) * b / (105 - 83) + 84.22540213;
-						}
-						else if (a <= 117) {
-							b = 92.88745828 - 91.59517945;
-							b = (a - 105) * b / (117 - 105) + 91.59517945;
-						}
-						else if (a <= 123) {
-							b = 93.89928202 - 92.88745828;
-							b = (a - 117) * b / (123 - 117) + 92.88745828;
-						}
-						else if (a <= 130) {
-							b = 94.96737888 - 93.89928202;
-							b = (a - 123) * b / (130 - 123) + 93.89928202;
-						}
-						else if (a <= 140) {
-							b = 95.983027 - 94.96737888;
-							b = (a - 130) * b / (140 - 130) + 94.96737888;
-						}
-						else if (a <= 152) {
-							b = 96.93721175 - 95.983027;
-							b = (a - 140) * b / (152 - 140) + 95.983027;
-						}
-						else if (a <= 163.5) {
-							b = 97.97507774 - 96.93721175;
-							b = (a - 152) * b / (163.5 - 152) + 96.93721175;
-						}
-						else if (a <= 172.5) {
-							b = 98.49801724 - 97.97507774;
-							b = (a - 163.5) * b / (172.5 - 163.5) + 97.97507774;
-						}
-						else if (a <= 181.5) {
-							b = 98.99673561 - 98.49801724;
-							b = (a - 172.5) * b / (181.5 - 172.5) + 98.49801724;
-						}
-						else if (a <= 196) {
-							b = 99.3487614 - 98.99673561;
-							b = (a - 181.5) * b / (196 - 181.5) + 98.99673561;
-						}
-						else if (a <= 206) {
-							b = 99.56019541 - 99.3487614;
-							b = (a - 196) * b / (206 - 196) + 99.3487614;
-						}
-						else if (a <= 218) {
-							b = 99.73930423 - 99.56019541;
-							b = (a - 206) * b / (218 - 206) + 99.56019541;
-						}
-						else if (a <= 235) {
-							b = 99.87060821 - 99.73930423;
-							b = (a - 218) * b / (235 - 218) + 99.73930423;
-						}
-						else if (a <= 300) {
-							b = 100 - 99.87060821;
-							b = (a - 235) * b / (300 - 235) + 99.87060821;
-						}
-						var c = ((100 - b) / 100) * n + 1;
-						document.getElementById("percentilePre").innerHTML = "<b>Percentile</b>: " + b.toFixed(7);
-						document.getElementById("rankPre").innerHTML = "<b>Rank</b>: " + Math.round(c);
-					}
-				}
-
-			}
-		</script>
-	</center>
-	<script>
-		window.oncontextmenu = function () {
-			rightc();
-			return false;     // cancel default menu
-		}
-		function rightc() {
-			if (navigator.share) {
-				navigator.share({
-
-					// Title that occurs over
-					// web share dialog
-					title: 'Divastra Rank Predictor',
-
-					// URL to share
-					url: 'https://divastra.github.io/rankPredictor.html'
-				}).then(() => {
-					console.log('Thanks for sharing!');
-				}).catch(err => {
-
-					// Handle errors, if occured
-					console.log(
-						"Error while using Web share API:");
-					console.log(err);
-				});
-			} else {
-
-				// Alerts user if API not available 
-				alert("Browser doesn't support this API !");
-			}
-		}
-	</script>
-
-	<script>
-		// Disable zoom using keyboard shortcuts (Ctrl +, Ctrl -, Ctrl + Mouse Wheel)
-		document.addEventListener("keydown", function (event) {
-			if (
-				event.ctrlKey &&
-				(event.key === "=" || event.key === "-" || event.key === "0")
-			) {
-				event.preventDefault();
-			}
-		});
-
-		// Disable zoom using mouse wheel + Ctrl
-		document.addEventListener("wheel", function (event) {
-			if (event.ctrlKey) {
-				event.preventDefault();
-			}
-		}, { passive: false });
-
-		// Disable pinch zoom on mobile devices
-		document.addEventListener("touchmove", function (event) {
-			if (event.touches.length > 1) {
-				event.preventDefault();
-			}
-		}, { passive: false });
-
-		// Prevent double-tap zooming
-		let lastTouchEnd = 0;
-		document.addEventListener("touchend", function (event) {
-			let now = new Date().getTime();
-			if (now - lastTouchEnd <= 300) {
-				event.preventDefault();
-			}
-			lastTouchEnd = now;
-		}, false);
-	</script>
+</script>
 </body>
-
 </html>

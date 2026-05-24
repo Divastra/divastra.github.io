@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divastra — Divine Weapon for Students</title>
+  <meta name="description" content="An initiative to provide students with quality technology to carry on their student life with more simplicity and efficiency.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --brand:   #6366f1;
+      --brand-l: #818cf8;
+      --violet:  #8b5cf6;
+      --cyan:    #22d3ee;
+      --bg:      #06000e;
+      --border:  rgba(255,255,255,0.07);
+      --grad:    linear-gradient(135deg,#6366f1,#8b5cf6,#22d3ee);
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+
+    body {
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:white;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    a { text-decoration:none; color:inherit; }
+
+    /* ── Particle canvas ── */
+    #particle-canvas {
+      position:fixed; inset:0;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    /* ── Very subtle radial bg so canvas isn't on pure black ── */
+    body::before {
+      content:'';
+      position:fixed; inset:0; z-index:0;
+      background:
+        radial-gradient(ellipse 70% 55% at 20% 20%, rgba(99,102,241,0.13), transparent),
+        radial-gradient(ellipse 50% 45% at 80% 75%, rgba(139,92,246,0.1), transparent);
+      pointer-events:none;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      padding:1rem 2rem;
+      display:flex; align-items:center; justify-content:space-between;
+      transition:background .35s, padding .35s, border-color .35s;
+    }
+    nav.solid {
+      background:rgba(6,0,14,.9);
+      backdrop-filter:blur(22px);
+      -webkit-backdrop-filter:blur(22px);
+      border-bottom:1px solid var(--border);
+      padding:.7rem 2rem;
+    }
+
+    .nav-logo { display:flex; align-items:center; gap:.55rem; }
+    .nav-logo-img {
+      width:30px; height:auto;
+      transition:transform .3s;
+    }
+    .nav-logo:hover .nav-logo-img { transform:scale(1.12) rotate(-5deg); }
+    .nav-logo-name {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-weight:800; font-size:1.2rem;
+      background:var(--grad);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text;
+      letter-spacing:-.3px;
+    }
+
+    .nav-links { display:flex; align-items:center; gap:.15rem; list-style:none; }
+    .nav-links a {
+      display:flex; align-items:center; gap:.3rem;
+      padding:.45rem .8rem;
+      color:rgba(255,255,255,.6);
+      font-size:.875rem; font-weight:500;
+      border-radius:8px;
+      transition:color .2s, background .2s;
+    }
+    .nav-links a i { font-size:.72rem; }
+    .nav-links a:hover { color:white; background:rgba(255,255,255,.08); }
+
+    .burger {
+      display:none; flex-direction:column; gap:5px;
+      padding:8px 10px;
+      background:rgba(255,255,255,.07); border:1px solid var(--border);
+      border-radius:8px; cursor:pointer;
+    }
+    .burger span { display:block; width:20px; height:2px; background:white; border-radius:2px; }
+
+    /* ── Mobile overlay ── */
+    .mob {
+      position:fixed; inset:0; z-index:200;
+      background:rgba(6,0,14,.97);
+      backdrop-filter:blur(24px);
+      display:flex; flex-direction:column;
+      padding:1.5rem;
+      opacity:0; pointer-events:none;
+      transition:opacity .3s;
+    }
+    .mob.open { opacity:1; pointer-events:all; }
+    .mob-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:2.5rem; }
+    .mob-close {
+      width:38px; height:38px; background:rgba(255,255,255,.08);
+      border:none; border-radius:8px; color:white; font-size:1.1rem;
+      cursor:pointer; display:flex; align-items:center; justify-content:center;
+    }
+    .mob-items { list-style:none; display:flex; flex-direction:column; gap:.3rem; }
+    .mob-items a {
+      display:flex; align-items:center; gap:.85rem;
+      padding:.9rem 1rem; color:rgba(255,255,255,.7);
+      font-size:1rem; font-weight:600;
+      border-radius:10px; transition:all .2s;
+    }
+    .mob-items a i { color:var(--brand-l); width:20px; text-align:center; }
+    .mob-items a:hover { color:white; background:rgba(255,255,255,.06); }
+
+    /* ── PAGE ── */
+    .page {
+      position:relative; z-index:2;
+      display:flex; flex-direction:column; align-items:center;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      width:100%; max-width:740px;
+      padding:7.5rem 1.5rem 4.5rem;
+      text-align:center;
+      display:flex; flex-direction:column; align-items:center;
+    }
+
+    /* Large animated logo */
+    .hero-logo-wrap {
+      position:relative;
+      width:114px; height:114px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:2rem;
+    }
+    .logo-ring {
+      position:absolute; inset:-10px; border-radius:50%;
+      border:1.5px solid transparent;
+      background:linear-gradient(var(--bg),var(--bg)) padding-box,
+                 linear-gradient(135deg,#6366f1,#8b5cf6,#22d3ee,#6366f1) border-box;
+      animation:spinRing 9s linear infinite;
+    }
+    .logo-ring-2 {
+      position:absolute; inset:-20px; border-radius:50%;
+      border:1px solid rgba(99,102,241,.18);
+      animation:spinRing 16s linear infinite reverse;
+    }
+    .logo-glow {
+      position:absolute; inset:-14px; border-radius:50%;
+      background:radial-gradient(circle,rgba(99,102,241,.28),transparent 70%);
+      animation:glowPulse 3.2s ease-in-out infinite;
+    }
+    .hero-logo-img { width:90px; height:auto; position:relative; z-index:2; }
+
+    @keyframes spinRing  { to { transform:rotate(360deg); } }
+    @keyframes glowPulse { 0%,100%{opacity:.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.14)} }
+
+    /* Badge */
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.35rem .95rem;
+      background:rgba(99,102,241,.12); border:1px solid rgba(99,102,241,.3);
+      border-radius:100px;
+      color:var(--brand-l); font-size:.76rem; font-weight:700;
+      letter-spacing:.7px; text-transform:uppercase;
+      margin-bottom:1.5rem;
+    }
+    .badge-dot {
+      width:6px; height:6px; background:var(--cyan);
+      border-radius:50%; animation:blinkDot 2.2s ease-in-out infinite;
+    }
+    @keyframes blinkDot { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+    .hero-title {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(2.4rem,6vw,4rem);
+      font-weight:900; line-height:1.1; letter-spacing:-2px;
+      margin-bottom:1.35rem;
+    }
+    .grad-text {
+      background:var(--grad);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    .hero-desc {
+      color:rgba(255,255,255,.5);
+      font-size:1.05rem; line-height:1.78;
+      max-width:500px; margin-bottom:2.5rem;
+    }
+
+    /* Stat pills */
+    .hero-pills { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; }
+    .pill {
+      display:inline-flex; align-items:center; gap:.42rem;
+      padding:.4rem .95rem;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:100px;
+      font-size:.79rem; font-weight:600;
+      color:rgba(255,255,255,.72);
+    }
+    .pill-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+    .pd-b { background:linear-gradient(135deg,#6366f1,#22d3ee); }
+    .pd-g { background:#22c55e; }
+    .pd-y { background:#fbbf24; }
+    .pd-r { background:#f43f5e; }
+
+    /* ── CARDS ── */
+    .cards-section {
+      width:100%; padding:3rem 1.5rem;
+      display:flex; flex-direction:column; align-items:center; gap:1.75rem;
+    }
+    .cards-label {
+      font-size:.72rem; font-weight:800;
+      letter-spacing:1.2px; text-transform:uppercase;
+      color:rgba(255,255,255,.28);
+    }
+    .cards {
+      width:100%; max-width:900px;
+      display:grid; grid-template-columns:repeat(2,1fr);
+      gap:1.1rem;
+    }
+
+    .card {
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:20px; padding:1.85rem 1.7rem;
+      display:flex; flex-direction:column;
+      transition:all .35s cubic-bezier(.4,0,.2,1);
+      position:relative; overflow:hidden;
+    }
+    .card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:var(--grad);
+      transform:scaleX(0); transform-origin:left;
+      transition:transform .4s ease;
+    }
+    .card::after {
+      content:''; position:absolute; inset:0; border-radius:20px;
+      background:radial-gradient(ellipse at 25% 0%,rgba(99,102,241,.1),transparent 60%);
+      opacity:0; transition:opacity .4s;
+    }
+    .card:hover {
+      background:rgba(255,255,255,.055);
+      border-color:rgba(99,102,241,.22);
+      transform:translateY(-7px);
+      box-shadow:0 20px 48px -8px rgba(99,102,241,.2),0 0 0 1px rgba(99,102,241,.09);
+    }
+    .card:hover::before { transform:scaleX(1); }
+    .card:hover::after  { opacity:1; }
+
+    .card-icon {
+      width:50px; height:50px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.25rem; margin-bottom:1.2rem;
+      position:relative; z-index:1;
+      transition:transform .3s;
+    }
+    .card:hover .card-icon { transform:scale(1.1) rotate(-5deg); }
+
+    .c1 .card-icon { background:rgba(99,102,241,.14); color:#818cf8; }
+    .c2 .card-icon { background:rgba(34,211,238,.12);  color:#22d3ee; }
+    .c3 .card-icon { background:rgba(251,191,36,.12);  color:#fbbf24; }
+    .c4 .card-icon { background:rgba(244,63,94,.12);   color:#fb7185; }
+
+    .card-title {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:1.02rem; font-weight:800;
+      color:white; margin-bottom:.52rem;
+      position:relative; z-index:1; letter-spacing:-.2px;
+    }
+    .card-desc {
+      color:rgba(255,255,255,.42); font-size:.87rem;
+      line-height:1.65; position:relative; z-index:1; flex:1;
+    }
+    .card-cta {
+      display:inline-flex; align-items:center; gap:.38rem;
+      margin-top:1.35rem;
+      color:var(--brand-l); font-size:.82rem; font-weight:700;
+      position:relative; z-index:1;
+      transition:gap .2s, color .2s;
+    }
+    .card:hover .card-cta { gap:.62rem; color:white; }
+    .card-cta i { font-size:.72rem; }
+
+    /* ── ABOUT ── */
+    .about {
+      width:100%; padding:4rem 1.5rem 5rem;
+      position:relative;
+    }
+    .about::before {
+      content:''; position:absolute; top:0; left:50%;
+      transform:translateX(-50%);
+      width:100%; max-width:900px; height:1px;
+      background:linear-gradient(90deg,transparent,rgba(99,102,241,.32),rgba(34,211,238,.2),transparent);
+    }
+    .about-inner {
+      max-width:900px; margin:0 auto;
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:3.5rem; align-items:start;
+    }
+
+    /* Text side */
+    .about-label {
+      display:inline-flex; align-items:center; gap:.4rem;
+      padding:.3rem .8rem;
+      background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.22);
+      border-radius:100px;
+      color:var(--brand-l); font-size:.7rem; font-weight:800;
+      letter-spacing:.8px; text-transform:uppercase;
+      margin-bottom:1rem;
+    }
+    .about-title {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(1.5rem,3vw,2.1rem);
+      font-weight:900; line-height:1.2;
+      letter-spacing:-.8px; margin-bottom:1.1rem;
+    }
+    .about-body {
+      color:rgba(255,255,255,.46);
+      font-size:.92rem; line-height:1.84; margin-bottom:1.5rem;
+    }
+    .about-points { list-style:none; display:flex; flex-direction:column; gap:.7rem; }
+    .about-points li {
+      display:flex; align-items:flex-start; gap:.7rem;
+      font-size:.875rem; color:rgba(255,255,255,.52); line-height:1.55;
+    }
+    .pt-check {
+      width:20px; height:20px; flex-shrink:0;
+      background:rgba(99,102,241,.15); border-radius:6px;
+      margin-top:1px; display:flex; align-items:center; justify-content:center;
+      color:var(--brand-l); font-size:.65rem;
+    }
+
+    /* ── YouTube card ── */
+    .yt-card {
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px; overflow:hidden;
+      transition:border-color .3s, box-shadow .3s;
+    }
+    .yt-card:hover {
+      border-color:rgba(255,60,60,.32);
+      box-shadow:0 16px 40px -8px rgba(255,30,30,.1);
+    }
+
+    /* Thumbnail wrapper — strict 16:9 */
+    .yt-thumb-wrap {
+      width:100%; aspect-ratio:16/9;
+      position:relative; overflow:hidden;
+      background:#0a0010; cursor:pointer;
+    }
+
+    .yt-thumb-img {
+      width:100%; height:100%;
+      object-fit:cover;
+      transition:opacity .45s ease, transform .45s ease;
+    }
+    .yt-thumb-img.fading { opacity:0; transform:scale(1.03); }
+
+    /* Dark overlay on thumb */
+    .yt-thumb-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 50%);
+      pointer-events:none;
+    }
+
+    /* Play button on thumbnail */
+    .yt-play-btn {
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      transition:opacity .2s;
+    }
+    .yt-play-circle {
+      width:56px; height:56px; border-radius:50%;
+      background:rgba(255,255,255,.92);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.3rem; color:#e00;
+      box-shadow:0 6px 24px rgba(0,0,0,.45);
+      transition:transform .3s, box-shadow .3s;
+    }
+    .yt-thumb-wrap:hover .yt-play-circle {
+      transform:scale(1.12);
+      box-shadow:0 10px 32px rgba(0,0,0,.55);
+    }
+    .yt-play-circle i { margin-left:3px; }
+
+    /* Embedded iframe (hidden until play) */
+    .yt-iframe-wrap {
+      position:absolute; inset:0; display:none;
+    }
+    .yt-iframe-wrap iframe {
+      width:100%; height:100%; border:none;
+    }
+    .yt-iframe-wrap.active { display:block; }
+
+    /* Progress dots */
+    .yt-dots {
+      position:absolute; bottom:8px; left:50%;
+      transform:translateX(-50%);
+      display:flex; gap:5px; z-index:5;
+    }
+    .yt-dot {
+      width:5px; height:5px; border-radius:50%;
+      background:rgba(255,255,255,.35);
+      transition:background .3s, transform .3s;
+      cursor:pointer;
+    }
+    .yt-dot.active {
+      background:white; transform:scale(1.3);
+    }
+
+    /* Video title below thumb */
+    .yt-vid-title {
+      padding:.65rem 1rem .4rem;
+      font-size:.8rem; font-weight:600;
+      color:rgba(255,255,255,.65);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+
+    /* Channel meta row */
+    .yt-meta {
+      padding:.35rem 1rem .8rem;
+      display:flex; align-items:center; gap:.75rem;
+    }
+    .yt-avatar {
+      width:36px; height:36px; border-radius:50%; flex-shrink:0;
+      background:var(--grad);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-weight:900; font-size:.8rem; color:white;
+    }
+    .yt-ch-name { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:.88rem; }
+    .yt-handle  { color:rgba(255,255,255,.38); font-size:.74rem; margin-top:1px; }
+
+    /* Chips */
+    .yt-chips {
+      padding:.1rem 1rem .8rem;
+      display:flex; flex-wrap:wrap; gap:.4rem;
+    }
+    .yt-chip {
+      padding:.22rem .65rem;
+      background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.09);
+      border-radius:100px; font-size:.7rem; font-weight:600;
+      color:rgba(255,255,255,.5);
+    }
+
+    /* CTA row */
+    .yt-cta-row { padding:0 .9rem .9rem; display:flex; gap:.6rem; }
+    .btn-yt {
+      flex:1; display:flex; align-items:center; justify-content:center; gap:.45rem;
+      padding:.65rem; background:#ff0000;
+      color:white; font-weight:700; font-size:.82rem;
+      border-radius:10px; border:none; cursor:pointer;
+      transition:all .25s;
+      box-shadow:0 4px 14px rgba(255,0,0,.28);
+    }
+    .btn-yt:hover { background:#cc0000; transform:translateY(-2px); box-shadow:0 8px 22px rgba(255,0,0,.38); }
+    .btn-ghost-sm {
+      display:flex; align-items:center; justify-content:center; gap:.38rem;
+      padding:.65rem .8rem;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+      color:rgba(255,255,255,.7); font-size:.82rem; font-weight:600;
+      border-radius:10px; cursor:pointer; transition:all .25s;
+    }
+    .btn-ghost-sm:hover { background:rgba(255,255,255,.11); color:white; }
+
+    /* ── FOOTER ── */
+    footer {
+      position:relative; z-index:2;
+      width:100%; padding:3rem 1.5rem 2.5rem;
+      border-top:1px solid rgba(255,255,255,.06);
+      display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    }
+    .footer-logo { display:flex; align-items:center; gap:.5rem; }
+    .footer-logo img { width:26px; height:auto; }
+    .footer-logo-name {
+      font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:1.05rem;
+      background:var(--grad);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .footer-tag { color:rgba(255,255,255,.22); font-size:.78rem; font-style:italic; }
+    .footer-socials { display:flex; gap:.7rem; }
+    .soc-btn {
+      width:42px; height:42px;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.09);
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:.95rem; color:rgba(255,255,255,.5);
+      transition:all .25s;
+    }
+    .soc-btn:hover { transform:translateY(-3px); }
+    .soc-yt:hover { background:#ff0000; border-color:#ff0000; color:white; box-shadow:0 6px 20px rgba(255,0,0,.35); }
+    .soc-ig:hover { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-color:transparent; color:white; box-shadow:0 6px 20px rgba(220,39,67,.35); }
+    .soc-li:hover { background:#0a66c2; border-color:#0a66c2; color:white; box-shadow:0 6px 20px rgba(10,102,194,.35); }
+
+    /* ── Scroll reveal ── */
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity:1; transform:translateY(0); }
+    .d1 { transition-delay:.1s; } .d2 { transition-delay:.2s; }
+    .d3 { transition-delay:.3s; } .d4 { transition-delay:.4s; }
+
+    /* ── Responsive ── */
+    @media(max-width:700px){
+      .nav-links { display:none; }
+      .burger    { display:flex; }
+      nav { padding:.9rem 1.25rem; }
+      nav.solid { padding:.75rem 1.25rem; }
+      .hero { padding:6.5rem 1.25rem 3.5rem; }
+      .hero-title { letter-spacing:-1.5px; }
+      .cards { grid-template-columns:1fr; max-width:420px; }
+      .about-inner { grid-template-columns:1fr; gap:2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ░░ PARTICLE CANVAS ░░ -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- ░░ MOBILE OVERLAY ░░ -->
+<div class="mob" id="mobNav">
+  <div class="mob-head">
+    <div class="nav-logo">
+      <img src="logo.svg" class="nav-logo-img" alt="Divastra">
+      <span class="nav-logo-name">Divastra</span>
+    </div>
+    <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mob-items">
+    <li><a href="https://divastra.github.io/counselling.html"  onclick="closeMob()"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="https://divastra.github.io/rankPredictor.html" onclick="closeMob()"><i class="fas fa-chart-line"></i>   Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html"        onclick="closeMob()"><i class="fas fa-book-open"></i>     Books</a></li>
+    <li><a href="https://divastra.github.io/video.html"        onclick="closeMob()"><i class="fab fa-youtube"></i>       Videos</a></li>
+  </ul>
+</div>
+
+<!-- ░░ NAVBAR ░░ -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <img src="logo.svg" class="nav-logo-img" alt="Divastra logo">
+    <span class="nav-logo-name">Divastra</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://divastra.github.io/counselling.html"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="https://divastra.github.io/rankPredictor.html"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html"><i class="fas fa-book-open"></i> Books</a></li>
+    <li><a href="https://divastra.github.io/video.html"><i class="fab fa-youtube"></i> Videos</a></li>
+  </ul>
+  <div class="burger" onclick="openMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ░░ PAGE ░░ -->
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-logo-wrap">
+      <div class="logo-ring-2"></div>
+      <div class="logo-ring"></div>
+      <div class="logo-glow"></div>
+      <img src="logo.svg" class="hero-logo-img" alt="Divastra">
+    </div>
+
+    <div class="hero-badge"><span class="badge-dot"></span>Divine Weapon for Students</div>
+
+    <h1 class="hero-title">The Era of<br><span class="grad-text">Smarter Students</span></h1>
+
+    <p class="hero-desc">
+      An initiative to provide students with quality technology to carry on their student life with more simplicity and efficiency. You demand, we provide.
+    </p>
+
+    <div class="hero-pills">
+      <span class="pill"><span class="pill-dot pd-b"></span>10,000+ Students</span>
+      <span class="pill"><span class="pill-dot pd-g"></span>100% Free</span>
+      <span class="pill"><span class="pill-dot pd-y"></span>NIT Jamshedpur</span>
+      <span class="pill"><span class="pill-dot pd-r"></span>JEE Focused</span>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="cards-section">
+    <span class="cards-label">What we offer</span>
+    <div class="cards">
+
+      <a class="card c1 reveal" href="https://divastra.github.io/counselling.html">
+        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="card-title">College / Student Counselling</div>
+        <p class="card-desc">Get the college choice filling, student, and college life help — personalised guidance from someone who's been there.</p>
+        <span class="card-cta">Get guidance <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a class="card c2 reveal d1" href="https://divastra.github.io/rankPredictor.html">
+        <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+        <div class="card-title">JEE Mains Rank Predictor</div>
+        <p class="card-desc">Check your JEE Mains rank even before the result declaration — data-driven, accurate, and completely free.</p>
+        <span class="card-cta">Predict rank <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a class="card c3 reveal d2" href="https://divastra.github.io/books.html">
+        <div class="card-icon"><i class="fas fa-book-open"></i></div>
+        <div class="card-title">IIT JEE Books Library</div>
+        <p class="card-desc">Read all the books you need for IIT JEE preparation for free — no paywalls, no sign-up, no compromise.</p>
+        <span class="card-cta">Browse books <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a class="card c4 reveal d3" href="https://divastra.github.io/video.html">
+        <div class="card-icon"><i class="fab fa-youtube"></i></div>
+        <div class="card-title">Prabhat Ranjan Video Hub</div>
+        <p class="card-desc">Watch all educational videos by Prabhat Ranjan — JEE tips, college life, and career guidance in one place.</p>
+        <span class="card-cta">Watch videos <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-inner">
+
+      <!-- Text -->
+      <div class="reveal">
+        <div class="about-label"><i class="fas fa-user-circle"></i>&nbsp;About</div>
+        <h2 class="about-title">
+          Started as a student,<br>
+          <span class="grad-text">still building for you</span>
+        </h2>
+        <p class="about-body">
+          Divastra started as a passion project when Prabhat Ranjan was deep in his JEE prep days at NIT Jamshedpur. He graduated, started his professional career — and kept building anyway. Because the mission was never about one student's journey. It was always about yours.
+        </p>
+        <ul class="about-points">
+          <li>
+            <div class="pt-check"><i class="fas fa-check"></i></div>
+            Graduated from NIT Jamshedpur — still showing up for every aspirant
+          </li>
+          <li>
+            <div class="pt-check"><i class="fas fa-check"></i></div>
+            Tools built for JEE aspirants specifically — not generic study apps
+          </li>
+          <li>
+            <div class="pt-check"><i class="fas fa-check"></i></div>
+            Everything free — because quality education shouldn't be a privilege
+          </li>
+        </ul>
+      </div>
+
+      <!-- YouTube card -->
+      <div class="reveal d1">
+        <div class="yt-card">
+
+          <!-- 16:9 Thumbnail -->
+          <div class="yt-thumb-wrap" id="ytThumbWrap" onclick="ytPlayCurrent()">
+            <img class="yt-thumb-img" id="ytImg"
+                 src="https://img.youtube.com/vi/gR9P5YbY_VE/hqdefault.jpg"
+                 alt="Video thumbnail">
+            <div class="yt-thumb-overlay"></div>
+
+            <div class="yt-play-btn" id="ytPlayBtn">
+              <div class="yt-play-circle"><i class="fab fa-youtube"></i></div>
+            </div>
+
+            <!-- Progress dots -->
+            <div class="yt-dots" id="ytDots"></div>
+
+          </div>
+
+          <!-- Video title -->
+          <div class="yt-vid-title" id="ytTitle">50 best college options for 90-95 JEE Main Percentile</div>
+
+          <!-- Channel meta -->
+          <div class="yt-meta">
+            <div class="yt-avatar">PR</div>
+            <div>
+              <div class="yt-ch-name">Prabhat Ranjan</div>
+              <div class="yt-handle">@iam_prabhatranjan</div>
+            </div>
+          </div>
+
+          <!-- Topic chips -->
+          <div class="yt-chips">
+            <span class="yt-chip">JEE Tips</span>
+            <span class="yt-chip">College Life</span>
+            <span class="yt-chip">Study Strategy</span>
+            <span class="yt-chip">Career Guidance</span>
+          </div>
+
+          <!-- CTA -->
+          <div class="yt-cta-row">
+            <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" class="btn-yt">
+              <i class="fab fa-youtube"></i> Visit Channel
+            </a>
+            <a href="https://divastra.github.io/video.html" class="btn-ghost-sm">
+              <i class="fas fa-play"></i> All Videos
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.svg" alt="">
+      <span class="footer-logo-name">Divastra</span>
+    </div>
+    <p class="footer-tag">Divya + Astra — Divine Weapon for Every Student</p>
+    <div class="footer-socials">
+      <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" class="soc-btn soc-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com/itsprabhatranjan"  target="_blank" class="soc-btn soc-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/itsprabhatranjan" target="_blank" class="soc-btn soc-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+
+</div><!-- /page -->
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script>
+/* ─────────────────────────────────────────────────────────────
+   1.  PARTICLE WIND SYSTEM
+───────────────────────────────────────────────────────────── */
+(function(){
+  const canvas = document.getElementById('particle-canvas');
+  const ctx    = canvas.getContext('2d');
+
+  function resize(){
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive:true });
+
+  const windAngle = Math.random() * Math.PI * 2;
+  const BASE_SPD  = 0.55;
+  const ATTRACT_R = 180;
+  const COUNT     = 110;
+
+  /* Mouse / touch state */
+  const mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  let prevMX = mouse.x, prevMY = mouse.y;
+  let cursorSpeed = 0;
+
+  /* Global cursor-direction influence shared by ALL particles */
+  let cursorDirX    = Math.cos(windAngle);
+  let cursorDirY    = Math.sin(windAngle);
+  let cursorStrength  = 0;   /* 0 = pure wind, 1 = full cursor direction */
+  let cursorSpeedBoost = 0;  /* extra speed added on top of BASE_SPD */
+
+  window.addEventListener('mousemove', e => {
+    const dvx = e.clientX - prevMX;
+    const dvy = e.clientY - prevMY;
+    cursorSpeed = Math.sqrt(dvx*dvx + dvy*dvy);
+
+    if(cursorSpeed > 2){
+      cursorDirX = dvx / cursorSpeed;
+      cursorDirY = dvy / cursorSpeed;
+      /* Influence proportional to cursor speed, saturates at ~15px/frame */
+      cursorStrength   = Math.min(1, cursorSpeed / 15);
+      cursorSpeedBoost = Math.min(cursorSpeed * 0.04, 3.0);
+    }
+
+    prevMX = mouse.x; prevMY = mouse.y;
+    mouse.x = e.clientX; mouse.y = e.clientY;
+  }, { passive:true });
+
+  window.addEventListener('touchmove', e => {
+    const t = e.touches[0];
+    mouse.x = t.clientX; mouse.y = t.clientY;
+    cursorStrength   = 0.6;
+    cursorSpeedBoost = 1.5;
+  }, { passive:true });
+
+  const PALETTE = ['#6366f1','#818cf8','#8b5cf6','#a5b4fc','#22d3ee','#67e8f9'];
+
+  class Particle {
+    constructor(){ this.init(); }
+
+    init(){
+      this.x  = Math.random() * canvas.width;
+      this.y  = Math.random() * canvas.height;
+      this.r  = Math.random() * 1.8 + 0.5;
+      this.spd = 0.5 + Math.random() * 0.8;  /* individual speed factor */
+      this.vx = Math.cos(windAngle) * BASE_SPD * this.spd;
+      this.vy = Math.sin(windAngle) * BASE_SPD * this.spd;
+      this.alpha  = Math.random() * 0.55 + 0.2;
+      this.color  = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+      this.phase  = Math.random() * Math.PI * 2;
+      this.phSpd  = 0.018 + Math.random() * 0.018;
+      this.trail  = [];
+      this.nearFactor = 0;  /* 0-1, proximity to cursor (for glow boost) */
+    }
+
+    update(){
+      /* ── Global direction target: blend wind angle ↔ cursor direction ── */
+      const tSpd = (BASE_SPD + cursorSpeedBoost) * this.spd;
+      const wx   = Math.cos(windAngle), wy = Math.sin(windAngle);
+      const blendX = wx * (1 - cursorStrength) + cursorDirX * cursorStrength;
+      const blendY = wy * (1 - cursorStrength) + cursorDirY * cursorStrength;
+      const tVx = blendX * tSpd;
+      const tVy = blendY * tSpd;
+
+      /* Smoothly steer all particles toward the blended target */
+      this.vx += (tVx - this.vx) * 0.04;
+      this.vy += (tVy - this.vy) * 0.04;
+
+      /* ── Nearby position pull (only within ATTRACT_R) ── */
+      const dx   = mouse.x - this.x;
+      const dy   = mouse.y - this.y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+
+      if(dist < ATTRACT_R && dist > 1){
+        const t   = (ATTRACT_R - dist) / ATTRACT_R;
+        const pow = t * t;
+        const str = 0.045 + Math.min(cursorSpeed, 40) * 0.0025;
+        this.vx  += (dx / dist) * pow * str;
+        this.vy  += (dy / dist) * pow * str;
+        this.nearFactor = Math.min(1, this.nearFactor + pow * 0.18);
+      } else {
+        this.nearFactor *= 0.92;
+      }
+
+      /* Speed cap */
+      const spd    = Math.sqrt(this.vx*this.vx + this.vy*this.vy);
+      const maxSpd = BASE_SPD * 4 + cursorSpeedBoost * 2;
+      if(spd > maxSpd){ this.vx = (this.vx/spd)*maxSpd; this.vy = (this.vy/spd)*maxSpd; }
+
+      /* Trail */
+      this.trail.unshift({ x:this.x, y:this.y });
+      if(this.trail.length > 6) this.trail.pop();
+
+      this.x    += this.vx;
+      this.y    += this.vy;
+      this.phase += this.phSpd;
+
+      /* Wrap edges */
+      const m = 12;
+      if(this.x < -m) this.x = canvas.width  + m;
+      if(this.x > canvas.width  + m) this.x = -m;
+      if(this.y < -m) this.y = canvas.height + m;
+      if(this.y > canvas.height + m) this.y = -m;
+    }
+
+    draw(){
+      const pulse = 0.55 + Math.sin(this.phase) * 0.35;
+      const boost = 1 + this.nearFactor * 1.8;  /* extra glow near cursor */
+
+      /* Trail */
+      for(let i = 0; i < this.trail.length; i++){
+        const frac = (this.trail.length - i) / this.trail.length;
+        ctx.beginPath();
+        ctx.arc(this.trail[i].x, this.trail[i].y, this.r * frac, 0, Math.PI*2);
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.alpha * pulse * frac * 0.38;
+        ctx.fill();
+      }
+
+      /* Core dot (slightly larger near cursor) */
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r * (0.85 + this.nearFactor * 0.4), 0, Math.PI*2);
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.alpha * pulse;
+      ctx.fill();
+
+      /* Glow halo (expands with nearFactor) */
+      const hR = this.r * 3.5 * boost;
+      const g  = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, hR);
+      g.addColorStop(0, this.color + 'aa');
+      g.addColorStop(1, this.color + '00');
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, hR, 0, Math.PI*2);
+      ctx.fillStyle = g;
+      ctx.globalAlpha = this.alpha * pulse * (0.4 + this.nearFactor * 0.35);
+      ctx.fill();
+    }
+  }
+
+  const particles = Array.from({ length:COUNT }, () => new Particle());
+
+  function loop(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.globalAlpha = 1;
+    particles.forEach(p => { p.update(); p.draw(); });
+
+    /* Decay global cursor influence each frame */
+    cursorStrength   *= 0.97;
+    cursorSpeedBoost *= 0.95;
+    cursorSpeed      *= 0.88;
+
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+
+/* ─────────────────────────────────────────────────────────────
+   2.  NAVBAR SCROLL
+───────────────────────────────────────────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('solid', window.scrollY > 40);
+}, { passive:true });
+
+
+/* ─────────────────────────────────────────────────────────────
+   3.  MOBILE NAV
+───────────────────────────────────────────────────────────── */
+const mobNav = document.getElementById('mobNav');
+function openMob(){ mobNav.classList.add('open');  document.body.style.overflow='hidden'; }
+function closeMob(){ mobNav.classList.remove('open'); document.body.style.overflow=''; }
+
+
+/* ─────────────────────────────────────────────────────────────
+   4.  SCROLL REVEAL
+───────────────────────────────────────────────────────────── */
+const revEls = document.querySelectorAll('.reveal');
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); revObs.unobserve(e.target); } });
+}, { threshold:.1, rootMargin:'0px 0px -30px 0px' });
+revEls.forEach(el => revObs.observe(el));
+
+
+/* ─────────────────────────────────────────────────────────────
+   5.  YOUTUBE THUMBNAIL CAROUSEL
+───────────────────────────────────────────────────────────── */
+(function(){
+  const CHANNEL_ID = 'UCnMzgt48z2rIUL1R6tARfMA';
+
+  /* Fallback list — used immediately and if RSS fetch fails */
+  let videos = [
+    { id:'gR9P5YbY_VE', title:'50 best college options for 90-95 JEE Main Percentile' },
+    { id:'wYYdkDooLtA', title:'Best Colleges Near Tech Parks & Factories 🚀' },
+    { id:'_Dp-uP4tgPw', title:'Top 10 Class 12 Regional Colleges for Btech at Low JEE Rank 2026' },
+    { id:'6moClH4P7ac', title:'Private Colleges Under 8–14 Lakh Fees Range 🔥' },
+    { id:'VnDbBXgXxCU', title:'The Only College Metric That Matters' },
+    { id:'2Sj2z4bVYIM', title:'Geeta University Haryana Honest Review 2026' },
+    { id:'KLVRIY6hrCE', title:'Colleges At 80–90 Percentile 🔥' },
+    { id:'W5A68pQPioY', title:'The "Traditional College" Reality Check' },
+    { id:'seUrw7Fhpnc', title:'Min 6 LPA Job 🔥 or FULL Fee Refund' },
+    { id:'LOS_nrRQobg', title:'Abroad Engineering Colleges Eligibility Criteria 🌍' },
+  ];
+
+  let current = 0;
+  let timer   = null;
+
+  const img      = document.getElementById('ytImg');
+  const titleEl  = document.getElementById('ytTitle');
+  const dotsWrap = document.getElementById('ytDots');
+
+  /* ── Shorts detection: maxresdefault returns a tiny placeholder for Shorts ── */
+  function isShort(videoId){
+    return new Promise(resolve => {
+      const probe = new Image();
+      probe.onload  = () => resolve(probe.naturalWidth < 400);
+      probe.onerror = () => resolve(false);
+      probe.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    });
+  }
+
+  /* ── Auto-fetch latest videos from RSS (via CORS proxy) ── */
+  async function fetchLatest(){
+    const rssUrl  = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+    const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl);
+    try {
+      const resp = await fetch(proxyUrl);
+      if(!resp.ok) return;
+      const xml  = new DOMParser().parseFromString(await resp.text(), 'application/xml');
+      const entries = Array.from(xml.querySelectorAll('entry'));
+
+      const raw = entries.map(e => ({
+        id:    e.querySelector('videoId')?.textContent?.trim() || '',
+        title: e.querySelector('title')?.textContent?.trim()   || '',
+      })).filter(v => v.id);
+
+      /* Filter out Shorts (check up to 15, collect first 10 long videos) */
+      const long = [];
+      for(const v of raw){
+        if(long.length >= 10) break;
+        const short = await isShort(v.id);
+        if(!short) long.push(v);
+      }
+
+      if(long.length >= 3){
+        videos  = long;
+        current = 0;
+        rebuildDots();
+        showVideo(0, false);
+      }
+    } catch(_){ /* keep fallback */ }
+  }
+
+  /* ── Dot management ── */
+  function rebuildDots(){
+    dotsWrap.innerHTML = '';
+    videos.forEach((_, i) => {
+      const d = document.createElement('span');
+      d.className = 'yt-dot' + (i === 0 ? ' active' : '');
+      d.onclick = e => { e.stopPropagation(); goTo(i); };
+      dotsWrap.appendChild(d);
+    });
+  }
+
+  function updateDots(){
+    dotsWrap.querySelectorAll('.yt-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === current));
+  }
+
+  /* ── Carousel logic ── */
+  function showVideo(idx, animate){
+    if(animate) img.classList.add('fading');
+    setTimeout(() => {
+      img.src = `https://img.youtube.com/vi/${videos[idx].id}/hqdefault.jpg`;
+      titleEl.textContent = videos[idx].title;
+      if(animate) img.classList.remove('fading');
+      updateDots();
+    }, animate ? 380 : 0);
+  }
+
+  function goTo(idx){
+    current = idx;
+    showVideo(idx, true);
+  }
+
+  function next(){ goTo((current + 1) % videos.length); }
+
+  function startCycle(){ timer = setInterval(next, 5000); }
+
+  /* ── Click: open on YouTube (avoids embed restrictions) ── */
+  window.ytPlayCurrent = function(){
+    window.open('https://www.youtube.com/watch?v=' + videos[current].id, '_blank', 'noopener');
+  };
+
+  /* Init */
+  rebuildDots();
+  showVideo(0, false);
+  startCycle();
+  fetchLatest();   /* runs async in background; updates carousel if successful */
+})();
+</script>
+
+</body>
+</html>
