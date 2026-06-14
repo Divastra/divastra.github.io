@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Divastra Video Hub – JEE Videos by Prabhat Ranjan | NIT Jamshedpur</title>
+  <meta name="description" content="Watch JEE strategy, college reviews, book reviews, and counselling videos by Prabhat Ranjan (NIT Jamshedpur). Free video hub for every JEE aspirant.">
+  <meta name="author" content="Prabhat Ranjan">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://divastra.github.io/video.html">
+  <meta property="og:title" content="Divastra Video Hub – JEE Videos by Prabhat Ranjan">
+  <meta property="og:description" content="College reviews, book reviews, JEE tips & counselling — all in one place.">
+  <meta property="og:image" content="https://divastra.github.io/assets/img/thumbnail1.png">
+  <meta property="og:url" content="https://divastra.github.io/video.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --brand:#6366f1;--brand-l:#818cf8;--violet:#8b5cf6;--cyan:#22d3ee;
+      --bg:#06000e;--border:rgba(255,255,255,.07);
+      --grad:linear-gradient(135deg,#6366f1,#8b5cf6,#22d3ee);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;overflow-x:hidden;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:white;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    *,*::before,*::after{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none;}
+    input,textarea,select,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;user-select:text;}
+    img{-webkit-user-drag:none;pointer-events:none;}
+    a img,button img{pointer-events:auto;}
+
+    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+      background:radial-gradient(ellipse 60% 50% at 20% 20%,rgba(99,102,241,.1),transparent),
+                 radial-gradient(ellipse 55% 45% at 80% 70%,rgba(34,211,238,.08),transparent),
+                 radial-gradient(ellipse 40% 35% at 50% 100%,rgba(139,92,246,.07),transparent);}
+    #particle-canvas{position:fixed;inset:0;z-index:1;pointer-events:none;}
+    .cur-dot{position:fixed;width:8px;height:8px;border-radius:50%;background:white;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+    .cur-ring{position:fixed;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .22s,height .22s,border-color .22s;mix-blend-mode:difference;}
+    body:has(a:hover) .cur-ring,body:has(button:hover) .cur-ring{width:48px;height:48px;border-color:rgba(255,255,255,.8);}
+    #progressBar{position:fixed;top:0;left:0;height:2.5px;z-index:9001;width:0%;background:linear-gradient(90deg,#6366f1,#8b5cf6,#22d3ee);transition:width .1s;border-radius:0 2px 2px 0;box-shadow:0 0 8px rgba(99,102,241,.7);}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+    .grad-text{background:linear-gradient(90deg,#6366f1 0%,#8b5cf6 20%,#22d3ee 45%,#a5b4fc 55%,#22d3ee 70%,#8b5cf6 85%,#6366f1 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradShimmer 4s linear infinite;}
+    @keyframes gradShimmer{0%{background-position:0% center}100%{background-position:200% center}}
+
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s;}
+    #nav.solid{background:rgba(6,0,14,.92);backdrop-filter:blur(22px);border-bottom:1px solid var(--border);padding:.7rem 2rem;}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;}
+    .nav-logo-img{width:30px;height:auto;transition:transform .3s;}
+    .nav-logo:hover .nav-logo-img{transform:scale(1.12) rotate(-5deg);}
+    .nav-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.3px;}
+    .nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;}
+    .nav-links a{display:flex;align-items:center;gap:.3rem;padding:.45rem .8rem;color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;border-radius:8px;transition:color .2s,background .2s;position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:2px;left:.8rem;right:.8rem;height:1.5px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;border-radius:2px;}
+    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+    .nav-links a i{font-size:.72rem;}
+    .nav-links a:hover{color:white;background:rgba(255,255,255,.08);}
+    .nav-links a.active{color:#22d3ee;}
+    .burger{display:none;flex-direction:column;gap:5px;padding:8px 10px;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:8px;cursor:pointer;}
+    .burger span{display:block;width:20px;height:2px;background:white;border-radius:2px;}
+    .mob{position:fixed;inset:0;z-index:600;background:rgba(6,0,14,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s;}
+    .mob.open{opacity:1;pointer-events:all;}
+    .mob-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem;}
+    .mob-close{width:38px;height:38px;background:rgba(255,255,255,.08);border:none;border-radius:8px;color:white;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .mob-items{list-style:none;display:flex;flex-direction:column;gap:.3rem;}
+    .mob-items a{display:flex;align-items:center;gap:.85rem;padding:.9rem 1rem;color:rgba(255,255,255,.7);font-size:1rem;font-weight:600;border-radius:10px;transition:all .2s;}
+    .mob-items a i{color:var(--brand-l);width:20px;text-align:center;}
+    .mob-items a:hover{color:white;background:rgba(255,255,255,.06);}
+    #backTop{position:fixed;bottom:2rem;right:1.5rem;z-index:500;width:44px;height:44px;border-radius:14px;background:rgba(99,102,241,.18);border:1px solid rgba(99,102,241,.3);color:var(--brand-l);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s,background .2s;pointer-events:none;}
+    #backTop.show{opacity:1;transform:translateY(0);pointer-events:all;}
+    #backTop:hover{background:rgba(99,102,241,.3);}
+
+    /* SHARE */
+    .share-overlay{position:fixed;inset:0;z-index:800;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .25s;}
+    .share-overlay.show{opacity:1;pointer-events:all;}
+    .share-popup{position:fixed;z-index:801;width:318px;background:rgba(14,10,30,.96);border:1px solid rgba(99,102,241,.28);border-radius:20px;padding:1.4rem 1.35rem 1.2rem;box-shadow:0 24px 60px rgba(0,0,0,.6);opacity:0;transform:scale(.9) translateY(6px);pointer-events:none;transition:opacity .25s,transform .25s;}
+    .share-popup.show{opacity:1;transform:scale(1) translateY(0);pointer-events:all;}
+    .share-popup-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+    .share-popup-title{font-weight:700;font-size:1rem;}
+    .share-popup-close{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.07);border:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;}
+    .share-popup-url{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.55rem .75rem;font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .share-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin-bottom:.75rem;}
+    .share-btn{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:.6rem .3rem;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);cursor:pointer;font-size:.68rem;color:rgba(255,255,255,.7);transition:background .2s;}
+    .share-btn:hover{background:rgba(255,255,255,.1);}
+    .share-btn i{font-size:1.1rem;}
+    .share-copy-btn{width:100%;padding:.6rem;border-radius:10px;background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.3);color:var(--brand-l);font-size:.82rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.4rem;transition:background .2s;}
+    .share-copy-btn:hover{background:rgba(99,102,241,.3);}
+    .share-hint{text-align:center;font-size:.7rem;color:rgba(255,255,255,.3);margin-top:.6rem;}
+
+    /* HERO */
+    .hero{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7rem 1.5rem 4rem;text-align:center;}
+    .hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.38rem 1rem;border-radius:99px;border:1px solid rgba(248,113,113,.3);background:rgba(248,113,113,.08);color:#f87171;font-size:.78rem;font-weight:600;letter-spacing:.04em;margin-bottom:1.5rem;}
+    .hero-badge i{font-size:.75rem;}
+    .hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.2rem,7vw,4.2rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;max-width:820px;margin:0 auto .9rem;}
+    .hero p{font-size:clamp(.95rem,2.2vw,1.12rem);color:rgba(255,255,255,.55);max-width:600px;margin:0 auto 2.2rem;line-height:1.7;}
+    .hero-stats{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+    .hero-stat{display:flex;flex-direction:column;align-items:center;gap:.15rem;}
+    .hero-stat-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.9rem;font-weight:900;line-height:1;}
+    .hero-stat-lbl{font-size:.72rem;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.4);text-transform:uppercase;}
+    .hero-stat-div{width:1px;height:36px;background:rgba(255,255,255,.1);}
+    .hero-ctas{display:flex;align-items:center;justify-content:center;gap:.85rem;flex-wrap:wrap;}
+    .btn-yt{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1.6rem;border-radius:12px;background:#ff0000;color:white;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(255,0,0,.35);}
+    .btn-yt:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,0,0,.5);}
+    .btn-outline{display:inline-flex;align-items:center;gap:.55rem;padding:.72rem 1.5rem;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s;}
+    .btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
+
+    /* CHANNEL BANNER */
+    .channel-banner{position:relative;z-index:10;padding:0 1.5rem 3rem;max-width:1280px;margin:0 auto;width:100%;}
+    .channel-card{background:linear-gradient(135deg,rgba(99,102,241,.12),rgba(139,92,246,.1),rgba(34,211,238,.08));border:1px solid rgba(99,102,241,.25);border-radius:20px;padding:2rem 2.2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+    .channel-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6,#22d3ee);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;box-shadow:0 0 0 3px rgba(99,102,241,.3);}
+    .channel-info{flex:1;min-width:200px;}
+    .channel-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;margin-bottom:.2rem;}
+    .channel-handle{font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:.6rem;}
+    .channel-tags{display:flex;gap:.5rem;flex-wrap:wrap;}
+    .channel-tag{padding:.2rem .6rem;border-radius:6px;font-size:.7rem;font-weight:600;background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);}
+    .channel-actions{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;}
+    .btn-subscribe{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.4rem;border-radius:11px;background:#ff0000;color:white;font-weight:700;font-size:.87rem;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(255,0,0,.3);}
+    .btn-subscribe:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,0,0,.45);}
+
+    /* CURATOR FEED SECTION */
+    .feed-section{position:relative;z-index:10;padding:0 1.5rem 5rem;max-width:1400px;margin:0 auto;width:100%;}
+    .feed-hd{display:flex;align-items:center;gap:.85rem;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.06);}
+    .feed-hd-icon{width:38px;height:38px;border-radius:10px;background:rgba(248,113,113,.15);color:#f87171;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+    .feed-hd-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.15rem;}
+    .feed-hd-sub{font-size:.8rem;color:rgba(255,255,255,.35);margin-left:auto;}
+
+    /* Override curator.io feed colours for dark theme */
+    #curator-feed-new-feed-layout{
+      --crt-color-primary: #6366f1;
+      background: transparent !important;
+    }
+    #curator-feed-new-feed-layout .crt-feed-window{background:transparent !important;}
+    #curator-feed-new-feed-layout .crt-post{
+      background:rgba(255,255,255,.04) !important;
+      border:1px solid rgba(255,255,255,.08) !important;
+      border-radius:14px !important;
+      transition:transform .25s,border-color .25s,box-shadow .25s !important;
+    }
+    #curator-feed-new-feed-layout .crt-post:hover{
+      transform:translateY(-4px) !important;
+      border-color:rgba(255,255,255,.2) !important;
+      box-shadow:0 16px 40px rgba(0,0,0,.5) !important;
+    }
+    #curator-feed-new-feed-layout .crt-post-text{color:rgba(255,255,255,.8) !important;}
+    #curator-feed-new-feed-layout .crt-post-username{color:var(--brand-l) !important;}
+    #curator-feed-new-feed-layout .crt-post-share-button{color:rgba(255,255,255,.5) !important;}
+    #curator-feed-new-feed-layout .crt-logo{color:rgba(255,255,255,.25) !important;font-size:.72rem;}
+    /* Load more button */
+    #curator-feed-new-feed-layout .crt-load-more{
+      background:rgba(99,102,241,.2) !important;
+      border:1px solid rgba(99,102,241,.4) !important;
+      color:var(--brand-l) !important;
+      border-radius:12px !important;
+      padding:.65rem 1.8rem !important;
+      font-weight:600 !important;
+      transition:background .2s !important;
+    }
+    #curator-feed-new-feed-layout .crt-load-more:hover{background:rgba(99,102,241,.35) !important;}
+
+    /* FOOTER */
+    .footer-nav{position:relative;z-index:10;border-top:1px solid rgba(255,255,255,.06);padding:2.5rem 1.5rem;margin-top:2rem;}
+    .footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
+    .footer-brand{display:flex;align-items:center;gap:.5rem;}
+    .footer-brand-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .footer-copy{font-size:.78rem;color:rgba(255,255,255,.3);}
+    .footer-links{display:flex;gap:1.5rem;}
+    .footer-links a{font-size:.78rem;color:rgba(255,255,255,.4);transition:color .2s;}
+    .footer-links a:hover{color:rgba(255,255,255,.75);}
+
+    @media(max-width:768px){
+      #nav .nav-links{display:none;}
+      .burger{display:flex;}
+      .hero h1{font-size:2.2rem;}
+      .hero-stats{gap:1.5rem;}
+      .channel-card{flex-direction:column;text-align:center;}
+      .channel-tags{justify-content:center;}
+      .channel-actions{justify-content:center;}
+      .footer-inner{flex-direction:column;text-align:center;}
+      .footer-links{justify-content:center;}
+    }
+    @media(max-width:480px){
+      .share-btns{grid-template-columns:1fr 1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- Progress bar -->
+<div id="progressBar"></div>
+
+<!-- Particle canvas -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- Share popup -->
+<div class="share-overlay" id="shareOverlay" onclick="closeShare()"></div>
+<div class="share-popup" id="sharePopup">
+  <div class="share-popup-hd">
+    <span class="share-popup-title">Share Divastra</span>
+    <button class="share-popup-close" onclick="closeShare()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="share-popup-url">divastra.github.io/video.html</div>
+  <div class="share-btns">
+    <a class="share-btn" href="https://wa.me/?text=Watch%20JEE%20videos%20by%20Prabhat%20Ranjan%20on%20Divastra%3A%20https%3A%2F%2Fdivastra.github.io%2Fvideo.html" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="color:#25D366"></i>WhatsApp</a>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?text=Watch%20JEE%20videos%20by%20Prabhat%20Ranjan%20on%20Divastra%20%F0%9F%8E%AF&url=https%3A%2F%2Fdivastra.github.io%2Fvideo.html" target="_blank" rel="noopener"><i class="fab fa-twitter" style="color:#1DA1F2"></i>Twitter</a>
+    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdivastra.github.io%2Fvideo.html" target="_blank" rel="noopener"><i class="fab fa-linkedin" style="color:#0A66C2"></i>LinkedIn</a>
+    <a class="share-btn" href="https://t.me/share/url?url=https%3A%2F%2Fdivastra.github.io%2Fvideo.html&text=Watch%20JEE%20videos%20by%20Prabhat%20Ranjan%20on%20Divastra" target="_blank" rel="noopener"><i class="fab fa-telegram" style="color:#2CA5E0"></i>Telegram</a>
+    <button class="share-btn" onclick="copyShareLink()"><i class="fas fa-link" style="color:var(--brand-l)"></i>Copy Link</button>
+    <a class="share-btn" href="https://www.instagram.com/itsprabhatranjan/" target="_blank" rel="noopener"><i class="fab fa-instagram" style="color:#E1306C"></i>Instagram</a>
+  </div>
+  <p class="share-hint">Right-click · Ctrl key · Long-press to share ✨</p>
+</div>
+
+<!-- Mobile nav -->
+<div class="mob" id="mobNav">
+  <div class="mob-head">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.svg" alt="Divastra" class="nav-logo-img">
+      <span class="nav-logo-name">Divastra</span>
+    </a>
+    <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mob-items">
+    <li><a href="counselling.html"><i class="fas fa-user-tie"></i>Counselling</a></li>
+    <li><a href="rankPredictor.html"><i class="fas fa-chart-line"></i>Predictor</a></li>
+    <li><a href="books.html"><i class="fas fa-book"></i>Books</a></li>
+    <li><a href="video.html"><i class="fas fa-play-circle"></i>Videos</a></li>
+  </ul>
+</div>
+
+<!-- Nav -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.svg" alt="Divastra logo" class="nav-logo-img">
+    <span class="nav-logo-name">Divastra</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="counselling.html"><i class="fas fa-user-tie"></i> Counselling</a></li>
+    <li><a href="rankPredictor.html"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="books.html"><i class="fas fa-book"></i> Books</a></li>
+    <li><a href="video.html" class="active"><i class="fas fa-play-circle"></i> Videos</a></li>
+  </ul>
+  <button class="burger" onclick="openMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Back to top -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge reveal"><i class="fab fa-youtube"></i> YouTube Video Hub</div>
+  <h1 class="reveal d1">Watch & Learn,<br><span class="grad-text">Zero Distractions.</span></h1>
+  <p class="reveal d2">JEE strategy, 300+ college reviews, 100+ book reviews, and mentorship sessions — all by Prabhat Ranjan, directly inside Divastra.</p>
+  <div class="hero-stats reveal d2">
+    <div class="hero-stat">
+      <span class="hero-stat-val grad-text">35k+</span>
+      <span class="hero-stat-lbl">Subscribers</span>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-val grad-text">1Cr+</span>
+      <span class="hero-stat-lbl">Total Views</span>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-val grad-text">400+</span>
+      <span class="hero-stat-lbl">Videos</span>
+    </div>
+  </div>
+  <div class="hero-ctas reveal d3">
+    <a class="btn-yt" href="https://www.youtube.com/@iam_prabhatranjan" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Watch on YouTube</a>
+    <button class="btn-outline" onclick="document.getElementById('feedAnchor').scrollIntoView({behavior:'smooth'})"><i class="fas fa-play"></i> Browse Videos</button>
+  </div>
+</section>
+
+<!-- Channel Banner -->
+<div class="channel-banner reveal">
+  <div class="channel-card">
+    <div class="channel-avatar">🎓</div>
+    <div class="channel-info">
+      <div class="channel-name">Prabhat Ranjan</div>
+      <div class="channel-handle">@iam_prabhatranjan &nbsp;·&nbsp; NIT Jamshedpur, Mechanical Engineering</div>
+      <div class="channel-tags">
+        <span class="channel-tag">IIT JEE Tips</span>
+        <span class="channel-tag">300+ College Reviews</span>
+        <span class="channel-tag">100+ Book Reviews</span>
+        <span class="channel-tag">JEE Counselling</span>
+        <span class="channel-tag">JEE Maths</span>
+      </div>
+    </div>
+    <div class="channel-actions">
+      <a class="btn-subscribe" href="https://www.youtube.com/@iam_prabhatranjan?sub_confirmation=1" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Subscribe Free</a>
+      <a class="btn-outline" href="https://www.youtube.com/@iam_prabhatranjan/videos" target="_blank" rel="noopener" style="font-size:.85rem;padding:.6rem 1.2rem;"><i class="fas fa-film"></i> All Videos</a>
+    </div>
+  </div>
+</div>
+
+<!-- Curator.io Feed -->
+<div class="feed-section" id="feedAnchor">
+  <div class="feed-hd reveal">
+    <div class="feed-hd-icon"><i class="fab fa-youtube"></i></div>
+    <span class="feed-hd-title">Latest Videos</span>
+    <span class="feed-hd-sub">Auto-updated from YouTube · Powered by Curator.io</span>
+  </div>
+
+  <!-- curator.io embed — feed ID: 5870c8be-9785-4b76-b056-706ba2ed9303 -->
+  <div id="curator-feed-new-feed-layout">
+    <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
+  </div>
+  <script type="text/javascript">
+    /* curator-feed-new-feed-layout */
+    (function(){
+      var i,e,d=document,s='script';
+      i=d.createElement(s); i.async=1; i.charset='UTF-8';
+      i.src='https://cdn.curator.io/published/5870c8be-9785-4b76-b056-706ba2ed9303.js';
+      e=d.getElementsByTagName(s)[0]; e.parentNode.insertBefore(i,e);
+    })();
+  </script>
+</div>
+
+<!-- Footer -->
+<footer class="footer-nav">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.svg" alt="Divastra" style="width:22px;pointer-events:none;">
+      <span class="footer-brand-name">Divastra</span>
+    </div>
+    <span class="footer-copy">© 2024 Prabhat Ranjan · NIT Jamshedpur</span>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@iam_prabhatranjan" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/itsprabhatranjan/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="counselling.html">Counselling</a>
+      <a href="books.html">Books</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── SHARE ── */
+function openShare(e){
+  const popup=document.getElementById('sharePopup'),overlay=document.getElementById('shareOverlay');
+  const pw=318,ph=300;
+  let left=(e?e.clientX:window.innerWidth/2)-pw/2, top=(e?e.clientY:window.innerHeight/2)+10;
+  left=Math.max(10,Math.min(left,window.innerWidth-pw-10));
+  top=Math.max(10,Math.min(top,window.innerHeight-ph-10));
+  popup.style.left=left+'px'; popup.style.top=top+'px';
+  overlay.classList.add('show'); popup.classList.add('show');
+}
+function closeShare(){
+  document.getElementById('sharePopup').classList.remove('show');
+  document.getElementById('shareOverlay').classList.remove('show');
+}
+function copyShareLink(){
+  navigator.clipboard.writeText('https://divastra.github.io/video.html').then(()=>{
+    const btn=document.querySelector('.share-copy-btn');
+    if(btn){const t=btn.innerHTML;btn.innerHTML='<i class="fas fa-check"></i> Copied!';setTimeout(()=>btn.innerHTML=t,2000);}
+  });
+}
+
+/* ── NAV ── */
+function openMob(){document.getElementById('mobNav').classList.add('open');}
+function closeMob(){document.getElementById('mobNav').classList.remove('open');}
+
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  document.getElementById('nav').classList.toggle('solid',y>40);
+  document.getElementById('backTop').classList.toggle('show',y>300);
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('progressBar').style.width=(h>0?(y/h*100):0)+'%';
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-60) el.classList.add('show');
+  });
+},{passive:true});
+
+/* ── CURSOR ── */
+const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';},{passive:true});
+(function ac(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ac);})();
+
+/* ── APP LOCKS ── */
+document.addEventListener('contextmenu',e=>{e.preventDefault();openShare(e);});
+document.addEventListener('keydown',e=>{
+  if(e.ctrlKey||e.metaKey){
+    if(e.key==='Control'||e.key==='Meta') return;
+    if(e.key==='c'||e.key==='x'||e.key==='v') return;
+    e.preventDefault();
+    if(!e.shiftKey&&!e.altKey) openShare(e);
+  }
+  if(e.key&&e.key.startsWith('F')&&e.key.length<=3) e.preventDefault();
+  if(e.altKey) e.preventDefault();
+},true);
+let lpt;
+document.addEventListener('touchstart',()=>{lpt=setTimeout(()=>openShare(),600);},{passive:true});
+document.addEventListener('touchend',()=>clearTimeout(lpt),{passive:true});
+document.addEventListener('touchmove',()=>clearTimeout(lpt),{passive:true});
+
+/* ── PARTICLES ── */
+(function(){
+  const canvas=document.getElementById('particle-canvas'),ctx=canvas.getContext('2d');
+  let W,H;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  resize(); window.addEventListener('resize',resize,{passive:true});
+  class P{
+    constructor(){this.reset(true);}
+    reset(init){this.x=Math.random()*W;this.y=init?Math.random()*H:H+10;this.r=Math.random()*2.2+.5;this.sp=Math.random()*.35+.08;this.op=Math.random()*.45+.05;this.dx=(Math.random()-.5)*.3;}
+    update(){this.y-=this.sp;this.x+=this.dx;if(this.y<-10)this.reset(false);}
+    draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${this.op})`;ctx.fill();}
+  }
+  const particles=Array.from({length:110},()=>new P());
+  const ripples=[],shockwaves=[],tempBubbles=[];
+  let gcp=0;
+  document.addEventListener('click',e=>{
+    const x=e.clientX,y=e.clientY;
+    ripples.push({x,y,r:0,op:.7,max:80});
+    shockwaves.push({x,y,r:0,op:.5,max:120});
+    gcp=1;
+    for(let i=0;i<8;i++){const a=Math.random()*Math.PI*2,sp=Math.random()*3+1;tempBubbles.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,r:Math.random()*3+1,op:.8,life:1});}
+  });
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{p.update();p.draw();});
+    ripples.forEach((rp,i)=>{rp.r+=3;rp.op-=.025;ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.strokeStyle=`rgba(99,102,241,${rp.op})`;ctx.lineWidth=1.5;ctx.stroke();if(rp.op<=0)ripples.splice(i,1);});
+    shockwaves.forEach((sw,i)=>{sw.r+=5;sw.op-=.015;ctx.beginPath();ctx.arc(sw.x,sw.y,sw.r,0,Math.PI*2);ctx.strokeStyle=`rgba(34,211,238,${sw.op})`;ctx.lineWidth=1;ctx.stroke();if(sw.op<=0)shockwaves.splice(i,1);});
+    tempBubbles.forEach((tb,i)=>{tb.x+=tb.vx;tb.y+=tb.vy;tb.vy+=.06;tb.op-=.02;tb.life-=.02;ctx.beginPath();ctx.arc(tb.x,tb.y,tb.r,0,Math.PI*2);ctx.fillStyle=`rgba(139,92,246,${tb.op})`;ctx.fill();if(tb.life<=0)tempBubbles.splice(i,1);});
+    if(gcp>0){ctx.fillStyle=`rgba(99,102,241,${gcp*.04})`;ctx.fillRect(0,0,W,H);gcp-=.05;}
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+window.dispatchEvent(new Event('scroll'));
+</script>
+</body>
+</html>

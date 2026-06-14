@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Icon Generator</title></head>
+<body>
+<div id="status">Generating icons...</div>
+<script>
+async function renderIcon(size) {
+  return new Promise((resolve) => {
+    const canvas = document.createElement('canvas');
+    canvas.width = size; canvas.height = size;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#06000e';
+    ctx.fillRect(0, 0, size, size);
+    const img = new Image();
+    img.onload = () => {
+      const pad = size * 0.12;
+      ctx.drawImage(img, pad, pad, size - pad * 2, size - pad * 2);
+      resolve(canvas.toDataURL('image/png').split(',')[1]); // base64 only
+    };
+    img.onerror = () => resolve(null);
+    img.src = '/logo.svg';
+  });
+}
+
+// Map: filename -> size
+const ICONS = {
+  'android-icon-36x36.png':   36,
+  'android-icon-48x48.png':   48,
+  'android-icon-72x72.png':   72,
+  'android-icon-96x96.png':   96,
+  'android-icon-144x144.png': 144,
+  'android-icon-192x192.png': 192,
+  'android-icon-512x512.png': 512,
+  'apple-icon-57x57.png':   57,
+  'apple-icon-60x60.png':   60,
+  'apple-icon-72x72.png':   72,
+  'apple-icon-76x76.png':   76,
+  'apple-icon-114x114.png': 114,
+  'apple-icon-120x120.png': 120,
+  'apple-icon-144x144.png': 144,
+  'apple-icon-152x152.png': 152,
+  'apple-icon-180x180.png': 180,
+  'apple-icon.png':         180,
+  'ms-icon-70x70.png':   70,
+  'ms-icon-144x144.png': 144,
+  'ms-icon-150x150.png': 150,
+  'ms-icon-310x310.png': 310,
+  'favicon-16x16.png': 16,
+  'favicon-32x32.png': 32,
+  'favicon-96x96.png': 96
+};
+
+(async () => {
+  // Pre-render unique sizes
+  const cache = {};
+  for (const [name, size] of Object.entries(ICONS)) {
+    if (!cache[size]) cache[size] = await renderIcon(size);
+  }
+
+  // POST each file to the save endpoint
+  const results = [];
+  for (const [name, size] of Object.entries(ICONS)) {
+    const b64 = cache[size];
+    if (!b64) { results.push(`FAIL: ${name}`); continue; }
+    try {
+      const r = await fetch('/save-icon', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ name, data: b64 })
+      });
+      const txt = await r.text();
+      results.push(`${txt}: ${name}`);
+    } catch(e) {
+      results.push(`ERROR: ${name} — ${e.message}`);
+    }
+  }
+  document.getElementById('status').innerText = results.join('\n');
+  window._done = true;
+  window._results = results;
+})();
+</script>
+</body>
+</html>

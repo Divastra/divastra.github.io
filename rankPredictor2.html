@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>JEE Main 2026 Rank Predictor – Free Percentile to Rank Calculator | Divastra by Prabhat Ranjan</title>
+  <meta name="description" content="Free JEE Main 2026 Rank Predictor by Prabhat Ranjan (NIT Jamshedpur). Convert your percentile to rank instantly using NTA's official formula. Supports difficulty adjustment for Very Easy to Very Hard papers. Share your predicted rank with friends.">
+  <meta name="keywords" content="JEE Main rank predictor, JEE Main 2026 rank predictor, JEE percentile to rank, JEE rank calculator, NTA rank formula, JEE Main rank estimator, JEE rank predictor free, Divastra rank predictor, Prabhat Ranjan rank predictor">
+  <meta name="author" content="Prabhat Ranjan">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://divastra.github.io/rankPredictor.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://divastra.github.io/rankPredictor.html">
+  <meta property="og:site_name"   content="Divastra">
+  <meta property="og:title"       content="JEE Main 2026 Rank Predictor – Free | Divastra">
+  <meta property="og:description" content="Instantly predict your JEE Main rank from percentile. Built by Prabhat Ranjan (NIT Jamshedpur). Free, no sign-up.">
+  <meta property="og:image"       content="https://divastra.github.io/assets/img/thumbnail1.png">
+  <meta property="og:locale"      content="en_IN">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="JEE Main 2026 Rank Predictor – Divastra">
+  <meta name="twitter:image"      content="https://divastra.github.io/assets/img/thumbnail1.png">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ══════════════════════════════════════
+       ROOT TOKENS + RESET
+    ══════════════════════════════════════ */
+    :root{
+      --brand:#6366f1; --brand-l:#818cf8; --violet:#8b5cf6; --cyan:#22d3ee;
+      --bg:#06000e; --border:rgba(255,255,255,0.07);
+      --grad:linear-gradient(135deg,#6366f1,#8b5cf6,#22d3ee);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;overflow-x:hidden;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:white;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%;}
+    a{text-decoration:none;color:inherit;}
+
+    /* App-like: no selection, no drag */
+    *,*::before,*::after{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none;}
+    input,textarea,select,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;user-select:text;}
+    img{-webkit-user-drag:none;user-drag:none;pointer-events:none;}
+    a img,button img{pointer-events:auto;}
+
+    /* Background orbs */
+    body::before{
+      content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 20%,rgba(99,102,241,.1),transparent),
+        radial-gradient(ellipse 55% 45% at 80% 70%,rgba(34,211,238,.08),transparent),
+        radial-gradient(ellipse 40% 35% at 50% 100%,rgba(139,92,246,.07),transparent);
+    }
+
+    /* Particle canvas */
+    #particle-canvas{position:fixed;inset:0;z-index:1;pointer-events:none;}
+
+    /* Custom cursor */
+    .cur-dot{position:fixed;width:8px;height:8px;border-radius:50%;background:white;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,background .2s;mix-blend-mode:difference;}
+    .cur-ring{position:fixed;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .22s,height .22s,border-color .22s,opacity .22s;mix-blend-mode:difference;}
+    body:has(a:hover) .cur-ring,body:has(button:hover) .cur-ring{width:48px;height:48px;border-color:rgba(255,255,255,.8);}
+
+    /* Progress bar */
+    #progressBar{position:fixed;top:0;left:0;height:2.5px;z-index:9001;width:0%;background:linear-gradient(90deg,#6366f1,#8b5cf6,#22d3ee);transition:width .1s;border-radius:0 2px 2px 0;box-shadow:0 0 8px rgba(99,102,241,.7);}
+
+    /* Scroll-reveal */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+    /* Gradient shimmer text */
+    .grad-text{
+      background:linear-gradient(90deg,#6366f1 0%,#8b5cf6 20%,#22d3ee 45%,#a5b4fc 55%,#22d3ee 70%,#8b5cf6 85%,#6366f1 100%);
+      background-size:200% auto;
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+      animation:gradShimmer 4s linear infinite;
+    }
+    @keyframes gradShimmer{0%{background-position:0% center}100%{background-position:200% center}}
+
+    /* ── NAVBAR ── */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s;}
+    #nav.solid{background:rgba(6,0,14,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid var(--border);padding:.7rem 2rem;}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;}
+    .nav-logo-img{width:30px;height:auto;transition:transform .3s;}
+    .nav-logo:hover .nav-logo-img{transform:scale(1.12) rotate(-5deg);}
+    .nav-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.3px;}
+    .nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;}
+    .nav-links a{display:flex;align-items:center;gap:.3rem;padding:.45rem .8rem;color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;border-radius:8px;transition:color .2s,background .2s;position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:2px;left:.8rem;right:.8rem;height:1.5px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;border-radius:2px;}
+    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+    .nav-links a i{font-size:.72rem;}
+    .nav-links a:hover{color:white;background:rgba(255,255,255,.08);}
+    .nav-links a.active{color:#22d3ee;}
+    .burger{display:none;flex-direction:column;gap:5px;padding:8px 10px;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:8px;cursor:pointer;}
+    .burger span{display:block;width:20px;height:2px;background:white;border-radius:2px;}
+
+    /* Mobile nav */
+    .mob{position:fixed;inset:0;z-index:600;background:rgba(6,0,14,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s;}
+    .mob.open{opacity:1;pointer-events:all;}
+    .mob-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem;}
+    .mob-close{width:38px;height:38px;background:rgba(255,255,255,.08);border:none;border-radius:8px;color:white;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .mob-items{list-style:none;display:flex;flex-direction:column;gap:.3rem;}
+    .mob-items a{display:flex;align-items:center;gap:.85rem;padding:.9rem 1rem;color:rgba(255,255,255,.7);font-size:1rem;font-weight:600;border-radius:10px;transition:all .2s;}
+    .mob-items a i{color:var(--brand-l);width:20px;text-align:center;}
+    .mob-items a:hover{color:white;background:rgba(255,255,255,.06);}
+
+    /* Back-to-top */
+    #backTop{position:fixed;bottom:2rem;right:1.5rem;z-index:500;width:44px;height:44px;border-radius:14px;background:rgba(99,102,241,.18);border:1px solid rgba(99,102,241,.3);color:var(--brand-l);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s,background .2s;pointer-events:none;}
+    #backTop.show{opacity:1;transform:translateY(0);pointer-events:all;}
+    #backTop:hover{background:rgba(99,102,241,.3);}
+
+    /* Share overlay + popup */
+    .share-overlay{position:fixed;inset:0;z-index:800;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .25s;}
+    .share-overlay.show{opacity:1;pointer-events:all;}
+    .share-popup{position:fixed;z-index:801;width:318px;background:rgba(14,10,30,.96);border:1px solid rgba(99,102,241,.28);border-radius:20px;padding:1.4rem 1.35rem 1.2rem;box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);opacity:0;transform:scale(.9) translateY(6px);pointer-events:none;transition:opacity .25s,transform .25s;}
+    .share-popup.show{opacity:1;transform:scale(1) translateY(0);pointer-events:all;}
+    .share-popup-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+    .share-popup-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;display:flex;align-items:center;gap:.5rem;color:#a5b4fc;}
+    .share-popup-close{width:30px;height:30px;background:rgba(255,255,255,.07);border:none;border-radius:7px;color:rgba(255,255,255,.5);cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;}
+    .share-popup-close:hover{background:rgba(255,255,255,.13);color:white;}
+    .share-popup-url{font-size:.73rem;color:rgba(255,255,255,.28);margin-bottom:1rem;padding:.4rem .7rem;background:rgba(255,255,255,.04);border-radius:7px;font-family:monospace;letter-spacing:.3px;}
+    .share-btns{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+    .share-btn{display:flex;align-items:center;justify-content:center;gap:.42rem;padding:.6rem .7rem;border-radius:10px;font-size:.78rem;font-weight:700;cursor:pointer;border:1px solid;transition:background .2s,box-shadow .2s;}
+    .share-wa{background:rgba(37,211,102,.12);border-color:rgba(37,211,102,.25);color:#25d366;}
+    .share-wa:hover{background:rgba(37,211,102,.22);box-shadow:0 6px 18px rgba(37,211,102,.18);}
+    .share-tw{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.8);}
+    .share-tw:hover{background:rgba(255,255,255,.14);box-shadow:0 6px 18px rgba(255,255,255,.08);}
+    .share-li{background:rgba(10,102,194,.12);border-color:rgba(10,102,194,.25);color:#0a66c2;}
+    .share-li:hover{background:rgba(10,102,194,.22);box-shadow:0 6px 18px rgba(10,102,194,.18);}
+    .share-tg{background:rgba(0,136,204,.12);border-color:rgba(0,136,204,.25);color:#0088cc;}
+    .share-tg:hover{background:rgba(0,136,204,.22);box-shadow:0 6px 18px rgba(0,136,204,.18);}
+    .share-copy{grid-column:1/-1;background:rgba(99,102,241,.14);border-color:rgba(99,102,241,.28);color:#a5b4fc;}
+    .share-copy:hover{background:rgba(99,102,241,.24);box-shadow:0 6px 18px rgba(99,102,241,.2);}
+    .share-copy.copied{background:rgba(34,197,94,.18)!important;border-color:rgba(34,197,94,.35)!important;color:#4ade80!important;}
+    .share-ig{grid-column:1/-1;background:rgba(225,48,108,.12);border-color:rgba(225,48,108,.25);color:#e1306c;}
+    .share-ig:hover{background:rgba(225,48,108,.22);box-shadow:0 6px 18px rgba(225,48,108,.18);}
+    .share-hint{margin-top:.85rem;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.07);font-size:.66rem;color:rgba(255,255,255,.2);text-align:center;letter-spacing:.3px;}
+
+    /* ── PAGE ── */
+    .page{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;}
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero{
+      width:100%;max-width:860px;
+      padding:7.5rem 1.5rem 3.5rem;
+      text-align:center;
+      display:flex;flex-direction:column;align-items:center;
+      position:relative;
+    }
+    .hero::before{
+      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:700px;height:500px;border-radius:50%;pointer-events:none;z-index:-1;
+      background:radial-gradient(ellipse at center,rgba(99,102,241,.1) 0%,rgba(34,211,238,.05) 45%,transparent 70%);
+      animation:heroGlow 5s ease-in-out infinite;
+    }
+    @keyframes heroGlow{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.35rem .95rem;
+      background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.25);
+      border-radius:100px;color:#22d3ee;
+      font-size:.76rem;font-weight:700;letter-spacing:.7px;text-transform:uppercase;
+      margin-bottom:1.6rem;
+      animation:badgeBob 4.4s ease-in-out .6s infinite;
+    }
+    .badge-dot{width:6px;height:6px;background:#22d3ee;border-radius:50%;animation:blinkDot 2.2s ease-in-out infinite;box-shadow:0 0 8px rgba(34,211,238,.7);}
+    @keyframes blinkDot{0%,100%{opacity:1}50%{opacity:.25}}
+    @keyframes badgeBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .hero-title{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(2.2rem,5.5vw,3.6rem);
+      font-weight:900;line-height:1.08;letter-spacing:-2px;margin-bottom:1.2rem;
+    }
+    .hero-desc{color:rgba(255,255,255,.5);font-size:1rem;line-height:1.78;max-width:520px;margin-bottom:1.8rem;}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;}
+    .pill{display:inline-flex;align-items:center;gap:.42rem;padding:.4rem .95rem;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:100px;font-size:.79rem;font-weight:600;color:rgba(255,255,255,.72);transition:transform .22s,box-shadow .22s,border-color .22s,background .22s;}
+    .pill:hover{transform:translateY(-4px) scale(1.06);border-color:rgba(255,255,255,.2);box-shadow:0 8px 22px rgba(99,102,241,.22);}
+    .pill-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+    .pd-b{background:linear-gradient(135deg,#6366f1,#22d3ee);}
+    .pd-g{background:#22c55e;}
+    .pd-y{background:#fbbf24;}
+    .pd-c{background:#22d3ee;}
+
+    /* ══════════════════════════════════════
+       REPORT CARD (shown via shared URL)
+    ══════════════════════════════════════ */
+    .report-section{
+      width:100%;max-width:680px;
+      padding:0 1.5rem 3.5rem;
+      display:none; /* shown by JS when URL has rank params */
+    }
+    .report-section.visible{display:block;}
+    .report-card{
+      position:relative;
+      border-radius:28px;
+      overflow:hidden;
+      background:rgba(6,0,14,.85);
+      border:1px solid rgba(99,102,241,.25);
+      box-shadow:0 32px 80px -12px rgba(99,102,241,.3),0 0 0 1px rgba(255,255,255,.04);
+    }
+    /* Animated top gradient bar */
+    .report-bar{
+      height:4px;
+      background:linear-gradient(90deg,#6366f1,#8b5cf6,#22d3ee,#fbbf24,#f97316,#22d3ee,#6366f1);
+      background-size:300% 100%;
+      animation:barShift 4s linear infinite;
+    }
+    @keyframes barShift{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+    .report-inner{padding:2.2rem 2rem 2rem;}
+    .report-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.8rem;flex-wrap:wrap;gap:1rem;}
+    .report-logo{display:flex;align-items:center;gap:.55rem;}
+    .report-logo-img{width:26px;height:auto;}
+    .report-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .report-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .75rem;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.22);border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#22d3ee;}
+    .report-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.85rem;font-weight:900;letter-spacing:-.5px;margin-bottom:.3rem;line-height:1.1;}
+    .report-name-label{font-size:.72rem;color:rgba(255,255,255,.32);font-weight:600;letter-spacing:.8px;text-transform:uppercase;margin-bottom:.25rem;}
+    .report-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(99,102,241,.3),rgba(34,211,238,.2),transparent);margin:1.5rem 0;}
+    .report-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem;}
+    .report-stat{
+      padding:1.1rem .9rem;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:16px;
+      text-align:center;
+    }
+    .report-stat-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:900;line-height:1;margin-bottom:.35rem;}
+    .report-stat-val.blue{background:linear-gradient(135deg,#6366f1,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .report-stat-val.cyan{background:linear-gradient(135deg,#22d3ee,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .report-stat-val.amber{background:linear-gradient(135deg,#fbbf24,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .report-stat-lbl{font-size:.68rem;color:rgba(255,255,255,.32);font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+    .report-meta{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.6rem;}
+    .report-meta-chip{display:flex;align-items:center;gap:.4rem;padding:.3rem .75rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:100px;font-size:.74rem;color:rgba(255,255,255,.55);font-weight:500;}
+    .report-meta-chip i{font-size:.65rem;color:var(--brand-l);}
+    .report-zone{
+      display:flex;align-items:center;gap:.75rem;
+      padding:1rem 1.2rem;
+      border-radius:14px;
+      background:rgba(99,102,241,.08);
+      border:1px solid rgba(99,102,241,.2);
+      margin-bottom:1.5rem;
+    }
+    .report-zone-icon{font-size:1.5rem;}
+    .report-zone-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;color:#a5b4fc;}
+    .report-zone-sub{font-size:.73rem;color:rgba(255,255,255,.35);margin-top:2px;}
+    .report-cta{
+      display:flex;align-items:center;justify-content:center;gap:.5rem;
+      width:100%;padding:.82rem 1.2rem;
+      background:linear-gradient(135deg,#6366f1,#8b5cf6);
+      color:white;font-weight:700;font-size:.9rem;
+      border-radius:12px;border:none;cursor:pointer;
+      transition:opacity .25s,transform .25s;
+      box-shadow:0 6px 22px rgba(99,102,241,.4);
+    }
+    .report-cta:hover{opacity:.88;transform:translateY(-2px);}
+    .report-footer-note{margin-top:1rem;text-align:center;font-size:.69rem;color:rgba(255,255,255,.2);line-height:1.6;}
+
+    /* ══════════════════════════════════════
+       ROTATING RING WRAPPER
+    ══════════════════════════════════════ */
+    @property --ba{syntax:'<angle>';initial-value:0deg;inherits:false;}
+    .ring-wrap{
+      position:relative;
+      width:100%;
+      padding:14px;
+      border-radius:28px;
+    }
+    .ring-wrap::before{
+      content:'';position:absolute;inset:0;border-radius:28px;padding:4px;
+      background:conic-gradient(
+        from var(--ba),
+        #6366f1  0%, #8b5cf6 12%, #fbbf24 24%, #f97316 34%,
+        #22d3ee 46%, #67e8f9 54%, #22d3ee 64%, #f97316 74%,
+        #fbbf24 82%, #8b5cf6 90%, #6366f1 100%
+      );
+      -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;mask-composite:exclude;
+      animation:spinBorder 5s linear infinite;
+      pointer-events:none;z-index:1;
+    }
+    .ring-wrap::after{
+      content:'';position:absolute;inset:0;border-radius:28px;pointer-events:none;z-index:0;
+      background:conic-gradient(
+        from var(--ba),
+        rgba(99,102,241,.12)  0%, rgba(139,92,246,.09) 14%,
+        rgba(251,191,36,.09) 24%, rgba(249,115,22,.11) 34%,
+        rgba(34,211,238,.10) 48%, rgba(103,232,249,.07) 58%,
+        rgba(34,211,238,.09) 68%, rgba(139,92,246,.09) 82%,
+        rgba(99,102,241,.11) 100%
+      );
+      opacity:0;transition:opacity .45s ease;
+      animation:spinBorder 5s linear infinite;
+    }
+    .ring-wrap:hover::after{opacity:1;}
+    @keyframes spinBorder{to{--ba:360deg;}}
+    .ring-wrap>.predictor-card{position:relative;z-index:1;}
+
+    /* ══════════════════════════════════════
+       PREDICTOR SECTION
+    ══════════════════════════════════════ */
+    .predictor-section{
+      width:100%;max-width:740px;
+      padding:0 1.5rem 5rem;
+    }
+    .section-header{text-align:center;margin-bottom:2.2rem;}
+    .section-eyebrow{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .85rem;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);border-radius:100px;color:var(--brand-l);font-size:.7rem;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-bottom:1rem;}
+    .section-eyebrow i{font-size:.75rem;color:#22d3ee;}
+    .section-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:900;line-height:1.15;letter-spacing:-.8px;}
+    .section-sub{color:rgba(255,255,255,.4);font-size:.9rem;line-height:1.7;max-width:440px;margin:.5rem auto 0;}
+
+    /* ── Predictor Card ── */
+    .predictor-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      overflow:hidden;
+    }
+    .pred-card-top{
+      height:3px;
+      background:linear-gradient(90deg,#6366f1,#8b5cf6,#22d3ee,#6366f1);
+      background-size:300% 100%;
+      animation:barShift 4s linear infinite;
+    }
+    .pred-card-body{padding:2rem 2rem 1.75rem;}
+
+    /* Input groups */
+    .pred-label{display:block;font-size:.75rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.55rem;}
+    .pred-input-wrap{position:relative;margin-bottom:1.35rem;}
+    .pred-input-icon{
+      position:absolute;left:1rem;top:50%;transform:translateY(-50%);
+      color:rgba(255,255,255,.3);font-size:.85rem;pointer-events:none;
+      transition:color .2s;
+    }
+    .pred-input{
+      width:100%;
+      padding:.82rem 1rem .82rem 2.65rem;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:12px;
+      color:white;
+      font-size:.95rem;
+      font-family:'Inter',sans-serif;
+      transition:border-color .2s,background .2s,box-shadow .2s;
+      outline:none;
+    }
+    .pred-input:focus{
+      border-color:rgba(99,102,241,.55);
+      background:rgba(99,102,241,.07);
+      box-shadow:0 0 0 3px rgba(99,102,241,.12);
+    }
+    .pred-input::placeholder{color:rgba(255,255,255,.2);}
+    .pred-input:focus+.pred-input-focus-icon,
+    .pred-input-wrap:focus-within .pred-input-icon{color:var(--brand-l);}
+    select.pred-input{cursor:pointer;appearance:none;-webkit-appearance:none;}
+    select.pred-input option{background:#12091e;color:white;}
+    .pred-select-arrow{
+      position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+      color:rgba(255,255,255,.3);font-size:.75rem;pointer-events:none;
+    }
+
+    /* Two column layout for inputs */
+    .pred-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 1.2rem;}
+
+    /* Optional badge on name field */
+    .pred-optional{
+      font-size:.66rem;font-weight:600;letter-spacing:.4px;color:rgba(255,255,255,.25);
+      text-transform:uppercase;margin-left:.4rem;
+    }
+
+    /* Difficulty info chips */
+    .diff-info{
+      display:flex;flex-wrap:wrap;gap:.4rem;
+      margin-bottom:1.35rem;margin-top:-.6rem;
+    }
+    .diff-chip{
+      padding:.22rem .6rem;
+      border-radius:100px;
+      font-size:.68rem;font-weight:600;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.35);
+      transition:background .2s,border-color .2s,color .2s;
+      cursor:default;
+    }
+    .diff-chip.active-ve{background:rgba(34,211,238,.12);border-color:rgba(34,211,238,.28);color:#22d3ee;}
+    .diff-chip.active-e{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.28);color:#4ade80;}
+    .diff-chip.active-m{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.28);color:#fbbf24;}
+    .diff-chip.active-h{background:rgba(249,115,22,.12);border-color:rgba(249,115,22,.28);color:#fb923c;}
+    .diff-chip.active-vh{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.28);color:#f87171;}
+
+    /* Predict button */
+    .pred-btn{
+      width:100%;padding:.92rem 1.5rem;
+      background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#22d3ee 100%);
+      background-size:200% auto;
+      color:white;font-weight:800;font-size:1rem;
+      border-radius:14px;border:none;cursor:pointer;
+      transition:background-position .4s,transform .25s,box-shadow .25s,opacity .25s;
+      box-shadow:0 8px 28px rgba(99,102,241,.4);
+      display:flex;align-items:center;justify-content:center;gap:.55rem;
+      margin-top:.5rem;
+    }
+    .pred-btn:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 14px 36px rgba(99,102,241,.5);}
+    .pred-btn:active{transform:translateY(-1px);}
+    .pred-btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none;}
+    .pred-btn-arrow{transition:transform .25s;}
+    .pred-btn:hover .pred-btn-arrow{transform:translateX(4px);}
+
+    /* Results panel */
+    .pred-results{
+      margin-top:1.75rem;
+      padding-top:1.75rem;
+      border-top:1px solid rgba(255,255,255,.07);
+      display:none;
+    }
+    .pred-results.show{display:block;animation:resultSlide .5s cubic-bezier(.34,1.2,.64,1) both;}
+    @keyframes resultSlide{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .pred-results-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+    .pred-result-box{
+      padding:1.3rem 1rem;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      text-align:center;
+      transition:border-color .3s,background .3s;
+    }
+    .pred-result-box.highlight-rank{
+      background:rgba(99,102,241,.08);
+      border-color:rgba(99,102,241,.25);
+      box-shadow:0 8px 28px rgba(99,102,241,.15);
+    }
+    .pred-result-box.highlight-pct{
+      background:rgba(34,211,238,.06);
+      border-color:rgba(34,211,238,.2);
+      box-shadow:0 8px 28px rgba(34,211,238,.1);
+    }
+    .pred-result-lbl{font-size:.68rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:.55rem;}
+    .pred-result-val{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:2rem;font-weight:900;line-height:1;
+    }
+    .pred-result-val.blue{background:linear-gradient(135deg,#6366f1,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .pred-result-val.cyan{background:linear-gradient(135deg,#22d3ee,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .pred-result-sub{font-size:.72rem;color:rgba(255,255,255,.28);margin-top:.4rem;font-weight:500;}
+
+    /* Percentile bar */
+    .pct-bar-wrap{margin-bottom:1.2rem;}
+    .pct-bar-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;}
+    .pct-bar-label{font-size:.72rem;color:rgba(255,255,255,.35);font-weight:600;}
+    .pct-bar-val{font-size:.8rem;font-weight:700;color:#22d3ee;}
+    .pct-bar-track{height:7px;background:rgba(255,255,255,.06);border-radius:100px;overflow:hidden;}
+    .pct-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,#6366f1,#22d3ee);width:0%;transition:width 1s cubic-bezier(.4,0,.2,1);}
+
+    /* Zone badge */
+    .pred-zone{
+      display:flex;align-items:center;gap:.75rem;
+      padding:.9rem 1.1rem;
+      border-radius:14px;
+      margin-bottom:1.2rem;
+    }
+    .pred-zone-icon{font-size:1.4rem;flex-shrink:0;}
+    .pred-zone-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.9rem;}
+    .pred-zone-sub{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1px;}
+
+    /* Details row */
+    .pred-details-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.4rem;}
+    .pred-detail-chip{display:flex;align-items:center;gap:.38rem;padding:.28rem .75rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:100px;font-size:.73rem;color:rgba(255,255,255,.45);font-weight:500;}
+    .pred-detail-chip i{font-size:.62rem;color:var(--brand-l);}
+
+    /* Share result button */
+    .pred-share-btn{
+      width:100%;display:flex;align-items:center;justify-content:center;gap:.5rem;
+      padding:.78rem 1.2rem;
+      background:rgba(99,102,241,.14);
+      border:1px solid rgba(99,102,241,.28);
+      color:#a5b4fc;font-weight:700;font-size:.88rem;
+      border-radius:12px;cursor:pointer;
+      transition:background .25s,box-shadow .25s,transform .25s;
+    }
+    .pred-share-btn:hover{background:rgba(99,102,241,.24);box-shadow:0 8px 22px rgba(99,102,241,.2);transform:translateY(-2px);}
+    .pred-share-btn.copied{background:rgba(34,197,94,.14)!important;border-color:rgba(34,197,94,.3)!important;color:#4ade80!important;}
+
+    /* Disclaimer */
+    .pred-disclaimer{
+      margin-top:1.4rem;
+      padding:.85rem 1rem;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:12px;
+      font-size:.74rem;
+      color:rgba(255,255,255,.3);
+      line-height:1.65;
+      display:flex;align-items:flex-start;gap:.6rem;
+    }
+    .pred-disclaimer i{color:#fbbf24;font-size:.75rem;flex-shrink:0;margin-top:2px;}
+
+    /* Advanced toggle */
+    .pred-advanced-toggle{
+      display:flex;align-items:center;gap:.4rem;
+      font-size:.76rem;font-weight:600;color:rgba(255,255,255,.3);
+      cursor:pointer;margin-bottom:1rem;margin-top:-.3rem;
+      transition:color .2s;
+    }
+    .pred-advanced-toggle:hover{color:rgba(255,255,255,.55);}
+    .pred-advanced-toggle i{font-size:.68rem;transition:transform .25s;}
+    .pred-advanced-toggle.open i{transform:rotate(180deg);}
+    .pred-advanced{display:none;}
+    .pred-advanced.open{display:block;}
+
+    /* ══════════════════════════════════════
+       ABOUT SECTION
+    ══════════════════════════════════════ */
+    .about-section{
+      width:100%;max-width:740px;
+      padding:0 1.5rem 3rem;
+    }
+    .about-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:20px;
+      padding:1.6rem 1.8rem;
+      display:flex;align-items:flex-start;gap:1.2rem;
+    }
+    .about-avatar{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#6366f1,#22d3ee);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:.95rem;border:2px solid rgba(99,102,241,.3);}
+    .about-photo{width:52px;height:52px;border-radius:50%;flex-shrink:0;object-fit:cover;border:2px solid rgba(34,211,238,.35);}
+    .about-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;margin-bottom:.25rem;}
+    .about-cred{font-size:.78rem;color:rgba(255,255,255,.38);margin-bottom:.7rem;}
+    .about-text{font-size:.83rem;color:rgba(255,255,255,.42);line-height:1.7;}
+    .about-links{display:flex;gap:.55rem;margin-top:.85rem;flex-wrap:wrap;}
+    .about-link{display:flex;align-items:center;gap:.35rem;padding:.3rem .75rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:100px;font-size:.74rem;color:rgba(255,255,255,.6);font-weight:600;transition:background .2s,color .2s;}
+    .about-link:hover{background:rgba(255,255,255,.1);color:white;}
+    .about-link i{font-size:.7rem;}
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer{
+      width:100%;max-width:860px;
+      padding:2rem 1.5rem 2.5rem;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .footer-nav-links{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-bottom:1.2rem;}
+    .footer-nav-links a{font-size:.82rem;color:rgba(255,255,255,.35);font-weight:500;transition:color .2s;}
+    .footer-nav-links a:hover{color:rgba(255,255,255,.75);}
+    .footer-socials{display:flex;justify-content:center;gap:.65rem;margin-bottom:1rem;}
+    .soc-btn{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:background .2s,transform .2s;}
+    .soc-yt{background:rgba(255,0,0,.12);color:#ff4444;border:1px solid rgba(255,0,0,.2);}
+    .soc-yt:hover{background:rgba(255,0,0,.22);transform:translateY(-3px);}
+    .soc-ig{background:rgba(225,48,108,.12);color:#e1306c;border:1px solid rgba(225,48,108,.2);}
+    .soc-ig:hover{background:rgba(225,48,108,.22);transform:translateY(-3px);}
+    .soc-li{background:rgba(10,102,194,.12);color:#0a66c2;border:1px solid rgba(10,102,194,.2);}
+    .soc-li:hover{background:rgba(10,102,194,.22);transform:translateY(-3px);}
+    .footer-copy{font-size:.73rem;color:rgba(255,255,255,.18);}
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media(max-width:620px){
+      .nav-links{display:none;}.burger{display:flex;}
+      #nav{padding:.9rem 1.25rem;}#nav.solid{padding:.75rem 1.25rem;}
+      .hero{padding:6.5rem 1.25rem 3rem;}.hero-title{letter-spacing:-1.5px;}
+      .pred-grid{grid-template-columns:1fr;}
+      .pred-results-grid{grid-template-columns:1fr;}
+      .report-stats{grid-template-columns:1fr 1fr;}
+      .ring-wrap{padding:10px;}.ring-wrap::after{display:none;}
+      .about-card{flex-direction:column;gap:.85rem;}
+      .report-inner{padding:1.5rem 1.2rem;}
+    }
+    @media(max-width:420px){
+      .report-stats{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particle-canvas"></canvas>
+<div id="progressBar"></div>
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
+<button id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Share overlay + popup -->
+<div class="share-overlay" id="shareOverlay" onclick="closeShare()"></div>
+<div class="share-popup" id="sharePopup">
+  <div class="share-popup-hd">
+    <div class="share-popup-title"><i class="fas fa-share-nodes"></i> Share Divastra</div>
+    <button class="share-popup-close" onclick="closeShare()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="share-popup-url">divastra.github.io</div>
+  <div class="share-btns">
+    <a id="shareWa" class="share-btn share-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a id="shareTw" class="share-btn share-tw" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> Twitter</a>
+    <a id="shareLi" class="share-btn share-li" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    <a id="shareTg" class="share-btn share-tg" target="_blank" rel="noopener"><i class="fab fa-telegram"></i> Telegram</a>
+    <button class="share-btn share-copy" onclick="copyShareLink()"><i class="fas fa-link"></i> Copy Link</button>
+    <a class="share-btn share-ig" href="https://www.instagram.com/itsprabhatranjan" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
+  <div class="share-hint">Right-click · Ctrl key · Long-press to share ✨</div>
+</div>
+
+<!-- Mobile nav -->
+<div class="mob" id="mobNav">
+  <div class="mob-head">
+    <div class="nav-logo">
+      <img src="logo.svg" class="nav-logo-img" alt="Divastra">
+      <span class="nav-logo-name">Divastra</span>
+    </div>
+    <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mob-items">
+    <li><a href="counselling.html" onclick="closeMob()"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="rankPredictor.html" onclick="closeMob()"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html" onclick="closeMob()"><i class="fas fa-book-open"></i> Books</a></li>
+    <li><a href="https://divastra.github.io/video.html" onclick="closeMob()"><i class="fab fa-youtube"></i> Videos</a></li>
+  </ul>
+</div>
+
+<nav id="nav">
+  <a href="https://divastra.github.io/" class="nav-logo">
+    <img src="logo.svg" class="nav-logo-img" alt="Divastra logo">
+    <span class="nav-logo-name">Divastra</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="counselling.html"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="rankPredictor.html" class="active"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html"><i class="fas fa-book-open"></i> Books</a></li>
+    <li><a href="https://divastra.github.io/video.html"><i class="fab fa-youtube"></i> Videos</a></li>
+  </ul>
+  <div class="burger" onclick="openMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-badge reveal"><span class="badge-dot"></span> JEE Main 2026</div>
+    <h1 class="hero-title reveal d1">
+      Predict Your JEE<br>
+      <span class="grad-text">Rank Instantly</span>
+    </h1>
+    <p class="hero-desc reveal d2">
+      Enter your marks and paper difficulty — get your predicted rank and percentile using NTA's official formula. Built by Prabhat Ranjan, NIT Jamshedpur.
+    </p>
+    <div class="hero-pills reveal d3">
+      <span class="pill"><span class="pill-dot pd-b"></span>NTA Formula</span>
+      <span class="pill"><span class="pill-dot pd-g"></span>Difficulty Adjusted</span>
+      <span class="pill"><span class="pill-dot pd-y"></span>Shareable Results</span>
+      <span class="pill"><span class="pill-dot pd-c"></span>100% Free</span>
+    </div>
+  </section>
+
+  <!-- ══ REPORT CARD (shown only when URL has shared rank params) ══ -->
+  <section class="report-section reveal" id="reportSection">
+    <div class="section-header" style="margin-bottom:1.5rem;">
+      <div class="section-eyebrow"><i class="fas fa-trophy"></i>&nbsp;Shared Result</div>
+      <h2 class="section-title">Your Friend's <span class="grad-text">Rank Report</span></h2>
+      <p class="section-sub">Shared via Divastra Rank Predictor · Scroll down to predict yours →</p>
+    </div>
+    <div class="report-card">
+      <div class="report-bar"></div>
+      <div class="report-inner">
+        <div class="report-header">
+          <div class="report-logo">
+            <img src="logo.svg" class="report-logo-img" alt="Divastra"
+                 onerror="this.style.display='none'">
+            <span class="report-logo-name">Divastra</span>
+          </div>
+          <div class="report-badge"><i class="fas fa-chart-line"></i>&nbsp;JEE Main 2026 Prediction</div>
+        </div>
+        <div class="report-name-label">Student Name</div>
+        <div class="report-name" id="rcName">—</div>
+        <div class="report-divider"></div>
+        <div class="report-stats">
+          <div class="report-stat">
+            <div class="report-stat-val blue" id="rcRank">—</div>
+            <div class="report-stat-lbl">Predicted Rank</div>
+          </div>
+          <div class="report-stat">
+            <div class="report-stat-val cyan" id="rcPct">—</div>
+            <div class="report-stat-lbl">Percentile</div>
+          </div>
+          <div class="report-stat">
+            <div class="report-stat-val amber" id="rcMarks">—</div>
+            <div class="report-stat-lbl">Marks</div>
+          </div>
+        </div>
+        <div class="report-meta">
+          <div class="report-meta-chip"><i class="fas fa-gauge-high"></i><span id="rcDiff">—</span></div>
+          <div class="report-meta-chip"><i class="fas fa-users"></i><span id="rcCand">—</span></div>
+          <div class="report-meta-chip"><i class="fas fa-calendar"></i><span id="rcDate">—</span></div>
+        </div>
+        <div class="report-zone" id="rcZoneWrap">
+          <div class="report-zone-icon" id="rcZoneIcon">🎯</div>
+          <div>
+            <div class="report-zone-text" id="rcZoneName">—</div>
+            <div class="report-zone-sub" id="rcZoneSub">—</div>
+          </div>
+        </div>
+        <button class="report-cta" onclick="document.getElementById('predictorAnchor').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-calculator"></i> Predict My Own Rank Below
+        </button>
+        <p class="report-footer-note">Predictions are approximate and based on historical NTA data. Actual rank may vary.<br>Made with ❤️ by Divastra · <a href="https://divastra.github.io/" style="color:rgba(255,255,255,.3);text-decoration:underline">divastra.github.io</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PREDICTOR CARD ══ -->
+  <section class="predictor-section" id="predictorAnchor">
+    <div class="section-header reveal">
+      <div class="section-eyebrow"><i class="fas fa-calculator"></i>&nbsp;Rank Calculator</div>
+      <h2 class="section-title">Enter Your <span class="grad-text">Details</span></h2>
+      <p class="section-sub">Select difficulty level, enter marks, and hit predict.</p>
+    </div>
+
+    <div class="ring-wrap reveal d1">
+    <div class="predictor-card">
+      <div class="pred-card-top"></div>
+      <div class="pred-card-body">
+
+        <!-- ── Row 1: Difficulty + Marks ── -->
+        <div class="pred-grid">
+          <div>
+            <label class="pred-label" for="level">Paper Difficulty</label>
+            <div class="pred-input-wrap">
+              <i class="fas fa-sliders pred-input-icon"></i>
+              <select class="pred-input" id="level" name="level" onchange="handleDifficultyChange()">
+                <option value="" disabled selected>Select difficulty</option>
+                <option value="Very Easy">Very Easy</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+                <option value="Very Hard">Very Hard</option>
+              </select>
+              <i class="fas fa-chevron-down pred-select-arrow"></i>
+            </div>
+          </div>
+          <div>
+            <label class="pred-label" for="marks">Your Marks <span style="color:rgba(255,255,255,.18)">(out of 300)</span></label>
+            <div class="pred-input-wrap">
+              <i class="fas fa-pen pred-input-icon"></i>
+              <input type="number" class="pred-input" id="marks"
+                     placeholder="e.g. 185"
+                     min="-75" max="300" step="1"
+                     oninput="handleMarksInput()">
+            </div>
+          </div>
+        </div>
+
+        <!-- Difficulty info chips -->
+        <div class="diff-info" id="diffInfoRow">
+          <span class="diff-chip" id="dc-ve">⚡ Very Easy: +9% boost</span>
+          <span class="diff-chip" id="dc-e">✅ Easy: +5.2% boost</span>
+          <span class="diff-chip" id="dc-m">⚖️ Medium: ~neutral</span>
+          <span class="diff-chip" id="dc-h">🔥 Hard: −4.3% cut</span>
+          <span class="diff-chip" id="dc-vh">💀 Very Hard: −9% cut</span>
+        </div>
+
+        <!-- ── Row 2: Name (optional) ── -->
+        <div>
+          <label class="pred-label" for="studentName">Your Name <span class="pred-optional">optional · for sharing</span></label>
+          <div class="pred-input-wrap">
+            <i class="fas fa-user pred-input-icon"></i>
+            <input type="text" class="pred-input" id="studentName"
+                   placeholder="e.g. Arjun Sharma"
+                   maxlength="50">
+          </div>
+        </div>
+
+        <!-- ── Advanced: Candidates count ── -->
+        <div class="pred-advanced-toggle" id="advToggle" onclick="toggleAdvanced()">
+          <i class="fas fa-chevron-down"></i> Advanced options
+        </div>
+        <div class="pred-advanced" id="advPanel">
+          <label class="pred-label" for="candidates">Registered Candidates <span style="color:rgba(255,255,255,.18)">(default 16,00,000)</span></label>
+          <div class="pred-input-wrap">
+            <i class="fas fa-users pred-input-icon"></i>
+            <input type="number" class="pred-input" id="candidates"
+                   placeholder="1600000"
+                   value="1600000"
+                   min="100000" max="5000000">
+          </div>
+        </div>
+
+        <!-- ── Predict Button ── -->
+        <button class="pred-btn" id="predictBtn" onclick="score()" disabled>
+          <i class="fas fa-bolt"></i> Predict My Rank <i class="fas fa-arrow-right pred-btn-arrow"></i>
+        </button>
+
+        <!-- ══════════════════════════════════════
+             RESULTS PANEL
+             (Shown after score() runs)
+        ══════════════════════════════════════ -->
+        <div class="pred-results" id="resultsPanel">
+
+          <!-- Main result boxes -->
+          <div class="pred-results-grid">
+            <div class="pred-result-box highlight-rank">
+              <div class="pred-result-lbl"><i class="fas fa-ranking-star" style="margin-right:.3rem"></i>Predicted Rank</div>
+              <div class="pred-result-val blue" id="rankDisplay">—</div>
+              <div class="pred-result-sub" id="rankSubDisplay"></div>
+            </div>
+            <div class="pred-result-box highlight-pct">
+              <div class="pred-result-lbl"><i class="fas fa-percent" style="margin-right:.3rem"></i>Percentile</div>
+              <div class="pred-result-val cyan" id="pctDisplay">—</div>
+              <div class="pred-result-sub">NTA Score</div>
+            </div>
+          </div>
+
+          <!-- Percentile bar -->
+          <div class="pct-bar-wrap">
+            <div class="pct-bar-top">
+              <span class="pct-bar-label">Better than</span>
+              <span class="pct-bar-val" id="pctBarLabel">—% of students</span>
+            </div>
+            <div class="pct-bar-track"><div class="pct-bar-fill" id="pctBarFill"></div></div>
+          </div>
+
+          <!-- Zone badge -->
+          <div class="pred-zone" id="predZone">
+            <div class="pred-zone-icon" id="zoneIcon">🎯</div>
+            <div>
+              <div class="pred-zone-name" id="zoneName">—</div>
+              <div class="pred-zone-sub" id="zoneSub">—</div>
+            </div>
+          </div>
+
+          <!-- Details chips -->
+          <div class="pred-details-row" id="detailsRow"></div>
+
+          <!-- Share result button -->
+          <button class="pred-share-btn" id="shareResultBtn" onclick="shareResult()">
+            <i class="fas fa-share-nodes"></i> Share My Result with Friends
+          </button>
+
+          <!-- Disclaimer -->
+          <div class="pred-disclaimer">
+            <i class="fas fa-triangle-exclamation"></i>
+            <span>Predictions are based on historical NTA data and piecewise interpolation. Actual rank may differ. This tool is for estimation only — always verify with official NTA results.</span>
+          </div>
+        </div>
+        <!-- /.pred-results -->
+
+        <!-- Hidden output elements used by the preserved score() algorithm -->
+        <!-- These are required by the algorithm; styled results are shown above -->
+        <div style="display:none" aria-hidden="true">
+          <p id="percentilePre"></p>
+          <p id="rankPre"></p>
+          <p id="difficultyPre"></p>
+          <p id="marksPre"></p>
+          <button id="basic-addon1" onclick="score()"></button>
+          <button id="basic-addon2"></button>
+        </div>
+
+      </div><!-- /.pred-card-body -->
+    </div><!-- /.predictor-card -->
+    </div><!-- /.ring-wrap -->
+  </section>
+
+  <!-- ══ ABOUT CREATOR ══ -->
+  <section class="about-section">
+    <div class="about-card reveal">
+      <img src="https://divastra.github.io/assets/img/thumbnail1.png"
+           class="about-photo" alt="Prabhat Ranjan"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="about-avatar" style="display:none">PR</div>
+      <div>
+        <div class="about-name">Prabhat Ranjan · "Blue T-shirt Bhaiya"</div>
+        <div class="about-cred">Mechanical Engineering · NIT Jamshedpur · Working in IT Sector</div>
+        <div class="about-text">This rank predictor is built using NTA's official formula and piecewise linear interpolation calibrated on real historical data. It accounts for paper difficulty to give the most accurate estimate. For 1-on-1 college counselling, check the Counselling page.</div>
+        <div class="about-links">
+          <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" class="about-link"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://instagram.com/itsprabhatranjan" target="_blank" class="about-link"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="counselling.html" class="about-link"><i class="fas fa-graduation-cap"></i> Counselling</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-nav-links">
+      <a href="https://divastra.github.io/">Home</a>
+      <a href="counselling.html">Counselling</a>
+      <a href="rankPredictor.html">Predictor</a>
+      <a href="https://divastra.github.io/books.html">Books</a>
+      <a href="https://divastra.github.io/video.html">Videos</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" class="soc-btn soc-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com/itsprabhatranjan" target="_blank" class="soc-btn soc-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/itsprabhatranjan" target="_blank" class="soc-btn soc-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p class="footer-copy">© 2026 Divastra · Made with ❤️ by Prabhat Ranjan</p>
+  </footer>
+
+</div><!-- /.page -->
+
+<script>
+/* ════════════════════════════════════════════════
+   1. BUBBLE PARTICLE SYSTEM
+════════════════════════════════════════════════ */
+(function(){
+  const canvas=document.getElementById('particle-canvas'),ctx=canvas.getContext('2d');
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+  resize();window.addEventListener('resize',resize,{passive:true});
+  const windAngle=Math.random()*Math.PI*2,BASE_SPD=0.55,ATTRACT_R=180,COUNT=110;
+  const mouse={x:canvas.width/2,y:canvas.height/2};
+  let prevMX=mouse.x,prevMY=mouse.y,cursorSpeed=0;
+  let cursorDirX=Math.cos(windAngle),cursorDirY=Math.sin(windAngle),cursorStrength=0,cursorSpeedBoost=0;
+  window.addEventListener('mousemove',e=>{
+    const dvx=e.clientX-prevMX,dvy=e.clientY-prevMY;
+    cursorSpeed=Math.sqrt(dvx*dvx+dvy*dvy);
+    if(cursorSpeed>2){cursorDirX=dvx/cursorSpeed;cursorDirY=dvy/cursorSpeed;cursorStrength=Math.min(1,cursorSpeed/15);cursorSpeedBoost=Math.min(cursorSpeed*0.04,3);}
+    prevMX=mouse.x;prevMY=mouse.y;mouse.x=e.clientX;mouse.y=e.clientY;
+  },{passive:true});
+  window.addEventListener('touchmove',e=>{const t=e.touches[0];mouse.x=t.clientX;mouse.y=t.clientY;cursorStrength=0.6;cursorSpeedBoost=1.5;},{passive:true});
+  const PAL=['#6366f1','#818cf8','#8b5cf6','#a5b4fc','#22d3ee','#67e8f9','#fbbf24','#f97316','#f43f5e','#4ade80'];
+  const ripples=[],tempBubbles=[],shockwaves=[];
+  let globalClickPulse=0;
+
+  class P{
+    constructor(){this.init(true);}
+    init(rp){
+      if(rp){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;}
+      this.r=Math.random()*1.8+0.5;this.spd=0.5+Math.random()*0.8;
+      this.vx=Math.cos(windAngle)*BASE_SPD*this.spd;this.vy=Math.sin(windAngle)*BASE_SPD*this.spd;
+      this.alpha=Math.random()*0.55+0.2;this.color=PAL[Math.floor(Math.random()*PAL.length)];
+      this.phase=Math.random()*Math.PI*2;this.phSpd=0.018+Math.random()*0.018;
+      this.trail=[];this.nf=0;this.popCd=0;
+    }
+    update(){
+      const tS=(BASE_SPD+cursorSpeedBoost)*this.spd,wx=Math.cos(windAngle),wy=Math.sin(windAngle);
+      this.vx+=((wx*(1-cursorStrength)+cursorDirX*cursorStrength)*tS-this.vx)*0.04;
+      this.vy+=((wy*(1-cursorStrength)+cursorDirY*cursorStrength)*tS-this.vy)*0.04;
+      const dx=mouse.x-this.x,dy=mouse.y-this.y,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<20&&cursorSpeed>14&&this.popCd<=0){
+        ripples.push({x:this.x,y:this.y,r:this.r*2,maxR:45,life:1,color:this.color,fast:true});
+        this.init(false);this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;return;
+      }
+      if(this.popCd>0)this.popCd--;
+      if(dist<ATTRACT_R&&dist>1){const t=(ATTRACT_R-dist)/ATTRACT_R,pow=t*t,str=0.045+Math.min(cursorSpeed,40)*0.0025;this.vx+=(dx/dist)*pow*str;this.vy+=(dy/dist)*pow*str;this.nf=Math.min(1,this.nf+pow*0.18);}else{this.nf*=0.92;}
+      const spd=Math.sqrt(this.vx*this.vx+this.vy*this.vy),maxS=BASE_SPD*4+cursorSpeedBoost*2;
+      if(spd>maxS){this.vx=(this.vx/spd)*maxS;this.vy=(this.vy/spd)*maxS;}
+      this.trail.unshift({x:this.x,y:this.y});if(this.trail.length>8)this.trail.pop();
+      this.x+=this.vx;this.y+=this.vy;this.phase+=this.phSpd;
+      const m=12;
+      if(this.x<-m)this.x=canvas.width+m;if(this.x>canvas.width+m)this.x=-m;
+      if(this.y<-m)this.y=canvas.height+m;if(this.y>canvas.height+m)this.y=-m;
+    }
+    draw(){
+      const pulse=0.55+Math.sin(this.phase)*0.35,boost=1+this.nf*1.8,cb=1+globalClickPulse*0.6;
+      for(let i=0;i<this.trail.length;i++){const frac=(this.trail.length-i)/this.trail.length;ctx.beginPath();ctx.arc(this.trail[i].x,this.trail[i].y,this.r*frac,0,Math.PI*2);ctx.fillStyle=this.color;ctx.globalAlpha=this.alpha*pulse*frac*0.4;ctx.fill();}
+      ctx.beginPath();ctx.arc(this.x,this.y,this.r*(0.85+this.nf*0.5)*cb,0,Math.PI*2);ctx.fillStyle=this.nf>0.4?'#ffffff':this.color;ctx.globalAlpha=this.alpha*pulse*cb;ctx.fill();
+      const hR=this.r*3.8*boost*cb,g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,hR);
+      g.addColorStop(0,this.color+'bb');g.addColorStop(1,this.color+'00');
+      ctx.beginPath();ctx.arc(this.x,this.y,hR,0,Math.PI*2);ctx.fillStyle=g;ctx.globalAlpha=this.alpha*pulse*(0.42+this.nf*0.4)*cb;ctx.fill();
+    }
+  }
+
+  class TB{
+    constructor(x,y,angle,speed){
+      this.x=x;this.y=y;this.vx=Math.cos(angle)*speed;this.vy=Math.sin(angle)*speed-0.3;
+      this.r=Math.random()*3.5+1;this.life=1;this.decay=0.01+Math.random()*0.016;
+      this.color=PAL[Math.floor(Math.random()*PAL.length)];this.phase=Math.random()*Math.PI*2;
+      this.phSpd=0.05+Math.random()*0.04;this.wobble=Math.random()*0.4-0.2;this.wPhase=Math.random()*Math.PI*2;
+    }
+    update(){
+      this.wPhase+=0.06;this.vx+=Math.sin(this.wPhase)*this.wobble*0.05;
+      this.vx*=0.98;this.vy*=0.98;this.vy-=0.06;
+      this.x+=this.vx;this.y+=this.vy;this.life-=this.decay;this.phase+=this.phSpd;
+      return this.life>0;
+    }
+    draw(){
+      const pulse=0.72+Math.sin(this.phase)*0.28,sz=this.r*pulse;
+      ctx.beginPath();ctx.arc(this.x,this.y,sz,0,Math.PI*2);ctx.fillStyle=this.color;ctx.globalAlpha=this.life*0.55;ctx.fill();
+      ctx.beginPath();ctx.arc(this.x,this.y,sz,0,Math.PI*2);ctx.strokeStyle='#ffffff';ctx.lineWidth=0.7;ctx.globalAlpha=this.life*0.35;ctx.stroke();
+      ctx.beginPath();ctx.arc(this.x-sz*0.28,this.y-sz*0.28,sz*0.28,0,Math.PI*2);ctx.fillStyle='#ffffff';ctx.globalAlpha=this.life*0.3;ctx.fill();
+      const g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,sz*4);g.addColorStop(0,this.color+'88');g.addColorStop(1,this.color+'00');
+      ctx.beginPath();ctx.arc(this.x,this.y,sz*4,0,Math.PI*2);ctx.fillStyle=g;ctx.globalAlpha=this.life*0.35;ctx.fill();
+    }
+  }
+
+  window.__bubbleClick=function(x,y){
+    globalClickPulse=1;
+    ripples.push({x,y,r:5,maxR:90,life:1,color:PAL[Math.floor(Math.random()*PAL.length)],fast:false});
+    ripples.push({x,y,r:5,maxR:55,life:1,color:PAL[Math.floor(Math.random()*PAL.length)],fast:false});
+    shockwaves.push({x,y,r:0,life:1});
+    const n=20+Math.floor(Math.random()*9);
+    for(let i=0;i<n;i++){const ang=Math.random()*Math.PI*2,spd=1.2+Math.random()*4.5;tempBubbles.push(new TB(x,y,ang,spd));}
+    parts.forEach(p=>{const dx=p.x-x,dy=p.y-y,d=Math.sqrt(dx*dx+dy*dy);if(d<160&&d>0){const f=(160-d)/160*9;p.vx+=(dx/d)*f;p.vy+=(dy/d)*f;p.nf=Math.min(1,p.nf+0.9);}});
+  };
+
+  /* Long-press mobile → share */
+  let lpTimer=null;
+  window.addEventListener('touchstart',e=>{
+    if(e.touches.length!==1)return;
+    const t=e.touches[0];
+    lpTimer=setTimeout(()=>{if(window.__shareOpenFn)window.__shareOpenFn(t.clientX,t.clientY);},500);
+  },{passive:true});
+  window.addEventListener('touchend',()=>clearTimeout(lpTimer),{passive:true});
+  window.addEventListener('touchmove',()=>clearTimeout(lpTimer),{passive:true});
+
+  const parts=Array.from({length:COUNT},()=>new P());
+
+  (function loop(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);ctx.globalAlpha=1;
+    for(let i=shockwaves.length-1;i>=0;i--){const sw=shockwaves[i];sw.r+=5;sw.life-=0.04;if(sw.life<=0){shockwaves.splice(i,1);continue;}ctx.beginPath();ctx.arc(sw.x,sw.y,sw.r,0,Math.PI*2);ctx.strokeStyle='rgba(255,255,255,'+sw.life*0.22+')';ctx.lineWidth=2.5;ctx.stroke();}
+    for(let i=ripples.length-1;i>=0;i--){const rp=ripples[i];rp.r+=rp.fast?3:1.6;rp.life-=rp.fast?0.05:0.022;if(rp.life<=0){ripples.splice(i,1);continue;}ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.strokeStyle=rp.color;ctx.lineWidth=rp.fast?1.2:1.8;ctx.globalAlpha=rp.life*(rp.fast?0.7:0.5);ctx.stroke();}
+    for(let i=tempBubbles.length-1;i>=0;i--){if(!tempBubbles[i].update()){tempBubbles.splice(i,1);continue;}tempBubbles[i].draw();}
+    parts.forEach(p=>{p.update();p.draw();});
+    cursorStrength*=0.97;cursorSpeedBoost*=0.95;cursorSpeed*=0.88;globalClickPulse*=0.88;
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ════════════════════════════════════════════════
+   2. PROGRESS BAR + SCROLL + BACK-TO-TOP
+════════════════════════════════════════════════ */
+const navEl=document.getElementById('nav');
+const pb=document.getElementById('progressBar');
+const bt=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY,max=document.documentElement.scrollHeight-window.innerHeight;
+  navEl.classList.toggle('solid',s>40);
+  pb.style.width=(max>0?(s/max)*100:0)+'%';
+  bt.classList.toggle('show',s>400);
+},{passive:true});
+bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ════════════════════════════════════════════════
+   3. MOBILE NAV
+════════════════════════════════════════════════ */
+const mobNavEl=document.getElementById('mobNav');
+function openMob(){mobNavEl.classList.add('open');document.body.style.overflow='hidden';}
+function closeMob(){mobNavEl.classList.remove('open');document.body.style.overflow='';}
+
+/* ════════════════════════════════════════════════
+   4. SCROLL REVEAL
+════════════════════════════════════════════════ */
+const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');revObs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* ════════════════════════════════════════════════
+   5. CUSTOM CURSOR
+════════════════════════════════════════════════ */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches)return;
+  const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
+  let mx=0,my=0,rx=0,ry=0;
+  window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;},{passive:true});
+  (function animate(){
+    dot.style.left=mx+'px';dot.style.top=my+'px';
+    rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(animate);
+  })();
+})();
+
+/* ════════════════════════════════════════════════
+   6. SHARE POPUP — Right-click, Ctrl alone, Long-press
+════════════════════════════════════════════════ */
+(function(){
+  const SHARE_URL='https://divastra.github.io/rankPredictor.html';
+  const SHARE_TEXT='🎯 Free JEE Main Rank Predictor by Prabhat Ranjan (NIT Jamshedpur) — predict your rank from percentile instantly! Check Divastra:';
+  document.getElementById('shareWa').href='https://wa.me/?text='+encodeURIComponent(SHARE_TEXT+'\n'+SHARE_URL);
+  document.getElementById('shareTw').href='https://twitter.com/intent/tweet?url='+encodeURIComponent(SHARE_URL)+'&text='+encodeURIComponent(SHARE_TEXT);
+  document.getElementById('shareLi').href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(SHARE_URL);
+  document.getElementById('shareTg').href='https://t.me/share/url?url='+encodeURIComponent(SHARE_URL)+'&text='+encodeURIComponent(SHARE_TEXT);
+
+  const popup=document.getElementById('sharePopup'),overlay=document.getElementById('shareOverlay');
+
+  function openShare(cx,cy){
+    const vw=window.innerWidth,vh=window.innerHeight,W=318,pad=14;
+    let x,y;
+    if(cx!==null&&cy!==null){x=Math.min(cx,vw-W-pad);x=Math.max(x,pad);y=Math.min(cy,vh-320-pad);y=Math.max(y,pad);}
+    else{x=vw/2-W/2;y=vh/2-160;}
+    popup.style.left=x+'px';popup.style.top=y+'px';
+    overlay.classList.add('show');popup.classList.add('show');
+  }
+  window.__shareOpenFn=openShare;
+  window.closeShare=function(){overlay.classList.remove('show');popup.classList.remove('show');};
+
+  document.addEventListener('contextmenu',e=>{e.preventDefault();openShare(e.clientX,e.clientY);});
+
+  let ctrlDown=false;
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){window.closeShare();return;}
+    if(e.key==='Tab')return;
+    if(e.key==='Control'||e.key==='Meta'){ctrlDown=true;return;}
+    if(/^F\d+$/.test(e.key)){e.preventDefault();e.stopPropagation();return;}
+    if(e.ctrlKey||e.metaKey){ctrlDown=false;e.preventDefault();e.stopPropagation();return;}
+    if(e.altKey){e.preventDefault();e.stopPropagation();return;}
+  },true);
+  document.addEventListener('keyup',e=>{
+    if((e.key==='Control'||e.key==='Meta')&&ctrlDown){openShare(null,null);ctrlDown=false;}
+    if(e.key==='Control'||e.key==='Meta')ctrlDown=false;
+  },true);
+
+  window.copyShareLink=function(){
+    const btn=document.querySelector('.share-copy'),orig=btn.innerHTML;
+    const doFb=()=>{btn.innerHTML='<i class="fas fa-check"></i> Copied!';btn.classList.add('copied');setTimeout(()=>{btn.innerHTML=orig;btn.classList.remove('copied');},2500);};
+    if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(SHARE_URL).then(doFb).catch(doFb);
+    else{const el=document.createElement('textarea');el.value=SHARE_URL;el.style.cssText='position:fixed;opacity:0';document.body.appendChild(el);el.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(el);doFb();}
+  };
+})();
+
+/* ════════════════════════════════════════════════
+   7. CLICK → BUBBLES
+════════════════════════════════════════════════ */
+(function(){
+  document.addEventListener('click',e=>{
+    if(e.target.closest('a,button,input,select,textarea,.share-popup,.share-overlay'))return;
+    if(window.__bubbleClick)window.__bubbleClick(e.clientX,e.clientY);
+  });
+  let lastTap=0;
+  document.addEventListener('touchend',e=>{
+    if(e.target.closest('a,button,input,select,textarea,.share-popup,.share-overlay'))return;
+    const now=Date.now();if(now-lastTap<300)return;lastTap=now;
+    const t=e.changedTouches[0];if(window.__bubbleClick)window.__bubbleClick(t.clientX,t.clientY);
+  },{passive:true});
+})();
+
+/* ════════════════════════════════════════════════
+   8. APP-LIKE LOCKS
+════════════════════════════════════════════════ */
+(function(){
+  document.addEventListener('selectstart',e=>{if(!e.target.closest('input,textarea,select,[contenteditable]'))e.preventDefault();});
+  document.addEventListener('dragstart',e=>{e.preventDefault();});
+  window.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey)e.preventDefault();},{passive:false});
+  document.addEventListener('touchstart',e=>{if(e.touches.length>1)e.preventDefault();},{passive:false});
+  let lastT=0;
+  document.addEventListener('touchend',e=>{
+    const now=Date.now();
+    if(now-lastT<300&&!e.target.closest('a,button,input,select,textarea'))e.preventDefault();
+    lastT=now;
+  },{passive:false});
+  document.addEventListener('copy',e=>{if(!e.target.closest('input,textarea,select,[contenteditable]'))e.preventDefault();});
+  document.addEventListener('cut',e=>{if(!e.target.closest('input,textarea,select,[contenteditable]'))e.preventDefault();});
+})();
+
+/* ════════════════════════════════════════════════
+   9. 3D TILT ON PREDICTOR CARD
+════════════════════════════════════════════════ */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches)return;
+  const card=document.querySelector('.predictor-card');
+  if(!card)return;
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const nx=(e.clientX-r.left)/r.width-0.5,ny=(e.clientY-r.top)/r.height-0.5;
+    card.style.transform=`perspective(1200px) rotateX(${ny*-5}deg) rotateY(${nx*5}deg)`;
+  });
+  card.addEventListener('mouseleave',()=>{card.style.transform='';});
+})();
+
+/* ════════════════════════════════════════════════
+   ══════════════════════════════════════════════
+   PREDICTOR ALGORITHM — PRESERVED EXACTLY
+   ══════════════════════════════════════════════
+   Original algorithm from Divastra JEE Main Rank
+   Predictor. DO NOT MODIFY THIS FUNCTION.
+
+   To update for next year / new session:
+   ┌─────────────────────────────────────────────┐
+   │ 1. DIFFICULTY MULTIPLIERS (g values)        │
+   │    Change the g = X.XXXXX values below for  │
+   │    each difficulty level.                   │
+   │    Current values:                          │
+   │      Very Easy : g =  0.09                  │
+   │      Easy      : g =  0.05175               │
+   │      Medium    : g =  0.0045                │
+   │      Hard      : g = -0.04275               │
+   │      Very Hard : g = -0.09                  │
+   │                                             │
+   │ 2. PIECEWISE PERCENTILE TABLE               │
+   │    The nested if-else blocks with (a,b)     │
+   │    pairs define a piecewise linear curve    │
+   │    mapping marks → percentile.              │
+   │    Each segment: b = slope*(a-a0) + b0      │
+   │    Data points (marks, percentile):         │
+   │     (0, 6)         (56, 69.5797271)         │
+   │     (83, 84.22540213)                       │
+   │     (105, 91.59517945)                      │
+   │     (117, 92.88745828)                      │
+   │     (123, 93.89928202)                      │
+   │     (130, 94.96737888)                      │
+   │     (140, 95.983027)                        │
+   │     (152, 96.93721175)                      │
+   │     (163.5, 97.97507774)                    │
+   │     (172.5, 98.49801724)                    │
+   │     (181.5, 98.99673561)                    │
+   │     (196, 99.3487614)                       │
+   │     (206, 99.56019541)                      │
+   │     (218, 99.73930423)                      │
+   │     (235, 99.87060821)                      │
+   │     (300, 100)                              │
+   │    Update these pairs using new NTA data    │
+   │                                             │
+   │ 3. REGISTERED CANDIDATES                   │
+   │    Default is 1,600,000. Update below:      │
+   │    - In the null-check at top of score()    │
+   │    - In the HTML input default value        │
+   │    - Formula: rank = ((100-P)/100)*N + 1    │
+   └─────────────────────────────────────────────┘
+════════════════════════════════════════════════ */
+function score() {
+    /* ── INPUT READING ── */
+    var a = parseFloat(document.getElementById('marks').value);
+    var n = parseFloat(document.getElementById('candidates').value);
+    var b, g = 0.0;
+    var f = document.getElementById("level");
+    var difficulty = f.options[f.selectedIndex].text;
+    var inputClass2 = document.getElementById("candidates").classList;
+    var buttonClass2 = document.getElementById("basic-addon2").classList;
+
+    /* ── DEFAULT CANDIDATES (update this number each year) ── */
+    if (document.getElementById('candidates').value == "" || document.getElementById('candidates').value == null) {
+        document.getElementById('candidates').value = "1600000";
+        n = 1600000;
+    }
+
+    /* ── DIFFICULTY MULTIPLIERS (g)
+       Positive g  → paper was Easy   → inflate marks (students score lower vs normal)
+       Negative g  → paper was Hard   → deflate marks (students score higher vs normal)
+       The adjustment shifts raw marks to a "normalised" equivalent. ── */
+    if (difficulty === "Very Easy") {
+        g = 0.09;
+    }
+    else if (difficulty === "Easy") {
+        g = 0.05175;
+    }
+    else if (difficulty === "Medium") {
+        g = 0.0045;
+    }
+    else if (difficulty === "Hard") {
+        g = -0.04275;
+    }
+    else if (difficulty === "Very Hard") {
+        g = -0.09;
+    }
+
+    /* ── MARKS ADJUSTMENT
+       For marks ≤ 180: adjust proportionally to marks
+       For marks > 180: adjust proportionally to headroom (300 - marks),
+       scaled by the 180/120 ratio to keep the adjustment smooth. ── */
+    if (a <= 180) {
+        a = a - a * g;
+    }
+    else {
+        a = a - (300 - a) * g * 180 / 120;
+    }
+
+    /* ── CLAMP adjusted marks to valid range ── */
+    if (a < (-60)) {
+        document.getElementById('marks').value = "-60";
+        a = -60;
+    }
+    if (a > 300) {
+        document.getElementById('marks').value = "300";
+        a = 300;
+    }
+
+    /* ── COMPUTE PERCENTILE + RANK ── */
+    if (difficulty === "Select difficulty level") { }
+    else {
+        document.getElementById("candidates").disabled = false;
+        document.getElementById("basic-addon2").disabled = false;
+        document.getElementById("marksPre").innerHTML = "<b>Marks</b>: " + document.getElementById('marks').value;
+        inputClass2.add("shadow");
+        buttonClass2.add("shadow");
+
+        if (document.getElementById('marks').value == "" || document.getElementById('marks').value == null) {
+            document.getElementById("candidates").disabled = true;
+            document.getElementById("basic-addon2").disabled = true;
+            inputClass2.remove("shadow");
+            buttonClass2.remove("shadow");
+            document.getElementById("percentilePre").innerHTML = "";
+            document.getElementById("rankPre").innerHTML = "";
+            document.getElementById("marksPre").innerHTML = "";
+        }
+        else if (a < 0) {
+            /* ── Below minimum threshold → percentile < 6 ── */
+            document.getElementById("percentilePre").innerHTML = "<b>Percentile</b>: less than 6";
+            document.getElementById("rankPre").innerHTML = "<b>Rank</b>: less than " + (((100 - 6) / 1000) * n) + 1;
+        }
+        else {
+            /* ── PIECEWISE LINEAR INTERPOLATION
+               Maps normalised marks (a) → percentile (b)
+               using 18 known calibration segments from historical NTA data.
+               Each block: b = ((a - a0) / (a1 - a0)) * (b1 - b0) + b0 ── */
+            if (a <= 56) {
+                b = 69.5797271 - 6;
+                b = (a - 0) * b / (56 - 0) + 6;
+            }
+            else if (a <= 83) {
+                b = 84.22540213 - 69.5797271;
+                b = (a - 56) * b / (83 - 56) + 69.5797271;
+            }
+            else if (a <= 105) {
+                b = 91.59517945 - 84.22540213;
+                b = (a - 83) * b / (105 - 83) + 84.22540213;
+            }
+            else if (a <= 117) {
+                b = 92.88745828 - 91.59517945;
+                b = (a - 105) * b / (117 - 105) + 91.59517945;
+            }
+            else if (a <= 123) {
+                b = 93.89928202 - 92.88745828;
+                b = (a - 117) * b / (123 - 117) + 92.88745828;
+            }
+            else if (a <= 130) {
+                b = 94.96737888 - 93.89928202;
+                b = (a - 123) * b / (130 - 123) + 93.89928202;
+            }
+            else if (a <= 140) {
+                b = 95.983027 - 94.96737888;
+                b = (a - 130) * b / (140 - 130) + 94.96737888;
+            }
+            else if (a <= 152) {
+                b = 96.93721175 - 95.983027;
+                b = (a - 140) * b / (152 - 140) + 95.983027;
+            }
+            else if (a <= 163.5) {
+                b = 97.97507774 - 96.93721175;
+                b = (a - 152) * b / (163.5 - 152) + 96.93721175;
+            }
+            else if (a <= 172.5) {
+                b = 98.49801724 - 97.97507774;
+                b = (a - 163.5) * b / (172.5 - 163.5) + 97.97507774;
+            }
+            else if (a <= 181.5) {
+                b = 98.99673561 - 98.49801724;
+                b = (a - 172.5) * b / (181.5 - 172.5) + 98.49801724;
+            }
+            else if (a <= 196) {
+                b = 99.3487614 - 98.99673561;
+                b = (a - 181.5) * b / (196 - 181.5) + 98.99673561;
+            }
+            else if (a <= 206) {
+                b = 99.56019541 - 99.3487614;
+                b = (a - 196) * b / (206 - 196) + 99.3487614;
+            }
+            else if (a <= 218) {
+                b = 99.73930423 - 99.56019541;
+                b = (a - 206) * b / (218 - 206) + 99.56019541;
+            }
+            else if (a <= 235) {
+                b = 99.87060821 - 99.73930423;
+                b = (a - 218) * b / (235 - 218) + 99.73930423;
+            }
+            else if (a <= 300) {
+                b = 100 - 99.87060821;
+                b = (a - 235) * b / (300 - 235) + 99.87060821;
+            }
+
+            /* ── RANK FORMULA (NTA official formula) ── */
+            var c = ((100 - b) / 100) * n + 1;
+
+            /* ── Write to hidden output elements (required by algorithm) ── */
+            document.getElementById("percentilePre").innerHTML = "<b>Percentile</b>: " + b.toFixed(7);
+            document.getElementById("rankPre").innerHTML = "<b>Rank</b>: " + Math.round(c);
+        }
+    }
+
+    /* ── After algorithm runs, update the beautiful results UI ── */
+    updateResultsUI();
+}
+/* ════════════════════════════════════════════════
+   END OF PRESERVED ALGORITHM
+════════════════════════════════════════════════ */
+
+
+/* ════════════════════════════════════════════════
+   PREDICTOR UI LOGIC
+   (Controls form state, results display, etc.)
+════════════════════════════════════════════════ */
+
+/* Enable/disable predict button based on form state */
+function handleDifficultyChange(){
+  const diff=document.getElementById('level').value;
+  const marks=document.getElementById('marks').value;
+  const btn=document.getElementById('predictBtn');
+  btn.disabled=!(diff && marks!=='');
+  updateDiffChips(diff);
+  /* If marks already entered, run prediction */
+  if(diff && marks!==''){}
+}
+
+function handleMarksInput(){
+  const diff=document.getElementById('level').value;
+  const marks=document.getElementById('marks').value;
+  const btn=document.getElementById('predictBtn');
+  btn.disabled=!(diff && marks!=='');
+}
+
+function updateDiffChips(diff){
+  const map={
+    'Very Easy':'ve','Easy':'e','Medium':'m','Hard':'h','Very Hard':'vh'
+  };
+  const clsMap={
+    've':'active-ve','e':'active-e','m':'active-m','h':'active-h','vh':'active-vh'
+  };
+  document.querySelectorAll('.diff-chip').forEach(c=>c.className='diff-chip');
+  if(diff&&map[diff]){
+    const el=document.getElementById('dc-'+map[diff]);
+    if(el)el.classList.add(clsMap[map[diff]]);
+  }
+}
+
+function toggleAdvanced(){
+  const panel=document.getElementById('advPanel');
+  const toggle=document.getElementById('advToggle');
+  const open=panel.classList.toggle('open');
+  toggle.classList.toggle('open',open);
+}
+
+/* ════════════════════════════════════════════════
+   RESULTS UI UPDATE
+   Reads from the hidden algorithm output elements
+   and populates the beautiful results panel.
+════════════════════════════════════════════════ */
+function updateResultsUI(){
+  const rankHTML=document.getElementById('rankPre').innerHTML;
+  const pctHTML=document.getElementById('percentilePre').innerHTML;
+  const marksHTML=document.getElementById('marksPre').innerHTML;
+
+  if(!rankHTML&&!pctHTML)return; /* No results yet */
+
+  const resultsPanel=document.getElementById('resultsPanel');
+  resultsPanel.classList.add('show');
+
+  /* Parse rank */
+  let rankVal='—', rankSub='', pctVal='—', pctNum=0;
+
+  if(pctHTML.includes('less than')){
+    pctVal='< 6';pctNum=6;
+    rankVal='> '+numberWithCommas(Math.round(((100-6)/1000)*parseFloat(document.getElementById('candidates').value||1600000)));
+    rankSub='Approximate lower bound';
+  } else {
+    const pctMatch=pctHTML.match(/[\d.]+/);
+    if(pctMatch){pctNum=parseFloat(pctMatch[0]);pctVal=pctNum.toFixed(4)+'%';}
+    const rankMatch=rankHTML.match(/[\d]+/);
+    if(rankMatch){
+      rankVal=numberWithCommas(parseInt(rankMatch[0]));
+      rankSub='out of ~'+numberWithCommas(parseInt(document.getElementById('candidates').value||1600000));
+    }
+  }
+
+  document.getElementById('rankDisplay').textContent=rankVal;
+  document.getElementById('rankSubDisplay').textContent=rankSub;
+  document.getElementById('pctDisplay').textContent=pctVal;
+
+  /* Percentile bar */
+  const pctBarFill=document.getElementById('pctBarFill');
+  const pctBarLabel=document.getElementById('pctBarLabel');
+  setTimeout(()=>{ pctBarFill.style.width=Math.min(pctNum,100)+'%'; },50);
+  pctBarLabel.textContent=pctNum.toFixed(2)+'% of students';
+
+  /* Zone classification */
+  const rawRank=rankHTML.match(/[\d]+/);
+  const rank=rawRank?parseInt(rawRank[0]):9999999;
+  const zone=getZone(rank,pctNum);
+  const predZone=document.getElementById('predZone');
+  predZone.style.background=zone.bg;
+  predZone.style.border='1px solid '+zone.border;
+  document.getElementById('zoneIcon').textContent=zone.icon;
+  document.getElementById('zoneName').textContent=zone.name;
+  document.getElementById('zoneSub').textContent=zone.sub;
+  document.getElementById('zoneName').style.color=zone.color;
+
+  /* Details row */
+  const diff=document.getElementById('level').options[document.getElementById('level').selectedIndex].text;
+  const marksRaw=document.getElementById('marks').value;
+  const cands=parseInt(document.getElementById('candidates').value||1600000);
+  const dr=document.getElementById('detailsRow');
+  dr.innerHTML=`
+    <div class="pred-detail-chip"><i class="fas fa-gauge-high"></i>${diff}</div>
+    <div class="pred-detail-chip"><i class="fas fa-pen"></i>Marks: ${marksRaw}</div>
+    <div class="pred-detail-chip"><i class="fas fa-users"></i>${numberWithCommas(cands)} candidates</div>
+    <div class="pred-detail-chip"><i class="fas fa-calendar"></i>${getTodayStr()}</div>
+  `;
+
+  /* Store result globally for sharing */
+  window._lastResult={
+    name: document.getElementById('studentName').value.trim()||'JEE Aspirant',
+    date: getTodayStr(),
+    marks: marksRaw,
+    pct: pctNum.toFixed(7),
+    rank: rank,
+    diff: diff,
+    cands: cands
+  };
+}
+
+/* Zone classification based on predicted rank */
+function getZone(rank, pct){
+  if(pct<6||rank>1200000) return {icon:'📖',name:'State / Private College Zone',sub:'Keep pushing — every attempt is a step forward.',bg:'rgba(255,255,255,.04)',border:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.7)'};
+  if(rank<=2500)  return {icon:'🏆',name:'IIT (Top Tier) Zone',sub:'IIT Bombay, Delhi, Madras, Kanpur, Kharagpur range.',bg:'rgba(251,191,36,.08)',border:'rgba(251,191,36,.25)',color:'#fbbf24'};
+  if(rank<=10000) return {icon:'🥇',name:'IIT Zone',sub:'Good IIT branches — Roorkee, Guwahati, Hyderabad range.',bg:'rgba(251,191,36,.06)',border:'rgba(251,191,36,.18)',color:'#fcd34d'};
+  if(rank<=25000) return {icon:'⭐',name:'NIT (Top Tier) Zone',sub:'NIT Trichy, Warangal, Surathkal, Jamshedpur range.',bg:'rgba(99,102,241,.08)',border:'rgba(99,102,241,.25)',color:'#818cf8'};
+  if(rank<=50000) return {icon:'🎯',name:'NIT Zone',sub:'Good NITs across India — strong placement records.',bg:'rgba(99,102,241,.06)',border:'rgba(99,102,241,.18)',color:'#a5b4fc'};
+  if(rank<=120000) return {icon:'💡',name:'IIIT / GFTI Zone',sub:'IIITs, GFTIs, and some NITs — solid options.',bg:'rgba(34,211,238,.06)',border:'rgba(34,211,238,.18)',color:'#22d3ee'};
+  return {icon:'📚',name:'State / Private College Zone',sub:'Consider UPTAC, AKTU, and top private colleges.',bg:'rgba(255,255,255,.04)',border:'rgba(255,255,255,.1)',color:'rgba(255,255,255,.6)'};
+}
+
+function numberWithCommas(x){return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+function getTodayStr(){const d=new Date();return d.getDate().toString().padStart(2,'0')+'/'+(d.getMonth()+1).toString().padStart(2,'0')+'/'+d.getFullYear();}
+
+
+/* ════════════════════════════════════════════════
+   SHARE RESULT — Encode result in URL
+   URL format: ?rp_n=NAME&rp_d=DATE&rp_m=MARKS
+               &rp_p=PERCENTILE&rp_r=RANK
+               &rp_diff=DIFFICULTY&rp_c=CANDIDATES
+════════════════════════════════════════════════ */
+function shareResult(){
+  const res=window._lastResult;
+  if(!res){alert('Please predict your rank first!');return;}
+  const params=new URLSearchParams({
+    rp_n: res.name,
+    rp_d: res.date,
+    rp_m: res.marks,
+    rp_p: res.pct,
+    rp_r: res.rank,
+    rp_diff: res.diff,
+    rp_c: res.cands
+  });
+  const url=window.location.origin+window.location.pathname+'?'+params.toString();
+  const btn=document.getElementById('shareResultBtn');
+  const orig=btn.innerHTML;
+  const doFb=()=>{
+    btn.innerHTML='<i class="fas fa-check"></i> Link Copied! Share it with friends 🎉';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.innerHTML=orig;btn.classList.remove('copied');},3000);
+  };
+  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(url).then(doFb).catch(doFb);
+  else{const el=document.createElement('textarea');el.value=url;el.style.cssText='position:fixed;opacity:0';document.body.appendChild(el);el.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(el);doFb();}
+}
+
+
+/* ════════════════════════════════════════════════
+   REPORT CARD — Load from URL params on page load
+   Shows above predictor if URL has rank params.
+   If no params: report card section is hidden.
+════════════════════════════════════════════════ */
+(function loadReportCard(){
+  const params=new URLSearchParams(window.location.search);
+  const rp_n=params.get('rp_n');
+  const rp_d=params.get('rp_d');
+  const rp_m=params.get('rp_m');
+  const rp_p=params.get('rp_p');
+  const rp_r=params.get('rp_r');
+  const rp_diff=params.get('rp_diff');
+  const rp_c=params.get('rp_c');
+
+  /* Only show report card if rank param exists */
+  if(!rp_r)return;
+
+  const section=document.getElementById('reportSection');
+  section.classList.add('visible');
+
+  /* Populate fields */
+  document.getElementById('rcName').textContent=rp_n||'JEE Aspirant';
+  document.getElementById('rcRank').textContent=rp_r?numberWithCommas(parseInt(rp_r)):'—';
+  document.getElementById('rcPct').textContent=rp_p?parseFloat(rp_p).toFixed(4)+'%':'—';
+  document.getElementById('rcMarks').textContent=rp_m||'—';
+  document.getElementById('rcDiff').textContent=rp_diff||'—';
+  document.getElementById('rcCand').textContent=rp_c?numberWithCommas(parseInt(rp_c))+' candidates':'—';
+  document.getElementById('rcDate').textContent=rp_d||'—';
+
+  /* Zone */
+  const rank=parseInt(rp_r)||9999999;
+  const pct=parseFloat(rp_p)||0;
+  const zone=getZone(rank,pct);
+  const zoneWrap=document.getElementById('rcZoneWrap');
+  zoneWrap.style.background=zone.bg;
+  zoneWrap.style.border='1px solid '+zone.border;
+  document.getElementById('rcZoneIcon').textContent=zone.icon;
+  document.getElementById('rcZoneName').textContent=zone.name;
+  document.getElementById('rcZoneName').style.color=zone.color;
+  document.getElementById('rcZoneSub').textContent=zone.sub;
+})();
+
+</script>
+</body>
+</html>
