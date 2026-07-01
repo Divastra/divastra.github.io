@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JEE counselling by Prabhat Ranjan (NIT Jamshedpur) — JoSAA/CSAB preference order PDF, UPTAC PDF, and 1-on-1 live guidance sessions. Best coupon codes for PW IOI, Scaler, LPU NEST, Geeta University.">
+  <meta name="keywords" content="JEE counselling, JoSAA CSAB preference order, UPTAC counselling PDF, JEE rank predictor, college admission guidance, PW IOI coupon code, Scaler coupon, LPU NEST coupon, Geeta University coupon">
+  <meta name="author" content="Prabhat Ranjan, NIT Jamshedpur">
+  <meta property="og:title" content="JEE Counselling — Divastra">
+  <meta property="og:description" content="Expert JEE counselling by Prabhat Ranjan (NIT Jamshedpur). PDF guides & live sessions.">
+  <meta property="og:url" content="https://divastra.github.io/counselling.html">
+  <title>JEE Counselling — Divastra</title>
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="theme.css">
+  <style>
+  /* ── Page wrapper ── */
+  .page { padding-top: 62px; }
+
+  /* ── Hero ── */
+  .hero-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: var(--accent-light); border: 1px solid var(--accent-border);
+    color: var(--accent); font-size: .72rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: .35rem .85rem; border-radius: 100px; margin-bottom: 1.4rem;
+  }
+  .hero-badge .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  .hero-section .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 900; letter-spacing: -.5px; line-height: 1.15;
+    margin-bottom: 1.1rem;
+  }
+  .hero-section .hero-desc {
+    font-size: 1.05rem; color: var(--text-muted); line-height: 1.75;
+    max-width: 560px; margin: 0 auto 1.75rem;
+  }
+  .grad-text { color: var(--accent); }
+
+  /* Profile chip */
+  .profile-chip {
+    display: inline-flex; align-items: center; gap: .65rem;
+    background: var(--bg-subtle); border: 1px solid var(--border);
+    border-radius: 100px; padding: .45rem 1rem .45rem .45rem;
+    margin: 0 auto .3rem; max-width: fit-content;
+  }
+  .profile-photo { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; pointer-events: none; }
+  .profile-avatar-fb {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: linear-gradient(135deg,#0891b2,#0e7490);
+    color: white; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 900; font-size: .78rem; flex-shrink: 0;
+  }
+  .profile-name { font-weight: 700; font-size: .88rem; color: var(--text); }
+  .profile-role { font-size: .72rem; color: var(--text-muted); }
+
+  /* Hero pills */
+  .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; margin-top: 1.5rem; }
+  .pill-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .pd-b { background: #22d3ee; }
+  .pd-g { background: #10b981; }
+  .pd-y { background: #f59e0b; }
+  .pd-c { background: var(--accent); }
+
+  /* ── Section wrapper ── */
+  .content-section {
+    max-width: 900px; margin: 0 auto;
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .section-header {
+    text-align: center; margin-bottom: 2.75rem;
+  }
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: .7rem;
+  }
+  .section-header .section-title { max-width: 100%; }
+  .section-header .section-sub { margin: 0 auto; }
+
+  /* ── Service Bento ── */
+  .svc-bento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .svc-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--r-lg); overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: box-shadow var(--t-med), transform var(--t-med);
+  }
+  .svc-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+  .tier-violet { grid-column: 1; grid-row: 1; }
+  .tier-gold   { grid-column: 2; grid-row: 1 / 3; }
+  .tier-emerald{ grid-column: 1; grid-row: 2; }
+
+  .svc-bar { height: 4px; flex-shrink: 0; }
+  .tier-violet .svc-bar  { background: linear-gradient(90deg,#7c3aed,#a78bfa); }
+  .tier-gold   .svc-bar  { background: linear-gradient(90deg,#d97706,#fbbf24); }
+  .tier-emerald .svc-bar { background: linear-gradient(90deg,#047857,#10b981); }
+
+  .svc-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; gap: .8rem; }
+
+  .svc-tier {
+    font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+    display: flex; align-items: center; gap: .3rem;
+  }
+  .tier-violet .svc-tier  { color: #7c3aed; }
+  .tier-gold   .svc-tier  { color: #d97706; }
+  .tier-emerald .svc-tier { color: #047857; }
+
+  .svc-counsellor { display: flex; align-items: center; gap: .55rem; }
+  .svc-photo { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; pointer-events: none; }
+  .svc-cname { font-weight: 700; font-size: .8rem; color: var(--text); line-height: 1.3; }
+  .svc-ccred { font-size: .7rem; color: var(--text-muted); }
+
+  .svc-icon {
+    width: 44px; height: 44px; border-radius: var(--r);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .tier-violet .svc-icon  { background: rgba(124,58,237,.1); color: #7c3aed; }
+  .tier-gold   .svc-icon  { background: rgba(217,119,6,.1);  color: #d97706; }
+  .tier-emerald .svc-icon { background: rgba(4,120,87,.1);   color: #047857; }
+
+  .svc-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.05rem; color: var(--text); line-height: 1.3;
+  }
+
+  .svc-price-row { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+  .svc-price {
+    font-family: var(--font-display); font-size: 1.7rem;
+    font-weight: 900; color: var(--text); line-height: 1;
+  }
+  .tier-gold .svc-price { color: #d97706; }
+  .svc-price-note { font-size: .75rem; color: var(--text-muted); }
+
+  .svc-features { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+  .svc-features li { display: flex; align-items: flex-start; gap: .5rem; font-size: .83rem; color: var(--text-muted); line-height: 1.5; }
+  .feat-check {
+    width: 16px; height: 16px; border-radius: 50%; background: #dcfce7; color: #16a34a;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .55rem; flex-shrink: 0; margin-top: 2px;
+  }
+  .tier-gold .feat-check { background: rgba(217,119,6,.12); color: #d97706; }
+
+  .svc-note {
+    font-size: .77rem; color: var(--text-muted);
+    background: var(--bg-subtle); border: 1px solid var(--border);
+    border-radius: var(--r-sm); padding: .65rem .9rem;
+    display: flex; align-items: flex-start; gap: .45rem; line-height: 1.5;
+  }
+  .svc-note i { flex-shrink: 0; margin-top: 1px; }
+
+  .svc-buttons { display: flex; flex-direction: column; gap: .5rem; margin-top: auto; }
+
+  /* ── How It Works ── */
+  .steps-list { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: flex; align-items: flex-start; gap: 1.4rem;
+    padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-left { display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
+  .step-num {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--accent-light); border: 2px solid var(--accent-border);
+    color: var(--accent); font-family: var(--font-display); font-weight: 900;
+    font-size: .82rem; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-icon-wrap {
+    width: 36px; height: 36px; border-radius: var(--r-sm);
+    background: var(--bg-muted); color: var(--text-muted);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .88rem; flex-shrink: 0;
+  }
+  .step-title { font-family: var(--font-display); font-weight: 700; font-size: .975rem; margin-bottom: .3rem; }
+  .step-desc  { font-size: .85rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* ── Free Resources ── */
+  .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .res-card {
+    background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg);
+    padding: 1.4rem; display: flex; flex-direction: column; gap: .9rem;
+    transition: box-shadow var(--t-med), border-color var(--t-med);
+  }
+  .res-card:hover { box-shadow: var(--shadow); border-color: var(--border-hover); }
+  .res-card-top { display: flex; align-items: center; justify-content: space-between; }
+  .res-icon-wrap {
+    width: 40px; height: 40px; border-radius: var(--r);
+    background: var(--accent-light); color: var(--accent);
+    display: flex; align-items: center; justify-content: center; font-size: .95rem;
+  }
+  .res-badge-free {
+    font-size: .68rem; font-weight: 700; background: #dcfce7; color: #16a34a;
+    padding: .25rem .6rem; border-radius: 100px; display: flex; align-items: center; gap: .3rem;
+    border: 1px solid #bbf7d0;
+  }
+  .res-title { font-family: var(--font-display); font-weight: 700; font-size: .95rem; color: var(--text); }
+  .res-desc  { font-size: .83rem; color: var(--text-muted); line-height: 1.6; }
+  .res-tags  { display: flex; flex-wrap: wrap; gap: .35rem; }
+  .res-tag   {
+    font-size: .7rem; font-weight: 600; background: var(--bg-muted);
+    color: var(--text-muted); padding: .22rem .58rem; border-radius: 100px;
+    border: 1px solid var(--border);
+  }
+  .res-link {
+    color: var(--accent); font-size: .83rem; font-weight: 700;
+    display: flex; align-items: center; gap: .4rem; margin-top: auto;
+    transition: color var(--t);
+  }
+  .res-link:hover { color: var(--accent-hover); }
+  .res-link i { font-size: .72rem; transition: transform var(--t); }
+  .res-link:hover i { transform: translate(2px,-2px); }
+
+  /* ── Coupon Cards ── */
+  .coupon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .coupon-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--r-lg); overflow: hidden;
+    transition: box-shadow var(--t-med), transform var(--t-med);
+  }
+  .coupon-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .coupon-stripe { height: 4px; }
+  .cc-amber  .coupon-stripe { background: linear-gradient(90deg,#d97706,#fbbf24); }
+  .cc-indigo .coupon-stripe { background: linear-gradient(90deg,#4338ca,#818cf8); }
+  .cc-red    .coupon-stripe { background: linear-gradient(90deg,#e11d48,#f43f5e); }
+  .cc-teal   .coupon-stripe { background: linear-gradient(90deg,#0d9488,#2dd4bf); }
+  .coupon-body { padding: 1.2rem; display: flex; flex-direction: column; gap: .7rem; }
+  .coupon-top { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+  .coupon-discount {
+    font-family: var(--font-display); font-size: 1.85rem;
+    font-weight: 900; line-height: 1;
+  }
+  .cc-amber  .coupon-discount { color: #d97706; }
+  .cc-indigo .coupon-discount { color: #4338ca; }
+  .cc-red    .coupon-discount { color: #e11d48; }
+  .cc-teal   .coupon-discount { color: #0d9488; }
+  .coupon-off-lbl { font-size: .7rem; color: var(--text-muted); font-weight: 600; margin-top: .25rem; }
+  .coupon-verified {
+    font-size: .68rem; font-weight: 700; color: #16a34a;
+    display: flex; align-items: center; gap: .3rem;
+    background: #dcfce7; border: 1px solid #bbf7d0;
+    padding: .22rem .55rem; border-radius: 100px; white-space: nowrap; flex-shrink: 0;
+  }
+  .coupon-brand { font-family: var(--font-display); font-weight: 700; font-size: .88rem; color: var(--text); margin-bottom: .2rem; }
+  .coupon-desc  { font-size: .79rem; color: var(--text-muted); line-height: 1.55; }
+  .coupon-price { font-size: .8rem; color: var(--text-muted); display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
+  .price-strike { text-decoration: line-through; color: var(--text-light); }
+  .price-arrow  { color: var(--text-light); }
+  .price-new    { font-weight: 700; color: var(--text); }
+  .coupon-code-row {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--bg-subtle); border: 1.5px dashed var(--accent-border);
+    border-radius: var(--r-sm); padding: .7rem .9rem; gap: .65rem;
+  }
+  .coupon-code-lbl {
+    font-size: .64rem; color: var(--text-light); font-weight: 600;
+    text-transform: uppercase; letter-spacing: .07em; margin-bottom: .2rem;
+  }
+  .coupon-code { font-family: 'Courier New',monospace; font-weight: 900; font-size: 1.05rem; color: var(--text); letter-spacing: .04em; }
+  .coupon-copy-btn {
+    background: var(--accent); color: white; border: none;
+    border-radius: var(--r-sm); padding: .48rem .85rem;
+    font-size: .78rem; font-weight: 700; cursor: pointer;
+    display: flex; align-items: center; gap: .35rem;
+    transition: background var(--t), transform var(--t); flex-shrink: 0;
+  }
+  .coupon-copy-btn:hover { background: var(--accent-hover); transform: scale(1.04); }
+  .coupon-copy-btn.copied { background: #16a34a; }
+  .coupon-note {
+    text-align: center; font-size: .73rem; color: var(--text-light);
+    margin-top: 1.5rem; line-height: 1.7; max-width: 520px; margin-left: auto; margin-right: auto;
+  }
+  .coupon-note i { color: #4ade80; margin-right: .3rem; }
+
+  /* ── Responsive ── */
+  @media (max-width: 700px) {
+    .svc-bento {
+      grid-template-columns: 1fr;
+    }
+    .tier-violet  { grid-column: 1; grid-row: auto; }
+    .tier-gold    { grid-column: 1; grid-row: auto; }
+    .tier-emerald { grid-column: 1; grid-row: auto; }
+    .coupon-grid  { grid-template-columns: 1fr; }
+    .res-grid     { grid-template-columns: 1fr; }
+    .step-left    { flex-direction: column; gap: .4rem; }
+    .hero-section { padding: 4rem 1.25rem 3rem; }
+    .content-section { padding: 3rem 1.25rem; }
+  }
+  @media (max-width: 480px) {
+    .coupon-code-row { flex-direction: column; align-items: stretch; }
+    .coupon-copy-btn { justify-content: center; }
+  }
+  </style>
+</head>
+<body>
+
+<button id="backTop" class="back-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Share popup -->
+<div class="share-overlay" id="shareOverlay" onclick="closeShare()"></div>
+<div class="share-popup" id="sharePopup">
+  <div class="share-popup-hd">
+    <div class="share-popup-title"><i class="fas fa-share-nodes"></i> Share Divastra</div>
+    <button class="share-popup-close" onclick="closeShare()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="share-popup-url">divastra.github.io/counselling.html</div>
+  <div class="share-btns">
+    <a id="shareWa" class="share-btn share-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a id="shareTw" class="share-btn share-tw" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> Twitter</a>
+    <a id="shareLi" class="share-btn share-li" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    <a id="shareTg" class="share-btn share-tg" target="_blank" rel="noopener"><i class="fab fa-telegram"></i> Telegram</a>
+    <button class="share-btn share-copy" onclick="copyShareLink()"><i class="fas fa-link"></i> Copy Link</button>
+    <a class="share-btn" href="https://www.instagram.com/iam_prabhatranjan" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
+  <div class="share-hint">Right-click · Ctrl key · Long-press to share ✨</div>
+</div>
+
+<!-- Mobile nav overlay -->
+<div class="mob-overlay" id="mobOverlay" onclick="closeMob()"></div>
+
+<!-- Mobile nav panel -->
+<div class="mob" id="mobNav">
+  <div class="mob-head">
+    <a href="https://divastra.github.io/" class="nav-logo">
+      <img src="logo.svg" class="nav-logo-img" alt="Divastra">
+      <span>Divastra</span>
+    </a>
+    <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mob-items">
+    <li><a href="counselling.html" class="active" onclick="closeMob()"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="https://divastra.github.io/rankPredictor.html" onclick="closeMob()"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html" onclick="closeMob()"><i class="fas fa-book-open"></i> Books</a></li>
+    <li><a href="https://divastra.github.io/video.html" onclick="closeMob()"><i class="fab fa-youtube"></i> Videos</a></li>
+  </ul>
+</div>
+
+<!-- Nav -->
+<nav id="nav">
+  <a href="https://divastra.github.io/" class="nav-logo">
+    <img src="logo.svg" class="nav-logo-img" alt="Divastra">Divastra
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="counselling.html" class="active"><i class="fas fa-graduation-cap"></i> Counselling</a></li>
+    <li><a href="https://divastra.github.io/rankPredictor.html"><i class="fas fa-chart-line"></i> Predictor</a></li>
+    <li><a href="https://divastra.github.io/books.html"><i class="fas fa-book-open"></i> Books</a></li>
+    <li><a href="https://divastra.github.io/video.html"><i class="fab fa-youtube"></i> Videos</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Switch to Dark Mode"><i class="fas fa-moon"></i></button>
+    <button class="burger" onclick="openMob()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero-section">
+    <div class="hero-badge reveal"><span class="badge-dot"></span> Expert Counselling</div>
+    <h1 class="hero-title reveal d1">
+      Your JEE Journey,<br>
+      <span class="grad-text">Personally Guided</span>
+    </h1>
+    <p class="hero-desc reveal d2">
+      I'm Prabhat Ranjan — I help you navigate IIT JEE, choose the right engineering college, and plan your career. No generic advice. Real experience-backed guidance from NIT Jamshedpur.
+    </p>
+    <div class="profile-chip reveal d2">
+      <img src="https://divastra.github.io/assets/img/thumbnail1.png"
+           class="profile-photo" alt="Prabhat Ranjan"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="profile-avatar-fb" style="display:none">PR</div>
+      <div>
+        <div class="profile-name">Prabhat Ranjan</div>
+        <div class="profile-role">Mech Eng · NIT Jamshedpur · "Blue T-shirt Bhaiya"</div>
+      </div>
+    </div>
+    <div class="hero-pills reveal d3">
+      <span class="pill"><span class="pill-dot pd-b"></span>10,000+ Students</span>
+      <span class="pill"><span class="pill-dot pd-g"></span>NIT Jamshedpur</span>
+      <span class="pill"><span class="pill-dot pd-y"></span>JEE + Boards</span>
+      <span class="pill"><span class="pill-dot pd-c"></span>1-on-1 Sessions</span>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES BENTO ══ -->
+  <section class="content-section">
+    <div class="section-header reveal">
+      <div class="section-eyebrow"><i class="fas fa-layer-group"></i>&nbsp;What's Available</div>
+      <h2 class="section-title">Pick the guidance <span class="grad-text">that fits you</span></h2>
+      <p class="section-sub">Three ways to get expert help — from curated PDFs to live 1-on-1 sessions.</p>
+    </div>
+
+    <div class="svc-bento">
+
+      <!-- ① JoSAA / CSAB PDF — Violet ₹501 -->
+      <div class="svc-card tier-violet reveal">
+        <div class="svc-bar"></div>
+        <div class="svc-body">
+          <span class="svc-tier"><i class="fas fa-file-pdf"></i>&nbsp;Comprehensive PDF</span>
+
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div class=\'profile-avatar-fb\' style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a78bfa);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Curated by hand</div>
+            </div>
+          </div>
+
+          <div class="svc-icon"><i class="fas fa-list-ol"></i></div>
+          <div class="svc-title">JoSAA / CSAB Full<br>Preference Order PDF</div>
+
+          <div class="svc-price-row">
+            <span class="svc-price">₹501</span>
+            <span class="svc-price-note">one-time · 1-yr access</span>
+          </div>
+
+          <ul class="svc-features">
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>813 engineering programs in one PDF</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>IITs, NITs, IIITs, GFTIs &amp; IIEST Shibpur</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>All branches (excl. B.Arch &amp; B.Plan)</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
+          </ul>
+
+          <div class="svc-note"><i class="fas fa-clock"></i> Processing: a few hours to 48 hours after form submission.</div>
+
+          <div class="svc-buttons">
+            <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
+            <a href="https://drive.google.com/file/d/1wBwq7X3qEY1zLd-3-0mTXGBQmCJ6iXeK/view" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
+            <a href="https://drive.google.com/file/d/1Vkz70SZqlwRCbTK-6J6JqbIfQ6X4NWnO/view?usp=drive_link" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-gift"></i> Free Demo — 1st Page</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ② 1-on-1 Session — Gold ₹5000 (featured, spans 2 rows) -->
+      <div class="svc-card tier-gold reveal d1">
+        <div class="svc-bar"></div>
+        <div class="svc-body">
+          <span class="svc-tier"><i class="fas fa-crown"></i>&nbsp;Premium · Most Popular</span>
+
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div class=\'profile-avatar-fb\' style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#d97706,#fbbf24);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Live 1-on-1 Session</div>
+            </div>
+          </div>
+
+          <div class="svc-icon"><i class="fas fa-video"></i></div>
+          <div class="svc-title">1-on-1 College Admission<br>Guidance Session</div>
+
+          <div class="svc-price-row">
+            <span class="svc-price">₹5,000</span>
+            <span class="svc-price-note">per session</span>
+          </div>
+
+          <ul class="svc-features">
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Live Google Meet with Prabhat Ranjan</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>College, branch &amp; career path selection</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>4 available time slots — you choose</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Session recorded for your reference &amp; security</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Confirmation within 48 hours of form</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Same email used throughout the process</li>
+          </ul>
+
+          <div class="svc-note">
+            <i class="fas fa-envelope"></i>
+            <span>Queries before booking: <strong>divastra729@gmail.com</strong></span>
+          </div>
+
+          <div class="svc-buttons">
+            <a href="https://forms.gle/DRyB23ebHPCPAK296" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹5,000 Form</a>
+            <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" rel="noopener" class="btn-secondary"><i class="fab fa-youtube"></i> See My Channel First</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ③ UPTAC PDF — Emerald ₹501 -->
+      <div class="svc-card tier-emerald reveal d2">
+        <div class="svc-bar"></div>
+        <div class="svc-body">
+          <span class="svc-tier"><i class="fas fa-map-location-dot"></i>&nbsp;UP State Counselling</span>
+
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div class=\'profile-avatar-fb\' style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#047857,#10b981);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Curated &amp; organised</div>
+            </div>
+          </div>
+
+          <div class="svc-icon"><i class="fas fa-file-pdf"></i></div>
+          <div class="svc-title">UPTAC Counselling<br>Preference Order PDF</div>
+
+          <div class="svc-price-row">
+            <span class="svc-price">₹501</span>
+            <span class="svc-price-note">one-time · 1-yr access</span>
+          </div>
+
+          <ul class="svc-features">
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Full preference order for UP state colleges</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>AKTU-affiliated institutes covered</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Branches, ranks &amp; college tiers sorted</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
+          </ul>
+
+          <div class="svc-note"><i class="fas fa-clock"></i> Processing: a few hours to 48 hours after form submission.</div>
+
+          <div class="svc-buttons">
+            <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
+            <a href="https://drive.google.com/file/d/1YnFGRa6nhZCF6jBsHVvFGW7qs4UxOnjY/view" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.svc-bento -->
+  </section>
+
+  <!-- ══ HOW IT WORKS ══ -->
+  <section class="content-section">
+    <div class="section-header reveal">
+      <div class="section-eyebrow"><i class="fas fa-route"></i>&nbsp;The Process</div>
+      <h2 class="section-title">Simple. Fast. <span class="grad-text">Personal.</span></h2>
+      <p class="section-sub">Three steps between you and the guidance that changes everything.</p>
+    </div>
+    <div class="steps-list">
+      <div class="step reveal">
+        <div class="step-left">
+          <div class="step-num">01</div>
+          <div class="step-icon-wrap"><i class="fas fa-pen-to-square"></i></div>
+        </div>
+        <div>
+          <div class="step-title">Fill the Form</div>
+          <p class="step-desc">Submit the payment form with your details, preferences, and time slot. Use the same email throughout.</p>
+        </div>
+      </div>
+      <div class="step reveal d1">
+        <div class="step-left">
+          <div class="step-num">02</div>
+          <div class="step-icon-wrap"><i class="fas fa-envelope-open-text"></i></div>
+        </div>
+        <div>
+          <div class="step-title">Get Confirmed</div>
+          <p class="step-desc">Receive a confirmation on your email within 48 hours. PDF orders are processed as fast as a few hours.</p>
+        </div>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-left">
+          <div class="step-num">03</div>
+          <div class="step-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+        </div>
+        <div>
+          <div class="step-title">Guidance Begins</div>
+          <p class="step-desc">Access your PDF for a full year, or join your live session with Prabhat — recorded for your reference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FREE RESOURCES ══ -->
+  <section class="content-section">
+    <div class="section-header reveal">
+      <div class="section-eyebrow"><i class="fas fa-table-cells-large"></i>&nbsp;Free Tools</div>
+      <h2 class="section-title">Start for free. <span class="grad-text">No sign-up.</span></h2>
+      <p class="section-sub">Fully open spreadsheets — explore before you spend a rupee.</p>
+    </div>
+    <div class="res-grid reveal d1">
+      <div class="res-card">
+        <div class="res-card-top">
+          <div class="res-icon-wrap"><i class="fas fa-code-compare"></i></div>
+          <span class="res-badge-free"><i class="fas fa-unlock"></i> Free</span>
+        </div>
+        <div>
+          <div class="res-title">College Comparison Tool</div>
+          <div class="res-desc">Compare any two colleges side by side — fees, placement, rankings, location, and more. Built to cut through the noise.</div>
+        </div>
+        <div class="res-tags">
+          <span class="res-tag">Placement</span><span class="res-tag">Fees</span><span class="res-tag">Rankings</span><span class="res-tag">Location</span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1nmWcFF1r3odmjC_IR5tsCi00VFPxjotQUJ1JxcYXWvA/edit?usp=sharing" target="_blank" rel="noopener" class="res-link">Open Spreadsheet <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="res-card">
+        <div class="res-card-top">
+          <div class="res-icon-wrap"><i class="fas fa-clipboard-list"></i></div>
+          <span class="res-badge-free"><i class="fas fa-unlock"></i> Free</span>
+        </div>
+        <div>
+          <div class="res-title">Class 12 Eligibility Criteria — 1000+ Colleges</div>
+          <div class="res-desc">Know exactly what Class 12th score you need to be eligible for B.Tech at 1000+ engineering colleges across India — all in one searchable sheet.</div>
+        </div>
+        <div class="res-tags">
+          <span class="res-tag">1000+ Colleges</span><span class="res-tag">Class 12</span><span class="res-tag">B.Tech Eligibility</span><span class="res-tag">Free Sheet</span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1JFaVjSuRLTRsBDK1ZkTb7tHJrqDbjipoNLMIldbP7xI/edit?usp=sharing" target="_blank" rel="noopener" class="res-link">Open Spreadsheet <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COUPON CODES ══ -->
+  <section class="content-section" id="coupons">
+    <div class="section-header reveal">
+      <div class="section-eyebrow"><i class="fas fa-tag"></i>&nbsp;Exclusive Discount Codes</div>
+      <h2 class="section-title">Best Coupon Codes. <span class="grad-text">Verified &amp; Active.</span></h2>
+      <p class="section-sub">Personally verified by Prabhat Ranjan — the highest discounts currently available. One click to copy.</p>
+    </div>
+
+    <div class="coupon-grid reveal d1">
+
+      <!-- PW IOI — 80% -->
+      <div class="coupon-card cc-amber" itemscope itemtype="https://schema.org/Offer">
+        <div class="coupon-stripe"></div>
+        <div class="coupon-body">
+          <div class="coupon-top">
+            <div><div class="coupon-discount">80%</div><div class="coupon-off-lbl">Maximum Discount — Best Available</div></div>
+            <span class="coupon-verified"><i class="fas fa-circle-check"></i> Verified Active</span>
+          </div>
+          <div><div class="coupon-brand">PW IOI — Physics Wallah</div><div class="coupon-desc">Best coupon code for PW IOI. Biggest discount — drops price from ₹500 to ₹100, sometimes ₹49. Most discounted PW IOI promo code.</div></div>
+          <div class="coupon-price"><span class="price-strike">₹500</span><span class="price-arrow">→</span><span class="price-new">₹100&nbsp;(sometimes ₹49!)</span></div>
+          <div class="coupon-code-row">
+            <div><div class="coupon-code-lbl">Promo / Coupon Code</div><div class="coupon-code" itemprop="serialNumber">M0088</div></div>
+            <button class="coupon-copy-btn" onclick="copyCoupon(this,'M0088')"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+          <meta itemprop="name" content="PW IOI 80% Discount Coupon Code — M0088">
+          <meta itemprop="priceCurrency" content="INR"><meta itemprop="price" content="100">
+          <meta itemprop="url" content="https://divastra.github.io/counselling.html#coupons">
+          <link itemprop="availability" href="https://schema.org/InStock">
+        </div>
+      </div>
+
+      <!-- Scaler — 50% -->
+      <div class="coupon-card cc-indigo" itemscope itemtype="https://schema.org/Offer">
+        <div class="coupon-stripe"></div>
+        <div class="coupon-body">
+          <div class="coupon-top">
+            <div><div class="coupon-discount">50%</div><div class="coupon-off-lbl">Off — Highest Discount</div></div>
+            <span class="coupon-verified"><i class="fas fa-circle-check"></i> Verified Active</span>
+          </div>
+          <div><div class="coupon-brand">Scaler — Tech &amp; CS Upskilling</div><div class="coupon-desc">Best coupon for Scaler's software engineering and CS programs. Maximum 50% discount — highest Scaler promo code for college students.</div></div>
+          <div class="coupon-price"><span class="price-new">50% off — maximum Scaler discount</span></div>
+          <div class="coupon-code-row">
+            <div><div class="coupon-code-lbl">Promo / Coupon Code</div><div class="coupon-code" itemprop="serialNumber">COLLEGE50</div></div>
+            <button class="coupon-copy-btn" onclick="copyCoupon(this,'COLLEGE50')"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+          <meta itemprop="name" content="Scaler 50% Discount Coupon Code — COLLEGE50">
+          <meta itemprop="url" content="https://divastra.github.io/counselling.html#coupons">
+          <link itemprop="availability" href="https://schema.org/InStock">
+        </div>
+      </div>
+
+      <!-- LPUNEST — 20% -->
+      <div class="coupon-card cc-red" itemscope itemtype="https://schema.org/Offer">
+        <div class="coupon-stripe"></div>
+        <div class="coupon-body">
+          <div class="coupon-top">
+            <div><div class="coupon-discount">20%</div><div class="coupon-off-lbl">Off — LPU B.Tech Admission</div></div>
+            <span class="coupon-verified"><i class="fas fa-circle-check"></i> Verified Active</span>
+          </div>
+          <div><div class="coupon-brand">LPU NEST — B.Tech Admission</div><div class="coupon-desc">Best verified coupon for LPUNEST registration — 20% off on Lovely Professional University B.Tech application fee. Most reliable LPU NEST promo code.</div></div>
+          <div class="coupon-price"><span class="price-new">20% off on LPUNEST registration fee</span></div>
+          <div class="coupon-code-row">
+            <div><div class="coupon-code-lbl">Promo / Coupon Code</div><div class="coupon-code" itemprop="serialNumber">LPUHFY107</div></div>
+            <button class="coupon-copy-btn" onclick="copyCoupon(this,'LPUHFY107')"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+          <meta itemprop="name" content="LPUNEST 20% Discount Coupon Code — LPUHFY107">
+          <meta itemprop="url" content="https://divastra.github.io/counselling.html#coupons">
+          <link itemprop="availability" href="https://schema.org/InStock">
+        </div>
+      </div>
+
+      <!-- Geeta University — 50% -->
+      <div class="coupon-card cc-teal" itemscope itemtype="https://schema.org/Offer">
+        <div class="coupon-stripe"></div>
+        <div class="coupon-body">
+          <div class="coupon-top">
+            <div><div class="coupon-discount">50%</div><div class="coupon-off-lbl">Off — Maximum Savings</div></div>
+            <span class="coupon-verified"><i class="fas fa-circle-check"></i> Verified Active</span>
+          </div>
+          <div><div class="coupon-brand">Geeta University — B.Tech</div><div class="coupon-desc">Best coupon for Geeta University B.Tech admission. Maximum 50% discount — highest Geeta University promo code for engineering admission 2025–26.</div></div>
+          <div class="coupon-price"><span class="price-new">50% off — highest Geeta University discount</span></div>
+          <div class="coupon-code-row">
+            <div><div class="coupon-code-lbl">Promo / Coupon Code</div><div class="coupon-code" itemprop="serialNumber">GU26GK4</div></div>
+            <button class="coupon-copy-btn" onclick="copyCoupon(this,'GU26GK4')"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+          <meta itemprop="name" content="Geeta University 50% Discount Coupon Code — GU26GK4">
+          <meta itemprop="url" content="https://divastra.github.io/counselling.html#coupons">
+          <link itemprop="availability" href="https://schema.org/InStock">
+        </div>
+      </div>
+
+    </div><!-- /.coupon-grid -->
+    <p class="coupon-note">
+      <i class="fas fa-shield-halved"></i>
+      All coupon codes personally verified by Prabhat Ranjan (NIT Jamshedpur). These are the maximum discounts available. Codes are periodically re-verified — bookmark this page for the latest active codes.
+    </p>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.svg" alt="Divastra">Divastra
+        </div>
+        <div class="footer-tag">Divya + Astra — Divine Weapon for Every Student</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://divastra.github.io/">Home</a></li>
+        <li><a href="counselling.html">Counselling</a></li>
+        <li><a href="https://divastra.github.io/rankPredictor.html">Predictor</a></li>
+        <li><a href="https://divastra.github.io/books.html">Books</a></li>
+        <li><a href="https://divastra.github.io/video.html">Videos</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" class="soc-btn soc-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://instagram.com/iam_prabhatranjan" target="_blank" class="soc-btn soc-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/prabhat-ranjan-36602b213" target="_blank" class="soc-btn soc-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <p class="footer-copy">Divastra · Made with ❤️ by Prabhat Ranjan</p>
+  </footer>
+
+</div><!-- /.page -->
+
+<script>
+/* ── NAV SCROLL ── */
+const navEl = document.getElementById('nav');
+const backTopBtn = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  const s = window.scrollY;
+  navEl.classList.toggle('solid', s > 40);
+  backTopBtn.classList.toggle('show', s > 400);
+}, {passive: true});
+backTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+
+/* ── MOBILE NAV ── */
+function openMob() {
+  document.getElementById('mobNav').classList.add('open');
+  document.getElementById('mobOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMob() {
+  document.getElementById('mobNav').classList.remove('open');
+  document.getElementById('mobOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ── SCROLL REVEAL ── */
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); revObs.unobserve(e.target); } });
+}, {threshold: .1, rootMargin: '0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+/* ── SHARE POPUP ── */
+(function() {
+  const SHARE_URL  = 'https://divastra.github.io/counselling.html';
+  const SHARE_TEXT = '🎓 JEE Counselling by Prabhat Ranjan (NIT Jamshedpur) — preference order PDFs, live sessions & free resources. Check Divastra:';
+  document.getElementById('shareWa').href = 'https://wa.me/?text=' + encodeURIComponent(SHARE_TEXT + '\n' + SHARE_URL);
+  document.getElementById('shareTw').href = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(SHARE_URL) + '&text=' + encodeURIComponent(SHARE_TEXT);
+  document.getElementById('shareLi').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(SHARE_URL);
+  document.getElementById('shareTg').href = 'https://t.me/share/url?url=' + encodeURIComponent(SHARE_URL) + '&text=' + encodeURIComponent(SHARE_TEXT);
+
+  const popup = document.getElementById('sharePopup'), overlay = document.getElementById('shareOverlay');
+  function openShare(cx, cy) {
+    const vw = window.innerWidth, vh = window.innerHeight, W = 340, pad = 14;
+    let x, y;
+    if (cx !== null && cy !== null) { x = Math.min(cx, vw - W - pad); x = Math.max(x, pad); y = Math.min(cy, vh - 320 - pad); y = Math.max(y, pad); }
+    else { x = vw / 2 - W / 2; y = vh / 2 - 160; }
+    popup.style.left = x + 'px'; popup.style.top = y + 'px';
+    overlay.classList.add('show'); popup.classList.add('show');
+  }
+  window.__shareOpenFn = openShare;
+  window.closeShare = function() { overlay.classList.remove('show'); popup.classList.remove('show'); };
+
+  document.addEventListener('contextmenu', e => { e.preventDefault(); openShare(e.clientX, e.clientY); });
+  let ctrlDown = false;
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { window.closeShare(); return; }
+    if (e.key === 'Tab') return;
+    if (e.key === 'Control' || e.key === 'Meta') { ctrlDown = true; return; }
+    if (/^F\d+$/.test(e.key)) { e.preventDefault(); e.stopPropagation(); return; }
+    if (e.ctrlKey || e.metaKey) { ctrlDown = false; e.preventDefault(); e.stopPropagation(); return; }
+    if (e.altKey) { e.preventDefault(); e.stopPropagation(); return; }
+  }, true);
+  document.addEventListener('keyup', e => {
+    if ((e.key === 'Control' || e.key === 'Meta') && ctrlDown) { openShare(null, null); ctrlDown = false; }
+    if (e.key === 'Control' || e.key === 'Meta') ctrlDown = false;
+  }, true);
+
+  window.copyShareLink = function() {
+    const btn = document.querySelector('.share-copy'), orig = btn.innerHTML;
+    const doFb = () => { btn.innerHTML = '<i class="fas fa-check"></i> Copied!'; btn.classList.add('copied'); setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2500); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(SHARE_URL).then(doFb).catch(doFb);
+    else { const el = document.createElement('textarea'); el.value = SHARE_URL; el.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(el); el.select(); try { document.execCommand('copy'); } catch(e) {} document.body.removeChild(el); doFb(); }
+  };
+
+  let lpTimer = null;
+  window.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) return;
+    const t = e.touches[0];
+    lpTimer = setTimeout(() => { if (window.__shareOpenFn) window.__shareOpenFn(t.clientX, t.clientY); }, 500);
+  }, {passive: true});
+  window.addEventListener('touchend', () => clearTimeout(lpTimer), {passive: true});
+  window.addEventListener('touchmove', () => clearTimeout(lpTimer), {passive: true});
+})();
+
+/* ── COUPON COPY ── */
+function copyCoupon(btn, code) {
+  const orig = btn.innerHTML;
+  const doFb = () => {
+    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2500);
+  };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(code).then(doFb).catch(doFb);
+  else { const el = document.createElement('textarea'); el.value = code; el.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(el); el.select(); try { document.execCommand('copy'); } catch(e) {} document.body.removeChild(el); doFb(); }
+}
+
+/* ── APP-LIKE LOCKS ── */
+(function() {
+  document.addEventListener('selectstart', e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
+  document.addEventListener('dragstart', e => { e.preventDefault(); });
+  window.addEventListener('wheel', e => { if (e.ctrlKey || e.metaKey) e.preventDefault(); }, {passive: false});
+  document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preventDefault(); }, {passive: false});
+  let lastT = 0;
+  document.addEventListener('touchend', e => {
+    const now = Date.now();
+    if (now - lastT < 300 && !e.target.closest('a,button,input,select,textarea')) e.preventDefault();
+    lastT = now;
+  }, {passive: false});
+  document.addEventListener('copy', e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
+  document.addEventListener('cut',  e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
+})();
+</script>
+</body>
+</html>

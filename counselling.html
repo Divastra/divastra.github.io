@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="JEE counselling by Prabhat Ranjan (NIT Jamshedpur) — JoSAA/CSAB preference order PDF, UPTAC PDF, and 1-on-1 live guidance sessions. Best coupon codes for PW IOI, Scaler, LPU NEST, Geeta University.">
-  <meta name="keywords" content="JEE counselling, JoSAA CSAB preference order, UPTAC counselling PDF, JEE rank predictor, college admission guidance, PW IOI coupon code, Scaler coupon, LPU NEST coupon, Geeta University coupon">
+  <meta name="description" content="JEE counselling by Prabhat Ranjan (NIT Jamshedpur) — preference order PDFs for JoSAA/CSAB, UPTAC & JCECEB, expert batch sessions, and 1-on-1 personal guidance.">
+  <meta name="keywords" content="JEE counselling, JoSAA CSAB preference order, UPTAC counselling PDF, JCECEB counselling, JEE rank predictor, college admission guidance, PW IOI coupon code, Scaler coupon, LPU NEST coupon, Geeta University coupon">
   <meta name="author" content="Prabhat Ranjan, NIT Jamshedpur">
   <meta property="og:title" content="JEE Counselling — Divastra">
-  <meta property="og:description" content="Expert JEE counselling by Prabhat Ranjan (NIT Jamshedpur). PDF guides & live sessions.">
+  <meta property="og:description" content="PDF guides, batch sessions & 1-on-1 calls for JEE college admission — by Prabhat Ranjan, NIT Jamshedpur.">
   <meta property="og:url" content="https://divastra.github.io/counselling.html">
   <title>JEE Counselling — Divastra</title>
   <link rel="icon" href="logo.svg" type="image/svg+xml">
@@ -19,43 +19,42 @@
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="theme.css">
   <style>
-  /* ── Page wrapper ── */
   .page { padding-top: 62px; }
 
-  /* ── Hero ── */
+  /* ═══════════════════════════════════════════════
+     HERO
+  ═══════════════════════════════════════════════ */
   .hero-section {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 5rem 2rem 4rem;
-    text-align: center;
+    max-width: 820px; margin: 0 auto;
+    padding: 5.5rem 2rem 4.5rem; text-align: center;
   }
   .hero-badge {
     display: inline-flex; align-items: center; gap: .5rem;
     background: var(--accent-light); border: 1px solid var(--accent-border);
     color: var(--accent); font-size: .72rem; font-weight: 700;
     letter-spacing: .08em; text-transform: uppercase;
-    padding: .35rem .85rem; border-radius: 100px; margin-bottom: 1.4rem;
+    padding: .35rem .9rem; border-radius: 100px; margin-bottom: 1.6rem;
   }
   .hero-badge .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
-  .hero-section .hero-title {
+  .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    font-weight: 900; letter-spacing: -.5px; line-height: 1.15;
-    margin-bottom: 1.1rem;
-  }
-  .hero-section .hero-desc {
-    font-size: 1.05rem; color: var(--text-muted); line-height: 1.75;
-    max-width: 560px; margin: 0 auto 1.75rem;
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+    font-weight: 900; letter-spacing: -.6px; line-height: 1.1;
+    margin-bottom: 1.2rem; color: var(--text);
   }
   .grad-text { color: var(--accent); }
+  .hero-desc {
+    font-size: 1.08rem; color: var(--text-muted); line-height: 1.8;
+    max-width: 580px; margin: 0 auto 1.8rem;
+  }
 
   /* Profile chip */
   .profile-chip {
     display: inline-flex; align-items: center; gap: .65rem;
     background: var(--bg-subtle); border: 1px solid var(--border);
-    border-radius: 100px; padding: .45rem 1rem .45rem .45rem;
-    margin: 0 auto .3rem; max-width: fit-content;
+    border-radius: 100px; padding: .45rem 1.1rem .45rem .45rem;
+    margin: 0 auto 1.8rem; max-width: fit-content;
   }
   .profile-photo { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; pointer-events: none; }
   .profile-avatar-fb {
@@ -67,110 +66,296 @@
   .profile-name { font-weight: 700; font-size: .88rem; color: var(--text); }
   .profile-role { font-size: .72rem; color: var(--text-muted); }
 
-  /* Hero pills */
-  .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; margin-top: 1.5rem; }
-  .pill-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-  .pd-b { background: #22d3ee; }
-  .pd-g { background: #10b981; }
-  .pd-y { background: #f59e0b; }
-  .pd-c { background: var(--accent); }
+  /* Hero stat strip */
+  .hero-stats-strip {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: .35rem 1.5rem; margin-top: .25rem;
+  }
+  .hss-item {
+    display: flex; align-items: center; gap: .45rem;
+    font-size: .83rem; color: var(--text-muted);
+  }
+  .hss-item strong { color: var(--text); font-weight: 700; }
+  .hss-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
-  /* ── Section wrapper ── */
+  /* ═══════════════════════════════════════════════
+     "WHAT WOULD YOU LIKE HELP WITH?" — OVERVIEW STRIP
+  ═══════════════════════════════════════════════ */
+  .overview-section {
+    background: var(--bg-subtle);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3.5rem 2rem;
+  }
+  .overview-inner { max-width: 900px; margin: 0 auto; }
+  .overview-head  { text-align: center; margin-bottom: 2.25rem; }
+  .overview-eyebrow {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: .6rem;
+  }
+  .overview-title {
+    font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.85rem);
+    font-weight: 800; color: var(--text); letter-spacing: -.3px;
+  }
+  .overview-sub { font-size: .9rem; color: var(--text-muted); margin-top: .45rem; }
+
+  /* Overview cards */
+  .overview-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  }
+  .ov-card {
+    background: var(--bg); border: 1.5px solid var(--border);
+    border-radius: var(--r-lg); padding: 1.6rem 1.4rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    cursor: pointer; transition: box-shadow var(--t-med), transform var(--t-med), border-color var(--t-med);
+    text-decoration: none;
+  }
+  .ov-card:hover { transform: translateY(-4px); border-color: var(--accent-border); box-shadow: var(--shadow-lg); }
+  .ov-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .5rem; }
+  .ov-icon {
+    width: 46px; height: 46px; border-radius: var(--r);
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .ov-pdf   .ov-icon { background: rgba(124,58,237,.1); color: #7c3aed; }
+  .ov-batch .ov-icon { background: rgba(217,119,6,.1);  color: #d97706; }
+  .ov-solo  .ov-icon { background: rgba(239,68,68,.08); color: #dc2626; }
+
+  .ov-price-pill {
+    font-family: var(--font-display); font-size: .8rem; font-weight: 800;
+    padding: .3rem .75rem; border-radius: 100px; white-space: nowrap;
+  }
+  .ov-pdf   .ov-price-pill { background: rgba(124,58,237,.1); color: #7c3aed; }
+  .ov-batch .ov-price-pill { background: rgba(217,119,6,.1);  color: #d97706; }
+  .ov-solo  .ov-price-pill { background: rgba(239,68,68,.08); color: #dc2626; }
+
+  .ov-label {
+    font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--text-light);
+  }
+  .ov-name {
+    font-family: var(--font-display); font-size: 1.1rem; font-weight: 800;
+    color: var(--text); line-height: 1.25;
+  }
+  .ov-desc { font-size: .84rem; color: var(--text-muted); line-height: 1.6; }
+  .ov-chips { display: flex; flex-wrap: wrap; gap: .35rem; }
+  .ov-chip {
+    font-size: .7rem; font-weight: 600; padding: .2rem .6rem;
+    border-radius: 100px; border: 1px solid var(--border);
+    background: var(--bg-muted); color: var(--text-muted);
+  }
+  .ov-cta {
+    font-size: .83rem; font-weight: 700; color: var(--accent);
+    display: flex; align-items: center; gap: .4rem; margin-top: auto;
+    transition: gap var(--t);
+  }
+  .ov-card:hover .ov-cta { gap: .65rem; }
+
+  /* ═══════════════════════════════════════════════
+     SERVICES DETAIL SECTION
+  ═══════════════════════════════════════════════ */
   .content-section {
     max-width: 900px; margin: 0 auto;
-    padding: 4rem 2rem;
-    border-top: 1px solid var(--border);
+    padding: 4rem 2rem; border-top: 1px solid var(--border);
   }
-  .section-header {
-    text-align: center; margin-bottom: 2.75rem;
-  }
+  .section-header { text-align: center; margin-bottom: 2.5rem; }
   .section-eyebrow {
     display: inline-flex; align-items: center; gap: .4rem;
     font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
     color: var(--accent); margin-bottom: .7rem;
   }
   .section-header .section-title { max-width: 100%; }
-  .section-header .section-sub { margin: 0 auto; }
+  .section-header .section-sub   { margin: 0 auto; }
 
-  /* ── Service Bento ── */
-  .svc-bento {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+  /* Filter bar */
+  .filter-bar {
+    display: flex; flex-wrap: wrap; gap: .5rem;
+    justify-content: center; margin-bottom: 2.25rem;
   }
-  .svc-card {
-    background: var(--bg); border: 1px solid var(--border);
-    border-radius: var(--r-lg); overflow: hidden;
-    display: flex; flex-direction: column;
-    transition: box-shadow var(--t-med), transform var(--t-med);
+  .filter-btn {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .78rem; font-weight: 700; padding: .5rem 1.15rem;
+    border-radius: 100px; border: 1.5px solid var(--border);
+    background: var(--bg); color: var(--text-muted);
+    cursor: pointer; transition: all var(--t);
+    font-family: var(--font-display);
   }
-  .svc-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-  .tier-violet { grid-column: 1; grid-row: 1; }
-  .tier-gold   { grid-column: 2; grid-row: 1 / 3; }
-  .tier-emerald{ grid-column: 1; grid-row: 2; }
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn.active {
+    background: var(--accent); border-color: var(--accent);
+    color: #fff; box-shadow: 0 2px 14px rgba(8,145,178,.28);
+  }
+  .fbtn-count {
+    background: rgba(255,255,255,.22); border-radius: 100px;
+    font-size: .68rem; padding: .08rem .45rem;
+  }
+  .filter-btn:not(.active) .fbtn-count {
+    background: var(--bg-muted); color: var(--text-light);
+  }
+  .pdf-grid.grid-solo { grid-template-columns: 1fr; max-width: 460px; }
 
-  .svc-bar { height: 4px; flex-shrink: 0; }
-  .tier-violet .svc-bar  { background: linear-gradient(90deg,#7c3aed,#a78bfa); }
-  .tier-gold   .svc-bar  { background: linear-gradient(90deg,#d97706,#fbbf24); }
-  .tier-emerald .svc-bar { background: linear-gradient(90deg,#047857,#10b981); }
-
-  .svc-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; gap: .8rem; }
-
+  /* Shared svc bits */
   .svc-tier {
     font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
-    display: flex; align-items: center; gap: .3rem;
+    display: inline-flex; align-items: center; gap: .35rem;
   }
-  .tier-violet .svc-tier  { color: #7c3aed; }
-  .tier-gold   .svc-tier  { color: #d97706; }
-  .tier-emerald .svc-tier { color: #047857; }
-
   .svc-counsellor { display: flex; align-items: center; gap: .55rem; }
   .svc-photo { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; pointer-events: none; }
   .svc-cname { font-weight: 700; font-size: .8rem; color: var(--text); line-height: 1.3; }
   .svc-ccred { font-size: .7rem; color: var(--text-muted); }
-
-  .svc-icon {
-    width: 44px; height: 44px; border-radius: var(--r);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; flex-shrink: 0;
+  .svc-features { list-style: none; display: flex; flex-direction: column; gap: .42rem; }
+  .svc-features li {
+    display: flex; align-items: flex-start; gap: .5rem;
+    font-size: .83rem; color: var(--text-muted); line-height: 1.5;
   }
-  .tier-violet .svc-icon  { background: rgba(124,58,237,.1); color: #7c3aed; }
-  .tier-gold   .svc-icon  { background: rgba(217,119,6,.1);  color: #d97706; }
-  .tier-emerald .svc-icon { background: rgba(4,120,87,.1);   color: #047857; }
-
-  .svc-title {
-    font-family: var(--font-display); font-weight: 800;
-    font-size: 1.05rem; color: var(--text); line-height: 1.3;
-  }
-
-  .svc-price-row { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
-  .svc-price {
-    font-family: var(--font-display); font-size: 1.7rem;
-    font-weight: 900; color: var(--text); line-height: 1;
-  }
-  .tier-gold .svc-price { color: #d97706; }
-  .svc-price-note { font-size: .75rem; color: var(--text-muted); }
-
-  .svc-features { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
-  .svc-features li { display: flex; align-items: flex-start; gap: .5rem; font-size: .83rem; color: var(--text-muted); line-height: 1.5; }
   .feat-check {
     width: 16px; height: 16px; border-radius: 50%; background: #dcfce7; color: #16a34a;
     display: flex; align-items: center; justify-content: center;
     font-size: .55rem; flex-shrink: 0; margin-top: 2px;
   }
-  .tier-gold .feat-check { background: rgba(217,119,6,.12); color: #d97706; }
-
+  .feat-check-gold   { background: rgba(217,119,6,.12); color: #d97706; }
+  .feat-check-violet { background: rgba(124,58,237,.1); color: #7c3aed; }
+  .feat-check-teal   { background: rgba(8,145,178,.1);  color: #0891b2; }
   .svc-note {
     font-size: .77rem; color: var(--text-muted);
     background: var(--bg-subtle); border: 1px solid var(--border);
-    border-radius: var(--r-sm); padding: .65rem .9rem;
+    border-radius: var(--r-sm); padding: .6rem .85rem;
     display: flex; align-items: flex-start; gap: .45rem; line-height: 1.5;
   }
   .svc-note i { flex-shrink: 0; margin-top: 1px; }
 
-  .svc-buttons { display: flex; flex-direction: column; gap: .5rem; margin-top: auto; }
+  /* Premium 1-on-1 card */
+  .prem-card {
+    background: var(--bg); border: 1.5px solid rgba(217,119,6,.32);
+    border-radius: var(--r-lg); overflow: hidden; margin-bottom: 1.5rem;
+    transition: box-shadow var(--t-med);
+  }
+  .prem-card:hover { box-shadow: 0 8px 36px rgba(217,119,6,.14); }
+  .prem-bar {
+    height: 5px;
+    background: linear-gradient(90deg,#92400e,#d97706,#fbbf24,#f59e0b,#d97706,#92400e);
+    background-size: 300% 100%; animation: goldSlide 3s linear infinite;
+  }
+  @keyframes goldSlide { 0%{background-position:0% center} 100%{background-position:300% center} }
+  .prem-body {
+    padding: 1.75rem 2rem; display: grid;
+    grid-template-columns: 1fr 260px; gap: 2.25rem; align-items: start;
+  }
+  .prem-left  { display: flex; flex-direction: column; gap: 1rem; }
+  .prem-right { display: flex; flex-direction: column; gap: .8rem; }
+  .prem-tier  { color: #d97706; }
+  .prem-title {
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 800;
+    color: var(--text); line-height: 1.2;
+  }
+  .prem-price { font-family: var(--font-display); font-size: 2.4rem; font-weight: 900; color: #d97706; line-height: 1; }
+  .prem-price-note { font-size: .78rem; color: var(--text-muted); margin-top: .3rem; }
+  .prem-buttons { display: flex; flex-direction: column; gap: .5rem; }
 
-  /* ── How It Works ── */
+  /* JoSAA/CSAB bestseller card */
+  .best-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--r-lg); overflow: hidden; margin-bottom: 2.5rem;
+    position: relative; transition: box-shadow var(--t-med), transform var(--t-med);
+  }
+  .best-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .best-bar { height: 4px; background: linear-gradient(90deg,#7c3aed,#a78bfa); }
+  .best-badge {
+    position: absolute; top: 1.1rem; right: 1.25rem;
+    background: linear-gradient(135deg,#7c3aed,#a78bfa);
+    color: white; font-size: .64rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .08em;
+    padding: .28rem .75rem; border-radius: 100px;
+    display: inline-flex; align-items: center; gap: .35rem;
+  }
+  .best-body {
+    padding: 1.5rem; display: grid;
+    grid-template-columns: 1fr 200px; gap: 2rem; align-items: start;
+  }
+  .best-left  { display: flex; flex-direction: column; gap: .85rem; }
+  .best-right { display: flex; flex-direction: column; gap: .7rem; }
+  .best-tier  { color: #7c3aed; }
+  .best-icon {
+    width: 44px; height: 44px; border-radius: var(--r);
+    background: rgba(124,58,237,.1); color: #7c3aed;
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+  }
+  .best-title { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--text); line-height: 1.25; }
+  .best-price { font-family: var(--font-display); font-size: 1.9rem; font-weight: 900; color: var(--text); line-height: 1; }
+  .best-price-note { font-size: .75rem; color: var(--text-muted); margin-top: .25rem; }
+  .best-buttons { display: flex; flex-direction: column; gap: .5rem; }
+
+  /* PDF grid */
+  .pdf-grid-head {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    justify-content: space-between; gap: .5rem; margin-bottom: 1.1rem;
+  }
+  .pdf-grid-title { font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--text); }
+  .pdf-grid-note  { font-size: .8rem; color: var(--text-muted); }
+  .pdf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .pdf-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--r-lg); overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: box-shadow var(--t-med), transform var(--t-med);
+  }
+  .pdf-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+  .pdf-card-bar { height: 4px; flex-shrink: 0; }
+  .pdf-uptac  .pdf-card-bar { background: linear-gradient(90deg,#047857,#10b981); }
+  .pdf-jceceb .pdf-card-bar { background: linear-gradient(90deg,#0891b2,#22d3ee); }
+  .pdf-card-body { padding: 1.3rem; flex: 1; display: flex; flex-direction: column; gap: .75rem; }
+  .pdf-tier-uptac  { color: #047857; }
+  .pdf-tier-jceceb { color: #0891b2; }
+  .pdf-icon { width: 40px; height: 40px; border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .pdf-icon-uptac  { background: rgba(4,120,87,.1);  color: #047857; }
+  .pdf-icon-jceceb { background: rgba(8,145,178,.1); color: #0891b2; }
+  .pdf-title { font-family: var(--font-display); font-weight: 800; font-size: .98rem; color: var(--text); line-height: 1.3; }
+  .pdf-price-row { display: flex; align-items: baseline; gap: .45rem; flex-wrap: wrap; }
+  .pdf-price      { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--text); line-height: 1; }
+  .pdf-price-note { font-size: .73rem; color: var(--text-muted); }
+  .pdf-buttons { display: flex; flex-direction: column; gap: .45rem; margin-top: auto; }
+
+  /* Addon action buttons */
+  .addon-btn-meet {
+    display: inline-flex; align-items: center; gap: .45rem;
+    font-size: .8rem; font-weight: 700; padding: .55rem .9rem;
+    border-radius: var(--r-sm); border: 1.5px solid #1a73e8; color: #1a73e8;
+    background: transparent; cursor: pointer; transition: background var(--t), color var(--t);
+    font-family: var(--font-display); text-decoration: none;
+  }
+  .addon-btn-meet:hover { background: #1a73e8; color: #fff; }
+  .addon-btn-tg {
+    display: inline-flex; align-items: center; gap: .45rem;
+    font-size: .8rem; font-weight: 700; padding: .55rem .9rem;
+    border-radius: var(--r-sm); border: 1.5px solid #0088cc; color: #0088cc;
+    background: transparent; cursor: pointer; transition: background var(--t), color var(--t);
+    font-family: var(--font-display); text-decoration: none;
+  }
+  .addon-btn-tg:hover { background: #0088cc; color: #fff; }
+
+  /* JCECEB add-on */
+  .addon-sep { border: none; border-top: 1.5px dashed var(--border); margin: .5rem 0 0; }
+  .addon-block {
+    background: var(--bg-subtle); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 1rem; display: flex; flex-direction: column; gap: .65rem;
+  }
+  .addon-tag {
+    display: inline-flex; align-items: center; gap: .3rem;
+    font-size: .63rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em;
+    color: #7c3aed; background: rgba(124,58,237,.08); border: 1px solid rgba(124,58,237,.2);
+    padding: .2rem .55rem; border-radius: 100px; width: fit-content;
+  }
+  .addon-title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+  .addon-title { font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: var(--text); line-height: 1.3; }
+  .addon-price { font-family: var(--font-display); font-weight: 900; font-size: 1.1rem; color: var(--text); white-space: nowrap; }
+  .addon-meta  { font-size: .78rem; color: var(--text-muted); line-height: 1.55; display: flex; flex-direction: column; gap: .3rem; }
+  .addon-meta-row { display: flex; align-items: flex-start; gap: .45rem; }
+  .addon-meta-row i { color: var(--accent); font-size: .75rem; margin-top: 2px; flex-shrink: 0; }
+
+  /* ═══════════════════════════════════════════════
+     HOW IT WORKS
+  ═══════════════════════════════════════════════ */
   .steps-list { display: flex; flex-direction: column; gap: 0; }
   .step {
     display: flex; align-items: flex-start; gap: 1.4rem;
@@ -182,8 +367,7 @@
     width: 42px; height: 42px; border-radius: 50%;
     background: var(--accent-light); border: 2px solid var(--accent-border);
     color: var(--accent); font-family: var(--font-display); font-weight: 900;
-    font-size: .82rem; display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
+    font-size: .82rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
   .step-icon-wrap {
     width: 36px; height: 36px; border-radius: var(--r-sm);
@@ -194,7 +378,9 @@
   .step-title { font-family: var(--font-display); font-weight: 700; font-size: .975rem; margin-bottom: .3rem; }
   .step-desc  { font-size: .85rem; color: var(--text-muted); line-height: 1.65; }
 
-  /* ── Free Resources ── */
+  /* ═══════════════════════════════════════════════
+     FREE RESOURCES
+  ═══════════════════════════════════════════════ */
   .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .res-card {
     background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg);
@@ -216,21 +402,15 @@
   .res-title { font-family: var(--font-display); font-weight: 700; font-size: .95rem; color: var(--text); }
   .res-desc  { font-size: .83rem; color: var(--text-muted); line-height: 1.6; }
   .res-tags  { display: flex; flex-wrap: wrap; gap: .35rem; }
-  .res-tag   {
-    font-size: .7rem; font-weight: 600; background: var(--bg-muted);
-    color: var(--text-muted); padding: .22rem .58rem; border-radius: 100px;
-    border: 1px solid var(--border);
-  }
-  .res-link {
-    color: var(--accent); font-size: .83rem; font-weight: 700;
-    display: flex; align-items: center; gap: .4rem; margin-top: auto;
-    transition: color var(--t);
-  }
+  .res-tag   { font-size: .7rem; font-weight: 600; background: var(--bg-muted); color: var(--text-muted); padding: .22rem .58rem; border-radius: 100px; border: 1px solid var(--border); }
+  .res-link  { color: var(--accent); font-size: .83rem; font-weight: 700; display: flex; align-items: center; gap: .4rem; margin-top: auto; transition: color var(--t); }
   .res-link:hover { color: var(--accent-hover); }
   .res-link i { font-size: .72rem; transition: transform var(--t); }
   .res-link:hover i { transform: translate(2px,-2px); }
 
-  /* ── Coupon Cards ── */
+  /* ═══════════════════════════════════════════════
+     COUPON CARDS
+  ═══════════════════════════════════════════════ */
   .coupon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .coupon-card {
     background: var(--bg); border: 1px solid var(--border);
@@ -244,16 +424,13 @@
   .cc-red    .coupon-stripe { background: linear-gradient(90deg,#e11d48,#f43f5e); }
   .cc-teal   .coupon-stripe { background: linear-gradient(90deg,#0d9488,#2dd4bf); }
   .coupon-body { padding: 1.2rem; display: flex; flex-direction: column; gap: .7rem; }
-  .coupon-top { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
-  .coupon-discount {
-    font-family: var(--font-display); font-size: 1.85rem;
-    font-weight: 900; line-height: 1;
-  }
+  .coupon-top  { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+  .coupon-discount { font-family: var(--font-display); font-size: 1.85rem; font-weight: 900; line-height: 1; }
   .cc-amber  .coupon-discount { color: #d97706; }
   .cc-indigo .coupon-discount { color: #4338ca; }
   .cc-red    .coupon-discount { color: #e11d48; }
   .cc-teal   .coupon-discount { color: #0d9488; }
-  .coupon-off-lbl { font-size: .7rem; color: var(--text-muted); font-weight: 600; margin-top: .25rem; }
+  .coupon-off-lbl  { font-size: .7rem; color: var(--text-muted); font-weight: 600; margin-top: .25rem; }
   .coupon-verified {
     font-size: .68rem; font-weight: 700; color: #16a34a;
     display: flex; align-items: center; gap: .3rem;
@@ -271,10 +448,7 @@
     background: var(--bg-subtle); border: 1.5px dashed var(--accent-border);
     border-radius: var(--r-sm); padding: .7rem .9rem; gap: .65rem;
   }
-  .coupon-code-lbl {
-    font-size: .64rem; color: var(--text-light); font-weight: 600;
-    text-transform: uppercase; letter-spacing: .07em; margin-bottom: .2rem;
-  }
+  .coupon-code-lbl { font-size: .64rem; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .2rem; }
   .coupon-code { font-family: 'Courier New',monospace; font-weight: 900; font-size: 1.05rem; color: var(--text); letter-spacing: .04em; }
   .coupon-copy-btn {
     background: var(--accent); color: white; border: none;
@@ -291,23 +465,27 @@
   }
   .coupon-note i { color: #4ade80; margin-right: .3rem; }
 
-  /* ── Responsive ── */
+  /* ═══════════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════════ */
   @media (max-width: 700px) {
-    .svc-bento {
-      grid-template-columns: 1fr;
-    }
-    .tier-violet  { grid-column: 1; grid-row: auto; }
-    .tier-gold    { grid-column: 1; grid-row: auto; }
-    .tier-emerald { grid-column: 1; grid-row: auto; }
-    .coupon-grid  { grid-template-columns: 1fr; }
-    .res-grid     { grid-template-columns: 1fr; }
-    .step-left    { flex-direction: column; gap: .4rem; }
-    .hero-section { padding: 4rem 1.25rem 3rem; }
+    .overview-grid { grid-template-columns: 1fr; }
+    .prem-body  { grid-template-columns: 1fr; gap: 1.25rem; }
+    .best-body  { grid-template-columns: 1fr; gap: 1rem; }
+    .best-badge { position: static; margin-bottom: .5rem; width: fit-content; }
+    .pdf-grid   { grid-template-columns: 1fr; }
+    .coupon-grid{ grid-template-columns: 1fr; }
+    .res-grid   { grid-template-columns: 1fr; }
+    .step-left  { flex-direction: column; gap: .4rem; }
+    .hero-section    { padding: 4rem 1.25rem 3rem; }
+    .overview-section{ padding: 2.5rem 1.25rem; }
     .content-section { padding: 3rem 1.25rem; }
   }
   @media (max-width: 480px) {
     .coupon-code-row { flex-direction: column; align-items: stretch; }
     .coupon-copy-btn { justify-content: center; }
+    .prem-price { font-size: 2rem; }
+    .overview-grid { gap: .75rem; }
   }
   </style>
 </head>
@@ -336,13 +514,10 @@
 
 <!-- Mobile nav overlay -->
 <div class="mob-overlay" id="mobOverlay" onclick="closeMob()"></div>
-
-<!-- Mobile nav panel -->
 <div class="mob" id="mobNav">
   <div class="mob-head">
     <a href="https://divastra.github.io/" class="nav-logo">
-      <img src="logo.svg" class="nav-logo-img" alt="Divastra">
-      <span>Divastra</span>
+      <img src="logo.svg" class="nav-logo-img" alt="Divastra"><span>Divastra</span>
     </a>
     <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
   </div>
@@ -375,166 +550,315 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero-section">
-    <div class="hero-badge reveal"><span class="badge-dot"></span> Expert Counselling</div>
+    <div class="hero-badge reveal"><span class="badge-dot"></span> JEE Counselling by Prabhat Ranjan</div>
+
     <h1 class="hero-title reveal d1">
-      Your JEE Journey,<br>
-      <span class="grad-text">Personally Guided</span>
+      Rank mil gayi.<br>
+      <span class="grad-text">Ab sahi college chunna hai.</span>
     </h1>
+
     <p class="hero-desc reveal d2">
-      I'm Prabhat Ranjan — I help you navigate IIT JEE, choose the right engineering college, and plan your career. No generic advice. Real experience-backed guidance from NIT Jamshedpur.
+      Most JEE students get their preference order wrong — and spend 4 years regretting it.
+      Prabhat Ranjan (NIT Jamshedpur) has guided <strong>10,000+ students</strong> through
+      JoSAA/CSAB, UPTAC &amp; JCECEB — with PDFs, batch sessions, and personal 1-on-1 calls.
     </p>
+
     <div class="profile-chip reveal d2">
       <img src="https://divastra.github.io/assets/img/thumbnail1.png"
            class="profile-photo" alt="Prabhat Ranjan"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="profile-avatar-fb" style="display:none">PR</div>
       <div>
-        <div class="profile-name">Prabhat Ranjan</div>
-        <div class="profile-role">Mech Eng · NIT Jamshedpur · "Blue T-shirt Bhaiya"</div>
+        <div class="profile-name">Prabhat Ranjan — "Blue T-shirt Bhaiya"</div>
+        <div class="profile-role">Mech Eng · NIT Jamshedpur · Trusted by 10K+ students</div>
       </div>
     </div>
-    <div class="hero-pills reveal d3">
-      <span class="pill"><span class="pill-dot pd-b"></span>10,000+ Students</span>
-      <span class="pill"><span class="pill-dot pd-g"></span>NIT Jamshedpur</span>
-      <span class="pill"><span class="pill-dot pd-y"></span>JEE + Boards</span>
-      <span class="pill"><span class="pill-dot pd-c"></span>1-on-1 Sessions</span>
+
+    <div class="hero-stats-strip reveal d3">
+      <span class="hss-item"><span class="hss-dot"></span><strong>3</strong>&nbsp;exams covered</span>
+      <span class="hss-item"><span class="hss-dot"></span><strong>₹501</strong>&nbsp;starting price</span>
+      <span class="hss-item"><span class="hss-dot"></span><strong>PDF · Batch · 1-on-1</strong>&nbsp;options</span>
+      <span class="hss-item"><span class="hss-dot"></span>Preview before you pay</span>
     </div>
   </section>
 
-  <!-- ══ SERVICES BENTO ══ -->
-  <section class="content-section">
+  <!-- ══ WHAT WOULD YOU LIKE HELP WITH? ══ -->
+  <div class="overview-section">
+    <div class="overview-inner">
+      <div class="overview-head reveal">
+        <div class="overview-eyebrow"><i class="fas fa-compass"></i>&nbsp;Your Options at a Glance</div>
+        <div class="overview-title">What kind of help do you need?</div>
+        <div class="overview-sub">Three types of support — pick what fits your budget and how much hand-holding you want.</div>
+      </div>
+
+      <div class="overview-grid">
+
+        <!-- PDF Guides -->
+        <a class="ov-card ov-pdf reveal" href="#pdfs" onclick="scrollToSection('pdfs',event)">
+          <div class="ov-card-top">
+            <div class="ov-icon"><i class="fas fa-file-lines"></i></div>
+            <div class="ov-price-pill">From ₹501</div>
+          </div>
+          <div>
+            <div class="ov-label">Self-study</div>
+            <div class="ov-name">Preference Order<br>PDF Guides</div>
+          </div>
+          <div class="ov-desc">
+            Ready-made, curated PDFs listing the ideal college preference order for each exam — study at your own pace, no calls needed.
+          </div>
+          <div class="ov-chips">
+            <span class="ov-chip">JoSAA / CSAB</span>
+            <span class="ov-chip">UPTAC</span>
+            <span class="ov-chip">JCECEB</span>
+          </div>
+          <div class="ov-cta">See PDF Guides <i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <!-- Batch Counselling -->
+        <a class="ov-card ov-batch reveal d1" href="#batch" onclick="scrollToSection('batch',event)">
+          <div class="ov-card-top">
+            <div class="ov-icon"><i class="fas fa-users"></i></div>
+            <div class="ov-price-pill">₹751</div>
+          </div>
+          <div>
+            <div class="ov-label">Group sessions · Live</div>
+            <div class="ov-name">Batch Counselling<br>Sessions</div>
+          </div>
+          <div class="ov-desc">
+            Expert-led live sessions every Saturday, 8–9 PM. Ask questions, get answers — in a structured batch format till September 2026.
+          </div>
+          <div class="ov-chips">
+            <span class="ov-chip">Every Saturday</span>
+            <span class="ov-chip">8–9 PM</span>
+            <span class="ov-chip">JCECEB</span>
+          </div>
+          <div class="ov-cta">See Batch Details <i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 1-on-1 -->
+        <a class="ov-card ov-solo reveal d2" href="#session" onclick="scrollToSection('session',event)">
+          <div class="ov-card-top">
+            <div class="ov-icon"><i class="fas fa-video"></i></div>
+            <div class="ov-price-pill">₹5,000</div>
+          </div>
+          <div>
+            <div class="ov-label">Personal · Most Premium</div>
+            <div class="ov-name">1-on-1 Session<br>with Prabhat</div>
+          </div>
+          <div class="ov-desc">
+            A dedicated Google Meet call, directly with Prabhat Ranjan. Your rank, your doubts, your specific situation — completely personal.
+          </div>
+          <div class="ov-chips">
+            <span class="ov-chip">Any exam</span>
+            <span class="ov-chip">Any topic</span>
+            <span class="ov-chip">Recorded</span>
+          </div>
+          <div class="ov-cta">Book a Session <i class="fas fa-arrow-right"></i></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SERVICES DETAIL ══ -->
+  <section class="content-section" id="all-services">
     <div class="section-header reveal">
-      <div class="section-eyebrow"><i class="fas fa-layer-group"></i>&nbsp;What's Available</div>
-      <h2 class="section-title">Pick the guidance <span class="grad-text">that fits you</span></h2>
-      <p class="section-sub">Three ways to get expert help — from curated PDFs to live 1-on-1 sessions.</p>
+      <div class="section-eyebrow"><i class="fas fa-layer-group"></i>&nbsp;Service Details</div>
+      <h2 class="section-title">Everything you need, <span class="grad-text">clearly laid out</span></h2>
+      <p class="section-sub">Full details of each option — features, pricing, and how to register.</p>
     </div>
 
-    <div class="svc-bento">
+    <!-- Filter -->
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all" onclick="filterServices(this)">
+        <i class="fas fa-border-all"></i> All <span class="fbtn-count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="pdf" onclick="filterServices(this)">
+        <i class="fas fa-file-pdf"></i> PDF Guides <span class="fbtn-count">3</span>
+      </button>
+      <button class="filter-btn" data-filter="counselling" onclick="filterServices(this)">
+        <i class="fas fa-comments"></i> Counselling Sessions <span class="fbtn-count">2</span>
+      </button>
+    </div>
 
-      <!-- ① JoSAA / CSAB PDF — Violet ₹501 -->
-      <div class="svc-card tier-violet reveal">
-        <div class="svc-bar"></div>
-        <div class="svc-body">
-          <span class="svc-tier"><i class="fas fa-file-pdf"></i>&nbsp;Comprehensive PDF</span>
-
+    <!-- ① Premium 1-on-1 -->
+    <div id="session" class="prem-card reveal" data-svc="counselling">
+      <div class="prem-bar"></div>
+      <div class="prem-body">
+        <div class="prem-left">
+          <div class="svc-tier prem-tier"><i class="fas fa-crown"></i>&nbsp;Most Premium · 1-on-1 with Prabhat Ranjan</div>
           <div class="svc-counsellor">
             <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
-                 onerror="this.outerHTML='<div class=\'profile-avatar-fb\' style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a78bfa);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+                 onerror="this.outerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#d97706,#fbbf24);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Live Google Meet</div>
+            </div>
+          </div>
+          <div class="prem-title">1-on-1 College Admission<br>Guidance Session</div>
+          <ul class="svc-features">
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Live Google Meet directly with Prabhat Ranjan</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>College, branch &amp; career path selection</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>4 available time slots — you choose</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Session recorded for your reference &amp; security</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Confirmation within 48 hours of form submission</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Same email used throughout the entire process</li>
+          </ul>
+          <div class="svc-note">
+            <i class="fas fa-envelope" style="color:#d97706"></i>
+            <span>Queries before booking: <strong>divastra729@gmail.com</strong></span>
+          </div>
+        </div>
+        <div class="prem-right">
+          <div>
+            <div class="prem-price">₹5,000</div>
+            <div class="prem-price-note">per session · one-time</div>
+          </div>
+          <div class="prem-buttons">
+            <a href="https://forms.gle/DRyB23ebHPCPAK296" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Book ₹5,000 Session</a>
+            <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" rel="noopener" class="btn-secondary"><i class="fab fa-youtube"></i> See My Channel First</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② JoSAA / CSAB Bestseller -->
+    <div id="pdfs" class="best-card reveal d1" data-svc="pdf">
+      <div class="best-bar"></div>
+      <div class="best-badge"><i class="fas fa-star"></i> Bestseller</div>
+      <div class="best-body">
+        <div class="best-left">
+          <div class="svc-tier best-tier"><i class="fas fa-file-pdf"></i>&nbsp;JoSAA / CSAB · Comprehensive PDF</div>
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a78bfa);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
             <div>
               <div class="svc-cname">Prabhat Ranjan</div>
               <div class="svc-ccred">NIT Jamshedpur · Curated by hand</div>
             </div>
           </div>
-
-          <div class="svc-icon"><i class="fas fa-list-ol"></i></div>
-          <div class="svc-title">JoSAA / CSAB Full<br>Preference Order PDF</div>
-
-          <div class="svc-price-row">
-            <span class="svc-price">₹501</span>
-            <span class="svc-price-note">one-time · 1-yr access</span>
-          </div>
-
+          <div class="best-icon"><i class="fas fa-list-ol"></i></div>
+          <div class="best-title">JoSAA / CSAB Full<br>Preference Order PDF</div>
           <ul class="svc-features">
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>813 engineering programs in one PDF</li>
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>IITs, NITs, IIITs, GFTIs &amp; IIEST Shibpur</li>
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>All branches (excl. B.Arch &amp; B.Plan)</li>
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
+            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>813 engineering programs in one PDF</li>
+            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>IITs, NITs, IIITs, GFTIs &amp; IIEST Shibpur</li>
+            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>All branches (excl. B.Arch &amp; B.Plan)</li>
+            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
           </ul>
-
           <div class="svc-note"><i class="fas fa-clock"></i> Processing: a few hours to 48 hours after form submission.</div>
-
-          <div class="svc-buttons">
+        </div>
+        <div class="best-right">
+          <div>
+            <div class="best-price">₹501</div>
+            <div class="best-price-note">one-time · 1-yr access</div>
+          </div>
+          <div class="best-buttons">
             <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
             <a href="https://drive.google.com/file/d/1wBwq7X3qEY1zLd-3-0mTXGBQmCJ6iXeK/view" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
             <a href="https://drive.google.com/file/d/1Vkz70SZqlwRCbTK-6J6JqbIfQ6X4NWnO/view?usp=drive_link" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-gift"></i> Free Demo — 1st Page</a>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- ② 1-on-1 Session — Gold ₹5000 (featured, spans 2 rows) -->
-      <div class="svc-card tier-gold reveal d1">
-        <div class="svc-bar"></div>
-        <div class="svc-body">
-          <span class="svc-tier"><i class="fas fa-crown"></i>&nbsp;Premium · Most Popular</span>
+    <!-- ③ PDF Grid -->
+    <div class="pdf-grid-head reveal d2" data-svc="pdf">
+      <div class="pdf-grid-title"><i class="fas fa-layer-group" style="color:var(--accent);margin-right:.4rem"></i>More Preference Order PDF Guides</div>
+      <div class="pdf-grid-note">All ₹501 · Lifetime access · Delivered to email</div>
+    </div>
 
+    <div class="pdf-grid">
+
+      <!-- UPTAC -->
+      <div class="pdf-card pdf-uptac reveal d2" data-svc="pdf">
+        <div class="pdf-card-bar"></div>
+        <div class="pdf-card-body">
+          <div class="svc-tier pdf-tier-uptac"><i class="fas fa-map-location-dot"></i>&nbsp;UP State Counselling</div>
           <div class="svc-counsellor">
             <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
-                 onerror="this.outerHTML='<div class=\'profile-avatar-fb\' style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#d97706,#fbbf24);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
-            <div>
-              <div class="svc-cname">Prabhat Ranjan</div>
-              <div class="svc-ccred">NIT Jamshedpur · Live 1-on-1 Session</div>
-            </div>
-          </div>
-
-          <div class="svc-icon"><i class="fas fa-video"></i></div>
-          <div class="svc-title">1-on-1 College Admission<br>Guidance Session</div>
-
-          <div class="svc-price-row">
-            <span class="svc-price">₹5,000</span>
-            <span class="svc-price-note">per session</span>
-          </div>
-
-          <ul class="svc-features">
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>Live Google Meet with Prabhat Ranjan</li>
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>College, branch &amp; career path selection</li>
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>4 available time slots — you choose</li>
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>Session recorded for your reference &amp; security</li>
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>Confirmation within 48 hours of form</li>
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>Same email used throughout the process</li>
-          </ul>
-
-          <div class="svc-note">
-            <i class="fas fa-envelope"></i>
-            <span>Queries before booking: <strong>divastra729@gmail.com</strong></span>
-          </div>
-
-          <div class="svc-buttons">
-            <a href="https://forms.gle/DRyB23ebHPCPAK296" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹5,000 Form</a>
-            <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" rel="noopener" class="btn-secondary"><i class="fab fa-youtube"></i> See My Channel First</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ③ UPTAC PDF — Emerald ₹501 -->
-      <div class="svc-card tier-emerald reveal d2">
-        <div class="svc-bar"></div>
-        <div class="svc-body">
-          <span class="svc-tier"><i class="fas fa-map-location-dot"></i>&nbsp;UP State Counselling</span>
-
-          <div class="svc-counsellor">
-            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
-                 onerror="this.outerHTML='<div class=\'profile-avatar-fb\' style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#047857,#10b981);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+                 onerror="this.outerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#047857,#10b981);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
             <div>
               <div class="svc-cname">Prabhat Ranjan</div>
               <div class="svc-ccred">NIT Jamshedpur · Curated &amp; organised</div>
             </div>
           </div>
-
-          <div class="svc-icon"><i class="fas fa-file-pdf"></i></div>
-          <div class="svc-title">UPTAC Counselling<br>Preference Order PDF</div>
-
-          <div class="svc-price-row">
-            <span class="svc-price">₹501</span>
-            <span class="svc-price-note">one-time · 1-yr access</span>
+          <div class="pdf-icon pdf-icon-uptac"><i class="fas fa-file-pdf"></i></div>
+          <div class="pdf-title">UPTAC Counselling<br>Preference Order PDF</div>
+          <div class="pdf-price-row">
+            <span class="pdf-price">₹501</span>
+            <span class="pdf-price-note">one-time · 1-yr access</span>
           </div>
-
           <ul class="svc-features">
             <li><div class="feat-check"><i class="fas fa-check"></i></div>Full preference order for UP state colleges</li>
             <li><div class="feat-check"><i class="fas fa-check"></i></div>AKTU-affiliated institutes covered</li>
             <li><div class="feat-check"><i class="fas fa-check"></i></div>Branches, ranks &amp; college tiers sorted</li>
             <li><div class="feat-check"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
           </ul>
-
           <div class="svc-note"><i class="fas fa-clock"></i> Processing: a few hours to 48 hours after form submission.</div>
-
-          <div class="svc-buttons">
+          <div class="pdf-buttons">
             <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
             <a href="https://drive.google.com/file/d/1YnFGRa6nhZCF6jBsHVvFGW7qs4UxOnjY/view" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
           </div>
         </div>
       </div>
 
-    </div><!-- /.svc-bento -->
+      <!-- JCECEB -->
+      <div id="batch" class="pdf-card pdf-jceceb reveal d3" data-svc="pdf counselling">
+        <div class="pdf-card-bar"></div>
+        <div class="pdf-card-body">
+          <div class="svc-tier pdf-tier-jceceb"><i class="fas fa-map-location-dot"></i>&nbsp;Jharkhand State Counselling</div>
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#0891b2,#22d3ee);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Curated &amp; organised</div>
+            </div>
+          </div>
+          <div class="pdf-icon pdf-icon-jceceb"><i class="fas fa-file-pdf"></i></div>
+          <div class="pdf-title">JCECEB Counselling<br>Preference Order PDF</div>
+          <div class="pdf-price-row">
+            <span class="pdf-price">₹501</span>
+            <span class="pdf-price-note">one-time · 1-yr access</span>
+          </div>
+          <ul class="svc-features">
+            <li><div class="feat-check feat-check-teal"><i class="fas fa-check"></i></div>Full preference order for Jharkhand state</li>
+            <li><div class="feat-check feat-check-teal"><i class="fas fa-check"></i></div>All JCECEB-affiliated colleges covered</li>
+            <li><div class="feat-check feat-check-teal"><i class="fas fa-check"></i></div>Branches, ranks &amp; college tiers sorted</li>
+            <li><div class="feat-check feat-check-teal"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
+          </ul>
+          <div class="svc-note"><i class="fas fa-clock"></i> Processing: a few hours to 48 hours after form submission.</div>
+          <div class="pdf-buttons">
+            <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
+            <a href="https://drive.google.com/file/d/1QSlJOPuQYCC6WLcoSJXfoBo72xgn9y6t/view?usp=sharing" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
+          </div>
+          <hr class="addon-sep">
+          <div class="addon-block">
+            <div class="addon-tag"><i class="fas fa-users"></i>&nbsp;Also Available</div>
+            <div class="addon-title-row">
+              <div class="addon-title">JCECEB Batch<br>Counselling Sessions</div>
+              <div class="addon-price">₹751</div>
+            </div>
+            <div class="addon-meta">
+              <div class="addon-meta-row"><i class="fas fa-calendar-week"></i>Every Saturday, 8–9 PM</div>
+              <div class="addon-meta-row"><i class="fas fa-users"></i>Batch format — expert-led sessions</div>
+              <div class="addon-meta-row"><i class="fas fa-hourglass-half"></i>Running till September 2026</div>
+              <div class="addon-meta-row"><i class="fas fa-info-circle"></i>Separate from ₹5,000 1-on-1 session</div>
+            </div>
+            <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-outline" style="font-size:.8rem;padding:.55rem .9rem">
+              <i class="fas fa-pen-to-square"></i> Register for ₹751 Session
+            </a>
+            <a href="https://meet.google.com/qkk-rzzx-azo" target="_blank" rel="noopener" class="addon-btn-meet">
+              <i class="fas fa-video"></i> Join Meet · Every Sat 8–9 PM
+            </a>
+            <a href="https://t.me/jcecebprabhat" target="_blank" rel="noopener" class="addon-btn-tg">
+              <i class="fab fa-telegram"></i> Join Telegram Group
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.pdf-grid -->
   </section>
 
   <!-- ══ HOW IT WORKS ══ -->
@@ -552,7 +876,7 @@
         </div>
         <div>
           <div class="step-title">Fill the Form</div>
-          <p class="step-desc">Submit the payment form with your details, preferences, and time slot. Use the same email throughout.</p>
+          <p class="step-desc">Submit the payment form with your details and preferences. Each service has its own form and payment — use the same email throughout.</p>
         </div>
       </div>
       <div class="step reveal d1">
@@ -562,7 +886,7 @@
         </div>
         <div>
           <div class="step-title">Get Confirmed</div>
-          <p class="step-desc">Receive a confirmation on your email within 48 hours. PDF orders are processed as fast as a few hours.</p>
+          <p class="step-desc">Receive a confirmation email within 48 hours. PDFs are usually processed in a few hours. Batch session details arrive before your first Saturday.</p>
         </div>
       </div>
       <div class="step reveal d2">
@@ -572,7 +896,7 @@
         </div>
         <div>
           <div class="step-title">Guidance Begins</div>
-          <p class="step-desc">Access your PDF for a full year, or join your live session with Prabhat — recorded for your reference.</p>
+          <p class="step-desc">Access your PDF for a full year, join your Saturday batch, or sit down 1-on-1 with Prabhat — session recorded for your reference.</p>
         </div>
       </div>
     </div>
@@ -607,7 +931,7 @@
         </div>
         <div>
           <div class="res-title">Class 12 Eligibility Criteria — 1000+ Colleges</div>
-          <div class="res-desc">Know exactly what Class 12th score you need to be eligible for B.Tech at 1000+ engineering colleges across India — all in one searchable sheet.</div>
+          <div class="res-desc">Know exactly what Class 12th score you need for B.Tech at 1000+ engineering colleges across India — all in one searchable sheet.</div>
         </div>
         <div class="res-tags">
           <span class="res-tag">1000+ Colleges</span><span class="res-tag">Class 12</span><span class="res-tag">B.Tech Eligibility</span><span class="res-tag">Free Sheet</span>
@@ -624,10 +948,7 @@
       <h2 class="section-title">Best Coupon Codes. <span class="grad-text">Verified &amp; Active.</span></h2>
       <p class="section-sub">Personally verified by Prabhat Ranjan — the highest discounts currently available. One click to copy.</p>
     </div>
-
     <div class="coupon-grid reveal d1">
-
-      <!-- PW IOI — 80% -->
       <div class="coupon-card cc-amber" itemscope itemtype="https://schema.org/Offer">
         <div class="coupon-stripe"></div>
         <div class="coupon-body">
@@ -647,8 +968,6 @@
           <link itemprop="availability" href="https://schema.org/InStock">
         </div>
       </div>
-
-      <!-- Scaler — 50% -->
       <div class="coupon-card cc-indigo" itemscope itemtype="https://schema.org/Offer">
         <div class="coupon-stripe"></div>
         <div class="coupon-body">
@@ -667,8 +986,6 @@
           <link itemprop="availability" href="https://schema.org/InStock">
         </div>
       </div>
-
-      <!-- LPUNEST — 20% -->
       <div class="coupon-card cc-red" itemscope itemtype="https://schema.org/Offer">
         <div class="coupon-stripe"></div>
         <div class="coupon-body">
@@ -676,7 +993,7 @@
             <div><div class="coupon-discount">20%</div><div class="coupon-off-lbl">Off — LPU B.Tech Admission</div></div>
             <span class="coupon-verified"><i class="fas fa-circle-check"></i> Verified Active</span>
           </div>
-          <div><div class="coupon-brand">LPU NEST — B.Tech Admission</div><div class="coupon-desc">Best verified coupon for LPUNEST registration — 20% off on Lovely Professional University B.Tech application fee. Most reliable LPU NEST promo code.</div></div>
+          <div><div class="coupon-brand">LPU NEST — B.Tech Admission</div><div class="coupon-desc">Best verified coupon for LPUNEST registration — 20% off on Lovely Professional University B.Tech application fee.</div></div>
           <div class="coupon-price"><span class="price-new">20% off on LPUNEST registration fee</span></div>
           <div class="coupon-code-row">
             <div><div class="coupon-code-lbl">Promo / Coupon Code</div><div class="coupon-code" itemprop="serialNumber">LPUHFY107</div></div>
@@ -687,8 +1004,6 @@
           <link itemprop="availability" href="https://schema.org/InStock">
         </div>
       </div>
-
-      <!-- Geeta University — 50% -->
       <div class="coupon-card cc-teal" itemscope itemtype="https://schema.org/Offer">
         <div class="coupon-stripe"></div>
         <div class="coupon-body">
@@ -707,11 +1022,10 @@
           <link itemprop="availability" href="https://schema.org/InStock">
         </div>
       </div>
-
-    </div><!-- /.coupon-grid -->
+    </div>
     <p class="coupon-note">
       <i class="fas fa-shield-halved"></i>
-      All coupon codes personally verified by Prabhat Ranjan (NIT Jamshedpur). These are the maximum discounts available. Codes are periodically re-verified — bookmark this page for the latest active codes.
+      All coupon codes personally verified by Prabhat Ranjan (NIT Jamshedpur). These are the maximum discounts available — bookmark this page for the latest active codes.
     </p>
   </section>
 
@@ -719,9 +1033,7 @@
   <footer>
     <div class="footer-main">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="logo.svg" alt="Divastra">Divastra
-        </div>
+        <div class="footer-logo"><img src="logo.svg" alt="Divastra">Divastra</div>
         <div class="footer-tag">Divya + Astra — Divine Weapon for Every Student</div>
       </div>
       <ul class="footer-links">
@@ -771,10 +1083,43 @@ const revObs = new IntersectionObserver(entries => {
 }, {threshold: .1, rootMargin: '0px 0px -30px 0px'});
 document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
+/* ── OVERVIEW CARD SCROLL ── */
+function scrollToSection(id, e) {
+  e.preventDefault();
+  const el = document.getElementById(id) || document.getElementById('all-services');
+  if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+  /* also activate matching filter */
+  const map = {pdfs:'pdf', session:'counselling', batch:'counselling'};
+  const fKey = map[id];
+  if (fKey) {
+    const btn = document.querySelector(`.filter-btn[data-filter="${fKey}"]`);
+    if (btn) filterServices(btn);
+  }
+}
+
+/* ── SERVICE FILTER ── */
+function filterServices(btn) {
+  const filter = btn.dataset.filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const grid = document.querySelector('.pdf-grid');
+  document.querySelectorAll('[data-svc]').forEach(el => {
+    const types = el.dataset.svc.split(' ');
+    el.style.display = (filter === 'all' || types.includes(filter)) ? '' : 'none';
+  });
+
+  if (filter === 'counselling') {
+    grid.classList.add('grid-solo');
+  } else {
+    grid.classList.remove('grid-solo');
+  }
+}
+
 /* ── SHARE POPUP ── */
 (function() {
   const SHARE_URL  = 'https://divastra.github.io/counselling.html';
-  const SHARE_TEXT = '🎓 JEE Counselling by Prabhat Ranjan (NIT Jamshedpur) — preference order PDFs, live sessions & free resources. Check Divastra:';
+  const SHARE_TEXT = '🎓 JEE Counselling by Prabhat Ranjan (NIT Jamshedpur) — PDFs, batch sessions & 1-on-1 calls. Check Divastra:';
   document.getElementById('shareWa').href = 'https://wa.me/?text=' + encodeURIComponent(SHARE_TEXT + '\n' + SHARE_URL);
   document.getElementById('shareTw').href = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(SHARE_URL) + '&text=' + encodeURIComponent(SHARE_TEXT);
   document.getElementById('shareLi').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(SHARE_URL);
@@ -783,15 +1128,13 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
   const popup = document.getElementById('sharePopup'), overlay = document.getElementById('shareOverlay');
   function openShare(cx, cy) {
     const vw = window.innerWidth, vh = window.innerHeight, W = 340, pad = 14;
-    let x, y;
-    if (cx !== null && cy !== null) { x = Math.min(cx, vw - W - pad); x = Math.max(x, pad); y = Math.min(cy, vh - 320 - pad); y = Math.max(y, pad); }
-    else { x = vw / 2 - W / 2; y = vh / 2 - 160; }
+    let x = cx !== null ? Math.min(Math.max(cx, pad), vw - W - pad) : vw/2 - W/2;
+    let y = cy !== null ? Math.min(Math.max(cy, pad), vh - 320 - pad) : vh/2 - 160;
     popup.style.left = x + 'px'; popup.style.top = y + 'px';
     overlay.classList.add('show'); popup.classList.add('show');
   }
   window.__shareOpenFn = openShare;
   window.closeShare = function() { overlay.classList.remove('show'); popup.classList.remove('show'); };
-
   document.addEventListener('contextmenu', e => { e.preventDefault(); openShare(e.clientX, e.clientY); });
   let ctrlDown = false;
   document.addEventListener('keydown', e => {
@@ -806,14 +1149,12 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     if ((e.key === 'Control' || e.key === 'Meta') && ctrlDown) { openShare(null, null); ctrlDown = false; }
     if (e.key === 'Control' || e.key === 'Meta') ctrlDown = false;
   }, true);
-
   window.copyShareLink = function() {
     const btn = document.querySelector('.share-copy'), orig = btn.innerHTML;
     const doFb = () => { btn.innerHTML = '<i class="fas fa-check"></i> Copied!'; btn.classList.add('copied'); setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2500); };
     if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(SHARE_URL).then(doFb).catch(doFb);
     else { const el = document.createElement('textarea'); el.value = SHARE_URL; el.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(el); el.select(); try { document.execCommand('copy'); } catch(e) {} document.body.removeChild(el); doFb(); }
   };
-
   let lpTimer = null;
   window.addEventListener('touchstart', e => {
     if (e.touches.length !== 1) return;
@@ -827,11 +1168,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 /* ── COUPON COPY ── */
 function copyCoupon(btn, code) {
   const orig = btn.innerHTML;
-  const doFb = () => {
-    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2500);
-  };
+  const doFb = () => { btn.innerHTML = '<i class="fas fa-check"></i> Copied!'; btn.classList.add('copied'); setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2500); };
   if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(code).then(doFb).catch(doFb);
   else { const el = document.createElement('textarea'); el.value = code; el.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(el); el.select(); try { document.execCommand('copy'); } catch(e) {} document.body.removeChild(el); doFb(); }
 }
@@ -844,9 +1181,7 @@ function copyCoupon(btn, code) {
   document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preventDefault(); }, {passive: false});
   let lastT = 0;
   document.addEventListener('touchend', e => {
-    const now = Date.now();
-    if (now - lastT < 300 && !e.target.closest('a,button,input,select,textarea')) e.preventDefault();
-    lastT = now;
+    const now = Date.now(); if (now - lastT < 300 && !e.target.closest('a,button,input,select,textarea')) e.preventDefault(); lastT = now;
   }, {passive: false});
   document.addEventListener('copy', e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
   document.addEventListener('cut',  e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
