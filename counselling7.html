@@ -235,7 +235,9 @@
   .prem-bar {
     height: 5px;
     background: linear-gradient(90deg,#92400e,#d97706,#fbbf24,#f59e0b,#d97706,#92400e);
+    background-size: 300% 100%; animation: goldSlide 3s linear infinite;
   }
+  @keyframes goldSlide { 0%{background-position:0% center} 100%{background-position:300% center} }
   .prem-body {
     padding: 1.75rem 2rem; display: grid;
     grid-template-columns: 1fr 260px; gap: 2.25rem; align-items: start;
@@ -350,42 +352,6 @@
   .addon-meta  { font-size: .78rem; color: var(--text-muted); line-height: 1.55; display: flex; flex-direction: column; gap: .3rem; }
   .addon-meta-row { display: flex; align-items: flex-start; gap: .45rem; }
   .addon-meta-row i { color: var(--accent); font-size: .75rem; margin-top: 2px; flex-shrink: 0; }
-
-  /* Card badges — Premium / Latest / Handpicked */
-  .card-badge {
-    position: absolute; top: 1.1rem; right: 1.25rem;
-    font-size: .64rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em;
-    padding: .28rem .75rem; border-radius: 100px;
-    display: inline-flex; align-items: center; gap: .35rem;
-  }
-  .prem-card { position: relative; }
-  .badge-premium { background: linear-gradient(135deg,#92400e,#d97706); color: #fff; }
-  .best-badge { /* existing Bestseller — purple, already defined */ }
-  .badge-latest  { background: linear-gradient(135deg,#065f46,#10b981); color: #fff; }
-  .card-tag {
-    display: inline-flex; align-items: center; gap: .3rem;
-    font-size: .63rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em;
-    padding: .2rem .55rem; border-radius: 100px; width: fit-content;
-  }
-  .tag-handpicked { background: rgba(8,145,178,.1); color: #0891b2; border: 1px solid rgba(8,145,178,.25); }
-
-  /* COMEDK card */
-  .best-comedk .best-bar { background: linear-gradient(90deg,#c2410c,#fb923c); }
-  .feat-check-orange { background: rgba(234,88,12,.1); color: #ea580c; }
-
-  /* PDF section divider */
-  .pdf-section-divider {
-    display: flex; align-items: center; gap: 1rem;
-    margin: 2rem 0 1.5rem;
-  }
-  .psd-line { flex: 1; height: 1px; background: var(--border); }
-  .psd-label {
-    font-family: var(--font-display); font-size: .78rem; font-weight: 800;
-    text-transform: uppercase; letter-spacing: .1em;
-    color: var(--text-muted); white-space: nowrap;
-    display: flex; align-items: center; gap: .45rem;
-  }
-  .psd-label i { color: var(--accent); }
 
   /* ═══════════════════════════════════════════════
      HOW IT WORKS
@@ -521,11 +487,9 @@
     .prem-price { font-size: 2rem; }
     .overview-grid { gap: .75rem; }
   }
-
   </style>
 </head>
 <body>
-
 
 <button id="backTop" class="back-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
@@ -586,37 +550,115 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero-section">
-    <div class="hero-inner">
-      <div class="hero-badge reveal"><span class="badge-dot"></span> JEE Counselling by Prabhat Ranjan</div>
+    <div class="hero-badge reveal"><span class="badge-dot"></span> JEE Counselling by Prabhat Ranjan</div>
 
-      <h1 class="hero-title reveal d1">
-        Rank mil gayi.<br>
-        <span class="grad-text">Ab sahi college chunna hai.</span>
-      </h1>
+    <h1 class="hero-title reveal d1">
+      Rank mil gayi.<br>
+      <span class="grad-text">Ab sahi college chunna hai.</span>
+    </h1>
 
-      <p class="hero-desc reveal d2">
-        Prabhat Ranjan (NIT Jamshedpur) has guided <strong>10,000+ students</strong> pick the right college.
-        PDF guides from ₹501 — or a personal 1-on-1 call at ₹5,000.
-      </p>
+    <p class="hero-desc reveal d2">
+      Most JEE students get their preference order wrong — and spend 4 years regretting it.
+      Prabhat Ranjan (NIT Jamshedpur) has guided <strong>10,000+ students</strong> through
+      JoSAA/CSAB, UPTAC &amp; JCECEB — with PDFs, batch sessions, and personal 1-on-1 calls.
+    </p>
 
-      <div class="profile-chip reveal d2">
-        <img src="https://divastra.github.io/assets/img/thumbnail1.png"
-             class="profile-photo" alt="Prabhat Ranjan"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="profile-avatar-fb" style="display:none">PR</div>
-        <div>
-          <div class="profile-name">Prabhat Ranjan — "Blue T-shirt Bhaiya"</div>
-          <div class="profile-role">Mech Eng · NIT Jamshedpur · Trusted by 10K+ students</div>
-        </div>
-      </div>
-
-      <div class="hero-stats-strip reveal d3">
-        <span class="hss-item"><span class="hss-dot"></span>JoSAA · UPTAC · JCECEB · COMEDK</span>
-        <span class="hss-item"><span class="hss-dot"></span><strong>PDF from ₹501</strong></span>
-        <span class="hss-item"><span class="hss-dot"></span><strong>1-on-1 at ₹5,000</strong></span>
+    <div class="profile-chip reveal d2">
+      <img src="https://divastra.github.io/assets/img/thumbnail1.png"
+           class="profile-photo" alt="Prabhat Ranjan"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="profile-avatar-fb" style="display:none">PR</div>
+      <div>
+        <div class="profile-name">Prabhat Ranjan — "Blue T-shirt Bhaiya"</div>
+        <div class="profile-role">Mech Eng · NIT Jamshedpur · Trusted by 10K+ students</div>
       </div>
     </div>
+
+    <div class="hero-stats-strip reveal d3">
+      <span class="hss-item"><span class="hss-dot"></span><strong>3</strong>&nbsp;exams covered</span>
+      <span class="hss-item"><span class="hss-dot"></span><strong>₹501</strong>&nbsp;starting price</span>
+      <span class="hss-item"><span class="hss-dot"></span><strong>PDF · Batch · 1-on-1</strong>&nbsp;options</span>
+      <span class="hss-item"><span class="hss-dot"></span>Preview before you pay</span>
+    </div>
   </section>
+
+  <!-- ══ WHAT WOULD YOU LIKE HELP WITH? ══ -->
+  <div class="overview-section">
+    <div class="overview-inner">
+      <div class="overview-head reveal">
+        <div class="overview-eyebrow"><i class="fas fa-compass"></i>&nbsp;Your Options at a Glance</div>
+        <div class="overview-title">What kind of help do you need?</div>
+        <div class="overview-sub">Three types of support — pick what fits your budget and how much hand-holding you want.</div>
+      </div>
+
+      <div class="overview-grid">
+
+        <!-- PDF Guides -->
+        <a class="ov-card ov-pdf reveal" href="#pdfs" onclick="scrollToSection('pdfs',event)">
+          <div class="ov-card-top">
+            <div class="ov-icon"><i class="fas fa-file-lines"></i></div>
+            <div class="ov-price-pill">From ₹501</div>
+          </div>
+          <div>
+            <div class="ov-label">Self-study</div>
+            <div class="ov-name">Preference Order<br>PDF Guides</div>
+          </div>
+          <div class="ov-desc">
+            Ready-made, curated PDFs listing the ideal college preference order for each exam — study at your own pace, no calls needed.
+          </div>
+          <div class="ov-chips">
+            <span class="ov-chip">JoSAA / CSAB</span>
+            <span class="ov-chip">UPTAC</span>
+            <span class="ov-chip">JCECEB</span>
+          </div>
+          <div class="ov-cta">See PDF Guides <i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <!-- Batch Counselling -->
+        <a class="ov-card ov-batch reveal d1" href="#batch" onclick="scrollToSection('batch',event)">
+          <div class="ov-card-top">
+            <div class="ov-icon"><i class="fas fa-users"></i></div>
+            <div class="ov-price-pill">₹751</div>
+          </div>
+          <div>
+            <div class="ov-label">Group sessions · Live</div>
+            <div class="ov-name">Batch Counselling<br>Sessions</div>
+          </div>
+          <div class="ov-desc">
+            Expert-led live sessions every Saturday, 8–9 PM. Ask questions, get answers — in a structured batch format till September 2026.
+          </div>
+          <div class="ov-chips">
+            <span class="ov-chip">Every Saturday</span>
+            <span class="ov-chip">8–9 PM</span>
+            <span class="ov-chip">JCECEB</span>
+          </div>
+          <div class="ov-cta">See Batch Details <i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 1-on-1 -->
+        <a class="ov-card ov-solo reveal d2" href="#session" onclick="scrollToSection('session',event)">
+          <div class="ov-card-top">
+            <div class="ov-icon"><i class="fas fa-video"></i></div>
+            <div class="ov-price-pill">₹5,000</div>
+          </div>
+          <div>
+            <div class="ov-label">Personal · Most Premium</div>
+            <div class="ov-name">1-on-1 Session<br>with Prabhat</div>
+          </div>
+          <div class="ov-desc">
+            A dedicated Google Meet call, directly with Prabhat Ranjan. Your rank, your doubts, your specific situation — completely personal.
+          </div>
+          <div class="ov-chips">
+            <span class="ov-chip">Any exam</span>
+            <span class="ov-chip">Any topic</span>
+            <span class="ov-chip">Recorded</span>
+          </div>
+          <div class="ov-cta">Book a Session <i class="fas fa-arrow-right"></i></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
 
   <!-- ══ SERVICES DETAIL ══ -->
   <section class="content-section" id="all-services">
@@ -626,18 +668,46 @@
       <p class="section-sub">Full details of each option — features, pricing, and how to register.</p>
     </div>
 
+    <!-- Filter -->
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all" onclick="filterServices(this)">
+        <i class="fas fa-border-all"></i> All <span class="fbtn-count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="pdf" onclick="filterServices(this)">
+        <i class="fas fa-file-pdf"></i> PDF Guides <span class="fbtn-count">3</span>
+      </button>
+      <button class="filter-btn" data-filter="counselling" onclick="filterServices(this)">
+        <i class="fas fa-comments"></i> Counselling Sessions <span class="fbtn-count">2</span>
+      </button>
+    </div>
+
     <!-- ① Premium 1-on-1 -->
     <div id="session" class="prem-card reveal" data-svc="counselling">
       <div class="prem-bar"></div>
-      <div class="card-badge badge-premium"><i class="fas fa-crown"></i> Premium</div>
       <div class="prem-body">
         <div class="prem-left">
+          <div class="svc-tier prem-tier"><i class="fas fa-crown"></i>&nbsp;Most Premium · 1-on-1 with Prabhat Ranjan</div>
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#d97706,#fbbf24);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Live Google Meet</div>
+            </div>
+          </div>
           <div class="prem-title">1-on-1 College Admission<br>Guidance Session</div>
           <ul class="svc-features">
-            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Live Google Meet — directly with Prabhat Ranjan</li>
-            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>College, branch &amp; career path — completely personal</li>
-            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Session recorded · 4 time slots to choose from</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Live Google Meet directly with Prabhat Ranjan</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>College, branch &amp; career path selection</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>4 available time slots — you choose</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Session recorded for your reference &amp; security</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Confirmation within 48 hours of form submission</li>
+            <li><div class="feat-check feat-check-gold"><i class="fas fa-check"></i></div>Same email used throughout the entire process</li>
           </ul>
+          <div class="svc-note">
+            <i class="fas fa-envelope" style="color:#d97706"></i>
+            <span>Queries before booking: <strong>divastra729@gmail.com</strong></span>
+          </div>
         </div>
         <div class="prem-right">
           <div>
@@ -652,25 +722,30 @@
       </div>
     </div>
 
-    <!-- PDF section divider -->
-    <div class="pdf-section-divider reveal">
-      <div class="psd-line"></div>
-      <div class="psd-label"><i class="fas fa-file-lines"></i> PDF Guides · ₹501 each</div>
-      <div class="psd-line"></div>
-    </div>
-
     <!-- ② JoSAA / CSAB Bestseller -->
     <div id="pdfs" class="best-card reveal d1" data-svc="pdf">
       <div class="best-bar"></div>
       <div class="best-badge"><i class="fas fa-star"></i> Bestseller</div>
       <div class="best-body">
         <div class="best-left">
+          <div class="svc-tier best-tier"><i class="fas fa-file-pdf"></i>&nbsp;JoSAA / CSAB · Comprehensive PDF</div>
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a78bfa);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Curated by hand</div>
+            </div>
+          </div>
+          <div class="best-icon"><i class="fas fa-list-ol"></i></div>
           <div class="best-title">JoSAA / CSAB Full<br>Preference Order PDF</div>
           <ul class="svc-features">
-            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>813 engineering programs — IITs, NITs, IIITs, GFTIs</li>
-            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>All branches covered · curated preference order</li>
-            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>Delivered to email · 1-year access</li>
+            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>813 engineering programs in one PDF</li>
+            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>IITs, NITs, IIITs, GFTIs &amp; IIEST Shibpur</li>
+            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>All branches (excl. B.Arch &amp; B.Plan)</li>
+            <li><div class="feat-check feat-check-violet"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
           </ul>
+          <div class="svc-note"><i class="fas fa-clock"></i> Processing: a few hours to 48 hours after form submission.</div>
         </div>
         <div class="best-right">
           <div>
@@ -686,50 +761,40 @@
       </div>
     </div>
 
-    <!-- ③ COMEDK Latest -->
-    <div class="best-card best-comedk reveal d2" data-svc="pdf">
-      <div class="best-bar"></div>
-      <div class="best-badge badge-latest"><i class="fas fa-bolt"></i> Latest</div>
-      <div class="best-body">
-        <div class="best-left">
-          <div class="best-title">COMEDK Full<br>Preference Order PDF</div>
-          <ul class="svc-features">
-            <li><div class="feat-check feat-check-orange"><i class="fas fa-check"></i></div>Karnataka private engineering colleges covered</li>
-            <li><div class="feat-check feat-check-orange"><i class="fas fa-check"></i></div>All branches — curated preference order</li>
-            <li><div class="feat-check feat-check-orange"><i class="fas fa-check"></i></div>Delivered to email · 1-year access</li>
-          </ul>
-        </div>
-        <div class="best-right">
-          <div>
-            <div class="best-price">₹501</div>
-            <div class="best-price-note">one-time · 1-yr access</div>
-          </div>
-          <div class="best-buttons">
-            <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
-            <a href="https://drive.google.com/file/d/1Fa5fSgQ2RIkNmfJX2I47fI83EhVfoBml/view?usp=sharing" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
-            <a href="https://drive.google.com/file/d/1R3nsLlJeGTFk8mLwCls7JYhXgRn4Nocn/view?usp=sharing" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-gift"></i> Free Demo — 1st Page</a>
-          </div>
-        </div>
-      </div>
+    <!-- ③ PDF Grid -->
+    <div class="pdf-grid-head reveal d2" data-svc="pdf">
+      <div class="pdf-grid-title"><i class="fas fa-layer-group" style="color:var(--accent);margin-right:.4rem"></i>More Preference Order PDF Guides</div>
+      <div class="pdf-grid-note">All ₹501 · Lifetime access · Delivered to email</div>
     </div>
 
-    <!-- ④ PDF Grid -->
     <div class="pdf-grid">
 
       <!-- UPTAC -->
       <div class="pdf-card pdf-uptac reveal d2" data-svc="pdf">
         <div class="pdf-card-bar"></div>
         <div class="pdf-card-body">
-          <div class="card-tag tag-handpicked"><i class="fas fa-hand-sparkles"></i> Handpicked</div>
+          <div class="svc-tier pdf-tier-uptac"><i class="fas fa-map-location-dot"></i>&nbsp;UP State Counselling</div>
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#047857,#10b981);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Curated &amp; organised</div>
+            </div>
+          </div>
+          <div class="pdf-icon pdf-icon-uptac"><i class="fas fa-file-pdf"></i></div>
           <div class="pdf-title">UPTAC Counselling<br>Preference Order PDF</div>
           <div class="pdf-price-row">
             <span class="pdf-price">₹501</span>
             <span class="pdf-price-note">one-time · 1-yr access</span>
           </div>
           <ul class="svc-features">
-            <li><div class="feat-check"><i class="fas fa-check"></i></div>UP state colleges — AKTU-affiliated</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Full preference order for UP state colleges</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>AKTU-affiliated institutes covered</li>
             <li><div class="feat-check"><i class="fas fa-check"></i></div>Branches, ranks &amp; college tiers sorted</li>
+            <li><div class="feat-check"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
           </ul>
+          <div class="svc-note"><i class="fas fa-clock"></i> Processing: a few hours to 48 hours after form submission.</div>
           <div class="pdf-buttons">
             <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
             <a href="https://drive.google.com/file/d/1YnFGRa6nhZCF6jBsHVvFGW7qs4UxOnjY/view" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
@@ -738,27 +803,103 @@
       </div>
 
       <!-- JCECEB -->
-      <div class="pdf-card pdf-jceceb reveal d3" data-svc="pdf">
+      <div id="batch" class="pdf-card pdf-jceceb reveal d3" data-svc="pdf counselling">
         <div class="pdf-card-bar"></div>
         <div class="pdf-card-body">
-          <div class="card-tag tag-handpicked"><i class="fas fa-hand-sparkles"></i> Handpicked</div>
+          <div class="svc-tier pdf-tier-jceceb"><i class="fas fa-map-location-dot"></i>&nbsp;Jharkhand State Counselling</div>
+          <div class="svc-counsellor">
+            <img src="https://divastra.github.io/assets/img/thumbnail1.png" class="svc-photo" alt="Prabhat Ranjan"
+                 onerror="this.outerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#0891b2,#22d3ee);display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-weight:900;font-size:.75rem;flex-shrink:0;color:white\'>PR</div>'">
+            <div>
+              <div class="svc-cname">Prabhat Ranjan</div>
+              <div class="svc-ccred">NIT Jamshedpur · Curated &amp; organised</div>
+            </div>
+          </div>
+          <div class="pdf-icon pdf-icon-jceceb"><i class="fas fa-file-pdf"></i></div>
           <div class="pdf-title">JCECEB Counselling<br>Preference Order PDF</div>
           <div class="pdf-price-row">
             <span class="pdf-price">₹501</span>
             <span class="pdf-price-note">one-time · 1-yr access</span>
           </div>
           <ul class="svc-features">
-            <li><div class="feat-check feat-check-teal"><i class="fas fa-check"></i></div>Jharkhand state — all JCECEB colleges</li>
+            <li><div class="feat-check feat-check-teal"><i class="fas fa-check"></i></div>Full preference order for Jharkhand state</li>
+            <li><div class="feat-check feat-check-teal"><i class="fas fa-check"></i></div>All JCECEB-affiliated colleges covered</li>
             <li><div class="feat-check feat-check-teal"><i class="fas fa-check"></i></div>Branches, ranks &amp; college tiers sorted</li>
+            <li><div class="feat-check feat-check-teal"><i class="fas fa-check"></i></div>Delivered to your registered email</li>
           </ul>
+          <div class="svc-note"><i class="fas fa-clock"></i> Processing: a few hours to 48 hours after form submission.</div>
           <div class="pdf-buttons">
             <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
             <a href="https://drive.google.com/file/d/1QSlJOPuQYCC6WLcoSJXfoBo72xgn9y6t/view?usp=sharing" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
+          </div>
+          <hr class="addon-sep">
+          <div class="addon-block">
+            <div class="addon-tag"><i class="fas fa-users"></i>&nbsp;Also Available</div>
+            <div class="addon-title-row">
+              <div class="addon-title">JCECEB Batch<br>Counselling Sessions</div>
+              <div class="addon-price">₹751</div>
+            </div>
+            <div class="addon-meta">
+              <div class="addon-meta-row"><i class="fas fa-calendar-week"></i>Every Saturday, 8–9 PM</div>
+              <div class="addon-meta-row"><i class="fas fa-users"></i>Batch format — expert-led sessions</div>
+              <div class="addon-meta-row"><i class="fas fa-hourglass-half"></i>Running till September 2026</div>
+              <div class="addon-meta-row"><i class="fas fa-info-circle"></i>Separate from ₹5,000 1-on-1 session</div>
+            </div>
+            <a href="https://forms.gle/Ayy26Yc7UEds4MYFA" target="_blank" rel="noopener" class="btn-outline" style="font-size:.8rem;padding:.55rem .9rem">
+              <i class="fas fa-pen-to-square"></i> Register for ₹751 Session
+            </a>
+            <a href="https://meet.google.com/qkk-rzzx-azo" target="_blank" rel="noopener" class="addon-btn-meet">
+              <i class="fas fa-video"></i> Join Meet · Every Sat 8–9 PM
+            </a>
+            <a href="https://t.me/jcecebprabhat" target="_blank" rel="noopener" class="addon-btn-tg">
+              <i class="fab fa-telegram"></i> Join Telegram Group
+            </a>
           </div>
         </div>
       </div>
 
     </div><!-- /.pdf-grid -->
+  </section>
+
+  <!-- ══ HOW IT WORKS ══ -->
+  <section class="content-section">
+    <div class="section-header reveal">
+      <div class="section-eyebrow"><i class="fas fa-route"></i>&nbsp;The Process</div>
+      <h2 class="section-title">Simple. Fast. <span class="grad-text">Personal.</span></h2>
+      <p class="section-sub">Three steps between you and the guidance that changes everything.</p>
+    </div>
+    <div class="steps-list">
+      <div class="step reveal">
+        <div class="step-left">
+          <div class="step-num">01</div>
+          <div class="step-icon-wrap"><i class="fas fa-pen-to-square"></i></div>
+        </div>
+        <div>
+          <div class="step-title">Fill the Form</div>
+          <p class="step-desc">Submit the payment form with your details and preferences. Each service has its own form and payment — use the same email throughout.</p>
+        </div>
+      </div>
+      <div class="step reveal d1">
+        <div class="step-left">
+          <div class="step-num">02</div>
+          <div class="step-icon-wrap"><i class="fas fa-envelope-open-text"></i></div>
+        </div>
+        <div>
+          <div class="step-title">Get Confirmed</div>
+          <p class="step-desc">Receive a confirmation email within 48 hours. PDFs are usually processed in a few hours. Batch session details arrive before your first Saturday.</p>
+        </div>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-left">
+          <div class="step-num">03</div>
+          <div class="step-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+        </div>
+        <div>
+          <div class="step-title">Guidance Begins</div>
+          <p class="step-desc">Access your PDF for a full year, join your Saturday batch, or sit down 1-on-1 with Prabhat — session recorded for your reference.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ══ FREE RESOURCES ══ -->
@@ -1036,7 +1177,6 @@ function copyCoupon(btn, code) {
 (function() {
   document.addEventListener('selectstart', e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
   document.addEventListener('dragstart', e => { e.preventDefault(); });
-
   window.addEventListener('wheel', e => { if (e.ctrlKey || e.metaKey) e.preventDefault(); }, {passive: false});
   document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preventDefault(); }, {passive: false});
   let lastT = 0;
@@ -1046,7 +1186,6 @@ function copyCoupon(btn, code) {
   document.addEventListener('copy', e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
   document.addEventListener('cut',  e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
 })();
-
 </script>
 </body>
 </html>
