@@ -522,6 +522,244 @@
     .overview-grid { gap: .75rem; }
   }
 
+  /* ══ CARD ANIMATIONS ══ */
+
+  /* ── ₹5000 Premium card — animated gold fill ── */
+  .prem-card {
+    background: linear-gradient(135deg, #1c1000 0%, #0d0800 40%, #1a1200 70%, #110900 100%);
+    background-size: 300% 300%;
+    animation: premShift 7s ease-in-out infinite;
+    border: 1.5px solid rgba(251,191,36,.28);
+  }
+  @keyframes premShift {
+    0%,100% { background-position: 0% 0%; box-shadow: 0 0 0 1px rgba(251,191,36,.1), 0 8px 40px rgba(217,119,6,.18); }
+    50%      { background-position: 100% 100%; box-shadow: 0 0 0 1px rgba(251,191,36,.22), 0 12px 60px rgba(217,119,6,.32); }
+  }
+  .prem-title { color: #fef9c3; }
+  .prem-price { color: #fbbf24; }
+  .prem-price-note { color: rgba(255,255,255,.4); }
+  .prem-card .svc-features li { color: rgba(255,255,255,.65); }
+  .prem-card .feat-check-gold { background: rgba(251,191,36,.12); color: #fbbf24; }
+
+  /* Gold bar slide */
+  .prem-bar {
+    height: 5px;
+    background: linear-gradient(90deg,#92400e,#d97706,#fbbf24,#f59e0b,#d97706,#92400e);
+    background-size: 300% 100%;
+    animation: goldSlide 3s linear infinite;
+  }
+  @keyframes goldSlide { to { background-position: 300% center; } }
+
+  /* Premium badge shimmer */
+  .badge-premium {
+    background: linear-gradient(90deg,#92400e,#f59e0b,#fbbf24,#d97706,#92400e);
+    background-size: 300% 100%;
+    animation: goldSlide 3s linear infinite, premBadgeGlow 2.5s ease-in-out infinite;
+  }
+  @keyframes premBadgeGlow {
+    0%,100% { box-shadow: 0 0 6px rgba(251,191,36,.35); }
+    50%      { box-shadow: 0 0 18px rgba(251,191,36,.7); }
+  }
+
+  /* ── JoSAA / CSAB — violet pulse ── */
+  .best-bar {
+    background: linear-gradient(90deg, #7c3aed, #a78bfa, #c4b5fd, #a78bfa, #7c3aed);
+    background-size: 300% 100%;
+    animation: goldSlide 4s linear infinite;
+  }
+  .best-card { animation: bestGlow 4s ease-in-out infinite; }
+  @keyframes bestGlow {
+    0%,100% { box-shadow: 0 2px 16px rgba(124,58,237,.08); }
+    50%      { box-shadow: 0 4px 32px rgba(124,58,237,.2); }
+  }
+  .best-badge:not(.badge-latest) { animation: badgeViolet 3s ease-in-out infinite; }
+  @keyframes badgeViolet {
+    0%,100% { box-shadow: 0 2px 6px rgba(124,58,237,.3); }
+    50%      { box-shadow: 0 2px 18px rgba(124,58,237,.65); }
+  }
+
+  /* ── COMEDK — orange pulse ── */
+  .best-comedk { animation: comeGlow 4s ease-in-out infinite; }
+  @keyframes comeGlow {
+    0%,100% { box-shadow: 0 2px 16px rgba(234,88,12,.08); }
+    50%      { box-shadow: 0 4px 32px rgba(234,88,12,.22); }
+  }
+  .best-comedk .best-bar {
+    background: linear-gradient(90deg,#c2410c,#fb923c,#fed7aa,#fb923c,#c2410c);
+    background-size: 300% 100%;
+    animation: goldSlide 3.5s linear infinite;
+  }
+
+  /* Latest badge ping */
+  .badge-latest { position: relative; overflow: visible; }
+  .badge-latest::after {
+    content: ''; position: absolute; inset: -3px; border-radius: 100px;
+    border: 2px solid rgba(16,185,129,.55);
+    animation: latestPing 2.2s ease-out infinite; pointer-events: none;
+  }
+  @keyframes latestPing {
+    0%   { opacity: .9; transform: scale(1); }
+    100% { opacity: 0;  transform: scale(1.75); }
+  }
+
+  /* ── UPTAC — green shimmer ── */
+  .pdf-uptac .pdf-card-bar {
+    background: linear-gradient(90deg,#047857,#10b981,#6ee7b7,#10b981,#047857);
+    background-size: 300% 100%; animation: goldSlide 4s linear infinite;
+  }
+  .pdf-uptac { animation: uptacGlow 4.5s ease-in-out infinite; }
+  @keyframes uptacGlow {
+    0%,100% { box-shadow: 0 2px 12px rgba(4,120,87,.07); }
+    50%      { box-shadow: 0 4px 28px rgba(4,120,87,.2); }
+  }
+
+  /* ── JCECEB — teal shimmer ── */
+  .pdf-jceceb .pdf-card-bar {
+    background: linear-gradient(90deg,#0891b2,#22d3ee,#a5f3fc,#22d3ee,#0891b2);
+    background-size: 300% 100%; animation: goldSlide 4s linear infinite;
+  }
+  .pdf-jceceb { animation: jcecGlow 4.5s ease-in-out infinite; }
+  @keyframes jcecGlow {
+    0%,100% { box-shadow: 0 2px 12px rgba(8,145,178,.07); }
+    50%      { box-shadow: 0 4px 28px rgba(8,145,178,.2); }
+  }
+
+  /* Handpicked tag sweep */
+  .tag-handpicked { position: relative; overflow: hidden; }
+  .tag-handpicked::after {
+    content: ''; position: absolute; top: 0; left: -200%; width: 80%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(8,145,178,.35), transparent);
+    animation: tagSweep 3.5s ease-in-out infinite;
+  }
+  @keyframes tagSweep { 0%,40%{ left:-200%; } 80%,100%{ left:200%; } }
+
+  /* ══ BUTTON SHIMMER ══ */
+  .btn-primary { position: relative; overflow: hidden; }
+  .btn-primary::after {
+    content: '';
+    position: absolute; top: 0; left: -80%;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+    transform: skewX(-15deg); pointer-events: none;
+  }
+  .btn-primary:hover::after { animation: shimmerPass .5s ease forwards; }
+  @keyframes shimmerPass { from { left: -80%; } to { left: 180%; } }
+
+  /* ══ CARD PERIODIC SHINE SWEEP ══ */
+  .prem-card::before, .best-card::before, .pdf-card::before {
+    content: '';
+    position: absolute; top: 0; left: -120%;
+    width: 55%; height: 100%;
+    background: linear-gradient(105deg,
+      transparent 20%, rgba(255,255,255,.055) 50%, transparent 80%);
+    animation: cardShine 6s ease-in-out infinite;
+    pointer-events: none; z-index: 2; border-radius: inherit;
+  }
+  .prem-card::before {
+    background: linear-gradient(105deg,
+      transparent 20%, rgba(251,191,36,.09) 50%, transparent 80%);
+    animation-delay: 0s;
+  }
+  #pdfs::before          { animation-delay: 1.2s; }
+  .best-comedk::before   { animation-delay: 2.4s; }
+  .pdf-uptac::before     { animation-delay: 0.6s; }
+  .pdf-jceceb::before    { animation-delay: 1.8s; }
+  @keyframes cardShine {
+    0%, 60% { left: -120%; opacity: 0; }
+    62%      { opacity: 1; }
+    100%     { left: 160%; opacity: 0; }
+  }
+
+  /* ══ HOVER TITLE GLOW ══ */
+  .prem-card, .best-card, .pdf-card { --title-glow: transparent; }
+  .prem-card:hover  { --title-glow: rgba(251,191,36,.55); }
+  .best-card:not(.best-comedk):hover { --title-glow: rgba(124,58,237,.55); }
+  .best-comedk:hover { --title-glow: rgba(234,88,12,.55); }
+  .pdf-uptac:hover  { --title-glow: rgba(4,120,87,.55); }
+  .pdf-jceceb:hover { --title-glow: rgba(8,145,178,.55); }
+  .prem-card .prem-title,
+  .best-card .best-title,
+  .pdf-card  .pdf-title {
+    transition: text-shadow .3s ease;
+  }
+  .prem-card:hover  .prem-title { text-shadow: 0 0 28px var(--title-glow); }
+  .best-card:hover  .best-title { text-shadow: 0 0 22px var(--title-glow); }
+  .pdf-card:hover   .pdf-title  { text-shadow: 0 0 20px var(--title-glow); }
+
+  /* ══ HOVER EFFECTS ══ */
+  .prem-card, .best-card, .pdf-card {
+    transition: transform .28s cubic-bezier(.34,1.56,.64,1),
+                box-shadow .28s ease,
+                border-color .28s ease;
+  }
+
+  /* ── ₹5000 Premium — gold surge ── */
+  .prem-card:hover {
+    transform: translateY(-12px) scale(1.018);
+    border-color: rgba(251,191,36,.6);
+    box-shadow:
+      0 0 0 1.5px rgba(251,191,36,.45),
+      0 8px 24px rgba(0,0,0,.55),
+      0 24px 70px rgba(217,119,6,.5),
+      0 40px 100px rgba(217,119,6,.22),
+      inset 0 1px 0 rgba(251,191,36,.18);
+  }
+  .prem-card:hover .prem-bar { animation-duration: 1s; }
+
+  /* ── JoSAA/CSAB — violet surge ── */
+  .best-card:not(.best-comedk):hover {
+    transform: translateY(-12px) scale(1.018);
+    border-color: rgba(124,58,237,.55);
+    box-shadow:
+      0 0 0 1.5px rgba(124,58,237,.38),
+      0 8px 20px rgba(0,0,0,.1),
+      0 22px 65px rgba(124,58,237,.32),
+      0 40px 90px rgba(124,58,237,.14),
+      inset 0 1px 0 rgba(139,92,246,.22);
+  }
+  .best-card:not(.best-comedk):hover .best-bar { animation-duration: 1.4s; }
+
+  /* ── COMEDK — orange surge ── */
+  .best-comedk:hover {
+    transform: translateY(-12px) scale(1.018);
+    border-color: rgba(234,88,12,.55);
+    box-shadow:
+      0 0 0 1.5px rgba(234,88,12,.38),
+      0 8px 20px rgba(0,0,0,.1),
+      0 22px 65px rgba(234,88,12,.32),
+      0 40px 90px rgba(234,88,12,.14),
+      inset 0 1px 0 rgba(251,146,60,.22);
+  }
+  .best-comedk:hover .best-bar { animation-duration: 1.4s; }
+
+  /* ── UPTAC — green surge ── */
+  .pdf-uptac:hover {
+    transform: translateY(-12px) scale(1.022);
+    border-color: rgba(4,120,87,.55);
+    box-shadow:
+      0 0 0 1.5px rgba(4,120,87,.38),
+      0 8px 20px rgba(0,0,0,.1),
+      0 22px 60px rgba(4,120,87,.3),
+      0 40px 85px rgba(4,120,87,.13),
+      inset 0 1px 0 rgba(16,185,129,.22);
+  }
+  .pdf-uptac:hover .pdf-card-bar { animation-duration: 1.4s; }
+
+  /* ── JCECEB — teal surge ── */
+  .pdf-jceceb:hover {
+    transform: translateY(-12px) scale(1.022);
+    border-color: rgba(8,145,178,.55);
+    box-shadow:
+      0 0 0 1.5px rgba(8,145,178,.38),
+      0 8px 20px rgba(0,0,0,.1),
+      0 22px 60px rgba(8,145,178,.3),
+      0 40px 85px rgba(8,145,178,.13),
+      inset 0 1px 0 rgba(34,211,238,.22);
+  }
+  .pdf-jceceb:hover .pdf-card-bar { animation-duration: 1.4s; }
+  .confirm-note{font-size:.73rem;color:var(--text-muted);text-align:center;margin-top:.4rem;margin-bottom:0}
+  .confirm-note i{margin-right:.25rem}
+
   </style>
 </head>
 <body>
@@ -648,6 +886,7 @@
             <a href="https://forms.gle/DRyB23ebHPCPAK296" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Book ₹5,000 Session</a>
             <a href="https://youtube.com/@iam_prabhatranjan" target="_blank" rel="noopener" class="btn-secondary"><i class="fab fa-youtube"></i> See My Channel First</a>
           </div>
+          <p class="confirm-note"><i class="fas fa-clock"></i> You will get confirmation within 24–48 hours</p>
         </div>
       </div>
     </div>
@@ -682,6 +921,7 @@
             <a href="https://drive.google.com/file/d/1wBwq7X3qEY1zLd-3-0mTXGBQmCJ6iXeK/view" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
             <a href="https://drive.google.com/file/d/1Vkz70SZqlwRCbTK-6J6JqbIfQ6X4NWnO/view?usp=drive_link" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-gift"></i> Free Demo — 1st Page</a>
           </div>
+          <p class="confirm-note"><i class="fas fa-clock"></i> You will get confirmation within 24–48 hours</p>
         </div>
       </div>
     </div>
@@ -709,6 +949,7 @@
             <a href="https://drive.google.com/file/d/1Fa5fSgQ2RIkNmfJX2I47fI83EhVfoBml/view?usp=sharing" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
             <a href="https://drive.google.com/file/d/1R3nsLlJeGTFk8mLwCls7JYhXgRn4Nocn/view?usp=sharing" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-gift"></i> Free Demo — 1st Page</a>
           </div>
+          <p class="confirm-note"><i class="fas fa-clock"></i> You will get confirmation within 24–48 hours</p>
         </div>
       </div>
     </div>
@@ -734,6 +975,7 @@
             <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
             <a href="https://drive.google.com/file/d/1YnFGRa6nhZCF6jBsHVvFGW7qs4UxOnjY/view" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
           </div>
+          <p class="confirm-note"><i class="fas fa-clock"></i> You will get confirmation within 24–48 hours</p>
         </div>
       </div>
 
@@ -755,6 +997,7 @@
             <a href="https://forms.gle/8VDRv7ZS2hvXwivu6" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-pen-to-square"></i> Fill ₹501 Form</a>
             <a href="https://drive.google.com/file/d/1QSlJOPuQYCC6WLcoSJXfoBo72xgn9y6t/view?usp=sharing" target="_blank" rel="noopener" class="btn-secondary"><i class="fas fa-eye"></i> View Full PDF</a>
           </div>
+          <p class="confirm-note"><i class="fas fa-clock"></i> You will get confirmation within 24–48 hours</p>
         </div>
       </div>
 
@@ -1047,6 +1290,29 @@ function copyCoupon(btn, code) {
   document.addEventListener('cut',  e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
 })();
 
+/* ── MAGNETIC BUTTONS ── */
+(function() {
+  const STRENGTH = 0.32;
+  document.querySelectorAll('.btn-primary, .btn-secondary, .btn-outline').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      btn.style.transition = 'transform .12s ease, box-shadow .28s';
+    });
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - (r.left + r.width  / 2)) * STRENGTH;
+      const y = (e.clientY - (r.top  + r.height / 2)) * STRENGTH;
+      btn.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transition = 'transform .45s cubic-bezier(.34,1.56,.64,1), box-shadow .28s';
+      btn.style.transform = '';
+    });
+  });
+})();
+
 </script>
+<script>window.DiviPageCtx={id:'counselling',label:'Counselling',funnel:'conversion'};</script>
+<script src="customize.js"></script>
+<script src="divu/divu.bundle.js"></script>
 </body>
 </html>

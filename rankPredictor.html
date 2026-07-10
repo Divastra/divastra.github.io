@@ -939,6 +939,7 @@ function updateResultsUI(){
     diff:  diff,
     cands: cands
   };
+  if(typeof window.onDiviRankResult==='function') window.onDiviRankResult(rank, pctNum);
 }
 
 function getZone(rank, pct){
@@ -1002,6 +1003,74 @@ function shareResult(){
   document.getElementById('rcZoneName').style.color = zone.color;
   document.getElementById('rcZoneSub').textContent  = zone.sub;
 })();
+</script>
+<script>window.DiviPageCtx={id:'rank',label:'Rank Predictor',funnel:'decision'};</script>
+<script src="customize.js"></script>
+<script src="divu/divu.bundle.js"></script>
+<script>
+window.onDiviRankResult=function(rank,pct){
+  setTimeout(function(){
+    if(!window.Divi)return;
+
+    /* Read what the page itself is showing — future-proof if zones/labels change */
+    var zoneName=(document.getElementById('zoneName')||document.getElementById('rcZoneName'));
+    zoneName=zoneName?(zoneName.textContent||'').trim():'';
+    var zoneSub=(document.getElementById('zoneSub')||document.getElementById('rcZoneSub'));
+    zoneSub=zoneSub?(zoneSub.textContent||'').trim().slice(0,120):'';
+    var rankStr=rank.toLocaleString();
+    var zoneTag=zoneName?(' ('+zoneName+')'):'';
+
+    var msg,expr,followUp;
+
+    if(rank<=2500){
+      expr='starstruck';
+      msg='RANK '+rankStr+'!!'+zoneTag+' IIT TOP TIER!! Every single choice fill NOW matters — this is exactly Prabhat sir\'s specialty 🏆🔥';
+      followUp=zoneSub
+        ?'Your zone: "'+zoneSub+'"~ at this rank, JoSAA strategy is literally the difference between IIT Bombay and IIT Dhanbad. Book a session! 🎯'
+        :'At this rank, wrong choice filling is the only thing that can hurt you. Prabhat sir\'s session is built for exactly this 🎯';
+    }else if(rank<=10000){
+      expr='excited';
+      msg='RANK '+rankStr+'!!'+zoneTag+'~ real IIT options are on the table. One wrong fill and you miss it — JoSAA strategy is everything here 🎯';
+      followUp=zoneSub
+        ?'"'+zoneSub+'"~ at '+rankStr+', which IIT + branch combo is your best target? That\'s exactly what the counselling session maps out 📊'
+        :'IIT zone with '+rankStr+'~ which branches, which campuses? Prabhat sir walks through this choice-by-choice 📊';
+    }else if(rank<=25000){
+      expr='beaming';
+      msg=rankStr+zoneTag+'~ NIT top tier range! Trichy, Warangal, Surathkal are in this zone. The right choice fill makes ALL the difference 💪';
+      followUp=zoneSub
+        ?'"'+zoneSub+'"~ knowing your rank is step one. Step two is knowing which specific NITs to target and in what order. That\'s the counselling session 🎓'
+        :'NIT top tier with '+rankStr+'~ a strategy session tells you which specific colleges + branches to prioritize in JoSAA 🎓';
+    }else if(rank<=50000){
+      expr='happy';
+      msg=rankStr+zoneTag+'~ solid NIT rank! Great options IF you fill choices correctly. JoSAA is genuinely tricky — that\'s what the counselling session is for 🎯';
+      followUp=zoneSub
+        ?'"'+zoneSub+'"~ this range has more good options than most students realize. The trick is knowing which ones to target 👀'
+        :'More NIT options at '+rankStr+' than most students realize~ a session helps you find the hidden gems 👀';
+    }else if(rank<=120000){
+      expr='curious';
+      msg=rankStr+zoneTag+'~ more options than you might think! IIITs, GFTIs, state quotas — a counselling session opens your eyes to what\'s actually available 👀';
+      followUp=zoneSub
+        ?'"'+zoneSub+'"~ UPTAC, state quota, and private college options add a LOT at this range. Don\'t decide without a full picture 💡'
+        :'At '+rankStr+', the difference between a good outcome and a great one is knowing ALL your options. Prabhat sir does exactly that 💡';
+    }else{
+      expr='thinking';
+      msg=rankStr+'... '+( zoneName?'"'+zoneName+'" — ':'')+'there\'s still a real path here. State quotas, UPTAC, private gems~ Prabhat sir has guided students at every rank 💡';
+      followUp='Every rank has more options than JoSAA\'s common list shows. State counselling alone can open doors~ that\'s a full session topic 📋';
+    }
+
+    /* shout() always interrupts regardless of cooldowns — rank reveal is the key moment */
+    window.Divi.feel(expr);
+    window.Divi.shout(msg,7500);
+
+    /* Follow-up: zone detail + college hint, fires after first message clears */
+    if(followUp){
+      setTimeout(function(){
+        if(!window.Divi)return;
+        window.Divi.say(followUp,9000);
+      },10500);
+    }
+  },900);
+};
 </script>
 </body>
 </html>

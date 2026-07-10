@@ -155,6 +155,8 @@
     .channel-section { padding: 0 1.25rem 3rem; }
     .feed-section { padding: 0 1.25rem 4rem; }
   }
+  #channelAvatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+  #channelAvatar.has-avatar{background:transparent;box-shadow:0 4px 14px rgba(0,0,0,.18)}
   </style>
 </head>
 <body>
@@ -225,7 +227,7 @@
     <p class="hero-desc reveal d2">JEE strategy, 300+ college reviews, 100+ book reviews, and mentorship sessions — all by Prabhat Ranjan, directly inside Divastra.</p>
     <div class="hero-stats reveal d2">
       <div class="hero-stat">
-        <div class="hero-stat-val" data-live="subs">35k+</div>
+        <div class="hero-stat-val" data-live="subs">38K+</div>
         <div class="hero-stat-lbl">Subscribers</div>
       </div>
       <div class="hero-stat-div"></div>
@@ -235,7 +237,7 @@
       </div>
       <div class="hero-stat-div"></div>
       <div class="hero-stat">
-        <div class="hero-stat-val" data-live="videos">400+</div>
+        <div class="hero-stat-val" data-live="videos">2500+</div>
         <div class="hero-stat-lbl">Videos</div>
       </div>
     </div>
@@ -248,7 +250,7 @@
   <!-- ══ CHANNEL CARD ══ -->
   <div class="channel-section">
     <div class="channel-card reveal">
-      <div class="channel-avatar">🎓</div>
+      <div class="channel-avatar" id="channelAvatar"><i class="fab fa-youtube"></i></div>
       <div class="channel-info">
         <div class="channel-name">Prabhat Ranjan</div>
         <div class="channel-handle">@iam_prabhatranjan &nbsp;·&nbsp; NIT Jamshedpur, Mechanical Engineering</div>
@@ -408,6 +410,20 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     if (stats.subs)   document.querySelectorAll('[data-live="subs"]').forEach(el => { el.textContent = formatCount(stats.subs); });
     if (stats.videos) document.querySelectorAll('[data-live="videos"]').forEach(el => { el.textContent = formatCount(stats.videos); });
   });
+  (function(){
+    const proxy='https://api.allorigins.win/raw?url=';
+    fetch(proxy+encodeURIComponent('https://www.youtube.com/channel/UCnMzgt48z2rIUL1R6tARfMA/about'))
+      .then(r=>r.text()).then(html=>{
+        const m=html.match(/<meta property="og:image" content="([^"]+)"/)
+               ||html.match(/"og:image","content":"([^"]+)"/)
+               ||html.match(/(https:\/\/yt3\.ggpht\.com\/[A-Za-z0-9_\-]+=s[0-9]+[^"'\s<>]*)/);
+        if(!m)return;
+        const el=document.getElementById('channelAvatar');if(!el)return;
+        const img=new Image();
+        img.onload=function(){el.innerHTML='';el.appendChild(img);el.classList.add('has-avatar');};
+        img.src=m[1]||m[0];
+      }).catch(()=>{});
+  })();
 })();
 
 /* ── APP-LIKE LOCKS ── */
@@ -422,5 +438,8 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
   document.addEventListener('cut',  e => { if (!e.target.closest('input,textarea,select,[contenteditable]')) e.preventDefault(); });
 })();
 </script>
+<script>window.DiviPageCtx={id:'video',label:'JEE Videos',funnel:'consideration'};</script>
+<script src="customize.js"></script>
+<script src="divu/divu.bundle.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+/* ── Geometry & Expression data ── face layout constants and all 40+ expressions */
+export const EL={cx:68,cy:86}, ER={cx:132,cy:86};
+export const SR=28, IR=20, PR=12, MT=8, LR=34;
+export const U_OPEN=-58,U_WIDE=-60,U_LOVEY=-50,U_HALF=-22,U_DROOPY=-28,U_SLEEPY=-10;
+export const L_OPEN=58;
+export const MX1=60,MX2=140,MQX=100,MBASE=140;
+
+export const X = {
+  idle:       { ll:U_OPEN,  lr:U_OPEN,  lll:L_OPEN, lrl:L_OPEN, bly:0,   bry:0,   blr:0,  brr:0,   my:148, ck:0 },
+  curious:    { ll:U_WIDE,  lr:U_WIDE,  lll:L_OPEN, lrl:L_OPEN, bly:-8,  bry:0,   blr:-4, brr:0,   my:145, ck:0 },
+  happy:      { ll:U_OPEN,  lr:U_OPEN,  lll:L_OPEN, lrl:L_OPEN, bly:-6,  bry:-6,  blr:0,  brr:0,   my:157, ck:.28 },
+  excited:    { ll:U_WIDE,  lr:U_WIDE,  lll:L_OPEN, lrl:L_OPEN, bly:-12, bry:-12, blr:0,  brr:0,   my:166, ck:.55, teeth:true },
+  sad:        { ll:U_DROOPY,lr:U_DROOPY,lll:L_OPEN, lrl:L_OPEN, bly:7,   bry:7,   blr:6,  brr:-6,  my:124, ck:0 },
+  surprised:  { ll:U_WIDE,  lr:U_WIDE,  lll:L_OPEN, lrl:L_OPEN, bly:-14, bry:-14, blr:0,  brr:0,   my:143, ck:0,  oMouth:true },
+  bored:      { ll:U_HALF,  lr:U_HALF,  lll:46,     lrl:46,     bly:2,   bry:2,   blr:0,  brr:0,   my:143, ck:0 },
+  sleepy:     { ll:U_SLEEPY,lr:U_SLEEPY,lll:32,     lrl:32,     bly:1,   bry:1,   blr:0,  brr:0,   my:145, ck:0,  cat:true },
+  deepAsleep: { ll:0,       lr:0,       lll:32,     lrl:32,     bly:0,   bry:0,   blr:0,  brr:0,   my:143, ck:0 },
+  skeptical:  { ll:U_HALF,  lr:U_OPEN,  lll:46,     lrl:L_OPEN, bly:-8,  bry:5,   blr:0,  brr:7,   my:147, ck:0 },
+  lovey:      { ll:U_LOVEY, lr:U_LOVEY, lll:L_OPEN, lrl:L_OPEN, bly:-5,  bry:-5,  blr:0,  brr:0,   my:159, ck:.42, iris:'#c026d3' },
+  worried:    { ll:U_OPEN,  lr:U_OPEN,  lll:L_OPEN, lrl:L_OPEN, bly:6,   bry:6,   blr:-7, brr:7,   my:130, ck:0,  sweat:true },
+  proud:      { ll:-52,     lr:-52,     lll:L_OPEN, lrl:L_OPEN, bly:-4,  bry:-4,  blr:4,  brr:-4,  my:154, ck:.12 },
+  confused:   { ll:U_OPEN,  lr:U_OPEN,  lll:L_OPEN, lrl:L_OPEN, bly:-7,  bry:4,   blr:4,  brr:6,   my:138, ck:0 },
+  thinking:   { ll:U_LOVEY, lr:U_LOVEY, lll:L_OPEN, lrl:L_OPEN, bly:-5,  bry:2,   blr:-4, brr:4,   my:148, ck:0,  dot:true },
+  pensive:    { ll:U_LOVEY, lr:U_HALF,  lll:L_OPEN, lrl:44,     bly:-3,  bry:3,   blr:-3, brr:5,   my:145, ck:0 },
+  laughing:   { ll:U_WIDE,  lr:U_WIDE,  lll:20,     lrl:20,     bly:-9,  bry:-9,  blr:0,  brr:0,   my:168, ck:.68, teeth:true },
+  beaming:    { ll:U_WIDE,  lr:U_WIDE,  lll:28,     lrl:28,     bly:-10, bry:-10, blr:0,  brr:0,   my:163, ck:.5,  teeth:true },
+  melting:    { ll:-54,     lr:-54,     lll:24,     lrl:24,     bly:-7,  bry:-7,  blr:0,  brr:0,   my:170, ck:.72, iris:'#f472b6', teeth:true },
+  triumphant: { ll:U_WIDE,  lr:U_WIDE,  lll:L_OPEN, lrl:L_OPEN, bly:-13, bry:-13, blr:3,  brr:-3,  my:167, ck:.45, teeth:true, iris:'#f59e0b' },
+  cheeky:     { ll:U_OPEN,  lr:U_OPEN,  lll:L_OPEN, lrl:L_OPEN, bly:-4,  bry:-7,  blr:3,  brr:-6,  my:157, ck:.22, teeth:true, tongue:true, mqx:116 },
+  wink:       { ll:U_OPEN,  lr:0,       lll:L_OPEN, lrl:0,      bly:-4,  bry:4,   blr:0,  brr:3,   my:156, ck:.2,  mqx:112 },
+  flirty:     { ll:U_OPEN,  lr:-16,     lll:L_OPEN, lrl:L_OPEN, bly:-5,  bry:3,   blr:0,  brr:4,   my:158, ck:.3,  mqx:112 },
+  mischievous:{ ll:U_OPEN,  lr:-18,     lll:L_OPEN, lrl:44,     bly:-6,  bry:-10, blr:-4, brr:0,   my:154, ck:.14, mqx:118 },
+  smug:       { ll:U_HALF,  lr:-54,     lll:46,     lrl:L_OPEN, bly:0,   bry:-5,  blr:3,  brr:-4,  my:151, ck:0,   mqx:120 },
+  awestruck:  { ll:U_WIDE,  lr:U_WIDE,  lll:L_OPEN, lrl:L_OPEN, bly:-15, bry:-15, blr:0,  brr:0,   my:148, ck:0,  oMouth:true, iris:'#a5b4fc' },
+  starstruck: { ll:U_WIDE,  lr:U_WIDE,  lll:L_OPEN, lrl:L_OPEN, bly:-13, bry:-13, blr:0,  brr:0,   my:162, ck:.38, iris:'#f59e0b' },
+  pleading:   { ll:U_WIDE,  lr:U_WIDE,  lll:L_OPEN, lrl:L_OPEN, bly:6,   bry:6,   blr:-9, brr:9,   my:130, ck:.1 },
+  tearful:    { ll:-24,     lr:-24,     lll:L_OPEN, lrl:L_OPEN, bly:8,   bry:8,   blr:7,  brr:-7,  my:120, ck:0,   tears:true, quiver:true },
+  sobbing:    { ll:-14,     lr:-14,     lll:L_OPEN, lrl:L_OPEN, bly:10,  bry:10,  blr:10, brr:-10, my:115, ck:.12, tears:true, quiver:true },
+  angry:      { ll:-38,     lr:-38,     lll:L_OPEN, lrl:L_OPEN, bly:9,   bry:9,   blr:-9, brr:9,   my:124, iris:'#ef4444', mqx:84 },
+  furious:    { ll:-28,     lr:-28,     lll:48,     lrl:48,     bly:11,  bry:11,  blr:-12,brr:12,  my:118, iris:'#dc2626', sweat:true, rapidBlink:true, quiver:true, mqx:82 },
+  shy:        { ll:-44,     lr:-44,     lll:L_OPEN, lrl:L_OPEN, bly:0,   bry:0,   blr:0,  brr:0,   my:152, ck:.8,  avert:'dl', dot:true },
+  embarrassed:{ ll:-44,     lr:-44,     lll:L_OPEN, lrl:L_OPEN, bly:0,   bry:0,   blr:0,  brr:0,   my:150, ck:.85, avert:'dr', dot:true },
+  nervous:    { ll:-50,     lr:-50,     lll:L_OPEN, lrl:L_OPEN, bly:4,   bry:4,   blr:-4, brr:4,   my:140, ck:0,  sweat:true, rapidBlink:true },
+  panicking:  { ll:U_WIDE,  lr:U_WIDE,  lll:L_OPEN, lrl:L_OPEN, bly:-12, bry:-12, blr:-3, brr:3,   my:140, ck:0,  sweat:true, oMouth:true, rapidBlink:true },
+  determined: { ll:-36,     lr:-36,     lll:48,     lrl:48,     bly:5,   bry:5,   blr:-6, brr:6,   my:144, ck:0 },
+  content:    { ll:-46,     lr:-46,     lll:36,     lrl:36,     bly:-2,  bry:-2,  blr:0,  brr:0,   my:155, ck:.18, cat:true },
+  uwu:        { ll:U_LOVEY, lr:U_LOVEY, lll:L_OPEN, lrl:L_OPEN, bly:-6,  bry:-6,  blr:0,  brr:0,   my:148, ck:.55, cat:true },
+  impressed:  { ll:U_WIDE,  lr:U_LOVEY, lll:L_OPEN, lrl:L_OPEN, bly:-10, bry:-4,  blr:2,  brr:-2,  my:158, ck:.22 },
+  listening:  { ll:U_WIDE,  lr:U_WIDE,  lll:L_OPEN, lrl:L_OPEN, bly:-6,  bry:-6,  blr:0,  brr:0,   my:148, ck:.05 },
+  mimicking:  { ll:U_OPEN,  lr:U_OPEN,  lll:L_OPEN, lrl:L_OPEN, bly:-4,  bry:-4,  blr:0,  brr:0,   my:161, ck:.3,  teeth:true },
+};

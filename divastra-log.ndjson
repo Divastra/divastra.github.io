@@ -1,0 +1,8 @@
+﻿{"type":"chat","ip":"152.58.32.173","sid":"mq8qokhkmr7usvn5","ts":1783259744476,"userMsg":"Hi","reply":"Sup!! I've been here all along waiting for this exact moment 😍","category":"greeting","known":true}
+{"type":"event","eventType":"scroll_depth","ip":"152.58.32.173","sid":"mq8qokhkmr7usvn5","ts":1783259787528,"depth":25}
+{"type":"event","eventType":"scroll_depth","ip":"152.58.32.173","sid":"mq8qokhkmr7usvn5","ts":1783259792076,"depth":50}
+{"type":"event","eventType":"cta_click","ip":"152.58.32.173","sid":"mq8qokhkmr7usvn5","ts":1783259805396,"text":"Fill ₹501 Form"}
+{"type":"event","eventType":"scroll_depth","ip":"152.58.32.173","sid":"mq8qokhkmr7usvn5","ts":1783260075179,"depth":75}
+{"type":"event","eventType":"scroll_depth","ip":"152.58.32.173","sid":"mq8qokhkmr7usvn5","ts":1783260075506,"depth":100}
+{"type":"session","sid":"mq8qokhkmr7usvn5","ip":"152.58.32.173","ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","startTs":1783259732273,"endTs":1783260113874,"duration":381601,"scrollDepthMax":100,"chatCount":0,"funnel":"aware","userType":"unknown","url":"/counselling.html","ref":"direct"}
+{"type":"session","sid":"mq8qokhkmr7usvn5","ip":"152.58.32.173","ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","startTs":1783259732273,"endTs":1783260113894,"duration":381621,"scrollDepthMax":100,"chatCount":0,"funnel":"aware","userType":"unknown","url":"/counselling.html","ref":"direct"}
