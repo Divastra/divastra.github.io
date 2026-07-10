@@ -59,7 +59,8 @@
     },
 
     /* ── Analytics (Google Apps Script URL — paste after deploying) ─────── */
-    analyticsUrl: 'https://script.google.com/macros/s/AKfycbwakUnv8Elwnd-83oOMxpXQHYcLt5vKoQolIqkNzvVrDUxhfKhP084SQUSCvfkH_f-oNw/exec',
+    analyticsUrl: 'https://script.google.com/macros/s/AKfycbz0AOhD677ubFnaim6-xJvgZ8bLI-ZA5_QQNR_jox0Hi7AbGJnPAE1jBZdMpvIgaksGNg/exec',
+    divaLog:      'https://script.google.com/macros/s/AKfycbz0AOhD677ubFnaim6-xJvgZ8bLI-ZA5_QQNR_jox0Hi7AbGJnPAE1jBZdMpvIgaksGNg/exec',
 
     /* ── Greeting (shown on first visit or after long absence) ───────────── */
     greeting: "Hi! I'm Divi 👋 Your JEE companion! Let me help you find your dream college 🎯",

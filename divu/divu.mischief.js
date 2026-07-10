@@ -137,6 +137,14 @@ export function initFlirty(ctx, root, forceState){
     flastMs=Date.now();fc++;
   });
 
+  /* Touch directly on Divu — same melting reaction as click */
+  root.addEventListener('touchend',e=>{
+    e.stopPropagation();
+    if(Date.now()<ctx.manualUntil)return;
+    forceState('melting',6000,pick(C.flirtyDiviClick));
+    flastMs=Date.now();fc++;
+  },{passive:true});
+
   /* Hover on Divu 450ms without clicking (was 800ms) */
   root.addEventListener('mouseenter',()=>{
     hoverT=setTimeout(()=>{
@@ -147,6 +155,16 @@ export function initFlirty(ctx, root, forceState){
   });
   root.addEventListener('mouseleave',()=>clearTimeout(hoverT));
 
+  /* Touch start on Divu — proximity/hover reaction (mouseenter analogue on mobile) */
+  root.addEventListener('touchstart',()=>{
+    hoverT=setTimeout(()=>{
+      if(Date.now()-flastMs<5000||Date.now()<ctx.manualUntil)return;
+      forceState(fc<4?'wink':'flirty',5000,pick(C.flirtyProximity));
+      flastMs=Date.now();fc++;
+    },450);
+  },{passive:true});
+  root.addEventListener('touchcancel',()=>clearTimeout(hoverT));
+
   /* Any page click — 38% flirty chance (was 18%) */
   document.addEventListener('click',e=>{
     if(e.target.closest('#divu-root'))return;
@@ -155,6 +173,15 @@ export function initFlirty(ctx, root, forceState){
       flastMs=Date.now();fc++;
     }
   });
+
+  /* Any page touch — 38% flirty chance (mobile equivalent of page click) */
+  document.addEventListener('touchstart',e=>{
+    if(e.target.closest('#divu-root'))return;
+    if(Math.random()<.38&&Date.now()-flastMs>6000&&Date.now()>ctx.manualUntil){
+      forceState(pick(['wink','flirty','lovey','cheeky']),4500,pick(fc<5?C.flirty:C.flirtyEscalated));
+      flastMs=Date.now();fc++;
+    }
+  },{passive:true});
 
   /* Attention call — every 12–25 s, triggers after just 9 s of quiet (was 25–53 s / 22 s) */
   (function callAttn(){
