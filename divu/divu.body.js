@@ -912,26 +912,57 @@ export function makeDrag(root,refs,lerp,bubble,applyExprFn,body){
       applyExprFn(pick(['cheeky','mischievous','wink']),refs,lerp);
     }
   });
-  document.addEventListener('mouseup',e=>{
-    if(!dragging)return;dragging=false;
+  function snapToCorner(){
     root.classList.remove('dv-dragging');
     const r=root.getBoundingClientRect();
     const mx=r.left+r.width/2,my=r.top+r.height/2;
     const W=window.innerWidth,H=window.innerHeight;
-    const corners={
-      'dv-pos-br':Math.hypot(mx-W,my-H),
-      'dv-pos-bl':Math.hypot(mx,my-H),
-      'dv-pos-tr':Math.hypot(mx-W,my),
-      'dv-pos-tl':Math.hypot(mx,my),
-    };
+    const corners={'dv-pos-br':Math.hypot(mx-W,my-H),'dv-pos-bl':Math.hypot(mx,my-H),'dv-pos-tr':Math.hypot(mx-W,my),'dv-pos-tl':Math.hypot(mx,my)};
     const best=Object.entries(corners).sort((a,b)=>a[1]-b[1])[0][0];
     root.style.left='';root.style.top='';root.style.bottom='';root.style.right='';
-    root.classList.remove('dv-near-top');
-    root.classList.add(best);
+    root.classList.remove('dv-near-top');root.classList.add(best);
     if(body&&body.setHome)body.setHome(best);
     _hideUI(true);
     applyExprFn('triumphant',refs,lerp);
     bubble.show(pick(['New home!! I like it~ 😌','Redecorating!! 💅','This corner has better vibes 😏','Okay I could get used to this 😌']),2500);
     setTimeout(()=>applyExprFn('idle',refs,lerp),2600);
+  }
+
+  document.addEventListener('mouseup',e=>{
+    if(!dragging)return;dragging=false;
+    snapToCorner();
   });
+
+  /* ── Touch drag (mobile) ── */
+  let touchPending=false;
+  wrap.addEventListener('touchstart',e=>{
+    if(e.touches.length!==1)return;
+    if(root.classList.contains('dv-typing'))return;
+    touchPending=true;
+    startX=e.touches[0].clientX;startY=e.touches[0].clientY;
+    cdx=0;cdy=0;
+  },{passive:true});
+  document.addEventListener('touchmove',e=>{
+    if(!touchPending)return;
+    const dx=e.touches[0].clientX-startX,dy=e.touches[0].clientY-startY;
+    if(!dragging){
+      if(Math.hypot(dx,dy)<10)return; /* wait for threshold before committing to drag */
+      if(body&&body.isRoaming())body.caught(bubble);
+      dragging=true;_hideUI(false);
+    }
+    e.preventDefault(); /* suppress page scroll only during active Divi drag */
+    const r=root.getBoundingClientRect();
+    let nx=Math.max(0,Math.min(window.innerWidth-r.width,r.left+dx));
+    let ny=Math.max(0,Math.min(window.innerHeight-r.height,r.top+dy));
+    root.classList.remove('dv-pos-br','dv-pos-bl','dv-pos-tr','dv-pos-tl');
+    root.style.left=nx+'px';root.style.top=ny+'px';root.style.bottom='auto';root.style.right='auto';
+    root.classList.add('dv-dragging');
+    startX=e.touches[0].clientX;startY=e.touches[0].clientY;
+    if(Date.now()>dragForced+1800){dragForced=Date.now();applyExprFn(pick(['cheeky','mischievous','wink']),refs,lerp);}
+  },{passive:false});
+  document.addEventListener('touchend',()=>{
+    touchPending=false;
+    if(!dragging)return;dragging=false;
+    snapToCorner();
+  },{passive:true});
 }

@@ -148,6 +148,7 @@ export function makeIntel(refs,lerp,pupils,bubble,root,body){
   document.addEventListener('keyup',e=>{if(e.key==='CapsLock')capsActive=false;});
 
   window.addEventListener('scroll',()=>{
+    lastMoveMs=Date.now(); /* scrolling = user is active */
     const now=Date.now(),dy=Math.abs(window.scrollY-lastScrollY),dt=Math.max(1,now-lastScrollMs);
     lastScrollY=window.scrollY;lastScrollMs=now;if(dt<50)return;
     const spd=dy/dt;
@@ -156,6 +157,17 @@ export function makeIntel(refs,lerp,pupils,bubble,root,body){
     const pct=window.scrollY/Math.max(1,document.body.scrollHeight-window.innerHeight);
     if(pct>.92&&Date.now()>ctx.manualUntil){forceState('triumphant',3200,'Scrolled ALL the way! LEGENDARY!! 💪');showSymbol(refs,'✓');}
     if(pct<.05&&lastScrollY>200&&Date.now()>ctx.manualUntil)forceState('excited',2000,'Fresh start from the top! Let\'s GO!! 🔄✨');
+  },{passive:true});
+
+  /* Mobile touch: treat touch and touchmove as user activity (same as mousemove on desktop) */
+  document.addEventListener('touchstart',e=>{
+    const t=e.touches[0];if(t)pupils.setTarget(t.clientX,t.clientY);
+    const wasIdle=Date.now()-lastMoveMs>5000;lastMoveMs=Date.now();
+    if(body&&(wasIdle||body.isRoaming()))body.caught(bubble);
+  },{passive:true});
+  document.addEventListener('touchmove',e=>{
+    const t=e.touches[0];if(t)pupils.setTarget(t.clientX,t.clientY);
+    lastMoveMs=Date.now();
   },{passive:true});
 
   document.addEventListener('visibilitychange',()=>{
